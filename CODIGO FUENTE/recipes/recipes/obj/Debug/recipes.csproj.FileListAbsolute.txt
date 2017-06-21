@@ -1,0 +1,6 @@
+C:\Users\Henry\Documents\Code Proyects\recipes\recipes\bin\recipes.dll.config
+C:\Users\Henry\Documents\Code Proyects\recipes\recipes\bin\recipes.dll
+C:\Users\Henry\Documents\Code Proyects\recipes\recipes\bin\recipes.pdb
+C:\Users\Henry\Documents\Code Proyects\recipes\recipes\obj\Debug\recipes.csprojResolveAssemblyReference.cache
+C:\Users\Henry\Documents\Code Proyects\recipes\recipes\obj\Debug\recipes.dll
+C:\Users\Henry\Documents\Code Proyects\recipes\recipes\obj\Debug\recipes.pdb
