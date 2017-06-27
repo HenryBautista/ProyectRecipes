@@ -6,6 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <h2>Planificación del pedido</h2>
     <div class="content">
         <div class="fecha">
             <table>
