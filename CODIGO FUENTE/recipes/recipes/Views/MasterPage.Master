@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="recipes.Views.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="../Assets/css/Styles.css"/>
+    <link rel="stylesheet" href="../Assets/css/ContentStyles.css"/>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div>
+            <header>
+                <input type="checkbox" id="btn-menu"/>
+                <label for="btn-menu"><img src="../Images/menu_icon.png" id="menu-img" /></label>
+                <nav class="menu">
+                    <ul>
+                        <li> <a href="StartPage.aspx">Inicio</a></li>
+                        <li> <a href="#">Productos</a>
+                            <ul>
+                                <li><a href="VirtualMarket.aspx">Mercado virtual de ingredientes</a></li>
+                                <li><a href="SuggestedRecipes.aspx">Recetas sugeridas</a></li>
+                                <li><a href="CustomRecipes.aspx">Recetas personalizadas</a></li>
+                                <li><a href="BuyList.aspx">Planificación del pedido</a></li>
+                            </ul>
+                        </li>
+                        <li> <a href="Promotions.aspx">Promociones</a>
+
+                        </li>
+                        <li> <a href="About.aspx">Nosotros</a></li>
+                        <li> <a href="Contact.aspx">Contacto</a></li>
+                        <li> <a href="Administration.aspx">Administración</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div id="lblusername">
+                <asp:Label runat="server" id="lblUserName" Text="nombre de usuario"/>
+            </div>
+        </div>
+        <div class="ContentPlaceHolder1">
+            <asp:ContentPlaceHolder  ID="ContentPlaceHolder1" runat="server">
+            
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
