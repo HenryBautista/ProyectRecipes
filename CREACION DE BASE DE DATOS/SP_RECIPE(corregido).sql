@@ -885,3 +885,26 @@ end
 
 -----------------------------------------------------------------
 -----------------------------------------------------------------
+
+create procedure [dbo].[sp_concept]
+(
+@i_action varchar(2),
+@i_concept smallint=null,
+@i_correlative smallint =null,
+@i_name varchar(500) =null,
+@i_abbreviation varchar(50) =null
+)
+as
+begin
+
+	if @i_action ='S1'
+	begin
+		select
+		co_concept,
+		co_correlative,
+		co_name,
+		co_abbrevation
+		from t_concept
+		where co_concept =@i_concept and co_correlative >0
+	end
+end
