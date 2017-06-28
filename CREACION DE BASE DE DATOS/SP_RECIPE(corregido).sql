@@ -1,6 +1,8 @@
+
+
 create procedure sp_recipe_comentary
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_comentary int =null,
 @i_recipe int=null,
@@ -9,16 +11,16 @@ create procedure sp_recipe_comentary
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_comentary
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_comentary where co_comentary=@i_comentary
 	end
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_comentary
 			(	
@@ -33,7 +35,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_comentary set 
 			
@@ -42,7 +44,7 @@ begin
 		where co_comentary=@i_comentary
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_comentary where co_comentary=@i_comentary
     end
@@ -58,7 +60,7 @@ end
 
 create procedure sp_recipe_discount
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_discount int,
 @i_recipe int ,
@@ -68,16 +70,16 @@ create procedure sp_recipe_discount
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_discount
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_discount where di_discount=@i_discount
 	end
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_discount
 			(	di_recipe,
@@ -92,7 +94,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_discount set 
 			
@@ -102,7 +104,7 @@ begin
 		where di_discount=@i_discount
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_discount where di_discount=@i_discount
     end
@@ -118,7 +120,7 @@ end
 
 create procedure sp_recipe_ingredient
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_ingredient int = null,
 @i_ingredient_id varchar(20) = null,
@@ -132,17 +134,17 @@ create procedure sp_recipe_ingredient
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_ingredient
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_ingredient where in_ingredient=@i_ingredient
     end
 
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_ingredient
 			(
@@ -170,7 +172,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_ingredient set 
 			
@@ -184,7 +186,7 @@ begin
 		where in_ingredient=@i_ingredient
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_ingredient where in_ingredient=@i_ingredient
     end
@@ -197,7 +199,7 @@ end
 
 create procedure sp_recipe_ingredient_nutrient
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_ingredient_nutrient int =null,
 @i_nutrient int =null,
@@ -207,17 +209,17 @@ create procedure sp_recipe_ingredient_nutrient
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_ingredient_nutrient
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_ingredient_nutrient where in_ingredient_nutrient=@i_ingredient_nutrient
     end
 
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_ingredient_nutrient
 			(
@@ -236,7 +238,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_ingredient_nutrient set 
 			
@@ -246,7 +248,7 @@ begin
 		where in_ingredient_nutrient=@i_ingredient_nutrient
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_ingredient_nutrient where in_ingredient_nutrient=@i_ingredient_nutrient
     end
@@ -258,7 +260,7 @@ end
 
 create procedure sp_recipe_nutrient
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_nutrient int =null,
 @i_name varchar(50)=null,
@@ -267,17 +269,17 @@ create procedure sp_recipe_nutrient
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_nutrient
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_nutrient where nu_nutrient=@i_nutrient
     end
 
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_nutrient
 			(
@@ -293,7 +295,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_nutrient set 
 			
@@ -302,7 +304,7 @@ begin
 		where nu_nutrient=@i_nutrient
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_nutrient where nu_nutrient=@i_nutrient
     end
@@ -316,7 +318,7 @@ end
 
 create procedure sp_order
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_order int  =null,
 @i_order_date date =null,
@@ -327,16 +329,16 @@ create procedure sp_order
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_order
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_order where or_order=@i_order
 	end
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_order
 			(	
@@ -354,7 +356,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_order set 
 			
@@ -365,7 +367,7 @@ begin
 		where  or_order=@i_order
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_order where  or_order=@i_order
     end
@@ -379,7 +381,7 @@ end
 
 create procedure sp_recipe_person
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_person int =null,
 @i_name varchar(50)=null,
@@ -388,16 +390,16 @@ create procedure sp_recipe_person
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_person
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_person where pe_person=@i_person
 	end
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_person
 			(	
@@ -411,7 +413,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_person set 
 			
@@ -420,7 +422,7 @@ begin
 		where pe_person=@i_person
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_person where pe_person=@i_person
     end
@@ -447,7 +449,7 @@ end
 
 create procedure sp_recipe_promotion
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_promotion int=null,
 @i_name varchar(50)=null,
@@ -460,16 +462,16 @@ create procedure sp_recipe_promotion
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_promotion
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_promotion where pr_promotion=@i_promotion 
 	end
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_promotion
 			(	
@@ -491,7 +493,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_promotion set 
 			
@@ -504,7 +506,7 @@ begin
 		where  pr_promotion=@i_promotion 
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_promotion where  pr_promotion=@i_promotion 
     end
@@ -535,7 +537,7 @@ end
 
 create procedure sp_recipe_recipe
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_recipe int =null,
 @i_recipe_id varchar(20)=null,
@@ -549,17 +551,17 @@ create procedure sp_recipe_recipe
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_recipe
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_recipe where re_recipe=@i_recipe
     end
 
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_recipe
 			(
@@ -585,7 +587,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_recipe set 
 			
@@ -599,7 +601,7 @@ begin
 		where re_recipe=@i_recipe
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_recipe where re_recipe=@i_recipe
     end
@@ -619,7 +621,7 @@ end
 
 create procedure sp_recipe_recipe_ingredient
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_recipe_ingredient int = null,
 @i_recipe int =null,
@@ -630,16 +632,16 @@ create procedure sp_recipe_recipe_ingredient
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_recipe_ingredient
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_recipe_ingredient where ri_recipe_ingredient=@i_recipe_ingredient
 	end
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_recipe_ingredient
 			(
@@ -659,7 +661,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_recipe_ingredient set 
 			
@@ -670,7 +672,7 @@ begin
 		where ri_recipe_ingredient=@i_recipe_ingredient
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_recipe_ingredient where ri_recipe_ingredient=@i_recipe_ingredient
     end
@@ -685,7 +687,7 @@ end
 
 create procedure sp_recipe_recipe_order
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_recipe_order int =null,
 @i_order int=null,
@@ -697,16 +699,16 @@ create procedure sp_recipe_recipe_order
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_recipe_order
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_recipe_order where ro_recipe=@i_recipe_order
 	end
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_recipe_order
 			(	
@@ -727,7 +729,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_recipe_order set 
 			
@@ -739,7 +741,7 @@ begin
 		where ro_recipe=@i_recipe_order
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_recipe_order where ro_recipe=@i_recipe_order
     end
@@ -756,7 +758,7 @@ end
 
 create procedure sp_recipe_user
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_user int=null,
 @i_name varchar(50)=null,
@@ -769,16 +771,16 @@ create procedure sp_recipe_user
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_user
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_user where us_user=@i_user
 	end
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_user
 			(	
@@ -800,7 +802,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_user set 
 			
@@ -813,7 +815,7 @@ begin
 		where us_user=@i_user
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_user where us_user=@i_user
     end
@@ -830,7 +832,7 @@ end
 
 create procedure sp_recipe_user_recipe
 (
-@i_accion varchar(2) =null,
+@i_action varchar(2) =null,
 ------------ valores de la tabla
 @i_user_recipe int =null,
 @i_user int =null,
@@ -839,16 +841,16 @@ create procedure sp_recipe_user_recipe
 )
 as
 begin
-    if(@i_accion='S1')
+    if(@i_action='S1')
     begin
         select* from t_user_recipe
     end
     
-    if(@i_accion='S2')
+    if(@i_action='S2')
     begin
         select* from t_user_recipe where ur_recipe=@i_user_recipe
 	end
-    if(@i_accion='I1')
+    if(@i_action='I1')
     begin
         	insert into t_user_recipe
 			(	
@@ -864,7 +866,7 @@ begin
 			)
     end
 
-        if(@i_accion='U1')
+        if(@i_action='U1')
    begin
 		update t_user_recipe set 
 			
@@ -873,13 +875,13 @@ begin
 		where ur_recipe=@i_user_recipe
 	end
 
-        if(@i_accion='D1')
+        if(@i_action='D1')
     begin
         delete t_user_recipe where ur_recipe=@i_user_recipe
     end
 
 end
-end
+
 
 -----------------------------------------------------------------
 -----------------------------------------------------------------
