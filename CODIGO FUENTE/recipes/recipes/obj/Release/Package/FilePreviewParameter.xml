@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="recipesbolvia" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Henry\\Documents\\Code\ Proyects\\recipes\\recipes\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Henry\\Documents\\Code\ Proyects\\recipes\\recipes\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="ConnectionString-Web.config Connection String" description="" value="Data Source=tcp:httserver.database.windows.net,1433;Initial Catalog=recipes;User Id=HTTUser@httserver.database.windows.net;Password=2386545Htt" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Henry\\Documents\\Code\ Proyects\\recipes\\recipes\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
