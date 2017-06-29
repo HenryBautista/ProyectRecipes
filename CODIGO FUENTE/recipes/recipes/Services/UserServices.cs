@@ -38,6 +38,24 @@ namespace recipes.Services
             }
             return ms;
         }
-                
+
+        public static bool ThisEmailExits(string mail)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "F1");
+                command.Parameters.AddWithValue("i_mail", mail);
+                DataTable table = GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_user");
+                if (table.Rows.Count >= 1)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+                return true;
+            }
+        }
     }
 }

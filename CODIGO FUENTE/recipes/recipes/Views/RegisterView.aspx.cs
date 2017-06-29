@@ -21,11 +21,22 @@ namespace recipes.Views
         protected void btn_crear_Click(object sender, EventArgs e) 
         {
             
-            if (check_fields_register() && check_password_match())
+            if (check_fields_register() && check_password_match() && !check_email())
             {
                 UserServices.InsertOrUpdate(null,tbox_name.Text,"","",tbox_email.Text,"",0);
             }
 
+        }
+
+        private bool check_email()
+        {
+            if (UserServices.ThisEmailExits(tbox_email.Text.ToLower()))
+            {
+                lbl_message.InnerText = "El Email ya fue registrado, ingrese otro";
+                return true;
+            }
+            else
+                return false;
         }
 
         private bool check_password_match()

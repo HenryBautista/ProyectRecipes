@@ -10,7 +10,7 @@
 namespace recipes.Views {
     
     
-    public partial class RegisterView {
+    public partial class RegisterRecipeView {
         
         /// <summary>
         /// SM control.
@@ -22,6 +22,24 @@ namespace recipes.Views {
         protected global::System.Web.UI.ScriptManager SM;
         
         /// <summary>
+        /// div_register control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_register;
+        
+        /// <summary>
+        /// tbox_id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbox_id;
+        
+        /// <summary>
         /// tbox_name control.
         /// </summary>
         /// <remarks>
@@ -31,31 +49,22 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.TextBox tbox_name;
         
         /// <summary>
-        /// tbox_email control.
+        /// ddl_turn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbox_email;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_turn;
         
         /// <summary>
-        /// tbox_password control.
+        /// file_image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbox_password;
-        
-        /// <summary>
-        /// tbox_password_repeat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbox_password_repeat;
+        protected global::System.Web.UI.WebControls.FileUpload file_image;
         
         /// <summary>
         /// lbl_message control.
