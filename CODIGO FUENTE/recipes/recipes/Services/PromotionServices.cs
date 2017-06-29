@@ -6,7 +6,7 @@ using System.Web;
 
 namespace recipes.Services
 {
-    public class Promotion
+    public static class PromotionServices
     {
         public static string InsertOrUpdate(int? promotion, string name, string title, string txt1, string txt2, string image1, string image2)
         {
@@ -29,7 +29,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_text2", txt2);
                 command.Parameters.AddWithValue("i_image1", image1);
                 command.Parameters.AddWithValue("i_image2", image2);
-                GeneralServices.ExecuteQuery(command, "promotion");
+                GeneralServices.ExecuteQuery(command, "recipes..sp_promotion");
             }
             catch (Exception ex)
             {

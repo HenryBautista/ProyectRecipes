@@ -8,6 +8,7 @@ namespace recipes.Services
 {
     public static class UserServices
     {
+
         public static string InsertOrUpdate(int? usr, string name, string last, string mlast, string mail, string phone, int master)
         {
             string ms = "Update Ok";

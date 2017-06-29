@@ -5,7 +5,7 @@ using System.Web;
 
 namespace recipes.Services
 {
-    public class Concept
+    public static class ConceptServices
     {
 
     }

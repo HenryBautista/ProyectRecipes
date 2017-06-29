@@ -13,7 +13,7 @@ namespace recipes.Services
         private static string chain = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         public static DataTable ExecuteQuery(SqlCommand command, string request_procedure)
-        {            
+        {
             DataTable result = new DataTable();
             SqlConnection con = new SqlConnection();
             con.ConnectionString = chain;

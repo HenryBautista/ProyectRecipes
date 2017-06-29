@@ -6,7 +6,7 @@ using System.Web;
 
 namespace recipes.Services
 {
-    public class Ingredient_nutrient
+    public static class Ingredient_nutrientServices
     {
         public static string InsertOrUpdate(int? i_nutri, int nutri, int ingre, int qty)
         {
@@ -26,7 +26,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_nutrient", nutri);
                 command.Parameters.AddWithValue("i_ingredient", ingre);
                 command.Parameters.AddWithValue("i_quantity", qty);
-                GeneralServices.ExecuteQuery(command, "ingredient_nutrient");
+                GeneralServices.ExecuteQuery(command, "recipes..sp_ingredient_nutrient");
             }
             catch (Exception ex)
             {

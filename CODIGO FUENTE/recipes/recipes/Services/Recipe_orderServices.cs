@@ -6,15 +6,15 @@ using System.Web;
 
 namespace recipes.Services
 {
-    public class User_recipe
+    public static class Recipe_orderServices
     {
-        public static string InsertOrUpdate(int? u_recipe, int usr, int recipe)
+        public static string InsertOrUpdate(int? r_order, int order, int recipe, int qty, float price, string person)
         {
             string ms = "Update Ok";
             try
             {
                 string type = "U1";
-                if (u_recipe == null)
+                if (r_order == null)
                 {
                     type = "I1";
                     ms = "Insert Ok";
@@ -22,16 +22,19 @@ namespace recipes.Services
 
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", type);
-                command.Parameters.AddWithValue("i_user_recipe", u_recipe);
-                command.Parameters.AddWithValue("i_user", usr);
+                command.Parameters.AddWithValue("i_recipe_order", r_order);
+                command.Parameters.AddWithValue("i_order", order);
                 command.Parameters.AddWithValue("i_recipe", recipe);
-                GeneralServices.ExecuteQuery(command, "user_recipe");
+                command.Parameters.AddWithValue("i_quantity", qty);
+                command.Parameters.AddWithValue("i_price", price);
+                command.Parameters.AddWithValue("i_person", person);
+                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_order");
             }
             catch (Exception ex)
             {
                 return ex.Message;
             }
             return ms;
-        }      
+        }
     }
 }

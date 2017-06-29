@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -109,22 +110,22 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Commentary.cs" />
-    <Compile Include="Services\Concept.cs" />
-    <Compile Include="Services\Discount.cs" />
+    <Compile Include="Services\CommentaryServices.cs" />
+    <Compile Include="Services\ConceptServices.cs" />
+    <Compile Include="Services\DiscountServices.cs" />
     <Compile Include="Services\GeneralServices.cs" />
-    <Compile Include="Services\Ingredient.cs" />
-    <Compile Include="Services\Ingredient_nutrient.cs" />
-    <Compile Include="Services\Nutrient.cs" />
-    <Compile Include="Services\Order.cs" />
-    <Compile Include="Services\Person.cs" />
-    <Compile Include="Services\Promotion.cs" />
-    <Compile Include="Services\Recipe.cs" />
-    <Compile Include="Services\Recipe_Ingredient.cs" />
-    <Compile Include="Services\Recipe_order.cs" />
+    <Compile Include="Services\IngredientServices.cs" />
+    <Compile Include="Services\Ingredient_nutrientServices.cs" />
+    <Compile Include="Services\NutrientServices.cs" />
+    <Compile Include="Services\OrderServices.cs" />
+    <Compile Include="Services\PersonServices.cs" />
+    <Compile Include="Services\PromotionServices.cs" />
+    <Compile Include="Services\RecipeServices.cs" />
+    <Compile Include="Services\Recipe_IngredientServices.cs" />
+    <Compile Include="Services\Recipe_orderServices.cs" />
     <Compile Include="Services\servicio_ejemplo_commentary.cs" />
     <Compile Include="Services\UserServices.cs" />
-    <Compile Include="Services\User_recipe.cs" />
+    <Compile Include="Services\User_recipeServices.cs" />
     <Compile Include="Util\Utilities.cs" />
     <Compile Include="Views\BuyListView.aspx.cs">
       <DependentUpon>BuyListView.aspx</DependentUpon>

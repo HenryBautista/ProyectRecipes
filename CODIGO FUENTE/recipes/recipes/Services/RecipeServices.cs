@@ -6,7 +6,7 @@ using System.Web;
 
 namespace recipes.Services
 {
-    public class Recipe
+    public static class RecipeServices
     {
         public static string InsertOrUpdate(int? recipe, string i_recipe, string name, int turn, string image, float tc, string obs, int usr)
         {
@@ -30,7 +30,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_total", tc);
                 command.Parameters.AddWithValue("i_observation", obs);
                 command.Parameters.AddWithValue("i_of_user", usr);
-                GeneralServices.ExecuteQuery(command, "recipe");
+                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe");
             }
             catch (Exception ex)
             {
