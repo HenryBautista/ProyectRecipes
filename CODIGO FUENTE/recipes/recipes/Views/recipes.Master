@@ -14,7 +14,6 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <div>
             <header>
                 <input type="checkbox" id="btn-menu"/>
                 <label for="btn-menu"><img src="../Images/menu_icon.png" id="menu-img" /></label>
@@ -38,13 +37,10 @@
                     </ul>
                 </nav>
             </header>
-            <div id="lblusername">
-                <asp:Label runat="server" id="lblUserName" Text="nombre de usuario"/>
-            </div>
-        </div>
-        <div class="ContentPlaceHolder1">
-            <asp:ContentPlaceHolder  ID="ContentPlaceHolder1" runat="server">
             
+        <div id="body">
+            <asp:ContentPlaceHolder  ID="ContentPlaceHolder1" runat="server" >
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
             </asp:ContentPlaceHolder>
         </div>
     </div>

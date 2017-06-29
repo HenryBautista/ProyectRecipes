@@ -67,12 +67,33 @@
   <ItemGroup>
     <Content Include="Assets\css\ContentStyles.css" />
     <Content Include="Assets\css\Styles.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Default.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\menu_icon.png" />
     <Content Include="Images\RecipePhotos\macdonalds-japones-1.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Views\BuyListView.aspx" />
     <Content Include="Views\CustomRecipesView.aspx" />
+    <Content Include="Views\LoginView.aspx" />
     <Content Include="Views\PrincipalView.aspx" />
+    <Content Include="Views\RegisterView.aspx" />
     <Content Include="Views\StartPageView.aspx" />
     <Content Include="Views\SuggestedRecipesView.aspx" />
     <Content Include="Web.config">
@@ -102,7 +123,7 @@
     <Compile Include="Services\Recipe_Ingredient.cs" />
     <Compile Include="Services\Recipe_order.cs" />
     <Compile Include="Services\servicio_ejemplo_commentary.cs" />
-    <Compile Include="Services\User.cs" />
+    <Compile Include="Services\UserServices.cs" />
     <Compile Include="Services\User_recipe.cs" />
     <Compile Include="Util\Utilities.cs" />
     <Compile Include="Views\BuyListView.aspx.cs">
@@ -119,6 +140,13 @@
     <Compile Include="Views\CustomRecipesView.aspx.designer.cs">
       <DependentUpon>CustomRecipesView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoginView.aspx.cs">
+      <DependentUpon>LoginView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LoginView.aspx.designer.cs">
+      <DependentUpon>LoginView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\PrincipalView.aspx.cs">
       <DependentUpon>PrincipalView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -132,6 +160,13 @@
     </Compile>
     <Compile Include="Views\recipes.Master.designer.cs">
       <DependentUpon>recipes.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterView.aspx.cs">
+      <DependentUpon>RegisterView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterView.aspx.designer.cs">
+      <DependentUpon>RegisterView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\StartPageView.aspx.cs">
       <DependentUpon>StartPageView.aspx</DependentUpon>
@@ -152,6 +187,7 @@
     <Content Include="Images\Thumbs.db" />
     <None Include="Properties\PublishProfiles\recipesbolvia.pubxml" />
     <Content Include="Views\recipes.Master" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

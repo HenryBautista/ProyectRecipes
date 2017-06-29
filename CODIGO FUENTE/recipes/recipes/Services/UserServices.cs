@@ -6,7 +6,7 @@ using System.Web;
 
 namespace recipes.Services
 {
-    public class User
+    public static class UserServices
     {
         public static string InsertOrUpdate(int? usr, string name, string last, string mlast, string mail, string phone, int master)
         {
@@ -29,7 +29,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_mail", mail);
                 command.Parameters.AddWithValue("i_phone", phone);
                 command.Parameters.AddWithValue("i_master", master);
-                GeneralServices.ExecuteQuery(command, "user");
+                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_user");
             }
             catch (Exception ex)
             {
