@@ -29,5 +29,22 @@ namespace recipes.Services
             con.Close();
             return result;
         }
+        public static DataTable Show_Data_table(string t_name, string type, int val)
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                string data = "i_" + t_name;
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", type);
+                command.Parameters.AddWithValue(data, val);
+                result = ExecuteQuery(command, t_name);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result;
+        }
     }
 }
