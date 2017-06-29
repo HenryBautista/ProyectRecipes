@@ -12,7 +12,7 @@ namespace recipes.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            dlist_unit.DataSource = GeneralServices.Show_Data_table("concepts", "S1",2);
         }
 
         protected void btn_crear_Click(object sender, EventArgs e)
