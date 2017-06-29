@@ -8,7 +8,7 @@ namespace recipes.Services
 {
     public static class NutrientServices
     {
-        public static string InsertOrUpdate(int? nutri, string name, float qty)
+        public static string InsertOrUpdate(int? nutri, string name)
         {
             string ms = "Update Ok";
             try
@@ -24,7 +24,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_action", type);
                 command.Parameters.AddWithValue("i_nutrient", nutri);
                 command.Parameters.AddWithValue("i_name", name);
-                command.Parameters.AddWithValue("i_quantity", qty);
+                //command.Parameters.AddWithValue("i_quantity", qty);
                 GeneralServices.ExecuteQuery(command, "recipes..sp_nutrient");
             }
             catch (Exception ex)
