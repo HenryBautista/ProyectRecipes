@@ -10,3 +10,9 @@ E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.pdb
 E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.dll
 E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.pdb
 E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.csprojResolveAssemblyReference.cache
+D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.csprojResolveAssemblyReference.cache
+D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.dll
+D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll.config
+D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll
+D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.pdb
+D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.pdb

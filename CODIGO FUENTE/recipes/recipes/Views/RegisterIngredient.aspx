@@ -5,48 +5,70 @@
     <asp:ScriptManager ID="SM" runat="server">
 
     </asp:ScriptManager>
-    <div class="container-fluid">
-        <div class="row"> 
-            <div class="col-md-8 hidden-xs"  style="background-color:black">
-                <img src="../Images/RecipePhotos/macdonalds-japones-1.jpg" style="height:100%;width:100%; opacity:0.5"/>
+    <div class="content">
+        <div style="float:left; width:30%; height:30%;" >
+                <img src="../Images/RecipePhotos/macdonalds-japones-1.jpg" style="width:100%; height:100%;"/>
             </div>
-            <div class="col-sm-12 col-md-3" style="background-color:whitesmoke"> 
-                <div>
-                   <div class="form-group">
-                       <label>Codigo:</label>
-                       <asp:TextBox CssClass="form-control" ID="tbox_code" runat="server" ></asp:TextBox>
-                   </div>
-                <div class="form-group">
-                    <label>Nombre:</label>
-                    <asp:TextBox  CssClass="form-control" ID="tbox_name" runat="server"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <label>Unidad:</label>
-                    <asp:Datalist CssClass="form-control" id="dlist_unit" placeholder="Unidad medida" runat="server"/>
-                </div>
-                <div class="form-group">
-                    <label>Costo:</label>
-                    <asp:TextBox Cssclass="form-control" id="tbox_price" placeholder="Costo ingrediente" runat="server"/>
-                </div>
-                    
-                <div class="form-group">
-                    <label>Factor:</label>
-                    <asp:TextBox  Cssclass="form-control" id="tbox_factor" placeholder="Factor" runat="server"/>
-                </div>
-                    
-                <div class="form-group">
-                    <label>Categoria:</label>
-                    <asp:TextBox Cssclass="form-control" id="tbox_category" placeholder="Categoria del ingrediente" runat="server"/>
-                </div>
-                <div class="form-group">
-                    <label>Origen:</label>
-                    <asp:TextBox Cssclass="form-control" id="tbox_origin" placeholder="Irigen ingrediente " runat="server"/>
-                </div>
-                    <label runat="server" id="lbl_message" class="alert-danger"></label>
-                    <asp:Button id="btn_crear" runat="server" CssClass="btn btn-success" Text="CREAR" OnClick="btn_crear_Click"/>
-                </div>  
+            <div style="float:left; width:70%;" class="detail">
+                <table>
+                    <tr>
+                        <td class="label">Codigo:</td>
+                        <td class="text">
+                            <!-- -->
+                            <asp:TextBox class="detalle" ID="tbox_code" runat="server" ></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Nombre:</td>
+                        <td class="text">
+                            <asp:TextBox  CssClass="detalle" ID="tbox_name" placeholder="Costo ingrediente" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Unidad de medida:</td>
+                        <td class="text">
+                            <asp:Datalist CssClass="form-control" id="dlist_unit" placeholder="Unidad medida" runat="server"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Costo:</td>
+                        <td class="text">
+                            <asp:TextBox Cssclass="detalle" id="tbox_price" placeholder="Costo ingrediente" runat="server"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Factor:</td>
+                        <td class="text">
+                            <asp:TextBox  Cssclass="detalle" id="tbox_factor" placeholder="Factor" runat="server"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Categoria:</td>
+                        <td class="text">
+                            <asp:TextBox Cssclass="detalle" id="tbox_category" placeholder="Categoria del ingrediente" runat="server"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Origen:</td>
+                        <td class="text">
+                            <asp:TextBox Cssclass="detalle" id="tbox_origin" placeholder="Origen del ingrediente " runat="server"/>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td class="button">
+                            <asp:Button id="btn_crear" runat="server" CssClass="btn btn-success" Text="Crear ingrediente" OnClick="btn_crear_Click"/>
+                        </td>
+                        <td class="button">
+                            
+                        </td>
+                        <td class="button"></td>
+                        <td class="button"></td>
+                    </tr>
+                </table>
             </div>
-        </div>
+        
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
