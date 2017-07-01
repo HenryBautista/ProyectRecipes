@@ -33,8 +33,9 @@ namespace recipes.Services
         {
             DataTable result = new DataTable();
             try
-            {
+            {                
                 string data = "i_" + t_name;
+                t_name = "recipes..sp_" + t_name;
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", type);
                 command.Parameters.AddWithValue(data, val);

@@ -16,3 +16,9 @@ D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll.c
 D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll
 D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.pdb
 D:\GITHUB\recipes\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.pdb
+C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll.config
+C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll
+C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.pdb
+C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.csprojResolveAssemblyReference.cache
+C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.dll
+C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.pdb
