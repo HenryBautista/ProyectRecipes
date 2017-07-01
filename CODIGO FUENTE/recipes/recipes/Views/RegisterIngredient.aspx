@@ -9,7 +9,7 @@
         <div style="float:left; width:30%; height:30%;" >
                 <img src="../Images/RecipePhotos/macdonalds-japones-1.jpg" style="width:100%; height:100%;"/>
             </div>
-            <div style="float:left; width:70%;" class="detail">
+        <div style="float:left; width:70%;" class="detail">
                 <table>
                     <tr>
                         <td class="label">Codigo:</td>
@@ -68,8 +68,81 @@
                     </tr>
                 </table>
             </div>
-        
     </div>
+    <div style="width:80%; height:auto;margin-left:auto;margin-right:auto;">
+        <h3>Lista de ingredientes</h3>
+            <asp:GridView runat="server" ID="grdIngredientes" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:TemplateField HeaderText="Codigo">
+                        <ItemTemplate>
+                            <asp:Label ID="lblCodigo" runat="server" Text="Label"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nombre">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblNombre" runat="server" Text="Label"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Unidad de medida">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtUnidadMedida" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblUnidadMedida" runat="server" Text="Label"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Costo">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtCosto" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblCosto" runat="server" Text="Label"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Factor">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtFactor" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblFactor" runat="server" Text="Label"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Categoria">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtCategoria" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblCategoria" runat="server" Text="Label"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Origen">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtOrigen" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblOrigen" runat="server" Text="Label"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar" />
+                    <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="Borrar" />
+                </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
+
+            </asp:GridView>
+        </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 </asp:Content>
