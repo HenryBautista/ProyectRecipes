@@ -94,7 +94,7 @@
     <Content Include="Views\CustomRecipesView.aspx" />
     <Content Include="Views\LoginView.aspx" />
     <Content Include="Views\PrincipalView.aspx" />
-    <Content Include="Views\RegisterIngredient.aspx" />
+    <Content Include="Views\RegisterIngredientView.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
     <Content Include="Views\RegisterRecipeView.aspx" />
     <Content Include="Views\RegisterUser.aspx" />
@@ -166,12 +166,12 @@
     <Compile Include="Views\recipes.Master.designer.cs">
       <DependentUpon>recipes.Master</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegisterIngredient.aspx.cs">
-      <DependentUpon>RegisterIngredient.aspx</DependentUpon>
+    <Compile Include="Views\RegisterIngredientView.aspx.cs">
+      <DependentUpon>RegisterIngredientView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\RegisterIngredient.aspx.designer.cs">
-      <DependentUpon>RegisterIngredient.aspx</DependentUpon>
+    <Compile Include="Views\RegisterIngredientView.aspx.designer.cs">
+      <DependentUpon>RegisterIngredientView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterNutrient.aspx.cs">
       <DependentUpon>RegisterNutrient.aspx</DependentUpon>
