@@ -22,15 +22,6 @@ namespace recipes.Views {
         protected global::System.Web.UI.ScriptManager SM;
         
         /// <summary>
-        /// div_register control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_register;
-        
-        /// <summary>
         /// tbox_id control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.DropDownList ddl_turn;
         
         /// <summary>
+        /// tbox_total control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbox_total;
+        
+        /// <summary>
         /// file_image control.
         /// </summary>
         /// <remarks>
@@ -65,6 +65,15 @@ namespace recipes.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload file_image;
+        
+        /// <summary>
+        /// tbox_Observation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbox_Observation;
         
         /// <summary>
         /// lbl_message control.
@@ -76,12 +85,21 @@ namespace recipes.Views {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_message;
         
         /// <summary>
-        /// btn_crear control.
+        /// btn_add control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_crear;
+        protected global::System.Web.UI.WebControls.Button btn_add;
+        
+        /// <summary>
+        /// grid_recipes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grid_recipes;
     }
 }

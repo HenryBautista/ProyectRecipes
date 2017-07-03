@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -10,14 +11,14 @@ namespace recipes.Services
     {
         public static string InsertOrUpdate(int? recipe, string i_recipe, string name, int turn, string image, float tc, string obs, int usr)
         {
-            string ms = "Update Ok";
+            string ms = "success";
             try
             {
                 string type = "U1";
                 if (recipe == null)
                 {
                     type = "I1";
-                    ms = "Insert Ok";
+                    ms = "success";
                 }
 
                 SqlCommand command = new SqlCommand();
@@ -27,16 +28,32 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_name", name);
                 command.Parameters.AddWithValue("i_turn", turn);
                 command.Parameters.AddWithValue("i_image", image);
-                command.Parameters.AddWithValue("i_total", tc);
+                command.Parameters.AddWithValue("i_total_cost", tc);
                 command.Parameters.AddWithValue("i_observation", obs);
                 command.Parameters.AddWithValue("i_of_user", usr);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe");
+                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_recipe");
             }
             catch (Exception ex)
             {
                 return ex.Message;
             }
             return ms;
+        }
+
+        internal static DataTable GetAllRecipes()
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "S1");
+                result = GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_recipe");
+            }
+            catch (Exception)
+            {
+                result = new DataTable();
+            }
+            return result;
         }
     }
 }
