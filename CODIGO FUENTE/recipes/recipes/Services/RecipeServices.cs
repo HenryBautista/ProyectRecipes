@@ -31,7 +31,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_total_cost", tc);
                 command.Parameters.AddWithValue("i_observation", obs);
                 command.Parameters.AddWithValue("i_of_user", usr);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_recipe");
+                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe");
             }
             catch (Exception ex)
             {

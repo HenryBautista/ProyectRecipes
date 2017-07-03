@@ -31,7 +31,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_mail", mail);
                 command.Parameters.AddWithValue("i_phone", phone);
                 command.Parameters.AddWithValue("i_master", master);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_user");
+                GeneralServices.ExecuteQuery(command, "recipes..sp_user");
             }
             catch (Exception ex)
             {
@@ -47,7 +47,7 @@ namespace recipes.Services
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "F1");
                 command.Parameters.AddWithValue("i_mail", mail);
-                DataTable table = GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_user");
+                DataTable table = GeneralServices.ExecuteQuery(command, "recipes..sp_user");
                 if (table.Rows.Count >= 1)
                     return true;
                 else
