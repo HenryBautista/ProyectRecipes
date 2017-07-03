@@ -87,7 +87,7 @@
                 <Columns>
                     <asp:TemplateField HeaderText="Codigo">
                         <ItemTemplate>
-                            <asp:Label ID="lblCodigo" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblCodigo" runat="server" Text='<%# Bind("in_ingredient_id") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Nombre">
@@ -138,7 +138,7 @@
                             <asp:Label ID="lblOrigen" runat="server" Text="Label"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar" />
+                    <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar"/>
                     <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="Borrar" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
