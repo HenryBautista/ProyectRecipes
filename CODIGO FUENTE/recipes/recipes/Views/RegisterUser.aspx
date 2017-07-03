@@ -1,12 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipes.Master" AutoEventWireup="true" CodeBehind="RegisterUser.aspx.cs" Inherits="recipes.Views.RegisterUser" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
-                        <td class="label">Nombre de usuario:</td>
+        <table>
+            <tr>
+                        <td class="label">Nombre de usuario:></td>
+                        <td>
                             <asp:RequiredFieldValidator ID="rfUserName" runat="server" ControlToValidate="txtUserName" Display="None" ErrorMessage="Nombre de usuario" InitialValue="-1" SetFocusOnError="True" ValidationGroup="regUser"></asp:RequiredFieldValidator>
-                                                            <cc1:ValidatorCalloutExtender ID="rfUserName_validation" runat="server" Enabled="True" TargetControlID="rfUserName">
-                                                            </cc1:ValidatorCalloutExtender>
+                            <cc1:ValidatorCalloutExtender ID="rfUserName_validation" runat="server" Enabled="True" TargetControlID="rfUserName">
+                            </cc1:ValidatorCalloutExtender>
                         </td>
                     </tr>
                     <tr>
@@ -46,7 +48,6 @@
                     </tr>
                 </table>
             </div>
-    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 </asp:Content>

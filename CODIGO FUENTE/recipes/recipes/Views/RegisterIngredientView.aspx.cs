@@ -8,7 +8,7 @@ using recipes.Services;
 
 namespace recipes.Views
 {
-    public partial class RegisterIngredient : System.Web.UI.Page
+    public partial class RegisterIngredientView : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,7 +18,7 @@ namespace recipes.Views
             DDL_category.DataBind();
             DDL_origin.DataSource = GeneralServices.Show_Data_table("concept","S1",4);
             DDL_origin.DataBind();
-
+            grdIngredientes.DataSource = GeneralServices.Show_Data_table("ingredient","S1",null);
         }
 
         protected void btn_crear_Click(object sender, EventArgs e)

@@ -29,7 +29,7 @@ namespace recipes.Services
             con.Close();
             return result;
         }
-        public static DataTable Show_Data_table(string t_name, string type, int val)
+        public static DataTable Show_Data_table(string t_name, string type, int? val)
         {
             DataTable result = new DataTable();
             try
@@ -43,7 +43,6 @@ namespace recipes.Services
             }
             catch (Exception ex)
             {
-
             }
             return result;
         }
