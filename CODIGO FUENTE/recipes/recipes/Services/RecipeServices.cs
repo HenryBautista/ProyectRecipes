@@ -11,14 +11,12 @@ namespace recipes.Services
     {
         public static string InsertOrUpdate(int? recipe, string i_recipe, string name, int turn, string image, float tc, string obs, int usr)
         {
-            string ms = "success";
             try
             {
                 string type = "U1";
                 if (recipe == null)
                 {
                     type = "I1";
-                    ms = "success";
                 }
 
                 SqlCommand command = new SqlCommand();
@@ -37,7 +35,7 @@ namespace recipes.Services
             {
                 return ex.Message;
             }
-            return ms;
+            return "success";
         }
 
         internal static DataTable GetAllRecipes()
