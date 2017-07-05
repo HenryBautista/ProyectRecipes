@@ -24,6 +24,8 @@ namespace recipes.Views
             if (check_fields_register() && check_password_match() && !check_email())
             {
                 UserServices.InsertOrUpdate(null,tbox_name.Text,"","",tbox_email.Text,"",0);
+                lbl_message.InnerText = "Usuario registrado!";
+                Response.Redirect("StartPageView.aspx");
             }
 
         }
