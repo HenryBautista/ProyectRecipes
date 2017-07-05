@@ -12,14 +12,12 @@ namespace recipes.Services
 
         public static string InsertOrUpdate(int? usr, string name, string last, string mlast, string mail, string phone, int master)
         {
-            string ms = "Update Ok";
             try
             {
                 string type = "U1";
                 if (usr == null)
                 {
                     type = "I1";
-                    ms = "Insert Ok";
                 }
 
                 SqlCommand command = new SqlCommand();
@@ -37,7 +35,7 @@ namespace recipes.Services
             {
                 return ex.Message;
             }
-            return ms;
+            return "success";
         }
 
         public static bool ThisEmailExits(string mail)

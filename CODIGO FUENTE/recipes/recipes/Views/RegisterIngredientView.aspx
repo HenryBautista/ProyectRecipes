@@ -86,59 +86,64 @@
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Codigo">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtCodigo" runat="server" Text='<%# Bind("in_ingredient_id") %>'></asp:TextBox>
+                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblCodigo" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblCodigo" runat="server" Text='<%# Bind("in_ingredient_id") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtNombre" runat="server" Text='<%# Bind("in_name") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblNombre" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblNombre" runat="server" Text='<%# Bind("in_name") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Unidad de medida">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtUnidadMedida" runat="server"></asp:TextBox>
+                            <asp:DropDownList ID="DDLUnidadMedida" DataSource='<%# getData(2) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="True" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblUnidadMedida" runat="server" Text="Label"></asp:Label>
+                            <asp:DropDownList ID="DDLunidad" DataSource='<%# getData(2) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server">
+                                
+                            </asp:DropDownList>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Costo">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtCosto" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtCosto" runat="server" Text='<%# Bind("in_cost") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblCosto" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblCosto" runat="server" Text='<%# Bind("in_cost") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Factor">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtFactor" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtFactor" runat="server" Text='<%# Bind("in_factor") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblFactor" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblFactor" runat="server" Text='<%# Bind("in_factor") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Categoria">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtCategoria" runat="server"></asp:TextBox>
+                            <asp:DropDownList ID="DDLCategory" DataSource='<%# getData(3) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="True" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblCategoria" runat="server" Text="Label"></asp:Label>
+                            <asp:DropDownList ID="DDLCat" DataSource='<%# getData(3) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Origen">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtOrigen" runat="server"></asp:TextBox>
+                            <asp:DropDownList ID="DDLOrigin" DataSource='<%# getData(4) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="True" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblOrigen" runat="server" Text="Label"></asp:Label>
+                            <asp:DropDownList ID="DDLor" DataSource='<%# getData(4) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar" />
+                    <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar"/>
                     <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="Borrar" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />

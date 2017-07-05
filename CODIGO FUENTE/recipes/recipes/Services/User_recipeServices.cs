@@ -10,14 +10,12 @@ namespace recipes.Services
     {
         public static string InsertOrUpdate(int? u_recipe, int usr, int recipe)
         {
-            string ms = "Update Ok";
             try
             {
                 string type = "U1";
                 if (u_recipe == null)
                 {
                     type = "I1";
-                    ms = "Insert Ok";
                 }
 
                 SqlCommand command = new SqlCommand();
@@ -31,7 +29,7 @@ namespace recipes.Services
             {
                 return ex.Message;
             }
-            return ms;
+            return "success";
         }      
     }
 }
