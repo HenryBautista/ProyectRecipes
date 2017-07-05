@@ -60,8 +60,8 @@
         </div>
         <div class="row"> 
             <div class="col-md-10">   
-               <asp:GridView ID="grid_recipes" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="false"
-                   DataKeyNames="re_recipe" OnRowDeleting="grid_recipes_RowDeleting"
+               <asp:GridView ID="grid_recipes" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="false" EnablePersistedSelection="true"
+                   DataKeyNames="re_recipe" OnRowDeleting="grid_recipes_RowDeleting" OnSelectedIndexChanged="grid_recipes_SelectedIndexChanged" 
                    OnRowCommand="grid_recipes_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="re_recipe" Visible="false"/>
@@ -73,7 +73,9 @@
                         <asp:ImageField HeaderText="IMAGEN" DataImageUrlField="re_image" ControlStyle-Width="80"></asp:ImageField>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Button id="btn_delete" CommandName="delete" Text="delete" runat="server"/>
+                                <asp:Button id="btn_delete" CommandName="delete_recipe" CommandArgument='<%#Eval("re_recipe")%>' Text="eliminar" runat="server" />
+                                <asp:Button id="btn_edit" CommandName="edit_recipe" CommandArgument='<%#Eval("re_recipe")%>' Text="editar" runat="server" />
+
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

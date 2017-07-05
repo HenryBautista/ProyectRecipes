@@ -13,7 +13,7 @@ namespace recipes.Views
     public partial class RegisterRecipeView : System.Web.UI.Page
     {
 
-        
+        string selected_recipe = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -114,11 +114,12 @@ namespace recipes.Views
         protected void grid_recipes_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             string command = e.CommandName;
-            int rowIndex = Convert.ToInt32(grid_recipes.SelectedRow);
+            //int rowIndex = Convert.ToInt32(grid_recipes.SelectedRow);
+            //string id = grid_recipes.DataKeys[rowIndex].Value.ToString();\
+            string id = e.CommandArgument.ToString();
             switch (command)
             {
-                case "delete":
-                    string id = grid_recipes.DataKeys[rowIndex].Value.ToString();
+                case "delete_recipe":
                     string result = GeneralServices.Delete_this("recipe","recipes..sp_recipe",id);
                     if (result == "success")
                         lbl_message.InnerText = "Eliminado con Exito!";
@@ -126,7 +127,21 @@ namespace recipes.Views
                         lbl_message.InnerText = result;
                     
                     break;
+                case "edit_recipe":
+                    selected_recipe = id;
+                    DataTable table = GeneralServices.Show_Data_table("recipe","S2",int.Parse(id));
+                    fill_fields(table);
+                    break;
             }
+        }
+
+        private void fill_fields(DataTable table)
+        {
+            tbox_id.Text = table.Rows[0]["re_recipe_id"].ToString();
+            tbox_name.Text = table.Rows[0]["re_name"].ToString();
+            ddl_turn.SelectedValue=table.Rows[0]["re_turn"].ToString();
+            tbox_total.Text=table.Rows[0]["re_total_cost"].ToString();
+            tbox_Observation.Text = table.Rows[0]["re_observation"].ToString();
         }
 
         private void delete_recipe(string p)
@@ -138,6 +153,19 @@ namespace recipes.Views
         {
             load_recipes();
         }
+
+        protected void grid_recipes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = e.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        
     }
     
 }
