@@ -110,6 +110,34 @@ namespace recipes.Views
             lbl_message.InnerText = "";
             return true;
         }
+
+        protected void grid_recipes_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string command = e.CommandName;
+            int rowIndex = Convert.ToInt32(grid_recipes.SelectedRow);
+            switch (command)
+            {
+                case "delete":
+                    string id = grid_recipes.DataKeys[rowIndex].Value.ToString();
+                    string result = GeneralServices.Delete_this("recipe","recipes..sp_recipe",id);
+                    if (result == "success")
+                        lbl_message.InnerText = "Eliminado con Exito!";
+                    else
+                        lbl_message.InnerText = result;
+                    
+                    break;
+            }
+        }
+
+        private void delete_recipe(string p)
+        {
+            
+        }
+
+        protected void grid_recipes_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            load_recipes();
+        }
     }
     
 }

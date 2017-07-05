@@ -29,6 +29,8 @@ namespace recipes.Services
             con.Close();
             return result;
         }
+
+
         public static DataTable Show_Data_table(string t_name, string type, int? val)
         {
             DataTable result = new DataTable();
@@ -45,6 +47,22 @@ namespace recipes.Services
             {
             }
             return result;
+        }
+
+        public static string Delete_this(string table, string sp,string value)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "D1");
+                command.Parameters.AddWithValue("i_"+table, value);
+                ExecuteQuery(command, sp);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return "success";
         }
     }
 }

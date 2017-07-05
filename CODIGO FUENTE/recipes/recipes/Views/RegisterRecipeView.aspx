@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterRecipeView.aspx.cs" Inherits="recipes.Views.RegisterRecipeView" MasterPageFile="~/Views/recipes.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterRecipeView.aspx.cs" Inherits="recipes.Views.RegisterRecipeView" MasterPageFile="~/Views/recipes.Master"  %>
 
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
@@ -60,7 +60,9 @@
         </div>
         <div class="row"> 
             <div class="col-md-10">   
-               <asp:GridView ID="grid_recipes" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="false">
+               <asp:GridView ID="grid_recipes" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="false"
+                   DataKeyNames="re_recipe" OnRowDeleting="grid_recipes_RowDeleting"
+                   OnRowCommand="grid_recipes_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="re_recipe" Visible="false"/>
                         <asp:BoundField HeaderText="ID" DataField="re_recipe_id"/>
@@ -69,6 +71,11 @@
                         <asp:BoundField HeaderText="COSTO" DataField="re_total_cost"/>
                         <asp:BoundField HeaderText="OBSERVACION" DataField="re_observation"/>
                         <asp:ImageField HeaderText="IMAGEN" DataImageUrlField="re_image" ControlStyle-Width="80"></asp:ImageField>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Button id="btn_delete" CommandName="delete" Text="delete" runat="server"/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>  

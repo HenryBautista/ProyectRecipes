@@ -45,7 +45,7 @@ namespace recipes.Services
             {
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "S1");
-                result = GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_recipe");
+                result = GeneralServices.ExecuteQuery(command, "recipes..sp_recipe");
             }
             catch (Exception)
             {
