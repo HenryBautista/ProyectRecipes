@@ -19,7 +19,7 @@ namespace recipes.Views
             DDL_category.DataBind();
             DDL_origin.DataSource = getData(4);
             DDL_origin.DataBind();
-            grdIngredientes.DataSource = GeneralServices.Show_Data_table("ingredient","S1",null);
+            grdIngredientes.DataSource = GeneralServices.Show_Data_table("ingredient", "S1", null);
             grdIngredientes.DataBind();
         }
 
@@ -32,5 +32,131 @@ namespace recipes.Views
         {
            return GeneralServices.Show_Data_table("concept", "S1", type);
         }
+
+        //--------------------------------------------------------METODOS DEL SUBGRID---------------------------------------------------------
+
+
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    if (!IsPostBack)
+        //    {
+        //        fillList();
+        //    }
+        //}
+        protected void fillList()
+        {
+        //    SqlConnection conexion = new SqlConnection(cadena);
+        //    SqlCommand comando = new SqlCommand();
+        //    conexion.Open();
+
+        //    comando.CommandType = CommandType.StoredProcedure;
+        //    comando.CommandText = "ListaDeproductos..ShowProducts"; //////////////select id_producto,nombre from producto
+
+        //    comando.Connection = conexion;
+        //    comando.ExecuteNonQuery();
+
+        //    DataTable dt = new DataTable();
+        //    dt.Load(comando.ExecuteReader());
+
+        //    grd.DataSource = dt;
+        //    grd.DataBind();
+        }
+        protected void grd_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+        //    grd.EditIndex = e.NewEditIndex;
+        //    fillList();
+        }
+
+        protected void grd_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+        //    string nombreProducto = ((TextBox)grd.Rows[e.RowIndex].FindControl("txtNombreEdit")).Text;
+        //    string idProducto = ((Label)grd.Rows[e.RowIndex].FindControl("lblNumero")).Text;
+        //    SqlConnection conexion = new SqlConnection(cadena);
+        //    SqlCommand comando = new SqlCommand();
+        //    conexion.Open();
+
+        //    comando.CommandType = CommandType.StoredProcedure;
+        //    comando.CommandText = "ListaDeproductos..sp_updateProduct"; //////////////////update producto set nombre=@nombre where id_producto=@id_producto
+        //    comando.Parameters.AddWithValue("@id_producto", idProducto);  
+        //    comando.Parameters.AddWithValue("@nombre", nombreProducto);
+        //    comando.Connection = conexion;
+        //    comando.ExecuteNonQuery();
+        //    grd.EditIndex = -1;
+        //    fillList();
+        }
+
+        protected void grd_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+        //    grd.EditIndex = -1;
+        //    fillList();
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+        //    string nombreProducto = ((TextBox)grd.FooterRow.FindControl("txtNombre")).Text;
+
+        //    SqlConnection conexion = new SqlConnection(cadena);
+        //    SqlCommand comando = new SqlCommand();
+        //    conexion.Open();
+
+        //    comando.CommandType = CommandType.StoredProcedure;
+        //    comando.CommandText = "ListaDeproductos..sp_addPruduct";  //////////////insert into producto(nombre) values (@i_nombre)
+        //    comando.Parameters.AddWithValue("@i_nombre", nombreProducto);
+
+        //    comando.Connection = conexion;
+        //    comando.ExecuteNonQuery();
+        //    fillList();
+        }
+
+        protected void deleteProduct_Click(object sender, EventArgs e)
+        {
+        //    LinkButton lnkRemove = (LinkButton)sender;
+
+        //    SqlConnection conexion = new SqlConnection(cadena);
+        //    SqlCommand comando = new SqlCommand();
+        //    conexion.Open();
+
+        //    comando.CommandType = CommandType.StoredProcedure;
+        //    comando.CommandText = "ListaDeproductos..sp_deleteProduct"; ////////// delete producto where id_producto=@id_producto
+        //    comando.Parameters.Add("@id_producto", SqlDbType.VarChar).Value = lnkRemove.CommandArgument;
+
+        //    comando.Connection = conexion;
+        //    comando.ExecuteNonQuery();
+        //    fillList();
+        }
+        protected void OnPaging(object sender, GridViewPageEventArgs e)
+        {
+        //    fillList();
+        //    grd.PageIndex = e.NewPageIndex;
+        //    grd.DataBind();
+        }
+
+        //--------------METODO QUE PERTENECE AL GRID PRINCIPAL, QUE DESPLIEGA EL SUBGRID
+        protected void grdIngredientes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            //if (e.Row.RowType == DataControlRowType.DataRow)
+            //{
+            //    string nutrientId = grdLista.DataKeys[e.Row.RowIndex].Value.ToString();
+            //    GridView grdNutrientes = e.Row.FindControl("grdNutrientes") as GridView;
+
+            //    SqlConnection conexion = new SqlConnection(cadena);
+            //    SqlCommand comando = new SqlCommand();
+            //    conexion.Open();
+
+            //    comando.CommandType = CommandType.StoredProcedure;
+            //    comando.CommandText = "ListaDeproductos..sp_showNutrient"; ///// select id,nutriente from nutriente where id_producto = @id_producto
+            //    comando.Parameters.AddWithValue("@id_producto", nutrientId);
+
+            //    comando.Connection = conexion;
+            //    comando.ExecuteNonQuery();
+
+            //    DataTable dt = new DataTable();
+            //    dt.Load(comando.ExecuteReader());
+
+            //    grdNutrientes.DataSource = dt;
+            //    grdNutrientes.DataBind();
+            //}
+        }
+        //-----------------------------------------------------------------------------------------------------------------------------------
     }
 }
