@@ -63,15 +63,11 @@
                         <asp:DropDownList ID="DDL_origin" CssClass="form-control" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                     </td>
                 </tr>
-            </table>
-            <table>
+                
                 <tr>
-                    <td class="button">
-                        <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="Crear ingrediente" OnClick="btn_crear_Click" />
+                    <td class="text">
+                        <asp:Label CssClass="detalle" ID="Lblmsg" runat="server" />
                     </td>
-                    <td class="button"></td>
-                    <td class="button"></td>
-                    <td class="button"></td>
                 </tr>
             </table>
             <table>
@@ -102,20 +98,20 @@
                                         AutoGenerateColumns="false" Font-Names="Arial"
                                         Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B"
                                         HeaderStyle-BackColor="green" AllowPaging="true" ShowFooter="true"
-                                        OnPageIndexChanging="OnPaging"
+                                        OnPageIndexChanging="OnPaging" DataSource='<%#getNutrients()%>'
                                         PageSize="10" OnRowCancelingEdit="grd_RowCancelingEdit" OnRowEditing="grd_RowEditing" OnRowUpdating="grd_RowUpdating">
                                         <Columns>
                                             <asp:TemplateField ItemStyle-Width="30px" HeaderText="Numero">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("id_producto")%>'></asp:Label>
+                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_nutrient")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="30px" HeaderText="nombre">
                                                 <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("nombre")%>' runat="server" />
+                                                    <asp:Label Text='<%# Eval("nu_name")%>' runat="server" />
                                                 </ItemTemplate>
                                                 <EditItemTemplate>
-                                                    <asp:TextBox ID="txtNombreEdit" runat="server" Text='<%# Eval("nombre")%>'></asp:TextBox>
+                                                    <asp:TextBox ID="txtNombreEdit" runat="server" Text='<%# Eval("nu_name")%>'></asp:TextBox>
                                                 </EditItemTemplate>
                                                 <FooterTemplate>
                                                     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
@@ -124,7 +120,7 @@
                                             <asp:TemplateField>
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="deleteProduct" runat="server"
-                                                        CommandArgument='<%# Eval("id_producto")%>'
+                                                        CommandArgument='<%# Eval("nu_nutrient")%>'
                                                         OnClientClick="return confirm('Do you want to delete?')"
                                                         Text="Delete" OnClick="deleteProduct_Click"></asp:LinkButton>
                                                 </ItemTemplate>
