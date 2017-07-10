@@ -62,10 +62,10 @@ Values('FIBRA'),
 Values('PROTEINAS')
 
 insert into t_ingredient(in_ingredient_id,in_name,in_unit,in_cost,in_category,in_origin)
-Values('ING-01',pollo','1','14','1','1'),
-Values('ING-02',carne res','1','22','1','1'),
-Values('ING-02',huevo','1','22','1','1'),
-Values('ING-04',leche','2','5','2','2'),
-Values('ING-03',zanahoria','1','4','2','2'),
-Values('ING-06',leche de coco','2','1','2','2'),
-Values('ING-07',harina','1','3.5','1','2'),
+Values('ING-01','pollo','1','14','1','1'),
+Values('ING-02','carne res','1','22','1','1'),
+Values('ING-02','huevo','1','22','1','1'),
+Values('ING-04','leche','2','5','2','2'),
+Values('ING-03','zanahoria','1','4','2','2'),
+Values('ING-06','leche de coco','2','1','2','2'),
+Values('ING-07','harina','1','3.5','1','2'),
