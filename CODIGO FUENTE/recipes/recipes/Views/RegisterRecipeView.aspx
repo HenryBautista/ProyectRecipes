@@ -75,7 +75,6 @@
                             <ItemTemplate>
                                 <asp:Button id="btn_delete" CommandName="delete_recipe" CommandArgument='<%#Eval("re_recipe")%>' Text="eliminar" runat="server" />
                                 <asp:Button id="btn_edit" CommandName="edit_recipe" CommandArgument='<%#Eval("re_recipe")%>' Text="editar" runat="server" />
-
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

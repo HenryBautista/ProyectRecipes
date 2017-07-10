@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipes.Master" AutoEventWireup="true" CodeBehind="RegisterIngredientView.aspx.cs" Inherits="recipes.Views.RegisterIngredientView" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -84,47 +83,6 @@
             </table>
         </div>
     </div>
-    <div>
-
-        <asp:GridView ID="grdNutrientesopt" runat="server" Width="550px"
-            AutoGenerateColumns="false" Font-Names="Arial"
-            Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B"
-            HeaderStyle-BackColor="green" AllowPaging="true" ShowFooter="true"
-            OnPageIndexChanging="OnPaging"
-            PageSize="10" OnRowCancelingEdit="grd_RowCancelingEdit" OnRowEditing="grd_RowEditing" OnRowUpdating="grd_RowUpdating">
-            <Columns>
-                <asp:TemplateField ItemStyle-Width="30px" HeaderText="Numero">
-                    <ItemTemplate>
-                        <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_nutrient")%>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField ItemStyle-Width="30px" HeaderText="nombre">
-                    <ItemTemplate>
-                        <asp:Label Text='<%# Eval("nu_name")%>' runat="server" />
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtNombreEdit" runat="server" Text='<%# Eval("nu_name")%>'></asp:TextBox>
-                    </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                    </FooterTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField>
-                    <ItemTemplate>
-                        <asp:LinkButton ID="deleteProduct" runat="server"
-                            CommandArgument='<%# Eval("nu_nutrient")%>'
-                            OnClientClick="return confirm('Do you want to delete?')"
-                            Text="Delete" OnClick="deleteProduct_Click"></asp:LinkButton>
-                    </ItemTemplate>
-                    <FooterTemplate>
-                        <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
-                    </FooterTemplate>
-                </asp:TemplateField>
-                <asp:CommandField ShowEditButton="True" />
-            </Columns>
-            <AlternatingRowStyle BackColor="#C2D69B" />
-        </asp:GridView>
-    </div>
     <div style="width: 80%; height: auto; margin-left: auto; margin-right: auto;">
         <h3>Lista de ingredientes</h3>
         <asp:GridView runat="server" ID="grdIngredientes" DataKeyNames="in_ingredient" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="grdIngredientes_RowDataBound">
@@ -144,27 +102,33 @@
                                         OnPageIndexChanging="OnPaging"
                                         PageSize="10" OnRowCancelingEdit="grd_RowCancelingEdit" OnRowEditing="grd_RowEditing" OnRowUpdating="grd_RowUpdating">
                                         <Columns>
-                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="Numero">
+                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="Nutriente">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_nutrient")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="nombre">
-                                                <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("nu_name")%>' runat="server" />
+                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_name")%>'></asp:Label>
                                                 </ItemTemplate>
                                                 <EditItemTemplate>
-                                                    <asp:TextBox ID="txtNombreEdit" runat="server" Text='<%# Eval("nu_name")%>'></asp:TextBox>
+                                                    <asp:DropDownList ID="DDL_nutrient" CssClass="form-control" DataSource='<%#getNutrients() %>' DataValueField="nu_nutrient" DataTextField="nu_name" runat="server"></asp:DropDownList>
                                                 </EditItemTemplate>
                                                 <FooterTemplate>
-                                                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                                                    <asp:DropDownList ID="DDL_Nnutrient" CssClass="form-control" DataSource='<%#getNutrients() %>' DataValueField="nu_nutrient" DataTextField="nu_name" runat="server"></asp:DropDownList>
+                                                </FooterTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="Cantidad">
+                                                <ItemTemplate>
+                                                    <asp:Label Text='<%# Eval("in_quantity")%>' runat="server" />
+                                                </ItemTemplate>
+                                                <EditItemTemplate>
+                                                    <asp:TextBox ID="txtquantity" runat="server" Text='<%# Eval("in_quantity")%>'></asp:TextBox>
+                                                </EditItemTemplate>
+                                                <FooterTemplate>
+                                                    <asp:TextBox ID="txtFqty" runat="server"></asp:TextBox>
                                                 </FooterTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField>
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="deleteProduct" runat="server"
                                                         CommandArgument='<%# Eval("nu_nutrient")%>'
-                                                        OnClientClick="return confirm('Do you want to delete?')"
+                                                        OnClientClick="return confirm('Seguro que quiere quitar el nutriente?')"
                                                         Text="Delete" OnClick="deleteProduct_Click"></asp:LinkButton>
                                                 </ItemTemplate>
                                                 <FooterTemplate>
@@ -202,7 +166,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Unidad de medida">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DDLUnidadMedida" DataSource='<%# getData(2) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="True" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="DDLUnidadMedida" DataSource='<%# getData(2) %>' Enabled="True" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:DropDownList ID="DDLunidad" DataSource='<%# getData(2) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server">
@@ -227,21 +191,21 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Categoria">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DDLCategory" DataSource='<%# getData(3) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="True" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="DDLCategory" DataSource='<%# getData(3) %>' SelectedValue='<%# Bind("in_category")%>' Enabled="True" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:DropDownList ID="DDLCat" DataSource='<%# getData(3) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="DDLCat" DataSource='<%# getData(3) %>' SelectedValue='<%# Bind("in_category")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Origen">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DDLOrigin" DataSource='<%# getData(4) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="True" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="DDLOrigin" DataSource='<%# getData(4) %>' SelectedValue='<%# Bind("in_origin")%>' Enabled="True" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:DropDownList ID="DDLor" DataSource='<%# getData(4) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="DDLor" DataSource='<%# getData(4) %>' SelectedValue='<%# Bind("in_origin")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar" />
+                <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar"/>
                 <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="Borrar" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />

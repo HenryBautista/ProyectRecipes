@@ -100,7 +100,6 @@
     <Content Include="Views\RegisterIngredientView.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
     <Content Include="Views\RegisterRecipeView.aspx" />
-    <Content Include="Views\RegisterUser.aspx" />
     <Content Include="Views\RegisterView.aspx" />
     <Content Include="Views\StartPageView.aspx" />
     <Content Include="Views\SuggestedRecipesView.aspx" />
@@ -189,13 +188,6 @@
     </Compile>
     <Compile Include="Views\RegisterRecipeView.aspx.designer.cs">
       <DependentUpon>RegisterRecipeView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RegisterUser.aspx.cs">
-      <DependentUpon>RegisterUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\RegisterUser.aspx.designer.cs">
-      <DependentUpon>RegisterUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterView.aspx.cs">
       <DependentUpon>RegisterView.aspx</DependentUpon>
