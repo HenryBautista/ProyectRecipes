@@ -5,6 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="SM" runat="server">
     </asp:ScriptManager>
+    <%-- Script para desplegar el subgrid----------- --%>
+    
     <script type="text/javascript">
         $("[src*=plus]").live("click", function () {
             $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>")
@@ -63,7 +65,7 @@
                         <asp:DropDownList ID="DDL_origin" CssClass="form-control" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                     </td>
                 </tr>
-                
+
                 <tr>
                     <td class="text">
                         <asp:Label CssClass="detalle" ID="Lblmsg" runat="server" />
@@ -83,45 +85,45 @@
         </div>
     </div>
     <div>
-        
-                                    <asp:GridView ID="grdNutrientesopt" runat="server" Width="550px"
-                                        AutoGenerateColumns="false" Font-Names="Arial"
-                                        Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B"
-                                        HeaderStyle-BackColor="green" AllowPaging="true" ShowFooter="true"
-                                        OnPageIndexChanging="OnPaging"
-                                        PageSize="10" OnRowCancelingEdit="grd_RowCancelingEdit" OnRowEditing="grd_RowEditing" OnRowUpdating="grd_RowUpdating">
-                                        <Columns>
-                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="Numero">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_nutrient")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="nombre">
-                                                <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("nu_name")%>' runat="server" />
-                                                </ItemTemplate>
-                                                <EditItemTemplate>
-                                                    <asp:TextBox ID="txtNombreEdit" runat="server" Text='<%# Eval("nu_name")%>'></asp:TextBox>
-                                                </EditItemTemplate>
-                                                <FooterTemplate>
-                                                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                                                </FooterTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField>
-                                                <ItemTemplate>
-                                                    <asp:LinkButton ID="deleteProduct" runat="server"
-                                                        CommandArgument='<%# Eval("nu_nutrient")%>'
-                                                        OnClientClick="return confirm('Do you want to delete?')"
-                                                        Text="Delete" OnClick="deleteProduct_Click"></asp:LinkButton>
-                                                </ItemTemplate>
-                                                <FooterTemplate>
-                                                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
-                                                </FooterTemplate>
-                                            </asp:TemplateField>
-                                            <asp:CommandField ShowEditButton="True" />
-                                        </Columns>
-                                        <AlternatingRowStyle BackColor="#C2D69B" />
-                                    </asp:GridView>
+
+        <asp:GridView ID="grdNutrientesopt" runat="server" Width="550px"
+            AutoGenerateColumns="false" Font-Names="Arial"
+            Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B"
+            HeaderStyle-BackColor="green" AllowPaging="true" ShowFooter="true"
+            OnPageIndexChanging="OnPaging"
+            PageSize="10" OnRowCancelingEdit="grd_RowCancelingEdit" OnRowEditing="grd_RowEditing" OnRowUpdating="grd_RowUpdating">
+            <Columns>
+                <asp:TemplateField ItemStyle-Width="30px" HeaderText="Numero">
+                    <ItemTemplate>
+                        <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_nutrient")%>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField ItemStyle-Width="30px" HeaderText="nombre">
+                    <ItemTemplate>
+                        <asp:Label Text='<%# Eval("nu_name")%>' runat="server" />
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtNombreEdit" runat="server" Text='<%# Eval("nu_name")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                    </FooterTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:LinkButton ID="deleteProduct" runat="server"
+                            CommandArgument='<%# Eval("nu_nutrient")%>'
+                            OnClientClick="return confirm('Do you want to delete?')"
+                            Text="Delete" OnClick="deleteProduct_Click"></asp:LinkButton>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
+                    </FooterTemplate>
+                </asp:TemplateField>
+                <asp:CommandField ShowEditButton="True" />
+            </Columns>
+            <AlternatingRowStyle BackColor="#C2D69B" />
+        </asp:GridView>
     </div>
     <div style="width: 80%; height: auto; margin-left: auto; margin-right: auto;">
         <h3>Lista de ingredientes</h3>
