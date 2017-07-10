@@ -26,6 +26,8 @@ namespace recipes.Views
             DDL_origin.DataBind();
             grdIngredientes.DataSource = GeneralServices.Show_Data_table("ingredient", "S1", null);
             grdIngredientes.DataBind();
+            grdNutrientesopt.DataSource = getNutrients();
+            grdNutrientesopt.DataBind();
         }
         protected void btn_crear_Click(object sender, EventArgs e)
         {
@@ -141,28 +143,14 @@ namespace recipes.Views
         //--------------METODO QUE PERTENECE AL GRID PRINCIPAL, QUE DESPLIEGA EL SUBGRID
         protected void grdIngredientes_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            //if (e.Row.RowType == DataControlRowType.DataRow)
-            //{
-            //    string nutrientId = grdLista.DataKeys[e.Row.RowIndex].Value.ToString();
-            //    GridView grdNutrientes = e.Row.FindControl("grdNutrientes") as GridView;
-
-            //    SqlConnection conexion = new SqlConnection(cadena);
-            //    SqlCommand comando = new SqlCommand();
-            //    conexion.Open();
-
-            //    comando.CommandType = CommandType.StoredProcedure;
-            //    comando.CommandText = "ListaDeproductos..sp_showNutrient"; ///// select id,nutriente from nutriente where id_producto = @id_producto
-            //    comando.Parameters.AddWithValue("@id_producto", nutrientId);
-
-            //    comando.Connection = conexion;
-            //    comando.ExecuteNonQuery();
-
-            //    DataTable dt = new DataTable();
-            //    dt.Load(comando.ExecuteReader());
-
-            //    grdNutrientes.DataSource = dt;
-            //    grdNutrientes.DataBind();
-            //}
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                string nutrientId = grdIngredientes.DataKeys[e.Row.RowIndex].Value.ToString();
+                GridView grdNutrientes = e.Row.FindControl("grdNutrientes") as GridView;
+                                
+                grdNutrientes.DataSource = getNutrients();
+                grdNutrientes.DataBind();
+            }
         }
         //-----------------------------------------------------------------------------------------------------------------------------------
     }

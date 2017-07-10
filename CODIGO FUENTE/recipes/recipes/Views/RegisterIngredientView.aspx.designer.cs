@@ -103,6 +103,15 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.Button btn_crear;
         
         /// <summary>
+        /// grdNutrientesopt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdNutrientesopt;
+        
+        /// <summary>
         /// grdIngredientes control.
         /// </summary>
         /// <remarks>

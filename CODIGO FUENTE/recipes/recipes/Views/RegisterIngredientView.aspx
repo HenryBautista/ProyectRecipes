@@ -82,9 +82,50 @@
             </table>
         </div>
     </div>
+    <div>
+        
+                                    <asp:GridView ID="grdNutrientesopt" runat="server" Width="550px"
+                                        AutoGenerateColumns="false" Font-Names="Arial"
+                                        Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B"
+                                        HeaderStyle-BackColor="green" AllowPaging="true" ShowFooter="true"
+                                        OnPageIndexChanging="OnPaging"
+                                        PageSize="10" OnRowCancelingEdit="grd_RowCancelingEdit" OnRowEditing="grd_RowEditing" OnRowUpdating="grd_RowUpdating">
+                                        <Columns>
+                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="Numero">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_nutrient")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="nombre">
+                                                <ItemTemplate>
+                                                    <asp:Label Text='<%# Eval("nu_name")%>' runat="server" />
+                                                </ItemTemplate>
+                                                <EditItemTemplate>
+                                                    <asp:TextBox ID="txtNombreEdit" runat="server" Text='<%# Eval("nu_name")%>'></asp:TextBox>
+                                                </EditItemTemplate>
+                                                <FooterTemplate>
+                                                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                                                </FooterTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <asp:LinkButton ID="deleteProduct" runat="server"
+                                                        CommandArgument='<%# Eval("nu_nutrient")%>'
+                                                        OnClientClick="return confirm('Do you want to delete?')"
+                                                        Text="Delete" OnClick="deleteProduct_Click"></asp:LinkButton>
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
+                                                </FooterTemplate>
+                                            </asp:TemplateField>
+                                            <asp:CommandField ShowEditButton="True" />
+                                        </Columns>
+                                        <AlternatingRowStyle BackColor="#C2D69B" />
+                                    </asp:GridView>
+    </div>
     <div style="width: 80%; height: auto; margin-left: auto; margin-right: auto;">
         <h3>Lista de ingredientes</h3>
-        <asp:GridView runat="server" ID="grdIngredientes" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="grdIngredientes_RowDataBound">
+        <asp:GridView runat="server" ID="grdIngredientes" DataKeyNames="in_ingredient" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="grdIngredientes_RowDataBound">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <%--COMIENZO DEL SUBGRID DE NUTRIENTES----------------------------------%>
@@ -94,11 +135,11 @@
                         <asp:Panel runat="server" ID="pnlNutrientes" Style="display: none">
                             <asp:UpdatePanel runat="server" ID="updatePanel">
                                 <ContentTemplate>
-                                    <asp:GridView ID="grd" runat="server" Width="550px"
+                                    <asp:GridView ID="grdNutrientes" runat="server" Width="550px"
                                         AutoGenerateColumns="false" Font-Names="Arial"
                                         Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B"
                                         HeaderStyle-BackColor="green" AllowPaging="true" ShowFooter="true"
-                                        OnPageIndexChanging="OnPaging" DataSource='<%#getNutrients()%>'
+                                        OnPageIndexChanging="OnPaging"
                                         PageSize="10" OnRowCancelingEdit="grd_RowCancelingEdit" OnRowEditing="grd_RowEditing" OnRowUpdating="grd_RowUpdating">
                                         <Columns>
                                             <asp:TemplateField ItemStyle-Width="30px" HeaderText="Numero">
@@ -134,7 +175,7 @@
                                     </asp:GridView>
                                 </ContentTemplate>
                                 <Triggers>
-                                    <asp:AsyncPostBackTrigger ControlID="grd" />
+                                    <asp:AsyncPostBackTrigger ControlID="grdNutrientes" />
                                 </Triggers>
                             </asp:UpdatePanel>
                         </asp:Panel>
