@@ -85,7 +85,11 @@
     </div>
     <div style="width: 80%; height: auto; margin-left: auto; margin-right: auto;">
         <h3>Lista de ingredientes</h3>
-        <asp:GridView runat="server" ID="grdIngredientes" DataKeyNames="in_ingredient" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="grdIngredientes_RowDataBound">
+        <asp:GridView runat="server" ID="grdIngredientes" DataKeyNames="in_ingredient" 
+            AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" 
+            OnRowEditing="grdIngredientes_RowEditing" OnRowUpdating="grdIngredientes_RowUpdating" 
+            OnRowCancelingEdit="grdIngredientes_RowCancelingEdit"            
+            OnRowDataBound="grdIngredientes_RowDataBound">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <%--COMIENZO DEL SUBGRID DE NUTRIENTES----------------------------------%>
@@ -100,11 +104,13 @@
                                         Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B"
                                         HeaderStyle-BackColor="green" AllowPaging="true" ShowFooter="true"
                                         OnPageIndexChanging="OnPaging"
-                                        PageSize="10" OnRowCancelingEdit="grd_RowCancelingEdit" OnRowEditing="grd_RowEditing" OnRowUpdating="grd_RowUpdating">
+                                        PageSize="10" OnRowCancelingEdit="grd_RowCancelingEdit" 
+                                        OnRowEditing="grd_RowEditing" OnRowUpdating="grd_RowUpdating">
                                         <Columns>
                                             <asp:TemplateField ItemStyle-Width="30px" HeaderText="Nutriente">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_name")%>'></asp:Label>
+                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_name")%>'></asp:Label>                                                    
+                                                    <asp:Label ID="lblNro" runat="server" Text='<%# Eval("nGrid") %>'></asp:Label>
                                                 </ItemTemplate>
                                                 <EditItemTemplate>
                                                     <asp:DropDownList ID="DDL_nutrient" CssClass="form-control" DataSource='<%#getNutrients() %>' DataValueField="nu_nutrient" DataTextField="nu_name" runat="server"></asp:DropDownList>
@@ -133,6 +139,7 @@
                                                 </ItemTemplate>
                                                 <FooterTemplate>
                                                     <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
+                                                    <asp:Label ID="lblNro" runat="server"></asp:Label>
                                                 </FooterTemplate>
                                             </asp:TemplateField>
                                             <asp:CommandField ShowEditButton="True" />
@@ -205,7 +212,9 @@
                         <asp:DropDownList ID="DDLor" DataSource='<%# getData(4) %>' SelectedValue='<%# Bind("in_origin")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar"/>
+                <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar"/>                
+                <asp:ButtonField ButtonType="Button" CommandName="Update" Text="Guardar"/>
+                <asp:ButtonField ButtonType="Button" CommandName="Cancel" Text="Calcelar"/>
                 <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="Borrar" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />

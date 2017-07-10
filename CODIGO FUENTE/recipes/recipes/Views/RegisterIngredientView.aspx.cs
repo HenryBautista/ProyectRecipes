@@ -62,8 +62,18 @@ namespace recipes.Views
         }
         protected void grd_RowEditing(object sender, GridViewEditEventArgs e)
         {
-           // grdNutrientes.EditIndex = e.NewEditIndex;
-            fillList();
+            //cast grid view           
+            GridView g = (GridView)sender;
+            //obtengo el index del grid grande que guarde en el subgrid
+            int nro = Convert.ToInt32(((Label)g.Rows[0].FindControl("lblNro")).Text);
+            //saco el subgrid view 
+            GridView grdNutrientes = grdIngredientes.Rows[nro].FindControl("grdNutrientes") as GridView;
+            //prueba ....
+            grdNutrientes.DataSource = IngredientServices.getIngrdientNutrientGrd(2, nro);
+            grdNutrientes.DataBind();
+            //no hay cambios en el grid             
+            grdNutrientes.EditIndex = e.NewEditIndex;
+            BindData();
         }
 
         protected void grd_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -135,12 +145,28 @@ namespace recipes.Views
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                int ingredientId = int.Parse(grdIngredientes.DataKeys[e.Row.RowIndex].Value.ToString());
+                string ingredientId = grdIngredientes.DataKeys[e.Row.RowIndex].Value.ToString();
                 GridView grdNutrientes = e.Row.FindControl("grdNutrientes") as GridView;
-
-                grdNutrientes.DataSource = GeneralServices.Show_Data_table("ingredient", "F2", ingredientId);
-                grdNutrientes.DataBind();
+                grdNutrientes.DataSource = IngredientServices.getIngrdientNutrientGrd( int.Parse( ingredientId),e.Row.RowIndex);
+                grdNutrientes.DataBind();                
             }
+        }
+
+        protected void grdIngredientes_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            grdIngredientes.EditIndex = e.NewEditIndex;
+            BindData();
+        }
+
+        protected void grdIngredientes_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+        }
+
+        protected void grdIngredientes_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            grdIngredientes.EditIndex = -1;
+            BindData();
         }
         //-----------------------------------------------------------------------------------------------------------------------------------
     }
