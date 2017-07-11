@@ -85,13 +85,13 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.DropDownList DDL_origin;
         
         /// <summary>
-        /// Lblmsg control.
+        /// lbl_msg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lblmsg;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_msg;
         
         /// <summary>
         /// btn_crear control.
