@@ -74,6 +74,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\aboutImage.jpg" />
     <Content Include="Images\menu_icon.png" />
     <Content Include="Images\minus1600.png" />
     <Content Include="Images\plus1600.png" />
@@ -93,7 +94,9 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Views\About.aspx" />
     <Content Include="Views\BuyListView.aspx" />
+    <Content Include="Views\Contact.aspx" />
     <Content Include="Views\CustomRecipesView.aspx" />
     <Content Include="Views\LoginView.aspx" />
     <Content Include="Views\PrincipalView.aspx" />
@@ -133,12 +136,26 @@
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="Services\User_recipeServices.cs" />
     <Compile Include="Util\Utilities.cs" />
+    <Compile Include="Views\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\BuyListView.aspx.cs">
       <DependentUpon>BuyListView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\BuyListView.aspx.designer.cs">
       <DependentUpon>BuyListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomRecipesView.aspx.cs">
       <DependentUpon>CustomRecipesView.aspx</DependentUpon>

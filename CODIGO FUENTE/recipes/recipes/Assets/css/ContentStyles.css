@@ -94,4 +94,27 @@ h2{
 
 /*---------------------------ADMINSTRACION-INGREDIENTES-GRID DE INGREDIENTES-----------------------------------*/
 
+/*-----------------------CONTACTO ESTILOS---------------------------------------*/
+.contactinfo{
+    float:left;
+    width:60%;
+    background:#d9ebf4;
+}
+.contactus{
+    float:left;
+    width:30%;
+    padding:20px;
+    background:#106999;
+    color:white;
+}
+.contactus-info{
+    width:100%;
+    font-size:20px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+.btnEnviar{
+    width:200px;
+    height:30px;
+}
 /*--------------------------------------------------------------*/
