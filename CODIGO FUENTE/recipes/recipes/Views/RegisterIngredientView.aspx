@@ -70,13 +70,11 @@
                         <label runat="server" id="lbl_msg" class="col-lg-2 label-danger control-label"></label>
                     </td>
                 </tr>
-            </table>
-            <table>
                 <tr>
+                    <td class="button"></td>
                     <td class="button">
                         <asp:Button ID="btn_crear" runat="server" CssClass="btn btn-success" Text="Crear ingrediente" OnClick="btn_crear_Click" />
                     </td>
-                    <td class="button"></td>
                     <td class="button"></td>
                     <td class="button"></td>
                 </tr>
@@ -86,8 +84,9 @@
     <div style="width: 80%; height: auto; margin-left: auto; margin-right: auto;">
         <h3>Lista de ingredientes</h3>
         <asp:GridView runat="server" ID="grdIngredientes" DataKeyNames="in_ingredient" 
-            AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" 
-            OnRowCommand="grdIngredientes_RowCommand" OnRowEditing="grdIngredientes_RowEditing"
+            AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" 
+            GridLines="None" ShowFooter="true" 
+            OnRowCommand="grdIngredientes_RowCommand"
             OnRowDataBound="grdIngredientes_RowDataBound">
             <AlternatingRowStyle BackColor="White" />
             <Columns>

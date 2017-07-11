@@ -45,7 +45,6 @@ namespace recipes.Views
             }
             
         }
-
         private bool check_fields()
         {
             if (tbox_code.Text == "")
@@ -151,39 +150,7 @@ namespace recipes.Views
         //    grdNutrientes.EditIndex = e.NewEditIndex;
         //    BindData();
         //}
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            //    string nombreProducto = ((TextBox)grd.FooterRow.FindControl("txtNombre")).Text;
-
-            //    SqlConnection conexion = new SqlConnection(cadena);
-            //    SqlCommand comando = new SqlCommand();
-            //    conexion.Open();
-
-            //    comando.CommandType = CommandType.StoredProcedure;
-            //    comando.CommandText = "ListaDeproductos..sp_addPruduct";  //////////////insert into producto(nombre) values (@i_nombre)
-            //    comando.Parameters.AddWithValue("@i_nombre", nombreProducto);
-
-            //    comando.Connection = conexion;
-            //    comando.ExecuteNonQuery();
-            //    fillList();
-        }
-
-        protected void deleteProduct_Click(object sender, EventArgs e)
-        {
-            //    LinkButton lnkRemove = (LinkButton)sender;
-
-            //    SqlConnection conexion = new SqlConnection(cadena);
-            //    SqlCommand comando = new SqlCommand();
-            //    conexion.Open();
-
-            //    comando.CommandType = CommandType.StoredProcedure;
-            //    comando.CommandText = "ListaDeproductos..sp_deleteProduct"; ////////// delete producto where id_producto=@id_producto
-            //    comando.Parameters.Add("@id_producto", SqlDbType.VarChar).Value = lnkRemove.CommandArgument;
-
-            //    comando.Connection = conexion;
-            //    comando.ExecuteNonQuery();
-            //    fillList();
-        }
+       
         protected void OnPaging(object sender, GridViewPageEventArgs e)
         {
             //    fillList();
@@ -230,17 +197,11 @@ namespace recipes.Views
                     b1.Visible = true;
                 }
                 GridView grdNutrientes = e.Row.FindControl("grdNutrientes") as GridView;
-                grdNutrientes.DataSource = IngredientServices.getIngrdientNutrientGrd( int.Parse( ingredientId),e.Row.RowIndex);
+                grdNutrientes.DataSource = GeneralServices.Show_Data_table("ingredient", "F2", Convert.ToInt32(ingredientId)); ;
                 grdNutrientes.DataBind();
 
             }
-        }        
-        protected void grdIngredientes_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            grdIngredientes.EditIndex = -1;
-            BindData();
-        }
-
+        }                
         protected void grdIngredientes_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
@@ -290,18 +251,13 @@ namespace recipes.Views
                     }
                     break;
                 case "edit_nutrient":
-                    Response.Redirect("EditIN.aspx?valor="+id_ing);
+                    Response.Redirect("IngredientNutrientView.aspx?valor="+id_ing);
                     break;
                 default:
                     break;
             }
         }
-
-        protected void grdIngredientes_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            grdIngredientes.EditIndex = e.NewEditIndex;
-            BindData();
-        }
+        
         //-----------------------------------------------------------------------------------------------------------------------------------
     }
 }
