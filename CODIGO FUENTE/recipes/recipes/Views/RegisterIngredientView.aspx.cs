@@ -207,6 +207,28 @@ namespace recipes.Views
                 b1.CommandArgument = e.Row.RowIndex.ToString();
                 b1 = e.Row.FindControl("btn_del") as Button;
                 b1.CommandArgument = e.Row.RowIndex.ToString();
+                if (grdIngredientes.EditIndex!=-1 && e.Row.RowIndex==grdIngredientes.EditIndex)
+                {
+                    b1 = e.Row.FindControl("btn_edit") as Button; 
+                    b1.Visible = false;
+                    b1 = e.Row.FindControl("btn_update") as Button;
+                    b1.Visible = true;
+                    b1 = e.Row.FindControl("btn_cancel") as Button;
+                    b1.Visible = true;
+                    b1 = e.Row.FindControl("btn_del") as Button;
+                    b1.Visible = false;
+                }
+                else
+                {
+                    b1 = e.Row.FindControl("btn_edit") as Button;
+                    b1.Visible = true;
+                    b1 = e.Row.FindControl("btn_update") as Button;
+                    b1.Visible = false;
+                    b1 = e.Row.FindControl("btn_cancel") as Button;
+                    b1.Visible = false;
+                    b1 = e.Row.FindControl("btn_del") as Button;
+                    b1.Visible = true;
+                }
                 GridView grdNutrientes = e.Row.FindControl("grdNutrientes") as GridView;
                 grdNutrientes.DataSource = IngredientServices.getIngrdientNutrientGrd( int.Parse( ingredientId),e.Row.RowIndex);
                 grdNutrientes.DataBind();
@@ -227,12 +249,6 @@ namespace recipes.Views
             switch (com)
             {
                 case "edit_ingredient":
-                    Button b1 = grdIngredientes.Rows[index].FindControl("btn_edit") as Button;
-                    b1.Visible = false;
-                    b1 = grdIngredientes.Rows[index].FindControl("btn_update") as Button;
-                    b1.Visible = true;
-                    b1 = grdIngredientes.Rows[index].FindControl("btn_cancel") as Button;
-                    b1.Visible = true;
                     grdIngredientes.EditIndex = index;
                     BindData();
                     break;
