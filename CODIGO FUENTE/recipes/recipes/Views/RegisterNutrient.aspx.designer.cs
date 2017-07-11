@@ -13,30 +13,12 @@ namespace recipes.Views {
     public partial class RegisterNutrient {
         
         /// <summary>
-        /// SM control.
+        /// grdNutrients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager SM;
-        
-        /// <summary>
-        /// tbox_name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbox_name;
-        
-        /// <summary>
-        /// btn_crear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_crear;
+        protected global::System.Web.UI.WebControls.GridView grdNutrients;
     }
 }

@@ -57,7 +57,16 @@ namespace recipes.Views
 
         protected void grdNutrients_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int index = Convert.ToInt32(e.CommandArgument);
+            int index;
+            try
+            {
+                index = Convert.ToInt32(e.CommandArgument);
+            }
+            catch (Exception)
+            {
+
+                index = 0;
+            }
             string com = e.CommandName.ToString();
             int? id_ing;
             try
@@ -102,8 +111,8 @@ namespace recipes.Views
                     }
                     break;
                 case "add":
-                    string qty2 = ((TextBox)grdNutrients.FooterRow.FindControl("txtQty")).Text;
-                    string nutri2 = ((DropDownList)grdNutrients.FooterRow.FindControl("DDLnutrient")).SelectedValue;
+                    string qty2 = ((TextBox)grdNutrients.FooterRow.FindControl("txtfooter")).Text;
+                    string nutri2 = ((DropDownList)grdNutrients.FooterRow.FindControl("DDLfooter")).SelectedValue;
                     if (check_fields(qty2, nutri2, index))
                     {
                         Ingredient_nutrientServices.InsertOrUpdate(id_ing, Convert.ToInt32(nutri2), Convert.ToInt32(ingredient_id.Text), Convert.ToInt32(qty2));
