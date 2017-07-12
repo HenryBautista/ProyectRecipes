@@ -40,6 +40,47 @@ namespace recipes.Views
         {
             return PersonServices.getMyPerson(Convert.ToInt32(user_id.Text));
         }
+        private bool check_fields(string qty, int index)
+        {
+            Label msg = grdOrden.Rows[index].FindControl("lblmsg") as Label;
+            
+            if (qty == "")
+            {
+                msg.Text = "Ingrese una cantidad";
+                return false;
+            }
+            try
+            {
+                int n = int.Parse(qty);
+                n = int.Parse(qty);
+            }
+            catch (Exception e)
+            {
+                msg.Text = "La cantidad no es un entero";
+                return false;
+            }
+
+            msg.Text = "";
+            return true;
+        }
+
+        private bool checkOrder()
+        {
+            string now = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff");
+            DateTime actual = Convert.ToDateTime(now);
+            DateTime fecha = Convert.ToDateTime(txtFecha.Text);
+            int result = DateTime.Compare(fecha, actual);
+            if (result<=0)
+            {
+                lbl_msg.InnerText = "La fecha ya paso o no es correcta"
+                return false;
+            }
+            return true;
+        }
+        protected void ConfirmarOrden()
+        {            
+            OrderServices.ConfirmOrder(Convert.ToInt32(user_id.Text) ,Convert.ToDateTime(txtFecha.Text));
+        }
 
         protected void grdOrden_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -111,29 +152,6 @@ namespace recipes.Views
             }
         }
 
-        private bool check_fields(string qty, int index)
-        {
-            Label msg = grdOrden.Rows[index].FindControl("lblmsg") as Label;
-            
-            if (qty == "")
-            {
-                msg.Text = "Ingrese una cantidad";
-                return false;
-            }
-            try
-            {
-                int n = int.Parse(qty);
-                n = int.Parse(qty);
-            }
-            catch (Exception e)
-            {
-                msg.Text = "La cantidad no es un entero";
-                return false;
-            }
-
-            msg.Text = "";
-            return true;
-        }
 
         protected void grdOrden_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -172,5 +190,7 @@ namespace recipes.Views
                 }
             }
         }
+
+        
     }
 }

@@ -32,6 +32,22 @@ namespace recipes.Services
                 return ex.Message;
             }
             return "success";
-        } 
+        }
+        public static string ConfirmOrder(int usr, DateTime o_date)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "U3");
+                command.Parameters.AddWithValue("i_order_date", o_date);
+                command.Parameters.AddWithValue("i_user", usr);
+                GeneralServices.ExecuteQuery(command, "recipes..sp_order");
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return "success";
+        }
     }
 }
