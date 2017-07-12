@@ -230,22 +230,15 @@ namespace recipes.Views
                     }
                     break;
                 case "cancel_ingredient":
-                    Button b2 = grdIngredientes.Rows[index].FindControl("btn_edit") as Button;
-                    b2.Visible = true;
-                    b2 = grdIngredientes.Rows[index].FindControl("btn_update") as Button;
-                    b2.Visible = false;
-                    b2 = grdIngredientes.Rows[index].FindControl("btn_cancel") as Button;
-                    b2.Visible = false;
                     grdIngredientes.EditIndex = -1;
                     BindData();
                     break;
                 case "delete_ingredient":
-                    string result = "ok";// GeneralServices.Delete_this("recipe", "recipes..sp_recipe", id_ing);
+                    string result = GeneralServices.Delete_this("ingredient", "recipes..sp_ingredient", id_ing.ToString());
                     if (result == "success")
                         BindData();
                     else
                     {
-
                         Label msg = grdIngredientes.Rows[index].FindControl("lblmsg") as Label;
                         msg.Text = "No se Pudo Eliminar";
                     }

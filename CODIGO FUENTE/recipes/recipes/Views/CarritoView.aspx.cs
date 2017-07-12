@@ -84,6 +84,7 @@ namespace recipes.Views
                                             Convert.ToInt32(dt.Rows[0]["ro_order"].ToString()),
                                             Convert.ToInt32(dt.Rows[0]["ro_recipe"].ToString()),
                                             Convert.ToInt32(qty),tp,Convert.ToInt32(per));
+                        GeneralServices.Show_Data_table("order","U2",id_ing);
                         grdOrden.EditIndex = -1;
                         BindData();
                     }
@@ -93,9 +94,12 @@ namespace recipes.Views
                     BindData();
                     break;
                 case "delete_nutrient":
-                    string result = "ok";// GeneralServices.Delete_this("recipe", "recipes..sp_recipe", id_ing);
+                    string result = GeneralServices.Delete_this("recipe_order", "recipes..sp_recipe_order", id_ing.ToString());
                     if (result == "success")
+                    {
+                        GeneralServices.Show_Data_table("order", "U2", id_ing);
                         BindData();
+                    }                        
                     else
                     {
                         Label msg = grdOrden.Rows[index].FindControl("lblmsg") as Label;

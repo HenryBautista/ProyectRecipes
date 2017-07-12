@@ -100,12 +100,11 @@ namespace recipes.Views
                     BindData();
                     break;
                 case "delete_nutrient":
-                    string result = "ok";// GeneralServices.Delete_this("recipe", "recipes..sp_recipe", id_ing);
+                    string result = GeneralServices.Delete_this("ingredient_nutrient", "recipes..sp_ingredient_nutrient", id_ing.ToString());
                     if (result == "success")
                         BindData();
                     else
                     {
-
                         Label msg = grdNutrients.Rows[index].FindControl("lblmsg") as Label;
                         msg.Text = "No se Pudo Eliminar";
                     }
