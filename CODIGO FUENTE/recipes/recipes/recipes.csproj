@@ -96,6 +96,7 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\BuyListView.aspx" />
+    <Content Include="Views\CarritoView.aspx" />
     <Content Include="Views\Contact.aspx" />
     <Content Include="Views\CustomRecipesView.aspx" />
     <Content Include="Views\IngredientNutrientView.aspx" />
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="Views\BuyListView.aspx.designer.cs">
       <DependentUpon>BuyListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CarritoView.aspx.cs">
+      <DependentUpon>CarritoView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CarritoView.aspx.designer.cs">
+      <DependentUpon>CarritoView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

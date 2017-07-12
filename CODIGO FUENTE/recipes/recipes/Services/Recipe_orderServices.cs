@@ -8,7 +8,7 @@ namespace recipes.Services
 {
     public static class Recipe_orderServices
     {
-        public static string InsertOrUpdate(int? r_order, int order, int recipe, int qty, float price, string person)
+        public static string InsertOrUpdate(int? r_order, int order, int recipe, int qty, float price, int person)
         {
             try
             {
