@@ -13,6 +13,15 @@ namespace recipes.Views {
     public partial class RecipeDetailView {
         
         /// <summary>
+        /// ImagenRecipe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImagenRecipe;
+        
+        /// <summary>
         /// lblRecipeName control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace recipes.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRecipeName;
+        
+        /// <summary>
+        /// lblid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblid;
         
         /// <summary>
         /// lblTurno control.
@@ -40,6 +58,15 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.Label lblTotalCost;
         
         /// <summary>
+        /// lblObs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblObs;
+        
+        /// <summary>
         /// lblRecipe control.
         /// </summary>
         /// <remarks>
@@ -49,12 +76,21 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.Label lblRecipe;
         
         /// <summary>
-        /// grdingredients control.
+        /// grdIngredients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdingredients;
+        protected global::System.Web.UI.WebControls.GridView grdIngredients;
+        
+        /// <summary>
+        /// Edit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Edit;
     }
 }
