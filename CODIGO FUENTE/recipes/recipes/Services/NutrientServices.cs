@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -31,6 +32,23 @@ namespace recipes.Services
             }
             return "success";
         }
-       
+
+        internal static DataTable CmpID(string name)
+        {
+
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "F1");
+                command.Parameters.AddWithValue("i_name", name);
+                result = GeneralServices.ExecuteQuery(command, "recipes..sp_nutrient");
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
+            return result;
+        }
     }
 }

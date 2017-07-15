@@ -10,79 +10,70 @@
 namespace recipes.Views {
     
     
-    public partial class RegisterIngredientView {
+    public partial class IngrdientNutrientView {
         
         /// <summary>
-        /// SM control.
+        /// lbl_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager SM;
+        protected global::System.Web.UI.WebControls.Label lbl_code;
         
         /// <summary>
-        /// tbox_code control.
+        /// lbl_nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbox_code;
+        protected global::System.Web.UI.WebControls.Label lbl_nombre;
         
         /// <summary>
-        /// tbox_name control.
+        /// lbl_unidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbox_name;
+        protected global::System.Web.UI.WebControls.Label lbl_unidad;
         
         /// <summary>
-        /// DDL_unit control.
+        /// lbl_cost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDL_unit;
+        protected global::System.Web.UI.WebControls.Label lbl_cost;
         
         /// <summary>
-        /// tbox_price control.
+        /// lbl_factor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbox_price;
+        protected global::System.Web.UI.WebControls.Label lbl_factor;
         
         /// <summary>
-        /// tbox_factor control.
+        /// lbl_cat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbox_factor;
+        protected global::System.Web.UI.WebControls.Label lbl_cat;
         
         /// <summary>
-        /// DDL_category control.
+        /// lbl_origin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDL_category;
-        
-        /// <summary>
-        /// DDL_origin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDL_origin;
+        protected global::System.Web.UI.WebControls.Label lbl_origin;
         
         /// <summary>
         /// lbl_msg control.
@@ -94,21 +85,21 @@ namespace recipes.Views {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_msg;
         
         /// <summary>
-        /// btn_crear control.
+        /// ingredient_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_crear;
+        protected global::System.Web.UI.WebControls.Label ingredient_id;
         
         /// <summary>
-        /// grdIngredientes control.
+        /// grdNutrients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdIngredientes;
+        protected global::System.Web.UI.WebControls.GridView grdNutrients;
     }
 }

@@ -57,6 +57,24 @@ namespace recipes.Services
                 
             return result;
         }
-       
+        public static DataTable CmpID(string id)
+        {
+
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "F1");
+                command.Parameters.AddWithValue("i_ingredient_id", id);
+                result = GeneralServices.ExecuteQuery(command, "recipes..sp_ingredient");
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
+
+
+            return result;
+        }
     }
 }

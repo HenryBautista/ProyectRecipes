@@ -100,7 +100,7 @@ ro_order int foreign key references t_order(or_order),
 ro_recipe int foreign key references t_recipe(re_recipe),
 ro_quantity int,
 ro_price float,
-ro_person varchar(50)
+ro_person int foreign key references t_person(pe_recipe)
 )
 
 create table t_comentary
