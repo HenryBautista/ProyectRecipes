@@ -33,7 +33,7 @@
             <br />
             <asp:TextBox runat="server" id="txtMensaje" TextMode="MultiLine" style="height:150px;" class="contactus-info"/>
             <br />
-            <asp:Button Text="Enviar Comentario" class="btnEnviar" ID="btnEnviar" runat="server" />
+            <asp:Button Text="Enviar Comentario" class="btnEnviar"  ID="btnEnviar" runat="server" />
         </div>
     </div>
 </asp:Content>

@@ -22,8 +22,13 @@
                 <label for="btn-menu"><img src="../Images/menu_icon.png" id="menu-img" /></label>
                 <nav class="menu">
                     <ul>
-                        <li> <a href="../Views/StartPageView.aspx">Inicio</a></li>
-                        <li> <a href="#">Productos</a>
+                        <li> <a href="../Views/StartPageView.aspx">
+                            <img src="../Images/home.png" style="" class="menu-image" alt="Alternate Text" />
+                            Inicio
+                             </a></li>
+                        <li> <a href="#">Productos
+                            <img src="../Images/product.png" style="" class="menu-image" alt="Alternate Text" />
+                             </a>
                             <ul>
                                 <li><a href="VirtualMarket.aspx">Mercado virtual de ingredientes</a></li>
                                 <li><a href="../Views/SuggestedRecipesView.aspx">Recetas sugeridas</a></li>
@@ -31,16 +36,38 @@
                                 <li><a href="../Views/BuyListView.aspx">Planificación del pedido</a></li>
                             </ul>
                         </li>
-                        <li> <a href="Promotions.aspx">Promociones</a>
-
+                        <li> <a href="../Views/Promotions.aspx">Promociones
+                            <img src="../Images/promotion.png" style="" class="menu-image" alt="Alternate Text" />
+                             </a>
                         </li>
-                        <li> <a href="About.aspx">Nosotros</a></li>
-                        <li> <a href="Contact.aspx">Contacto</a></li>
-                        <li> <a href="Administration.aspx">Administración</a>
+                        <li> <a href="../Views/About.aspx">Nosotros
+                            <img src="../Images/about.png" style="" class="menu-image" alt="Alternate Text" />
+                             </a></li>
+                        <li> <a href="../Views/Contact.aspx">Contacto
+                            <img src="../Images/contact.png" style="" class="menu-image" alt="Alternate Text" />
+                             </a></li>
+                        <li> <a href="#">Administración
+                            <img src="../Images/settings.png" style="" class="menu-image" alt="Alternate Text" />
+                             </a>
                             <ul>
                                 <li><a href="../Views/RegisterIngredientView.aspx">Ingrediente</a></li>
                                 <li><a href="../Views/RegisterUser.aspx">Registrar usuario</a></li>
+                                <li><a href="../Views/RegisterPromotion.aspx">Registrar promoción</a></li>
                             </ul>
+                        </li>
+                        <li style="background:#9fb0b2;"> <a href="../Views/Promotions.aspx">
+                            <div class="div-newUser" runat="server" id="divNewUser">
+                                <asp:Label Text="Registrarse" ID="lblregister" runat="server" />
+                            <img src="../Images/new user.png" style="" class="menu-image" alt="Alternate Text" />
+                            </div>
+                             </a>
+                        </li>
+                        <li style="background:#24a915;"> <a href="../Views/Promotions.aspx">
+                            <div class="div-login" id="divLogin" runat="server">
+                                <asp:Label Text="Iniciar sesión" ID="lbllogin" runat="server" />
+                            <img src="../Images/login.png" style="" class="menu-image" alt="Alternate Text" />
+                            </div>
+                             </a>
                         </li>
                     </ul>
                 </nav>
