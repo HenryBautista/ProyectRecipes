@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\ContentStyles.css" />
+    <Content Include="Assets\css\PromotionStyles.css" />
     <Content Include="Assets\css\StartPageViewStyles.css" />
     <Content Include="Assets\css\Styles.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -106,6 +107,7 @@
     <Content Include="Views\RecipeDetailView.aspx" />
     <Content Include="Views\RegisterIngredientView.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
+    <Content Include="Views\RegisterPromotion.aspx" />
     <Content Include="Views\RegisterRecipeView.aspx" />
     <Content Include="Views\RegisterView.aspx" />
     <Content Include="Views\StartPageView.aspx" />
@@ -223,6 +225,13 @@
     </Compile>
     <Compile Include="Views\RegisterNutrient.aspx.designer.cs">
       <DependentUpon>RegisterNutrient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterPromotion.aspx.cs">
+      <DependentUpon>RegisterPromotion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterPromotion.aspx.designer.cs">
+      <DependentUpon>RegisterPromotion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterRecipeView.aspx.cs">
       <DependentUpon>RegisterRecipeView.aspx</DependentUpon>

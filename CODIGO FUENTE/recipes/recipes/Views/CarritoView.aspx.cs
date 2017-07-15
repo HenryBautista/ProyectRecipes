@@ -72,7 +72,7 @@ namespace recipes.Views
             int result = DateTime.Compare(fecha, actual);
             if (result<=0)
             {
-                lbl_msg.InnerText = "La fecha ya paso o no es correcta"
+                lbl_msg.InnerText = "La fecha ya paso o no es correcta";
                 return false;
             }
             return true;
