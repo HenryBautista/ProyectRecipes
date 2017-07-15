@@ -109,8 +109,9 @@
                                         <Columns>
                                             <asp:TemplateField ItemStyle-Width="30px" HeaderText="Nutriente">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_name")%>'></asp:Label>                                                    
-                                                    <asp:Label ID="lblNro" runat="server" Text='<%# Eval("nGrid") %>'></asp:Label>
+                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_name")%>'></asp:Label>     
+                                                    <%--Hebert sos groso--%>                                               
+                                                    <%--<asp:Label ID="lblNro" runat="server" Text='<%# Eval("nGrid") %>'></asp:Label>--%>
                                                 </ItemTemplate>
                                                 <EditItemTemplate>
                                                     <asp:DropDownList ID="DDL_nutrient" CssClass="form-control" DataSource='<%#getNutrients() %>' DataValueField="nu_nutrient" DataTextField="nu_name" runat="server"></asp:DropDownList>
