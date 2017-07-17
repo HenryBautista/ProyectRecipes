@@ -14,18 +14,18 @@ namespace recipes.Views
         {
             if (!this.IsPostBack)
             {
-                
+
             }
         }
 
-        protected void btn_crear_Click(object sender, EventArgs e) 
+        protected void btn_crear_Click(object sender, EventArgs e)
         {
-            
+
             if (check_fields_register() && check_password_match() && !check_email())
             {
-                UserServices.InsertOrUpdate(null,tbox_name.Text,"","",tbox_email.Text,"",0);
+                UserServices.InsertOrUpdate(null, tbox_name.Text, tbox_paterno.Text, tbox_materno.Text, tbox_password.Text, tbox_email.Text.ToLower(), "", 0);
                 lbl_message.InnerText = "Usuario registrado!";
-                Response.Redirect("StartPageView.aspx");
+                Response.Redirect("LoginView.aspx");
             }
 
         }
@@ -43,12 +43,19 @@ namespace recipes.Views
 
         private bool check_password_match()
         {
-            if (tbox_password.Text==tbox_password_repeat.Text)
+            if (tbox_password.Text == tbox_password_repeat.Text)
             {
-                lbl_message.InnerText = "Las contraseñas ingresadas no coinciden";
-                return true;
+                if (tbox_password.Text.Length > 6 && tbox_password.Text.Length <= 20)
+                {
+                    return true;
+                }
+                else
+                {
+                    lbl_message.InnerText = "Debe ingresar una contraseña entre 6 y 20 caracteres";
+                    return false;
+                }
             }
-
+            lbl_message.InnerText = "Las contraseñas ingresadas no coinciden";
             return false;
         }
 
@@ -59,18 +66,28 @@ namespace recipes.Views
                 lbl_message.InnerText = "Ingrese un nombre de usuario";
                 return false;
             }
+            if (tbox_paterno.Text == "")
+            {
+                lbl_message.InnerText = "Ingrese su apellido paterno";
+                return false;
+            }
+            if (tbox_materno.Text == "")
+            {
+                lbl_message.InnerText = "Ingrese un apellido materno";
+                return false;
+            }
             if (tbox_email.Text == "")
             {
                 lbl_message.InnerText = "Ingrese un email";
                 return false;
             }
-            if (tbox_password.Text=="")
+            if (tbox_password.Text == "")
             {
                 lbl_message.InnerText = "Ingrese una  contraseña";
                 return false;
             }
 
-            if (tbox_password_repeat.Text=="")
+            if (tbox_password_repeat.Text == "")
             {
                 lbl_message.InnerText = "Repita su contraseña";
                 return false;

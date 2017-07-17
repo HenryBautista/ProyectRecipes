@@ -17,8 +17,16 @@
             <div class="col-sm-12 col-md-3" style="background-color:whitesmoke"> 
                 <div>
                    <div class="form-group">
-                       <label>Usuario:</label>
+                       <label>Nombre:</label>
                        <asp:TextBox CssClass="form-control" ID="tbox_name" runat="server" ></asp:TextBox>
+                   </div>
+                    <div class="form-group">
+                       <label>Paterno:</label>
+                       <asp:TextBox CssClass="form-control" ID="tbox_paterno" runat="server" ></asp:TextBox>
+                   </div>
+                    <div class="form-group">
+                       <label>Materno:</label>
+                       <asp:TextBox CssClass="form-control" ID="tbox_materno" runat="server" ></asp:TextBox>
                    </div>
                 <div class="form-group">
                     <label>Email:</label>

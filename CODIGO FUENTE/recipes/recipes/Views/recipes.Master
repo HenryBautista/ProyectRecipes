@@ -69,6 +69,20 @@
                             </div>
                              </a>
                         </li>
+                        <li>
+                            <div>
+                            <a id="lbl_log" runat="server" href="/Views/LoginView.aspx">Logearse</a>
+                            
+                            </div>
+                        </li>
+                        <li>
+                            <a id="lbl_usuario" href="/Views/UserView.aspx" runat="server">SESION NO INICIADA</a>
+                            <ul>
+                                <li>
+                                    <asp:Button id="btn_logout" runat="server"  Text="Terminar sesion" OnClick="btn_logout_Click" CssClass="btn btn-warning"></asp:Button>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </header>

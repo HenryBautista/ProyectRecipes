@@ -49,5 +49,22 @@ namespace recipes.Services
             }
             return result;
         }
+
+        internal static DataTable GetThisPerson(string person)
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "S2");
+                command.Parameters.AddWithValue("i_person", person);
+                result = GeneralServices.ExecuteQuery(command, "recipes..sp_person");
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
+            return result;
+        }
     }
 }

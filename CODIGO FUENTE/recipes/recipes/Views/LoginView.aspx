@@ -17,18 +17,19 @@
         </div>
         <div class="row">
             <div class="col-md-4" >
-                <form>
+                <form runat="server">
                     <div class="form-group">
                     <label>Email:</label>
-                    <input type="email" class="form-control" id="lbl_email" placeholder="Ingrese su Email"/>
+                    <asp:TextBox type="email" runat="server" class="form-control" id="tbox_email" placeholder="Ingrese su Email"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label>Contraseña:</label>
-                    <input type="password" class="form-control" id="tbox_password" placeholder="contraseña"/>
+                    <asp:TextBox runat="server"  type="password" class="form-control" id="tbox_password" placeholder="contraseña"/>
                 </div>
-                    <button class="btn btn-success" runat="server" style="width:100%">Acceder</button>
+                    <p class="alert-warning"><label id="lbl_error" runat="server" style="color:red"></label></p>
+                    <asp:Button id="btn_access" class="btn btn-success" runat="server" style="width:100%" Text="Aceeder" OnClick="btn_access_Click"> </asp:Button>
                     <p class="alert-warning" style="padding:10px"><b> Registrate en nuestra Web</b></p>
-                    <a class="btn btn-primary" href="RegisterView.aspx" style="width:100%">Registrarse</a>
+                    <asp:Button id="btn_register" runat="server" class="btn btn-primary" style="width:100%" Text="Registrarse" OnClick="btn_register_Click"></asp:Button>
                 </form>
                 
             </div>

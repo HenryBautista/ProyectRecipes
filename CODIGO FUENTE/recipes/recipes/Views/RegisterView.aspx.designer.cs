@@ -31,6 +31,24 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.TextBox tbox_name;
         
         /// <summary>
+        /// tbox_paterno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbox_paterno;
+        
+        /// <summary>
+        /// tbox_materno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbox_materno;
+        
+        /// <summary>
         /// tbox_email control.
         /// </summary>
         /// <remarks>

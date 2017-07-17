@@ -11,7 +11,29 @@ namespace recipes.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!this.IsPostBack)
+            {
+                GetUser();
+            }
+        }
 
+        private void GetUser()
+        {
+            try
+            {
+                lbl_usuario.InnerText = Session["US_NAME"].ToString();
+                lbl_log.Visible = false;
+            }
+            catch (Exception)
+            {
+                lbl_log.Visible = true;
+            }
+        }
+
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("StartPageView.aspx");
         }
     }
 }
