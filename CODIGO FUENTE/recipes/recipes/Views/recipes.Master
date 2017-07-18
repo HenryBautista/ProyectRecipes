@@ -62,7 +62,7 @@
                             </div>
                              </a>
                         </li>
-                        <li style="background:#24a915;"> <a href="../Views/Promotions.aspx">
+                        <li style="background:#24a915;"> <a id="lbl_log" runat="server" href="/Views/LoginView.aspx">
                             <div class="div-login" id="divLogin" runat="server">
                                 <asp:Label Text="Iniciar sesión" ID="lbllogin" runat="server" />
                             <img src="../Images/login.png" style="" class="menu-image" alt="Alternate Text" />
@@ -70,13 +70,7 @@
                              </a>
                         </li>
                         <li>
-                            <div>
-                            <a id="lbl_log" runat="server" href="/Views/LoginView.aspx">Logearse</a>
-                            
-                            </div>
-                        </li>
-                        <li>
-                            <a id="lbl_usuario" href="/Views/UserView.aspx" runat="server">SESION NO INICIADA</a>
+                            <a id="lbl_usuario" href="../Views/UserView.aspx" runat="server">SESION NO INICIADA</a>
                             <ul>
                                 <li>
                                     <asp:Button id="btn_logout" runat="server"  Text="Terminar sesion" OnClick="btn_logout_Click" CssClass="btn btn-warning"></asp:Button>

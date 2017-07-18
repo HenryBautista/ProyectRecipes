@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="detail-recImage">
-            <asp:Image id="ImagenRecipe" runat="server" alt="Alternate Text" class="recImage" />
+            <asp:Image id="ImagenRecipe" runat="server" ImageUrl="~/Images/RecipePhotos/macdonalds-japones-1.jpg" class="recImage" />
         </div>
         <div class="detail-recipe">
             <div class="lblRecipeName-detail">
