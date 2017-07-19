@@ -1,11 +1,21 @@
 ﻿body {
     margin: 0px;
     font-family: 'Segoe UI Light';
+    /*background: -webkit-linear-gradient(90deg, #aeafaf 10%, #dee0e2 90%);
+    background: -moz-linear-gradient(90deg, #aeafaf 10%, #dee0e2 90%);
+    background: -ms-linear-gradient(90deg, #aeafaf 10%, #dee0e2 90%);
+    background: -o-linear-gradient(90deg, #aeafaf 10%, #dee0e2 90%);
+    background: linear-gradient(90deg, #aeafaf 10%, #dee0e2 90%);*/
+    background: -webkit-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+    background: -moz-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+    background: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+    background: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+    background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
 }
 /*Menu styles*/
 header {
     width: 100%;
-    background: #207fbf;
+    /*background: #207fbf;*/
 }
 
 #btn-menu {
@@ -43,8 +53,8 @@ header label {
     .menu li a {
         display: block;
         padding: 15px 20px;
-        color: #fff;
         text-decoration: none;
+        color: #000;
     }
 
         .menu li a:hover {
@@ -58,7 +68,8 @@ header label {
 
     .menu li:hover > ul {
         display: block;
-        background: #207fbf;
+        background: #fff;
+        z-index: 200;
     }
 
 #lblusername {
@@ -75,23 +86,26 @@ header label {
 }
 
 /*THESE STYLES ARE USED WHEN DISPLAY WIDTH IS LESS THAN 768px*/
-@media(max-width:768px) {
+@media(max-width:769px) {
     header label {
         display: block;
     }
 
     .menu {
         position: absolute;
-        background: #207fbf;
+        background: #fff;
         width: 70%;
         margin-left: -70%;
         transition: all 0.5s;
+        z-index: 200;
     }
 
         .menu ul {
             flex-direction: column;
         }
-
+        .menu ul li ul li a{
+            color:white;
+        }
         .menu li {
             border-top: 1px solid #fff;
         }
@@ -99,10 +113,12 @@ header label {
     #btn-menu:checked ~ .menu {
         margin: 0;
     }
+
     .menu li:hover > ul {
         display: block;
         background: #3e3f41;
     }
+
     #lblusername {
         float: right;
         margin-right: 20px;

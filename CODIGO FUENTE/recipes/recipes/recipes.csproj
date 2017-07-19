@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="Assets\css\ContentStyles.css" />
     <Content Include="Assets\css\PromotionStyles.css" />
+    <Content Include="Assets\css\RegisterViewStyle.css" />
     <Content Include="Assets\css\StartPageViewStyles.css" />
     <Content Include="Assets\css\Styles.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -87,6 +88,7 @@
     <Content Include="Images\plus1600.png" />
     <Content Include="Images\product.png" />
     <Content Include="Images\promotion.png" />
+    <Content Include="Images\RecipePhotos\comida.jpg" />
     <Content Include="Images\RecipePhotos\macdonalds-japones-1.jpg" />
     <Content Include="Images\settings.png" />
     <Content Include="packages.config" />

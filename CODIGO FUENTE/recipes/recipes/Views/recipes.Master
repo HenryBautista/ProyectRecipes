@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../Assets/css/ContentStyles.css"/>
     <link href="../Assets/css/StartPageViewStyles.css" rel="stylesheet" />
     <link href="../Assets/css/PromotionStyles.css" rel="stylesheet" />
+    <link href="../Assets/css/RegisterViewStyle.css" rel="stylesheet" />
     <script type="text/javascript" src="../Scripts/jquery.min.js"></script>
     <meta charset="utf-8" />
 </head>
@@ -51,11 +52,12 @@
                              </a>
                             <ul>
                                 <li><a href="../Views/RegisterIngredientView.aspx">Ingrediente</a></li>
-                                <li><a href="../Views/RegisterUser.aspx">Registrar usuario</a></li>
+                                <li><a href="../Views/UserView.aspx">Registrar usuario</a></li>
                                 <li><a href="../Views/RegisterPromotion.aspx">Registrar promoción</a></li>
+                                <li><a href="../Views/RegisterRecipeView.aspx">Nueva Receta</a></li>
                             </ul>
                         </li>
-                        <li style="background:#9fb0b2;"> <a href="../Views/Promotions.aspx">
+                        <li style="background:#9fb0b2;"> <a href="../Views/UserView.aspx">
                             <div class="div-newUser" runat="server" id="divNewUser">
                                 <asp:Label Text="Registrarse" ID="lblregister" runat="server" />
                             <img src="../Images/new user.png" style="" class="menu-image" alt="Alternate Text" />

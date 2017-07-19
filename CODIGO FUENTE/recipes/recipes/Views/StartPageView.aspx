@@ -4,38 +4,25 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="content" style="margin-left: auto; margin-right: auto;">
+    <div class="content">
         <div class="search-box">
-            <asp:TextBox runat="server"  class="search-text" ID="txtSearch" placeholder="Buscar recetas..."/>
-            <asp:Label runat="server" id="lblReceta"/>
+            <asp:TextBox runat="server" class="search-text" ID="txtSearch" placeholder="Buscar recetas..." />
+            <asp:Label runat="server" ID="lblReceta" />
         </div>
         <asp:Repeater runat="server" ID="repeater1">
             <ItemTemplate>
                 <div class="break-word">
-                    <div class="divRepeater" id="divRepeater" style="width: 30%; float: left; margin: 10px;">
-                        <div class="polaroid">
-                            <div class="image-container">
-                                <div class="lblRecipeName">
-                                    <asp:Label Text='<%#Bind("re_name") %>' runat="server" ID="lblRecipeName"  />
-                                </div>
-                                <img class="recipe-image" src="../Images/RecipePhotos/macdonalds-japones-1.jpg" alt="Alternate Text" runat="server"/>
-                            </div>
-                            <div class="recipe-detail">
-                                    <asp:Label Text='<%#Bind("re_observation") %>' runat="server" id="lblObservacion"/>
-                                </div>
-                            <div class="container">
-                                <asp:HyperLink class="button" runat="server" CommandArgument='<%# Eval("re_recipe") %>'
-                                    NavigateUrl='<%#"~/Views/RecipeDetailView.aspx?RecID=" + DataBinder.Eval(Container.DataItem, "re_recipe").ToString()%>'
-                                    Style="text-decoration: none; color: black;"><span>Ver receta</span></asp:HyperLink>
-                            </div>
-                        </div>
+                    <div class="div-recipe">
+                        <%--<asp:Image ImageUrl="~/Images/RecipePhotos/comida.jpg" runat="server" class="recipe-image" />--%>
+                        <asp:Image ImageUrl='<%#Bind("re_image") %>' runat="server" class="recipe-image" ID="re_image" />
+                        <asp:HyperLink class="absoluto enlace" runat="server" CommandArgument='<%# Eval("re_recipe") %>'
+                            NavigateUrl='<%#"~/Views/RecipeDetailView.aspx?RecID=" + DataBinder.Eval(Container.DataItem, "re_recipe").ToString()%>'
+                            Style="text-decoration: none; color: black;">
 
-                    </div>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
-    </div>
-    <%--<asp:GridView ID="grid" runat="server">
-
-       </asp:GridView>--%>
-</asp:Content>
+                            <div class="texto absouluto">
+                                <h2>
+                                    <asp:Label Text='<%#Bind("re_name") %>' runat="server" ID="lblRecipeName" class="name" /></h2>
+                                <p>
+                                    <asp:Label Text='<%#Bind("re_observation") %>' runat="server" ID="lblObservacion" class="recipe-obs" /></p>
+                            </div>
+                        </asp:HyperLink></a></div></div></ItemTemplate></asp:Repeater></div></asp:Content>
