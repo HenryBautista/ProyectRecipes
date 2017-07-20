@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="contenido">
         <div class="div-title">
-            <h2>Registro de promociones</h2>
+            <asp:Label Text="Registro de promociones" style="font-size:30px; font-weight:bold;" runat="server" />
         </div>
         <div class="div-registro">
              <table>
