@@ -36,21 +36,41 @@
                                     <asp:Label Text="texto 1" runat="server" ID="lblTexto1" />
                                 </div>
                                 <br />
-                                <div style="width: 80%; border-radius: 5px; background: rgba(160, 160, 160, 0.30); overflow-wrap: break-word; padding: 10px;">
-                                    <asp:Label Text="texto 2" runat="server" ID="lblTexto2" />
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <%-- AQUI DEBERIAN ESTAR LAS DEMAS PROMOCIONES, LO DE ARRIBA ES EL QUE VA A ESTAR ACTIVO LA PRIMERA VEZ --%>
+            <asp:Repeater runat="server" ID="repeaterItem">
+            <ItemTemplate>
                 <div class="item">
+                    <div style="width: 100%;">
+                        <div class="div-prImages" style="float: left; width: 50%;">
+                            <asp:Image ImageUrl='<%#Bind("pr_image1") %>' runat="server" ID="prImage1" Style="width: 100%; max-height: 300px;" />
+                            <asp:Image ImageUrl='<%#Bind("pr_image2") %>' runat="server" ID="prImage2" Style="width: 100%; max-height: 300px;" />
+                        </div>
+                        <div class="div-prDetalles" style="float: left; width: 50%;">
+                            <div class="div-subprDetalles" style="margin: 20px; width: 100%;">
+                                <h2 style="width: 80%; overflow-wrap: break-word; margin-left: auto; margin-right: auto; border-bottom: 1px solid #0a306c;">
+                                    <asp:Label Text='<%# Bind("pr_title") %>' ID="titulo" runat="server" />
+                                </h2>
+                                <div style="width: 80%; border-radius: 5px; background: rgba(160, 160, 160, 0.30); overflow-wrap: break-word; padding: 10px;">
+                                    <asp:Label Text='<%#Bind("pr_text1") %>' runat="server" ID="lblTexto1" />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ItemTemplate>
+            </asp:Repeater>
+                <%--<div class="item">
                     <img src="../Images/RecipePhotos/comida.jpg" alt="promocion 2" style="width: 100%;">
                 </div>
 
                 <div class="item">
                     <img src="../Images/RecipePhotos/comida.jpg" alt="promocion 3" style="width: 100%;">
-                </div>
+                </div>--%>
             </div>
 
             <!-- Left and right controls -->

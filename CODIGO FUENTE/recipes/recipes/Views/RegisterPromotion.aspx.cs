@@ -10,9 +10,7 @@ using System.Data;
 namespace recipes.Views
 {
     public partial class RegisterPromotion : System.Web.UI.Page
-    {
-        
-
+    {   
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,6 +22,7 @@ namespace recipes.Views
         private void BindData()
         {
             grdPromotion.DataSource = GeneralServices.Show_Data_table("promotion","S1",null);
+            grdPromotion.DataBind();
         }
 
         protected void btn_createPromotion_Click(object sender, EventArgs e)
@@ -44,6 +43,7 @@ namespace recipes.Views
                 }
                 PromotionServices.InsertOrUpdate(
                     null,txtName.Text,txtTitle.Text,txtDetalles.Text,null,strname,strname2);
+                BindData();
             }
         }
 
@@ -51,22 +51,22 @@ namespace recipes.Views
         {
             if (txtName.Text == "")
             {
-                lblmsg.Text = "introduzca un nombre" ;
+                lblError.Text = "introduzca un nombre" ;
                 return false;
             }
             if (txtTitle.Text == "")
             {
-                lblmsg.Text = "introduzca un titulo";
+                lblError.Text = "introduzca un titulo";
                 return false;
             }
             if (txtDetalles.Text == "")
             {
-                lblmsg.Text = "introduzca los detalles de la promocion";
+                lblError.Text = "introduzca los detalles de la promocion";
                 return false;
             }
-            if (flpImage1.HasFile && flpImage2.HasFile)
+            if (!flpImage1.HasFile && !flpImage2.HasFile)
             {
-                lblmsg.Text = "introduzca al menos una imagen";
+                lblError.Text = "introduzca al menos una imagen";
                 return false;
             }
             return true;
@@ -82,7 +82,7 @@ namespace recipes.Views
             catch (Exception)
             {
 
-                index = 0;
+                index = -1;
             }
             string com = e.CommandName.ToString();
             int? id_pro;
@@ -105,10 +105,10 @@ namespace recipes.Views
                 case "update_promotion":
                     string name = ((TextBox)grdPromotion.Rows[index].FindControl("txtname")).Text;
                     string title = ((TextBox)grdPromotion.Rows[index].FindControl("txttitle")).Text;
-                    string texto = ((TextBox)grdPromotion.Rows[index].FindControl("txtdetail")).Text;
+                    string texto = ((TextBox)grdPromotion.Rows[index].FindControl("txt1")).Text;
                     FileUpload img1 = ((FileUpload)grdPromotion.Rows[index].FindControl("img1"));
                     FileUpload img2 = ((FileUpload)grdPromotion.Rows[index].FindControl("img2"));
-                    if (check_fields(name,title,texto, index) && img1.HasFile && img2.HasFile)
+                    if (check_fields(name,title,texto, index) && img1.HasFile )
                     {
                         string strname = img1.FileName.ToString();
                         string strname2 = null;
@@ -137,6 +137,9 @@ namespace recipes.Views
                         {
                             DataTable dt = GeneralServices.Show_Data_table("promotion","S2",id_pro);
                             PromotionServices.InsertOrUpdate(id_pro, name, title, texto, null, dt.Rows[0]["pr_image1"].ToString(), dt.Rows[0]["pr_image2"].ToString());
+
+                            grdPromotion.EditIndex = -1;
+                            BindData();
                         }
                     }
                     break;
@@ -148,8 +151,8 @@ namespace recipes.Views
                     string result = GeneralServices.Delete_this("promotion", "recipes..sp_promotion", id_pro.ToString());
                     if (result == "success")
                     {
-                        string ruta1 = ((Image)grdPromotion.Rows[index].FindControl("txttitle")).ImageUrl;
-                        string ruta2 = ((Image)grdPromotion.Rows[index].FindControl("txtdetail")).ImageUrl;
+                        string ruta1 = ((Image)grdPromotion.Rows[index].FindControl("img1")).ImageUrl;
+                        string ruta2 = ((Image)grdPromotion.Rows[index].FindControl("img2")).ImageUrl;
                         System.IO.File.Delete(Server.MapPath(ruta1));
                         System.IO.File.Delete(Server.MapPath(ruta2));
                         BindData();
@@ -168,17 +171,17 @@ namespace recipes.Views
         private bool check_fields(string name, string title, string texto, int index)
         {
             Label msg = (Label)grdPromotion.Rows[index].FindControl("lblmsg");
-            if (name != "")
+            if (name == "")
             {
                 msg.Text = "Ingrese un nombre" ;
                 return false;
             }
-            if (title != "")
+            if (title == "")
             {
                 msg.Text = "Ingrese un titulo";
                 return false;
             }
-            if (texto != "")
+            if (texto == "")
             {
                 msg.Text = "Ingrese el detalle";
                 return false;

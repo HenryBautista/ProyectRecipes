@@ -29,9 +29,10 @@
             <br />
             <asp:Label Text="" ID="lblError" runat="server" class="error" />
             <br />
-            <button class="btn-form" runat="server" onclick="btn_createPromotion_Click">
+            <asp:Button CssClass="btn-form" runat="server" OnClick="btn_createPromotion_Click" Text="Crear Promoción" />
+            <%--<button class="btn-form" runat="server" Onclick="btn_createPromotion_Click">
                     <span>Crear promoción</span>
-                </button>
+                </button>--%>
         </div>
         <%-- ---------------- --%>
 
@@ -54,15 +55,15 @@
                             <asp:TextBox ID="txttitle" Text='<%# Bind("pr_title") %>' runat="server"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblname" Text='<%# Bind("pr_title") %>' runat="server"></asp:Label>
+                            <asp:Label ID="lbltitle" Text='<%# Bind("pr_title") %>' runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Detalles">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtdetail" Text='<%# Bind("pr_text1") %>' runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txt1" Text='<%# Bind("pr_text1") %>' runat="server"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lbldetalles" Text='<%# Bind("pr_text1") %>' runat="server"></asp:Label>
+                            <asp:Label ID="lbl1" Text='<%# Bind("pr_text1") %>' runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Imagen 1">

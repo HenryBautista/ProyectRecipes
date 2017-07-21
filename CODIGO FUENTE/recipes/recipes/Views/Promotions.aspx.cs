@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using recipes.Services;
 
 namespace recipes.Views
 {
@@ -16,7 +17,16 @@ namespace recipes.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-   
+            if (!IsPostBack)
+            {
+                BindData();
+            }   
         }
+
+        private void BindData()
+        {
+            repeaterItem.DataSource = GeneralServices.Show_Data_table("promotion","S1",null);
+            repeaterItem.DataBind();
+        }        
     }
 }
