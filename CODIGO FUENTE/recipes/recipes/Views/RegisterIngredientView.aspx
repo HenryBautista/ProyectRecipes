@@ -107,19 +107,11 @@
                                         <Columns>                                            
                                             <asp:TemplateField ItemStyle-Width="30px" HeaderText="Nutriente">
                                                 <ItemTemplate>
-<<<<<<< HEAD
                                                     <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_name")%>'></asp:Label>     
-                                                    <%--Hebert sos groso--%>                                               
-                                                    <%--<asp:Label ID="lblNro" runat="server" Text='<%# Eval("nGrid") %>'></asp:Label>--%>
                                                 </ItemTemplate>
                                                 <EditItemTemplate>
                                                     <asp:DropDownList ID="DDL_nutrient" CssClass="form-control" DataSource='<%#getNutrients() %>' DataValueField="nu_nutrient" DataTextField="nu_name" runat="server"></asp:DropDownList>
                                                 </EditItemTemplate>
-=======
-                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_name")%>'></asp:Label>                                                    
-                                                    <%--<asp:Label ID="lblNro" runat="server" Text='<%# Eval("nGrid") %>' Visible="false"></asp:Label>--%>
-                                                </ItemTemplate>                                                
->>>>>>> 84bdbf3c8da443ba3eeed727212913d5a037d2d3
                                                 <FooterTemplate>
                                                     <asp:DropDownList ID="DDL_Nnutrient" CssClass="form-control" DataSource='<%#getNutrients() %>' DataValueField="nu_nutrient" DataTextField="nu_name" runat="server"></asp:DropDownList>
                                                 </FooterTemplate>
@@ -210,10 +202,6 @@
                         <asp:Button id="btn_del" CommandName="delete_ingredient" Text="Eliminar" runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
-                <%--<asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar"/>                
-                <asp:ButtonField ButtonType="Button" CommandName="Update" Text="Guardar"/>
-                <asp:ButtonField ButtonType="Button" CommandName="Cancel" Text="Calcelar"/>
-                <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="Borrar" />--%>
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

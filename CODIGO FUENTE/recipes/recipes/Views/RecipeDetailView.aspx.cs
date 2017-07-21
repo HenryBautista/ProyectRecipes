@@ -41,7 +41,18 @@ namespace recipes.Views
 
         protected void Edit_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EditRecipeView.aspx?valor=" + lblid.Text);
+            Response.Redirect("EditRecipeView.aspx?RecID=" + lblid.Text);
+        }
+
+        protected void grdIngredients_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                string ingredientId = grdIngredients.DataKeys[e.Row.RowIndex].Value.ToString();
+                GridView grdNutrientes = e.Row.FindControl("grdNutrientes") as GridView;
+                grdNutrientes.DataSource = GeneralServices.Show_Data_table("ingredient", "F2", Convert.ToInt32(ingredientId)); ;
+                grdNutrientes.DataBind();
+            }
         }
     }
 }

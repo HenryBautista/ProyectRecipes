@@ -35,7 +35,6 @@ namespace recipes.Views
                 result.Rows.Add(result.NewRow());
                 result.Rows[0]["nu_nutrient"] = 1;
                 result.Rows[0]["in_quantity"] = 0;
-                grdNutrients.EditIndex = 0;
                 grdNutrients.DataSource = result;
                 grdNutrients.DataBind();
                 //ShowNoResultFound(result, grdNutrients);
@@ -65,7 +64,7 @@ namespace recipes.Views
             catch (Exception)
             {
 
-                index = 0;
+                index = -1;
             }
             string com = e.CommandName.ToString();
             int? id_ing;
@@ -88,7 +87,7 @@ namespace recipes.Views
                 case "update_nutrient":
                     string qty = ((TextBox)grdNutrients.Rows[index].FindControl("txtQty")).Text;
                     string nutri = ((DropDownList)grdNutrients.Rows[index].FindControl("DDLnutrient")).SelectedValue;
-                    if (check_fields(qty,nutri, index))
+                    if (check_fields(qty,index))
                     {
                         Ingredient_nutrientServices.InsertOrUpdate(id_ing,Convert.ToInt32(nutri), Convert.ToInt32(ingredient_id.Text), Convert.ToInt32(qty));
                         grdNutrients.EditIndex = -1;
@@ -112,7 +111,7 @@ namespace recipes.Views
                 case "add":
                     string qty2 = ((TextBox)grdNutrients.FooterRow.FindControl("txtfooter")).Text;
                     string nutri2 = ((DropDownList)grdNutrients.FooterRow.FindControl("DDLfooter")).SelectedValue;
-                    if (check_fields(qty2, nutri2, index))
+                    if (cmp(nutri2) && check_fields(qty2, index))
                     {
                         Ingredient_nutrientServices.InsertOrUpdate(id_ing, Convert.ToInt32(nutri2), Convert.ToInt32(ingredient_id.Text), Convert.ToInt32(qty2));
                         BindData();
@@ -123,20 +122,27 @@ namespace recipes.Views
             }
         }
 
-        private bool check_fields( string qty,string nutri, int index)
+        private bool cmp(string nutri)
         {
-            Label msg = grdNutrients.Rows[index].FindControl("lblmsg") as Label;
+            Label msg = grdNutrients.FooterRow.FindControl("lblmsg") as Label;
+            if (Ingredient_nutrientServices.CmpID(Convert.ToInt32(nutri), Convert.ToInt32(ingredient_id.Text)).Rows.Count > 0)
+            {
+                msg.Text = "El nutriente ya existe";
+                return false;
+            }
+            return true;
+        }
+
+        private bool check_fields( string qty, int index)
+        {
+            Label msg; 
             try
             {
-                if (Ingredient_nutrientServices.CmpID(Convert.ToInt32(nutri), Convert.ToInt32(grdNutrients.DataKeys[index].Value)).Rows.Count > 1)
-                {
-                    msg.Text = "El nutriente ya existe";
-                    return false;
-                }
+                msg = grdNutrients.Rows[index].FindControl("lblmsg") as Label;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                msg.Text = "ok";
+                msg = grdNutrients.FooterRow.FindControl("lblmsg") as Label;
             }
             if (qty == "")
             {

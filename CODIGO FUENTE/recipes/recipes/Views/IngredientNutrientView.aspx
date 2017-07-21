@@ -74,11 +74,10 @@
             OnRowCommand="grdNutrients_RowCommand" OnRowDataBound="grdNutrients_RowDataBound" 
             ShowFooter="true">
             <AlternatingRowStyle BackColor="White" />
-            <Columns>
-                
+            <Columns>                
                 <asp:TemplateField HeaderText="Nutriente">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DDLnutrient" DataSource='<%#getNutrient()%>' SelectedValue='<%# Bind("nu_nutrient") %>' Enabled="True" DataValueField="nu_nutrient" DataTextField="nu_name" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="DDLnutrient" DataSource='<%#getNutrient()%>' SelectedValue='<%# Bind("nu_nutrient") %>' Enabled="False" DataValueField="nu_nutrient" DataTextField="nu_name" runat="server"></asp:DropDownList>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:DropDownList ID="DDLnut" DataSource='<%# getNutrient() %>' SelectedValue='<%# Bind("nu_nutrient")%>' Enabled="false" DataValueField="nu_nutrient" DataTextField="nu_name" runat="server">
@@ -109,6 +108,7 @@
                         <asp:Button id="btn_del" CommandName="delete_nutrient" Text="Eliminar" runat="server" />
                     </ItemTemplate>
                     <FooterTemplate>
+                        <asp:Label id="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
                         <asp:Button id="add" CommandName="add" Text="Agregar" runat="server" />
                     </FooterTemplate>
                 </asp:TemplateField>

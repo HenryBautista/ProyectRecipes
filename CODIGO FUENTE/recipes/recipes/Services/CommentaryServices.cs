@@ -6,7 +6,7 @@ using System.Web;
 
 namespace recipes.Services
 {
-    public class Commentary
+    public class CommentaryServices
     {
         public static string InsertOrUpdate(int? commentary, int recipe, string text)
         {

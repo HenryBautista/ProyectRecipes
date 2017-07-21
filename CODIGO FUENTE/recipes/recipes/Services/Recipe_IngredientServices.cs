@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
 namespace recipes.Services
 {
-    public class Recipe_ingredient
+    public class Recipe_ingredientServices
     {
         public static string InsertOrUpdate(int? r_ingre, int recipe, int ingre, int qty, string obs)
         {
@@ -25,7 +26,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_ingredient", ingre);
                 command.Parameters.AddWithValue("i_quantity", qty);
                 command.Parameters.AddWithValue("i_observation", obs);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_ingredient");
+                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_ingredient");
             }
             catch (Exception ex)
             {
@@ -33,6 +34,23 @@ namespace recipes.Services
             }
             return "success";
         }
-        
+
+        internal static DataTable CmpID(string ing, string recipe)
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "F2");
+                command.Parameters.AddWithValue("i_recipe", recipe);
+                command.Parameters.AddWithValue("i_ingredient", ing);
+                result = GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_ingredient");
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
+            return result;
+        }
     }
 }

@@ -3,6 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="SM" runat="server">
+    </asp:ScriptManager>
+        <script type="text/javascript">
+        $("[src*=plus]").live("click", function () {
+            $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>")
+            $(this).attr("src", "../Images/minus1600.png");
+        });
+        $("[src*=minus]").live("click", function () {
+            $(this).attr("src", "../Images/plus1600.png");
+            $(this).closest("tr").next().remove();
+        });
+    </script>
     <div class="container">
         <div class="detail-recImage">
             <asp:Image ID="ImagenRecipe" runat="server" ImageUrl="~/Images/RecipePhotos/comida.jpg" class="recImage" />
@@ -35,14 +47,48 @@
                 <br />
                 <asp:GridView runat="server" ID="grdIngredients" DataKeyNames="in_ingredient" Style="width: 100%;"
                     AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333"
-                    GridLines="None">
+                    GridLines="None" OnRowDataBound="grdIngredients_RowDataBound">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField HeaderText="Nombre" DataField="in_name" Visible="false" />
+                                        <%--COMIENZO DEL SUBGRID DE NUTRIENTES----------------------------------%>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <img src="../Images/plus1600.png" style="width: 20px; height: 20px; cursor: pointer;" alt="Alternate Text" />
+                        <asp:Panel runat="server" ID="pnlNutrientes" Style="display: none">
+                            <asp:UpdatePanel runat="server" ID="updatePanel">
+                                <ContentTemplate>
+                                    <asp:GridView ID="grdNutrientes" runat="server" Width="550px"
+                                        AutoGenerateColumns="false" Font-Names="Arial"
+                                        Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B"
+                                        HeaderStyle-BackColor="green" AllowPaging="true" 
+                                        PageSize="10">
+                                        <Columns>                                            
+                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="Nutriente">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblNumero" runat="server" Text='<%# Eval("nu_name")%>'></asp:Label>     
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="Cantidad">
+                                                <ItemTemplate>
+                                                    <asp:Label Text='<%# Eval("in_quantity")%>' runat="server" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
+                                        <AlternatingRowStyle BackColor="#C2D69B" />
+                                    </asp:GridView>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="grdNutrientes" />
+                                </Triggers>
+                            </asp:UpdatePanel>
+                        </asp:Panel>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                        <asp:BoundField HeaderText="Nombre" DataField="in_name"/>
                         <asp:BoundField HeaderText="Unidad" DataField="UNIT" />
                         <asp:BoundField HeaderText="Fator" DataField="in_factor" />
-                        <asp:BoundField HeaderText="Categoria" DataField="re_turn" />
-                        <asp:BoundField HeaderText="origen" DataField="ORIGIN" />
+                        <asp:BoundField HeaderText="Categoria" DataField="CATEGORY" />
+                        <asp:BoundField HeaderText="Origen" DataField="ORIGIN" />
                         <asp:BoundField HeaderText="Cantidad" DataField="ri_quantity" />
                         <asp:BoundField HeaderText="Osbervacion" DataField="ri_observation" />
                     </Columns>
@@ -58,8 +104,7 @@
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
             </div>
-            <asp:Button runat="server" ID="Edit" Text="Editar receta" class="btnEdit" OnClick="Edit_Click" />
-            
+            <asp:Button runat="server" ID="Edit" Text="Editar receta" class="btnEdit" OnClick="Edit_Click" />            
         </div>
     </div>
 </asp:Content>

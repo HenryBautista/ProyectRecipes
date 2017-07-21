@@ -40,8 +40,6 @@ namespace recipes.Views
                 {
                     lbl_msg.InnerText = result;
                 }
-
-
             }
             
         }
@@ -153,9 +151,9 @@ namespace recipes.Views
        
         protected void OnPaging(object sender, GridViewPageEventArgs e)
         {
-            //    fillList();
-            //    grd.PageIndex = e.NewPageIndex;
-            //    grd.DataBind();
+            BindData();
+            grdIngredientes.PageIndex = e.NewPageIndex;
+            grdIngredientes.DataBind();
         }
 
         //--------------METODO QUE PERTENECE AL GRID PRINCIPAL, QUE DESPLIEGA EL SUBGRID

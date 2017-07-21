@@ -10,16 +10,7 @@
 namespace recipes.Views {
     
     
-    public partial class RecipeDetailView {
-        
-        /// <summary>
-        /// SM control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager SM;
+    public partial class EditRecipeView {
         
         /// <summary>
         /// ImagenRecipe control.
@@ -76,21 +67,12 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.Label lblRecipe;
         
         /// <summary>
-        /// grdIngredients control.
+        /// grdIngredientes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdIngredients;
-        
-        /// <summary>
-        /// Edit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Edit;
+        protected global::System.Web.UI.WebControls.GridView grdIngredientes;
     }
 }
