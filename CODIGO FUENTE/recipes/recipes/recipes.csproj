@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="Assets\css\ContentStyles.css" />
     <Content Include="Assets\css\PromotionStyles.css" />
+    <Content Include="Assets\css\RegisterPromotionStyle.css" />
     <Content Include="Assets\css\RegisterViewStyle.css" />
     <Content Include="Assets\css\StartPageViewStyles.css" />
     <Content Include="Assets\css\Styles.css" />
