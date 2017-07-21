@@ -3,11 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="content" style="">
+    <div class="container" style="">
         <h1>¿Quiénes somos?</h1>
         <div style="float: left; width: 60%; background: #eff1f2;">
-            <div style="padding: 15px; text-align: justify;">
-                <p>Una mañana, tras un sueño intranquilo, Gregorio Samsa se despertó convertido en un monstruoso insecto.</p>
+            <div style="padding: 15px; text-align: justify; color:black;">
+                
+            </div>
+            <p>Una mañana, tras un sueño intranquilo, Gregorio Samsa se despertó convertido en un monstruoso insecto.</p>
 
                 <p>Estaba echado de espaldas sobre un duro caparazón y, al alzar la cabeza, vio su vientre convexo y oscuro, surcado por curvadas callosidades, sobre el que casi no se aguantaba la colcha, que estaba a punto de escurrirse hasta el suelo.</p>
 
@@ -16,8 +18,6 @@
                 <p>Sobre la mesa había desparramado un muestrario de paños - Samsa era viajante de comercio-, y de la pared colgaba una estampa recientemente recortada de una revista ilustrada y puesta en un marco dorado.</p>
 
                 <p>La estampa mostraba a una mujer tocada con un gorro de pieles, envuelta en una estola también de pieles, y que, muy erguida, esgrimía un amplio manguito, asimismo de piel, que ocultaba todo su antebrazo. Gregorio miró hacia la ventana; estaba nublado, y sobre el cinc del alféizar repiqueteaban las gotas de lluvia, lo que le hizo sentir una gran melancolía. «Bueno -pensó-; ¿y si siguiese durmiendo un rato y me olvidase de</p>
-            </div>
-
         </div>
         <div style="float: left; width: 30%; height: 30%;">
             <img src="../Images/aboutImage.jpg" alt="Alternate Text" style="height: 100%; width: 100%;" />

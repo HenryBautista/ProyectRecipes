@@ -80,6 +80,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\about.png" />
     <Content Include="Images\aboutImage.jpg" />
+    <Content Include="Images\cart.png" />
     <Content Include="Images\contact.png" />
     <Content Include="Images\home.png" />
     <Content Include="Images\login.png" />
