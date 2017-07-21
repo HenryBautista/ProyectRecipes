@@ -10,33 +10,42 @@
 namespace recipes.Views {
     
     
-    public partial class Contact {
+    public partial class Promotions {
         
         /// <summary>
-        /// txtEmail control.
+        /// prImage1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.Image prImage1;
         
         /// <summary>
-        /// txtMensaje control.
+        /// prImage2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMensaje;
+        protected global::System.Web.UI.WebControls.Image prImage2;
         
         /// <summary>
-        /// btnEnviar control.
+        /// lblTexto1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviar;
+        protected global::System.Web.UI.WebControls.Label lblTexto1;
+        
+        /// <summary>
+        /// lblTexto2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTexto2;
     }
 }

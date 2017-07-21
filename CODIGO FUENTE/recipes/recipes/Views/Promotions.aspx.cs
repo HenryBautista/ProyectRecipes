@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -7,11 +10,13 @@ using System.Web.UI.WebControls;
 
 namespace recipes.Views
 {
-    public partial class Contact : System.Web.UI.Page
+    public partial class Promotions : System.Web.UI.Page
     {
+        string cadena = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+   
         }
     }
 }
