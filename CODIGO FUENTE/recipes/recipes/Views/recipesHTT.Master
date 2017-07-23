@@ -115,10 +115,10 @@
 <div class="menu-center collapse navbar-collapse">
                             <ul class="ttr_menu_items nav navbar-nav navbar-right">
                                     <li>
-                                   <a href="StartPageView.aspx">inicio</a>
+                                   <a href="../Views/StartPageView.aspx">inicio</a>
                                     </li>
                                 <li><a href="#slider">promociones</a></li>
-                                <li><a href="../Views/About.aspx" id="about_button">Nosotros</a></li>
+                                <li><a href="../Views/StartPageView.aspx#about-us" id="about_button">Nosotros</a></li>
                                 <li><a href="#footer">contactos</a></li>
                                  <li>
                                     <a  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

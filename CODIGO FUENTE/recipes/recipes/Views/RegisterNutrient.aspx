@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipes.Master" AutoEventWireup="true" CodeBehind="RegisterNutrient.aspx.cs" Inherits="recipes.Views.RegisterNutrient" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" AutoEventWireup="true" CodeBehind="RegisterNutrient.aspx.cs" Inherits="recipes.Views.RegisterNutrient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="width: 80%; height: auto; margin-left: auto; margin-right: auto;">
+    <div style="width: 80%; height: auto; margin-left: auto; margin-right: auto; padding-top:100px">
         <h3>Lista de Nutrientes</h3>
         <asp:GridView runat="server" ID="grdNutrients" DataKeyNames="nu_nutrient" 
             AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" 

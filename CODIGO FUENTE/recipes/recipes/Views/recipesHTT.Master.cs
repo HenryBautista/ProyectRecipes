@@ -14,6 +14,11 @@ namespace recipes.Views
             if (!this.IsPostBack)
             {
                 GetUser();
+                string current = this.ContentPlaceHolder1.Page.GetType().Name;
+                if (!current.Contains("startpageview"))
+                {
+                    hero_area.Visible = false;
+                }
             }
         }
 

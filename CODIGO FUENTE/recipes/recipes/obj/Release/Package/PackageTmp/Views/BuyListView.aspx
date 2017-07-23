@@ -21,7 +21,6 @@
                                 </cc1:CalendarExtender>
                                 <cc2:FocusExtender ID="FocusExtender2" runat="server" DefaultCssClass="AptFocusDefault" OnFocusCssClass="AptOnFocus" TargetControlID="txtFecha" />
                 </td>
-
             </tr>
         </table>
         </div>

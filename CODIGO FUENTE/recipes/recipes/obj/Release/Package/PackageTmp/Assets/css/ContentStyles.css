@@ -4,9 +4,10 @@
 }
 /*-----------------------STYLES FOR "SugggestedRecipes"-------------------------*/
 .content{
-    width:100%;
-    margin:20px;
+    width:90%;
     height:auto;
+    margin-left:auto;
+    margin-right:auto;
 }
 .recipe{
     width:40%;
@@ -89,5 +90,32 @@ h2{
 .grdPedidos{
     width:100%;
     height:400px;
+}
+/*--------------------------------------------------------------*/
+
+/*---------------------------ADMINSTRACION-INGREDIENTES-GRID DE INGREDIENTES-----------------------------------*/
+
+/*-----------------------CONTACTO ESTILOS---------------------------------------*/
+.contactinfo{
+    float:left;
+    width:60%;
+    background:#d9ebf4;
+}
+.contactus{
+    float:left;
+    width:30%;
+    padding:20px;
+    background:#106999;
+    color:white;
+}
+.contactus-info{
+    width:100%;
+    font-size:20px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+.btnEnviar{
+    width:200px;
+    height:30px;
 }
 /*--------------------------------------------------------------*/

@@ -37,7 +37,7 @@
                                 <li><a href="../Views/BuyListView.aspx">Planificación del pedido</a></li>
                             </ul>
                         </li>
-                        <li> <a href="../Views/Promotions.aspx">Promociones
+                        <%--<li> <a href="../Views/Promotions.aspx">Promociones
                             <img src="../Images/promotion.png" style="" class="menu-image" alt="Alternate Text" />
                              </a>
                         </li>
@@ -46,7 +46,7 @@
                              </a></li>
                         <li> <a href="../Views/Contact.aspx">Contacto
                             <img src="../Images/contact.png" style="" class="menu-image" alt="Alternate Text" />
-                             </a></li>
+                             </a></li>--%>
                         <li> <a href="#">Administración
                             <img src="../Images/settings.png" style="" class="menu-image" alt="Alternate Text" />
                              </a>
@@ -57,7 +57,7 @@
                                 <li><a href="../Views/RegisterRecipeView.aspx">Nueva Receta</a></li>
                             </ul>
                         </li>
-                        <li style="background:#9fb0b2;"> <a href="../Views/UserView.aspx">
+                        <li style="background:#9fb0b2; display:none"> <a href="../Views/UserView.aspx" >
                             <div class="div-newUser" runat="server" id="divNewUser">
                                 <asp:Label Text="Registrarse" ID="lblregister" runat="server" />
                             <img src="../Images/new user.png" style="" class="menu-image" alt="Alternate Text" />

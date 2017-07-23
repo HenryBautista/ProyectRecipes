@@ -1,17 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterRecipeView.aspx.cs" Inherits="recipes.Views.RegisterRecipeView" MasterPageFile="~/Views/recipes.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterRecipeView.aspx.cs" Inherits="recipes.Views.RegisterRecipeView" MasterPageFile="~/Views/recipesHTT.Master" %>
 
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <%--<link href="../Content/bootstrap.min.css" rel="stylesheet"  type="text/css"/>--%>
-    <script src="../Scripts/jquery-1.9.1.min.js"></script>
-    <script src="../Scripts/bootstrap.min.js" type="text/javascript"></script>
+<%--    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js" type="text/javascript"></script>--%>
 
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="SM" runat="server">
     </asp:ScriptManager>
 
-    <div class="container">
+    <div class="container" style="padding-top:100px">
         <div class="div-formulario">
             <asp:Label Text="ID" runat="server" />
             <asp:TextBox ID="tbox_id" class="txt-form" placeholder="Introducir ID" runat="server"></asp:TextBox>

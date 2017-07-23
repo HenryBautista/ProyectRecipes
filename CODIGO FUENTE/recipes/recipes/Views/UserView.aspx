@@ -1,10 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserView.aspx.cs" Inherits="recipes.Views.UserView" 
-   MasterPageFile="~/Views/recipes.Master" %>
+   MasterPageFile="~/Views/recipesHTT.Master" %>
 <asp:Content ID="cont1" runat="server" ContentPlaceHolderID="head">
 
 </asp:Content>
-<asp:Content ID="cont2" runat="server" ContentPlaceHolderID="MainContent" >
-    <div class="container">  
+<asp:Content ID="cont2" runat="server" ContentPlaceHolderID="ContentPlaceHolder1" >
+      <div class="container" style="padding-top:100px">  
         <div class="row">
             <div class="col-lg-12">
                 <h1>DATOS DE USUARIO</h1>
