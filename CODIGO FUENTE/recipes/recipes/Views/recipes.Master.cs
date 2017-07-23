@@ -23,10 +23,12 @@ namespace recipes.Views
             {
                 lbl_usuario.InnerText = Session["US_NAME"].ToString();
                 lbl_log.Visible = false;
+                li_user.Visible = true;
             }
             catch (Exception)
             {
                 lbl_log.Visible = true;
+                li_user.Visible = false;
             }
         }
 

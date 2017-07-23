@@ -36,6 +36,7 @@ namespace recipes.Views
                     tbox_father.Text = result.Rows[0]["us_last_name"].ToString();
                     tbox_mother.Text = result.Rows[0]["us_mother_last_name"].ToString();
                     tbox_email.Text = result.Rows[0]["us_mail"].ToString();
+                    tbox_phone.Text = result.Rows[0]["us_phone"].ToString();
                     load_persons();
                 }
             }

@@ -71,7 +71,7 @@
                             </div>
                              </a>
                         </li>
-                        <li>
+                        <li id="li_user" runat="server">
                             <a id="lbl_usuario" href="../Views/UserView.aspx" runat="server">SESION NO INICIADA</a>
                             <ul>
                                 <li>
