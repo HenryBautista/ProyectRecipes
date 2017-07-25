@@ -23,10 +23,10 @@
             <br />
             <asp:FileUpload runat="server" ID="flpImage1" />
             <br />
-            <asp:Label Text="Imagen 2" runat="server" />
+            <%--<asp:Label Text="Imagen 2" runat="server" />
             <br />
             <asp:FileUpload runat="server" ID="flpImage2" />
-            <br />
+            <br />--%>
             <asp:Label Text="" ID="lblError" runat="server" class="error" />
             <br />
             <asp:Button CssClass="btn-form" runat="server" OnClick="btn_createPromotion_Click" Text="Crear Promoción" />
@@ -74,14 +74,14 @@
                             <asp:Image ID="img1" ImageUrl='<%# Bind("pr_image1") %>' runat="server" Width="80" Height="80"></asp:Image>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Imagen 2">
+                    <%--<asp:TemplateField HeaderText="Imagen 2">
                         <EditItemTemplate>
                             <asp:FileUpload runat="server" ID="img2" />
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Image ID="img2" ImageUrl='<%# Bind("pr_image2") %>' runat="server" Width="80" Height="80"></asp:Image>
                         </ItemTemplate>
-                    </asp:TemplateField>
+                    </asp:TemplateField>--%>
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>

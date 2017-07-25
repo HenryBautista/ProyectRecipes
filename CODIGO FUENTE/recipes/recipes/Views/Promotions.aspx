@@ -47,7 +47,7 @@
                     <div style="width: 100%;">
                         <div class="div-prImages" style="float: left; width: 50%;">
                             <asp:Image ImageUrl='<%#Bind("pr_image1") %>' runat="server" ID="prImage1" Style="width: 100%; max-height: 300px;" />
-                            <asp:Image ImageUrl='<%#Bind("pr_image2") %>' runat="server" ID="prImage2" Style="width: 100%; max-height: 300px;" />
+                            <%--<asp:Image ImageUrl='<%#Bind("pr_image2") %>' runat="server" ID="prImage2" Style="width: 100%; max-height: 300px;" />--%>
                         </div>
                         <div class="div-prDetalles" style="float: left; width: 50%;">
                             <div class="div-subprDetalles" style="margin: 20px; width: 100%;">

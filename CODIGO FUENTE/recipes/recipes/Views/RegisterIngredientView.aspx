@@ -52,7 +52,7 @@
             <h3>Lista de ingredientes</h3>
             <asp:GridView runat="server" ID="grdIngredientes" DataKeyNames="in_ingredient"
                 AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333"
-                GridLines="None" ShowFooter="true"
+                GridLines="None" ShowFooter="False"
                 OnRowCommand="grdIngredientes_RowCommand"
                 OnRowDataBound="grdIngredientes_RowDataBound">
                 <AlternatingRowStyle BackColor="White" />
@@ -69,7 +69,7 @@
                                             AutoGenerateColumns="false" Font-Names="Arial"
                                             Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B"
                                             HeaderStyle-BackColor="green" AllowPaging="true"
-                                            ShowFooter="true" OnPageIndexChanging="OnPaging"
+                                            ShowFooter="False" OnPageIndexChanging="OnPaging"
                                             PageSize="10">
                                             <Columns>
                                                 <asp:TemplateField ItemStyle-Width="30px" HeaderText="Nutriente">

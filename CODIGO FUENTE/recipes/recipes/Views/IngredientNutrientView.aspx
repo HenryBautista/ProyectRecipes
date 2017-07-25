@@ -77,6 +77,7 @@
                             </ItemTemplate>
                             <FooterTemplate>
                                 <asp:Button ID="add" CommandName="add" Text="Agregar" runat="server" />
+                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
                             </FooterTemplate>
                         </asp:TemplateField>
                     </Columns>

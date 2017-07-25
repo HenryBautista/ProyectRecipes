@@ -19,9 +19,7 @@ namespace recipes.Views
             if (!this.IsPostBack)
             {
                 BindData();
-            }
-
-            
+            }            
         }
 
         private void BindData()

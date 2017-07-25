@@ -33,7 +33,7 @@ namespace recipes.Views
             else
             {
                 result.Rows.Add(result.NewRow());
-                result.Rows[0]["nu_nutrient"] = 1;
+                result.Rows[0]["nu_nutrient"] = -1;
                 result.Rows[0]["in_quantity"] = 0;
                 grdNutrients.DataSource = result;
                 grdNutrients.DataBind();
