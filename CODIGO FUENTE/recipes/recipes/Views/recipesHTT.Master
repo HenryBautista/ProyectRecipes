@@ -112,9 +112,9 @@
                                                     <li>
                                                         <a href="../Views/StartPageView.aspx">inicio</a>
                                                     </li>
-                                                    <li><a href="#slider">promociones</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#slider">promociones</a></li>
                                                     <li><a href="../Views/StartPageView.aspx#about-us" id="about_button">Nosotros</a></li>
-                                                    <li><a href="#footer">contactos</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#footer">contactos</a></li>
                                                     <li>
                                                         <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">administracion
                                                         </a>
