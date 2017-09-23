@@ -1,0 +1,6 @@
+E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\Assets\css\PromotionStyles.css
+E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll.config
+E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll
+E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.pdb
+E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Release\recipes.dll
+E:\CODESS\GIT\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Release\recipes.pdb
