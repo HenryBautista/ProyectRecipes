@@ -39,7 +39,7 @@
 <body>
     <form id="form1" runat="server">
         <section id="hero_area" runat="server">
-            <img class="img-responsive" src="../Images/header.jpg" alt="" />
+            <img id="ImageInicio" runat="server" class="img-responsive" src="../Images/header.jpg" alt="" />
         </section>
         <div>
             <!--Header start 
@@ -112,9 +112,9 @@
                                                     <li>
                                                         <a href="../Views/StartPageView.aspx">inicio</a>
                                                     </li>
-                                                    <li><a href="../Views/StartPageView.aspx#slider">promociones</a></li>
+                                                    <li><a href="#slider">promociones</a></li>
                                                     <li><a href="../Views/StartPageView.aspx#about-us" id="about_button">Nosotros</a></li>
-                                                    <li><a href="../Views/StartPageView.aspx#footer">contactos</a></li>
+                                                    <li><a href="#footer">contactos</a></li>
                                                     <li>
                                                         <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">administracion
                                                         </a>
@@ -174,7 +174,7 @@
                                         </li>
                                         <li>
                                             <h4><i class="fa fa-map-marker"></i>Direccion</h4>
-                                            <p>2046 Blue Spruce Lane Laurel Canada</p>
+                                            <p>la direccino va aqui </p>
                                         </li>
                                         <li>
                                             <h4><i class="fa fa-envelope"></i>E mail</h4>
@@ -206,7 +206,7 @@
                         <!-- .col-md-4 close -->
                         <div class="col-md-4">
                             <div class="block wow fadeInLeft" data-wow-delay="1100ms">
-                                <div class="gallary">
+                                <%--<div class="gallary">
                                     <h3>FOTOS <span>NUESTRAS</span></h3>
                                     <ul>
                                         <li>
@@ -226,7 +226,7 @@
                                                 <img src="images/photo/photo-4.jpg" alt=""></a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div>--%>
                                 <div class="social-media-link">
                                     <h3>Siguenos <span>EN</span></h3>
                                     <ul>

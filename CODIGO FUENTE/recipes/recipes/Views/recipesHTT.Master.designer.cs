@@ -40,6 +40,15 @@ namespace recipes.Views {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl hero_area;
         
         /// <summary>
+        /// ImageInicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage ImageInicio;
+        
+        /// <summary>
         /// lbl_log control.
         /// </summary>
         /// <remarks>

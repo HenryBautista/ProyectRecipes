@@ -40,12 +40,12 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.Repeater repeaterItem;
         
         /// <summary>
-        /// repeater1 control.
+        /// repeateringredientes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeater1;
+        protected global::System.Web.UI.WebControls.Repeater repeateringredientes;
     }
 }

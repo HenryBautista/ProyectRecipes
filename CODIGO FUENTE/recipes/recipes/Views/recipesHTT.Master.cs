@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using recipes.Services;
 
 namespace recipes.Views
 {
@@ -19,9 +20,9 @@ namespace recipes.Views
                 {
                     hero_area.Visible = false;
                 }
+                ImageInicio.Src = GeneralServices.Show_Data_table("recipes","F2",null).Rows[0]["re_url"].ToString();
             }
         }
-
         private void GetUser()
         {
             try

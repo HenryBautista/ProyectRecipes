@@ -3,8 +3,30 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <!--Section Slider-->
+        <!--
+    Acerca de La Empresa start
+    ============================== -->
+    <section id="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <%--<img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms" src="images/cooker-img.png" alt="cooker-img">--%>
+                        <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">Somos <span>Resetas Bolivia</span>
+                            <%--<br />
+                            Comer bien <span>y sentirse bien</span>--%>
+                        </h1>
+                        <p id="Parrafo" class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </br>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+                    </div>
+                </div>
+                <!-- .col-md-12 close -->
+            </div>
+            <!-- .row close -->
+        </div>
+        <!-- .containe close -->
+    </section>
+    <!-- #call-to-action close -->
+    <!--Section Slider Promociones -->
     <section id="slider">
         <div class="container">
             <div class="row">
@@ -14,14 +36,12 @@
                         </h1>
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
-
                             <%-- POR CADA PROMOCION QUE HAYA HAY QUE AUMENTAR EL NUNMERO DE "data-slide-to" ----------------------------------------------%>
                             <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#myCarousel" data-slide-to="1"></li>
                                 <li data-target="#myCarousel" data-slide-to="2"></li>
+                                <li data-target="#myCarousel" data-slide-to="3"></li>
                             </ol>
-
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
@@ -86,32 +106,9 @@
                 <!-- .col-md-12 close -->
             </div>
             <!-- .row close -->
+        </div>
+    </section>
 
-        </div>
-    </section>
-    <!--
-    about-us start
-    ============================== -->
-    <section id="about-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block">
-                        <%--<img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms" src="images/cooker-img.png" alt="cooker-img">--%>
-                        <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">Somos <span>Resetas Bolivia</span>
-                            <br />
-                            Comer bien <span>y sentirse bien</span>
-                        </h1>
-                        <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </br>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
-                    </div>
-                </div>
-                <!-- .col-md-12 close -->
-            </div>
-            <!-- .row close -->
-        </div>
-        <!-- .containe close -->
-    </section>
-    <!-- #call-to-action close -->
     <!--
     blog start
     ============================ -->
@@ -122,34 +119,30 @@
                     <div class="block">
                         <h1 class="heading">Ultimas <span>Recetas</span> para <span>Ver</span></h1>
                         <ul>
-                            <asp:Repeater ID="repeater1" runat="server">
+                            <asp:Repeater ID="repeateringredientes" runat="server">
                                 <ItemTemplate>
-
                                     <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
-                                        <asp:HyperLink class="absoluto enlace" runat="server" CommandArgument='<%# Eval("re_recipe") %>'
-                                            NavigateUrl='<%#"~/Views/RecipeDetailView.aspx?RecID=" + DataBinder.Eval(Container.DataItem, "re_recipe").ToString()%>'
-                                            Style="text-decoration: none; color: black;">
                                             <div class="blog-img">
-                                                <asp:Image ImageUrl='<%#Bind("re_image") %>' runat="server" ID="re_image" alt="blog-img" Style="height: 280px" />
+                                                <asp:Image ImageUrl='<%#Bind("in_image") %>' runat="server" ID="re_image" alt="blog-img" Style="height: 280px" />
                                                 <%--<img src='<%#Bind("re_image") %>' alt="blog-img" />--%>
                                             </div>
                                             <div class="content-right">
                                                 <h3>
-                                                    <asp:Label Text='<%#Bind("re_name") %>' runat="server" ID="lblRecipeName" class="name"></asp:Label></h3>
+                                                    <asp:Label Text='<%#Bind("in_name") %>' runat="server" ID="lblRecipeName" class="name"></asp:Label></h3>
                                                 <p>
-                                                    <asp:Label Text='<%#Bind("re_observation") %>' runat="server" ID="lblObservacion" class="recipe-obs" />
+                                                    <asp:Label Text='<%#Bind("in_cantidad") %>' runat="server" ID="lblObservacion" class="recipe-obs" />
                                                 </p>
                                                 <br />
                                                 <div style="background-color: red; width: 60%">
                                                     <p style="color: white">
-                                                        <asp:Label Text='<%#Bind("re_total_cost") %>' runat="server" ID="lbl_total_cost" ForeColor="White" Font-Size="18" />
+                                                        <asp:Label Text='<%#Bind("in_cost") %>' runat="server" ID="lbl_total_cost" ForeColor="White" Font-Size="18" />
                                                         Bs.
                                                     </p>
                                                 </div>
 
 
                                             </div>
-                                        </asp:HyperLink></li>
+                                    </li>
                                 </ItemTemplate>
                             </asp:Repeater>
 
