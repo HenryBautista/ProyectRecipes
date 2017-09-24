@@ -26,9 +26,9 @@ namespace recipes.Views
         {   
             SqlCommand command = new SqlCommand();
             command.Parameters.AddWithValue("@i_action", "S1");
-            DataTable tab = GeneralServices.ExecuteQuery(command, "recipes..sp_recipe");
-            repeater1.DataSource = tab.DefaultView;
-            repeater1.DataBind();
+            DataTable tab = GeneralServices.ExecuteQuery(command, "recipes..sp_ingredient");
+            repeateringredients.DataSource = tab.DefaultView;
+            repeateringredients.DataBind();
             repeaterItem.DataSource = GeneralServices.Show_Data_table("promotion", "S1", null);
             repeaterItem.DataBind();
         } 

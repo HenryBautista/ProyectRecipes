@@ -13,6 +13,15 @@ namespace recipes.Views {
     public partial class StartPageView {
         
         /// <summary>
+        /// Parrafo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Parrafo;
+        
+        /// <summary>
         /// prImage1 control.
         /// </summary>
         /// <remarks>
@@ -40,12 +49,12 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.Repeater repeaterItem;
         
         /// <summary>
-        /// repeateringredientes control.
+        /// repeateringredients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeateringredientes;
+        protected global::System.Web.UI.WebControls.Repeater repeateringredients;
     }
 }

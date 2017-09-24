@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="block">
-                                <%--<nav class="navbar navbar-default">
+                               <%--<nav class="navbar navbar-default">
                           <div class="container-fluid">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
@@ -109,16 +109,24 @@
                                             </div>
                                             <div class="menu-center collapse navbar-collapse">
                                                 <ul class="ttr_menu_items nav navbar-nav navbar-right">
-                                                    <li>
-                                                        <a href="../Views/StartPageView.aspx">inicio</a>
-                                                    </li>
-                                                    <li><a href="#slider">promociones</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx">inicio</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#slider">promociones</a></li>
                                                     <li><a href="../Views/StartPageView.aspx#about-us" id="about_button">Nosotros</a></li>
-                                                    <li><a href="#footer">contactos</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#footer">contactos</a></li>
                                                     <li>
-                                                        <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">administracion
+                                                        <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
                                                         </a>
                                                         <ul class="dropdown-menu">
+                                                            <li><a href="../Views/StartPageView.aspx#blog">Mercado Virtual de ingredientes</a></li>
+                                                            <li><a href="../Views/RecipesView.aspx">Recetas sugerias</a></li>
+                                                            <li><a href="../Views/RecipesView.aspx">Recetas personalizadas</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administracion
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="../Views/RegisterIngredientView.aspx">Nutriente</a></li>
                                                             <li><a href="../Views/RegisterIngredientView.aspx">Ingrediente</a></li>
                                                             <li><a href="../Views/RegisterPromotion.aspx">Registrar promocion</a></li>
                                                             <li><a href="../Views/RegisterRecipeView.aspx">Nueva receta</a></li>

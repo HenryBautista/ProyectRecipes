@@ -151,6 +151,7 @@
     <Content Include="Views\BuyListView.aspx" />
     <Content Include="Views\CarritoView.aspx" />
     <Content Include="Views\Contact.aspx" />
+    <Content Include="Views\ContactUsView.aspx" />
     <Content Include="Views\CustomRecipesView.aspx" />
     <Content Include="Views\EditRecipeView.aspx" />
     <Content Include="Views\IngredientNutrientView.aspx" />
@@ -165,6 +166,7 @@
     <Content Include="Views\RegisterRecipeView.aspx" />
     <Content Include="Views\RegisterView.aspx" />
     <Content Include="Views\StartPageView.aspx" />
+    <Content Include="Views\StartViewAdministrator.aspx" />
     <Content Include="Views\SuggestedRecipesView.aspx" />
     <Content Include="Views\UserView.aspx" />
     <Content Include="Web.config">
@@ -223,6 +225,13 @@
     </Compile>
     <Compile Include="Views\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactUsView.aspx.cs">
+      <DependentUpon>ContactUsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ContactUsView.aspx.designer.cs">
+      <DependentUpon>ContactUsView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomRecipesView.aspx.cs">
       <DependentUpon>CustomRecipesView.aspx</DependentUpon>
@@ -335,6 +344,13 @@
     </Compile>
     <Compile Include="Views\StartPageView.aspx.designer.cs">
       <DependentUpon>StartPageView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartViewAdministrator.aspx.cs">
+      <DependentUpon>StartViewAdministrator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\StartViewAdministrator.aspx.designer.cs">
+      <DependentUpon>StartViewAdministrator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\SuggestedRecipesView.aspx.cs">
       <DependentUpon>SuggestedRecipesView.aspx</DependentUpon>

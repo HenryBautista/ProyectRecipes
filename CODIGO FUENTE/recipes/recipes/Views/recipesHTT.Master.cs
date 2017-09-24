@@ -20,7 +20,7 @@ namespace recipes.Views
                 {
                     hero_area.Visible = false;
                 }
-                ImageInicio.Src = GeneralServices.Show_Data_table("recipes","F2",null).Rows[0]["re_url"].ToString();
+                //ImageInicio.Src = GeneralServices.Show_Data_table("recipes","F2",null).Rows[0]["re_url"].ToString();
             }
         }
         private void GetUser()

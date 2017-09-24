@@ -22,7 +22,6 @@ namespace recipes.Services
             command.CommandText = request_procedure;
             command.CommandType = CommandType.StoredProcedure;
             command.CommandTimeout = 0;
-            //command.ExecuteNonQuery();
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = command;
             adapter.Fill(result);

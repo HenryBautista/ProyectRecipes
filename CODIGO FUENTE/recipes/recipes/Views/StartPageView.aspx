@@ -16,7 +16,7 @@
                             <%--<br />
                             Comer bien <span>y sentirse bien</span>--%>
                         </h1>
-                        <p id="Parrafo" class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </br>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+                        <p id="Parrafo" runat="server" class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </br>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
                     </div>
                 </div>
                 <!-- .col-md-12 close -->
@@ -119,7 +119,7 @@
                     <div class="block">
                         <h1 class="heading">Ultimas <span>Recetas</span> para <span>Ver</span></h1>
                         <ul>
-                            <asp:Repeater ID="repeateringredientes" runat="server">
+                            <asp:Repeater ID="repeateringredients" runat="server">
                                 <ItemTemplate>
                                     <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
                                             <div class="blog-img">
@@ -139,13 +139,10 @@
                                                         Bs.
                                                     </p>
                                                 </div>
-
-
                                             </div>
                                     </li>
                                 </ItemTemplate>
                             </asp:Repeater>
-
                         </ul>
                         <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" href="#" role="button">Ver mas >></a>
                     </div>
