@@ -9,32 +9,32 @@
         <Columns>
             <asp:TemplateField HeaderText="Fecha">
                 <ItemTemplate>
-                    <asp:Label ID="lblFecha" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Usuario">
                 <ItemTemplate>
-                    <asp:Label id="lblUsuario" runat="server" />
+                    <asp:Label id="lblUsuario" runat="server" Text='<%# Bind("") %>' />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Receta">
                 <ItemTemplate>
-                    <asp:Label id="lblReceta" runat="server" />
+                    <asp:Label id="lblReceta" runat="server" Text='<%# Bind("") %>' />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Ingredientes">
                 <ItemTemplate>
-                    <asp:Label id="lblIngredientes" runat="server" />
+                    <asp:Label id="lblIngredientes" runat="server" Text='<%# Bind("") %>' />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Unidad de medida">
                 <ItemTemplate>
-                    <asp:Label id="lblUnidadMedida" runat="server" />
+                    <asp:Label id="lblUnidadMedida" runat="server" Text='<%# Bind("") %>' />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Cantidad">
                 <ItemTemplate>
-                    <asp:Label id="lblCantidad" runat="server" />
+                    <asp:Label id="lblCantidad" runat="server"  Text='<%# Bind("") %>'/>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
