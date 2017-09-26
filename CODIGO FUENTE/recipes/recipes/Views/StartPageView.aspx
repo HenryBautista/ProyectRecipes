@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <!--
+    <!--
     Acerca de La Empresa start
     ============================== -->
     <section id="about-us">
@@ -57,7 +57,8 @@
                                                 <br />
                                                 <div>
                                                     <p>
-                                                        <asp:Label Text="texto 1" runat="server" ID="lblTexto1" /></p>
+                                                        <asp:Label Text="texto 1" runat="server" ID="lblTexto1" />
+                                                    </p>
                                                 </div>
                                                 <br />
                                             </div>
@@ -80,7 +81,8 @@
                                                         <br />
                                                         <div>
                                                             <p>
-                                                                <asp:Label Text='<%#Bind("pr_text1") %>' runat="server" ID="lblTexto1" /></p>
+                                                                <asp:Label Text='<%#Bind("pr_text1") %>' runat="server" ID="lblTexto1" />
+                                                            </p>
                                                         </div>
                                                         <br />
                                                     </div>
@@ -122,24 +124,24 @@
                             <asp:Repeater ID="repeateringredients" runat="server">
                                 <ItemTemplate>
                                     <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
-                                            <div class="blog-img">
-                                                <asp:Image ImageUrl='<%#Bind("in_image") %>' runat="server" ID="re_image" alt="blog-img" Style="height: 280px" />
-                                                <%--<img src='<%#Bind("re_image") %>' alt="blog-img" />--%>
-                                            </div>
-                                            <div class="content-right">
-                                                <h3>
-                                                    <asp:Label Text='<%#Bind("in_name") %>' runat="server" ID="lblRecipeName" class="name"></asp:Label></h3>
-                                                <p>
-                                                    <asp:Label Text='<%#Bind("in_cantidad") %>' runat="server" ID="lblObservacion" class="recipe-obs" />
+                                        <div class="blog-img">
+                                            <asp:Image ImageUrl='<%#Bind("in_image") %>' runat="server" ID="re_image" alt="blog-img" Style="height: 280px" />
+                                            <%--<img src='<%#Bind("re_image") %>' alt="blog-img" />--%>
+                                        </div>
+                                        <div class="content-right">
+                                            <h3>
+                                                <asp:Label Text='<%#Bind("in_name") %>' runat="server" ID="lblRecipeName" class="name"></asp:Label></h3>
+                                            <p>
+                                                <asp:Label Text='<%#Bind("in_cantidad") %>' runat="server" ID="lblObservacion" class="recipe-obs" />
+                                            </p>
+                                            <br />
+                                            <div style="background-color: red; width: 60%">
+                                                <p style="color: white">
+                                                    <asp:Label Text='<%#Bind("in_cost") %>' runat="server" ID="lbl_total_cost" ForeColor="White" Font-Size="18" />
+                                                    Bs.
                                                 </p>
-                                                <br />
-                                                <div style="background-color: red; width: 60%">
-                                                    <p style="color: white">
-                                                        <asp:Label Text='<%#Bind("in_cost") %>' runat="server" ID="lbl_total_cost" ForeColor="White" Font-Size="18" />
-                                                        Bs.
-                                                    </p>
-                                                </div>
                                             </div>
+                                        </div>
                                     </li>
                                 </ItemTemplate>
                             </asp:Repeater>

@@ -186,7 +186,7 @@
                                         </li>
                                         <li>
                                             <h4><i class="fa fa-envelope"></i>E mail</h4>
-                                            <p>rest@gmail.com - rest@mail.ru</p>
+                                            <p><a href="ContactUsView.aspx">rest@gmail.com - rest@mail.ru</a></p>
 
                                         </li>
                                     </ul>
