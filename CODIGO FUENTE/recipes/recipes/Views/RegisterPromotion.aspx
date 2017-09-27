@@ -22,7 +22,6 @@
             <div class="form-group">
                 <asp:Label Text="Detalles" runat="server" />
                 <asp:TextBox class="form-control" ID="txtDetalles" TextMode="MultiLine" runat="server" style="height:50px;"></asp:TextBox>
-
             </div>
             <asp:Label Text="Imagen 1" runat="server" />
             <br />

@@ -132,7 +132,7 @@
                                             <h3>
                                                 <asp:Label Text='<%#Bind("in_name") %>' runat="server" ID="lblRecipeName" class="name"></asp:Label></h3>
                                             <p>
-                                                <asp:Label Text='<%#Bind("in_cantidad") %>' runat="server" ID="lblObservacion" class="recipe-obs" />
+                                                <%--<asp:Label Text='<%#Bind("in_cantidad") %>' runat="server" ID="lblObservacion" class="recipe-obs" />--%>
                                             </p>
                                             <br />
                                             <div style="background-color: red; width: 60%">
