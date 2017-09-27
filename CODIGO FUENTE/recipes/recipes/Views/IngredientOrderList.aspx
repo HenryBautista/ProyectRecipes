@@ -3,8 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="width: 80%; margin-left: auto; margin-right: auto;">
+    <div style="width: 80%; margin-left: auto; margin-right: auto;margin-top:70px">
         <h2>Lista de ingredientes de pedidos</h2>
+        <br />
         <asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AllowPaging="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
