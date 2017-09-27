@@ -3,22 +3,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="padding-top:100px">
+    <div class="container" style="padding-top: 100px">
         <div class="div-title">
             <asp:Label Text="Registro de promociones" Style="font-size: 30px; font-weight: bold;" runat="server" />
         </div>
 
         <%-- --------------------- --%>
         <div class="div-formulario">
-            <asp:Label Text="Nombre" runat="server" />
-            <asp:TextBox runat="server" ID="txtName" placeholder="Nombre de la promoción" class="txt-form" />
+            <div class="form-group">
+                <asp:Label Text="Nombre" runat="server" />
+                <asp:TextBox runat="server" ID="txtName" placeholder="Nombre de la promoción" class="form-control" />
+            </div>
+            <div class="form-group">
+                <asp:Label Text="Titulo" runat="server" />
+                <asp:TextBox runat="server" ID="txtTitle" placeholder="Titulo de la promocion" class="form-control" />
+            </div>
 
-            <asp:Label Text="Titulo" runat="server" />
-            <asp:TextBox runat="server" ID="txtTitle" placeholder="Titulo de la promocion" class="txt-form" />
+            <div class="form-group">
+                <asp:Label Text="Detalles" runat="server" />
+                <asp:TextBox class="form-control" ID="txtDetalles" TextMode="MultiLine" runat="server" style="height:50px;"></asp:TextBox>
 
-            <asp:Label Text="Detalles" runat="server" />
-            <asp:TextBox CssClass="detalle multitext" ID="txtDetalles" TextMode="MultiLine" runat="server"></asp:TextBox>
-
+            </div>
             <asp:Label Text="Imagen 1" runat="server" />
             <br />
             <asp:FileUpload runat="server" ID="flpImage1" />
@@ -36,11 +41,12 @@
         </div>
         <%-- ---------------- --%>
 
-        
+
         <br />
         <div id="divPromotion">
-            <asp:GridView ID="grdPromotion" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="false" EnablePersistedSelection="true"
-                DataKeyNames="pr_promotion" OnRowDataBound="grdPromotion_RowDataBound" OnRowCommand="grdPromotion_RowCommand">
+            <asp:GridView ID="grdPromotion" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="False" EnablePersistedSelection="True"
+                DataKeyNames="pr_promotion" OnRowDataBound="grdPromotion_RowDataBound" OnRowCommand="grdPromotion_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
@@ -92,6 +98,16 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
         </div>
     </div>
