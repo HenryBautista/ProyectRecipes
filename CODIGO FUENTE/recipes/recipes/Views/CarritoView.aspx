@@ -13,8 +13,8 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <section>
         <div class="container" style="margin: 10px; margin-top:70px;">
-            <div style="float: left; width: 30%; height: 30%;">
-                <img src="../Images/RecipePhotos/comida.jpg" style="width: 100%; height: 100%;" />
+<%--            <div style="float: left; width: 30%; height: 30%;">
+                <img src="../Images/RecipePhotos/comida.jpg" style="width: 100%; height: 100%;" />--%>
             </div>
             <div style="float: left; width: 70%;" class="detail">
                 <div class="div-formulario">
@@ -32,12 +32,12 @@
                     <br />
                     <label runat="server" id="lbl_msg" class="col-lg-2 label-danger control-label"></label>
                     <br />
-                    <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn-form" />
+                    <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn-form" OnClick="ConfirmBuy"/>
                     <asp:Label ID="user_id" Visible="false" runat="server"></asp:Label>
                 </div>
             </div>
             <div style="width: 80%; height: auto; margin-left: auto; margin-right: auto;">
-                <h3>Lista de ordenes</h3>
+                <h3>Lista de ordenes <span> Recetas</span></h3>
                 <asp:GridView runat="server" ID="grdOrden" DataKeyNames="ro_recipe_order"
                     AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"
                     OnRowCommand="grdOrden_RowCommand" OnRowDataBound="grdOrden_RowDataBound">
@@ -106,8 +106,39 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
+                <h3>Lista de ordenes <samp> Ingredientes</samp></h3>
+                <asp:GridView ID="grid_recipes" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="False" EnablePersistedSelection="True"
+                DataKeyNames="re_recipe" OnRowDeleting="grid_recipes_RowDeleting" OnSelectedIndexChanged="grid_recipes_SelectedIndexChanged"
+                OnRowCommand="grid_recipes_RowCommand" Style="width: 100%;" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>                    
+                    <asp:ImageField HeaderText="IMAGEN" DataImageUrlField="in_image" ControlStyle-Width="80">                        
+                    <ControlStyle Width="80px"></ControlStyle>
+                    </asp:ImageField>
+                    <asp:BoundField DataField="in_ingredient" Visible="false" />
+                    <asp:BoundField HeaderText="ID" DataField="in_ingredient_id" />
+                    <asp:BoundField HeaderText="NOMBRE" DataField="in_name" />
+                    <asp:BoundField HeaderText="UNIDAD" DataField="UNIDAD" />
+                    <asp:BoundField HeaderText="CANTIDAD" DataField="in_quantity" />
+                    <asp:BoundField HeaderText="COSTO" DataField="in_costo" />
+                    <asp:BoundField HeaderText="FACTOR" DataField="FACTOR" />
+                    <asp:BoundField HeaderText="CATEGORIA" DataField="CATEGORIA" />
+                    <asp:BoundField HeaderText="ORIGEN" DataField="ORIGEN" />
+                </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
+            </asp:GridView>
             </div>
         </div>
+
     </section>
         <div hidden="hidden">
             <h1>Parece que aun no has seleccionado productos </h1>

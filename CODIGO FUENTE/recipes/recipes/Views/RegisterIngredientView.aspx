@@ -34,6 +34,9 @@
 
             <asp:Label Text="Costo" runat="server" />
             <asp:TextBox ID="tbox_price" placeholder="Costo ingrediente" runat="server" class="txt-form" />
+            
+            <asp:Label Text="Cantidad" runat="server" />
+            <asp:TextBox ID="TextBox1" placeholder="Cantidad de ingrediente" runat="server" class="txt-form" />
 
             <asp:Label Text="Factor" runat="server" />
             <asp:TextBox ID="tbox_factor" placeholder="Factor" runat="server" class="txt-form" />
@@ -43,6 +46,10 @@
 
             <asp:Label Text="Origen" runat="server" />
             <asp:DropDownList ID="DDL_origin" CssClass="form-control" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
+
+            
+            <asp:Label Text="Imagen" runat="server" />
+            <asp:FileUpload ID="file_image" runat="server" class="txt-form" />
             <br />
             <label runat="server" id="lbl_msg" class="col-lg-2 label-danger control-label"></label>
             <br />
@@ -109,6 +116,16 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <%--FIN DEL SUBGRID DE INGREDIENTES-------------------------------------------------------------------------------------------%>
+                    
+                    
+                    <asp:TemplateField HeaderText="Imagen">
+                        <EditItemTemplate>
+                            <asp:FileUpload runat="server" ID="img1" />
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Image ID="img1" ImageUrl='<%# Bind("in_image") %>' runat="server" Width="80" Height="80"></asp:Image>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Codigo">
                         <EditItemTemplate>
                             <asp:TextBox ID="txtCodigo" runat="server" Text='<%# Bind("in_ingredient_id") %>'></asp:TextBox>
@@ -132,6 +149,15 @@
                         <ItemTemplate>
                             <asp:DropDownList ID="DDLunidad" DataSource='<%# getData(2) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server">
                             </asp:DropDownList>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    
+                    <asp:TemplateField HeaderText="Cantidad">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtqty" runat="server" Text='<%# Bind("in_quantity") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblqty" runat="server" Text='<%# Bind("in_quantity") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Costo">
