@@ -153,6 +153,7 @@
     <Content Include="Views\Contact.aspx" />
     <Content Include="Views\ContactUsView.aspx" />
     <Content Include="Views\CustomRecipesView.aspx" />
+    <Content Include="Views\DetailShiping.aspx" />
     <Content Include="Views\EditRecipeView.aspx" />
     <Content Include="Views\IngredientNutrientView.aspx" />
     <Content Include="Views\LoginView.aspx" />
@@ -160,6 +161,7 @@
     <Content Include="Views\PrincipalView.aspx" />
     <Content Include="Views\Promotions.aspx" />
     <Content Include="Views\RecipeDetailView.aspx" />
+    <Content Include="Views\RecipePeopleView.aspx" />
     <Content Include="Views\RegisterIngredientView.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
     <Content Include="Views\RegisterPromotion.aspx" />
@@ -240,6 +242,13 @@
     <Compile Include="Views\CustomRecipesView.aspx.designer.cs">
       <DependentUpon>CustomRecipesView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\DetailShiping.aspx.cs">
+      <DependentUpon>DetailShiping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DetailShiping.aspx.designer.cs">
+      <DependentUpon>DetailShiping.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditRecipeView.aspx.cs">
       <DependentUpon>EditRecipeView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -288,6 +297,13 @@
     </Compile>
     <Compile Include="Views\RecipeDetailView.aspx.designer.cs">
       <DependentUpon>RecipeDetailView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecipePeopleView.aspx.cs">
+      <DependentUpon>RecipePeopleView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RecipePeopleView.aspx.designer.cs">
+      <DependentUpon>RecipePeopleView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\recipes.Master.cs">
       <DependentUpon>recipes.Master</DependentUpon>

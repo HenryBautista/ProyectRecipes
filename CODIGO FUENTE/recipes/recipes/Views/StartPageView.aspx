@@ -146,7 +146,7 @@
                                 </ItemTemplate>
                             </asp:Repeater>
                         </ul>
-                        <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" href="#" role="button">Ver mas >></a>
+<%--                        <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" href="#" role="button">Ver mas >></a>--%>
                     </div>
                 </div>
                 <!-- .col-md-12 close -->

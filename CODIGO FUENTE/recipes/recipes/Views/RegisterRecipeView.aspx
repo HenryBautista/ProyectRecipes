@@ -31,6 +31,10 @@
             <asp:Label Text="Observacion" runat="server" />
             <asp:TextBox ID="tbox_Observation" runat="server" TextMode="MultiLine" class="txt-form" Style="width: 100%; height: 60px;"></asp:TextBox>
 
+            
+            <asp:Label Text="URL Video" runat="server" />
+            <asp:TextBox ID="tbox_url" runat="server" class="txt-form" Style="width: 100%; height: 60px;"></asp:TextBox>
+
             <asp:Label Text="" ID="lblError" runat="server" class="error" />
             <label runat="server" id="lbl_message" class="error"></label>
             <br />
@@ -50,7 +54,7 @@
                     <asp:BoundField HeaderText="COSTO" DataField="re_total_cost" />
                     <asp:BoundField HeaderText="OBSERVACION" DataField="re_observation" />
                     <asp:ImageField HeaderText="IMAGEN" DataImageUrlField="re_image" ControlStyle-Width="80">
-<ControlStyle Width="80px"></ControlStyle>
+                    <ControlStyle Width="80px"></ControlStyle>
                     </asp:ImageField>
                     <asp:TemplateField>
                         <ItemTemplate>

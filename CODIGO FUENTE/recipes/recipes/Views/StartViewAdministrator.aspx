@@ -20,7 +20,7 @@
                         <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">Imagen<span>Inicio </span></h1>
                         <div>
                             <label for="ImageFile">Seleccionar Imagen</label>
-                            <input type="file" id="ImageFile" name="ImageFiles" />
+                            <input type="file" id="ImageFile" name="ImageFiles" onchange="showimagepreview(this)" />
                         </div>
                         <div class="overlay hm-white-slight z-depth-1-half">
                             <asp:Image ID="imageCabecera" runat="server" />
@@ -33,4 +33,17 @@
         </div>
         <!-- .containe close -->
     </section>
+    <script type="text/javascript">
+        function showimagepreview(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+
+                    document.getElementsByTagName("imageCabecera")[0].setAttribute("src", e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 </asp:Content>
