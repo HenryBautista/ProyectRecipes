@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipes.Master" AutoEventWireup="true" CodeBehind="CarritoView.aspx.cs" Inherits="recipes.Views.CarritoView" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" AutoEventWireup="true" CodeBehind="CarritoView.aspx.cs" Inherits="recipes.Views.CarritoView" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="Chapter7.1" Namespace="Chapter7" TagPrefix="cc2" %>
@@ -11,14 +11,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <div class="container">
+    <section>
+        <div class="container" style="margin: 10px; margin-top:70px;">
             <div style="float: left; width: 30%; height: 30%;">
                 <img src="../Images/RecipePhotos/comida.jpg" style="width: 100%; height: 100%;" />
             </div>
             <div style="float: left; width: 70%;" class="detail">
                 <div class="div-formulario">
                     <asp:Label Text="Fecha" runat="server" />
-                    <asp:TextBox ID="txtFecha" runat="server" class="txt-form" />
+                    <asp:TextBox ID="txtFecha" runat="server" class="form-control" />
                     <cc1:CalendarExtender ID="txtFecha_CalendarExtender" runat="server" Enabled="True" Format="dd/MM/yyyy" TargetControlID="txtFecha">
                     </cc1:CalendarExtender>
                     <cc2:FocusExtender ID="FocusExtender2" runat="server" DefaultCssClass="AptFocusDefault" OnFocusCssClass="AptOnFocus" TargetControlID="txtFecha" />
@@ -107,10 +108,11 @@
                 </asp:GridView>
             </div>
         </div>
+    </section>
         <div hidden="hidden">
             <h1>Parece que aun no has seleccionado productos </h1>
         </div>
 
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-</asp:Content>
+
+
