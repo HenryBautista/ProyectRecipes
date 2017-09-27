@@ -4,13 +4,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="width: 80%; height: auto; margin-left: auto; margin-right: auto; padding-top:100px">
         <h3>Lista de Nutrientes</h3>
-        <asp:GridView runat="server" ID="grdNutrients" DataKeyNames="nu_nutrient" 
+        <div class="container">
+            <asp:GridView runat="server" ID="grdNutrients" DataKeyNames="nu_nutrient"  Width="80%"
             AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" 
             OnRowCommand="grdNutrients_RowCommand" OnRowDataBound="grdNutrients_RowDataBound"
             ShowFooter="true">
             <AlternatingRowStyle BackColor="White" />
             <Columns>                
-                <asp:TemplateField HeaderText="Cantidad">
+                <asp:TemplateField HeaderText="Nombre">
                     <EditItemTemplate>
                         <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("nu_name") %>'></asp:TextBox>
                     </EditItemTemplate>
@@ -18,7 +19,7 @@
                         <asp:Label ID="lblQty" runat="server" Text='<%# Bind("nu_name") %>'></asp:Label>
                     </ItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="txtfooter" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtfooter" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField>
@@ -30,7 +31,7 @@
                         <asp:Button id="btn_del" CommandName="delete_nutrient" Text="Eliminar" runat="server" />
                     </ItemTemplate>
                     <FooterTemplate>
-                        <asp:Button id="add" CommandName="add" Text="Agregar" runat="server" />
+                        <asp:Button id="add" CommandName="add" Text="Agregar" runat="server" CssClass="btn-success"/>
                     </FooterTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -45,7 +46,6 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
+        </div>
     </div>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 </asp:Content>

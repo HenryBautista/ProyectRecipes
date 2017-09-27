@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SuggestedRecipesView.aspx.cs" Inherits="recipes.Views.SuggestedRecipesView" MasterPageFile="~/Views/recipes.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SuggestedRecipesView.aspx.cs" Inherits="recipes.Views.SuggestedRecipesView" MasterPageFile="~/Views/recipesHTT.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     

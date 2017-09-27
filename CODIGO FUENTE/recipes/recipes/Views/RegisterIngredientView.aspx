@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipes.Master" AutoEventWireup="true" CodeBehind="RegisterIngredientView.aspx.cs" Inherits="recipes.Views.RegisterIngredientView" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" AutoEventWireup="true" CodeBehind="RegisterIngredientView.aspx.cs" Inherits="recipes.Views.RegisterIngredientView" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -18,16 +18,16 @@
         });
     </script>
     <%-- --------------------------------------------------- --%>
-    <div class="container" style="width: 60%;">
+    <div class="container" Style="margin-top:80px;">
 
         <div style="margin-left: auto; margin-right: auto; width: 70%;" class="detail">
         </div>
         <div class="div-formulario">
             <asp:Label Text="Codigo" runat="server" />
-            <asp:TextBox ID="tbox_code" runat="server" placeholder="Introducir codigo" class="txt-form"></asp:TextBox>
+            <asp:TextBox ID="tbox_code" runat="server" placeholder="Introducir codigo" class="form-control"></asp:TextBox>
 
             <asp:Label Text="Nombre" runat="server" />
-            <asp:TextBox ID="tbox_name" placeholder="Introducir nombre" runat="server" class="txt-form"></asp:TextBox>
+            <asp:TextBox ID="tbox_name" placeholder="Introducir nombre" runat="server" class="form-control"></asp:TextBox>
 
             <asp:Label Text="Unidad de medida" runat="server" />
             <asp:DropDownList ID="DDL_unit" CssClass="form-control" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
@@ -37,7 +37,7 @@
 
             <asp:Label Text="Factor" runat="server" />
             <asp:TextBox ID="tbox_factor" placeholder="Factor" runat="server" class="txt-form" />
-
+            <br />
             <asp:Label Text="Categoria" runat="server" />
             <asp:DropDownList ID="DDL_category" CssClass="form-control" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
 
@@ -50,7 +50,7 @@
         </div>
         <div style="width: 100%; height: auto; margin-left: auto; margin-right: auto;">
             <h3>Lista de ingredientes</h3>
-            <asp:GridView runat="server" ID="grdIngredientes" DataKeyNames="in_ingredient"
+            <asp:GridView runat="server" ID="grdIngredientes" DataKeyNames="in_ingredient" Width="100%"
                 AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333"
                 GridLines="None" ShowFooter="False"
                 OnRowCommand="grdIngredientes_RowCommand"
@@ -194,6 +194,4 @@
             </asp:GridView>
         </div>
     </div>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 </asp:Content>
