@@ -58,20 +58,7 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.TextBox tbox_price;
         
         /// <summary>
-<<<<<<< HEAD
         /// Control tbox_factor.
-=======
-        /// TextBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
-        /// <summary>
-        /// tbox_factor control.
->>>>>>> e7876b1f0842b4748542fa8257af3ab520805fcb
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -98,9 +85,6 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.DropDownList DDL_origin;
         
         /// <summary>
-<<<<<<< HEAD
-        /// Control lbl_msg.
-=======
         /// file_image control.
         /// </summary>
         /// <remarks>
@@ -109,9 +93,6 @@ namespace recipes.Views {
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload file_image;
         
-        /// <summary>
-        /// lbl_msg control.
->>>>>>> e7876b1f0842b4748542fa8257af3ab520805fcb
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

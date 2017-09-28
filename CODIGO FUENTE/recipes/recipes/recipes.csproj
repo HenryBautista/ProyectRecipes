@@ -160,7 +160,6 @@
     <Content Include="Views\PrincipalView.aspx" />
     <Content Include="Views\Promotions.aspx" />
     <Content Include="Views\RecipeDetailView.aspx" />
-    <Content Include="Views\RecipePeopleView.aspx" />
     <Content Include="Views\RegisterIngredientView.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
     <Content Include="Views\RegisterPromotion.aspx" />
@@ -289,13 +288,6 @@
     </Compile>
     <Compile Include="Views\RecipeDetailView.aspx.designer.cs">
       <DependentUpon>RecipeDetailView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RecipePeopleView.aspx.cs">
-      <DependentUpon>RecipePeopleView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\RecipePeopleView.aspx.designer.cs">
-      <DependentUpon>RecipePeopleView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\recipes.Master.cs">
       <DependentUpon>recipes.Master</DependentUpon>
