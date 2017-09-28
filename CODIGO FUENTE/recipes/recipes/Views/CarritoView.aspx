@@ -8,6 +8,11 @@
             cursor:pointer;
         }
     </style>
+    <script>
+        function confirmation() {
+            return confirm("Esta seguro que desea realizar el pedido?");
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
