@@ -17,7 +17,7 @@ namespace recipes.Services
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "S1");
                 command.Parameters.AddWithValue("i_concept", concept);
-                result = GeneralServices.ExecuteQuery(command, "recipes..sp_concept");
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_concept");
             }
             catch (Exception ex)
             {

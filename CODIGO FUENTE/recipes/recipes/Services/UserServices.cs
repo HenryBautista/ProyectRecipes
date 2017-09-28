@@ -30,7 +30,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_phone", phone);
                 command.Parameters.AddWithValue("i_master", master);
                 command.Parameters.AddWithValue("i_password", pass);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_user");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_user");
                 return "success";
 
             }
@@ -58,7 +58,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_last_name", last);
                 command.Parameters.AddWithValue("i_mother_last_name", mlast);
                 command.Parameters.AddWithValue("i_phone", phone);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_user");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_user");
                 return "success";
 
             }
@@ -74,7 +74,7 @@ namespace recipes.Services
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "F1");
                 command.Parameters.AddWithValue("i_mail", mail);
-                DataTable table = GeneralServices.ExecuteQuery(command, "recipes..sp_user");
+                DataTable table = GeneralServices.ExecuteQuery(command, "recipes2..sp_user");
                 if (table.Rows.Count >= 1)
                     return true;
                 else
@@ -93,7 +93,7 @@ namespace recipes.Services
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "S3");
                 command.Parameters.AddWithValue("i_user", user);
-                return GeneralServices.ExecuteQuery(command, "recipes..sp_user");
+                return GeneralServices.ExecuteQuery(command, "recipes2..sp_user");
             }
             catch (Exception)
             {
@@ -107,7 +107,7 @@ namespace recipes.Services
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "S2");
                 command.Parameters.AddWithValue("i_mail", mail);
-                return GeneralServices.ExecuteQuery(command, "recipes..sp_user");
+                return GeneralServices.ExecuteQuery(command, "recipes2..sp_user");
             }
             catch (Exception)
             {

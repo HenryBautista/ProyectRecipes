@@ -25,7 +25,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_nutrient", nutri);
                 command.Parameters.AddWithValue("i_ingredient", ingre);
                 command.Parameters.AddWithValue("i_quantity", qty);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_ingredient_nutrient");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_ingredient_nutrient");
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_action", "F1");
                 command.Parameters.AddWithValue("i_nutrient", nutri);
                 command.Parameters.AddWithValue("i_ingredient", in_ingre);
-                result = GeneralServices.ExecuteQuery(command, "recipes..sp_ingredient_nutrient");
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_ingredient_nutrient");
             }
             catch (Exception ex)
             {

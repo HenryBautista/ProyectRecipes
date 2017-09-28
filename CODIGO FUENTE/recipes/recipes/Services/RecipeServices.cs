@@ -29,7 +29,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_total_cost", tc);
                 command.Parameters.AddWithValue("i_observation", obs);
                 command.Parameters.AddWithValue("i_of_user", usr);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_recipe");
             }
             catch (Exception ex)
             {
@@ -45,7 +45,7 @@ namespace recipes.Services
             {
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "S1");
-                result = GeneralServices.ExecuteQuery(command, "recipes..sp_recipe");
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_recipe");
             }
             catch (Exception)
             {

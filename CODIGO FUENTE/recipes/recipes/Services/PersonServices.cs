@@ -24,7 +24,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_person", person);
                 command.Parameters.AddWithValue("i_name", name);
                 command.Parameters.AddWithValue("i_user", usr);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_person");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_person");
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace recipes.Services
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "S3");
                 command.Parameters.AddWithValue("i_user", usr);
-                result = GeneralServices.ExecuteQuery(command, "recipes..sp_person");
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_person");
             }
             catch (Exception ex)
             {
@@ -58,7 +58,7 @@ namespace recipes.Services
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "S2");
                 command.Parameters.AddWithValue("i_person", person);
-                result = GeneralServices.ExecuteQuery(command, "recipes..sp_person");
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_person");
             }
             catch (Exception ex)
             {

@@ -152,7 +152,6 @@
     <Content Include="Views\CarritoView.aspx" />
     <Content Include="Views\Contact.aspx" />
     <Content Include="Views\ContactUsView.aspx" />
-    <Content Include="Views\CustomRecipesView.aspx" />
     <Content Include="Views\DetailShiping.aspx" />
     <Content Include="Views\EditRecipeView.aspx" />
     <Content Include="Views\IngredientNutrientView.aspx" />
@@ -234,13 +233,6 @@
     </Compile>
     <Compile Include="Views\ContactUsView.aspx.designer.cs">
       <DependentUpon>ContactUsView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CustomRecipesView.aspx.cs">
-      <DependentUpon>CustomRecipesView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\CustomRecipesView.aspx.designer.cs">
-      <DependentUpon>CustomRecipesView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\DetailShiping.aspx.cs">
       <DependentUpon>DetailShiping.aspx</DependentUpon>

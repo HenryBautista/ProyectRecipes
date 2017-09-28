@@ -20,10 +20,10 @@
                         <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">Imagen<span>Inicio </span></h1>
                         <div>
                             <label for="ImageFile">Seleccionar Imagen</label>
-                            <input type="file" id="ImageFile" name="ImageFiles" onchange="showimagepreview(this)" />
+                            <input type="file" id="files" name="ImageFiles" />
                         </div>
-                        <div class="overlay hm-white-slight z-depth-1-half">
-                            <asp:Image ID="imageCabecera" runat="server" />
+                        <div class="overlay hm-white-slight z-depth-1-half col-md-10">
+                                    <output id="list"></output>
                         </div>
                     </div>
                 </div>
@@ -34,16 +34,29 @@
         <!-- .containe close -->
     </section>
     <script type="text/javascript">
-        function showimagepreview(input) {
-
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-
-                    document.getElementsByTagName("imageCabecera")[0].setAttribute("src", e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+      function archivo(evt) {
+          var files = evt.target.files; // FileList object
+             
+          // Obtenemos la imagen del campo "file".
+          for (var i = 0, f; f = files[i]; i++) {
+              //Solo admitimos imágenes.
+              if (!f.type.match('image.*')) {
+                  continue;
+              }
+             
+              var reader = new FileReader();
+             
+              reader.onload = (function(theFile) {
+                  return function(e) {
+                      // Insertamos la imagen
+                      document.getElementById("list").innerHTML = ['<img class="img-responsive" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
+                  };
+              })(f);
+             
+              reader.readAsDataURL(f);
+          }
+      }
+             
+        document.getElementById('files').addEventListener('change', archivo, false);
     </script>
 </asp:Content>

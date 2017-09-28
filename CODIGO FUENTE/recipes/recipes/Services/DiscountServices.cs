@@ -24,7 +24,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_recipe", recipe);
                 command.Parameters.AddWithValue("i_state", state);
                 command.Parameters.AddWithValue("i_discount_quantity", qty);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_discount");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_discount");
             }
             catch (Exception ex)
             {

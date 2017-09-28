@@ -23,7 +23,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_user_recipe", u_recipe);
                 command.Parameters.AddWithValue("i_user", usr);
                 command.Parameters.AddWithValue("i_recipe", recipe);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_user_recipe");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_user_recipe");
             }
             catch (Exception ex)
             {

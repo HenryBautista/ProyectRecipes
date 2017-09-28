@@ -29,7 +29,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_factor", factor);
                 command.Parameters.AddWithValue("i_category", category);
                 command.Parameters.AddWithValue("i_origin", origin);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_ingredient");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_ingredient");
             }
             catch (Exception ex)
             {
@@ -47,7 +47,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_action", "F2");
                 command.Parameters.AddWithValue("i_ingredient", in_ingredient);
                 command.Parameters.AddWithValue("i_unit", nGrid);
-                result = GeneralServices.ExecuteQuery(command, "recipes..sp_ingredient");
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_ingredient");
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace recipes.Services
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "F1");
                 command.Parameters.AddWithValue("i_ingredient_id", id);
-                result = GeneralServices.ExecuteQuery(command, "recipes..sp_ingredient");
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_ingredient");
             }
             catch (Exception ex)
             {

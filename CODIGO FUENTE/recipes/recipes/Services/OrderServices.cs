@@ -25,7 +25,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_user", usr);
                 command.Parameters.AddWithValue("i_total_quantity", tqty);
                 command.Parameters.AddWithValue("i_total_price", tp);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_order");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_order");
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_action", "U3");
                 command.Parameters.AddWithValue("i_order_date", o_date);
                 command.Parameters.AddWithValue("i_user", usr);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_order");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_order");
             }
             catch (Exception ex)
             {

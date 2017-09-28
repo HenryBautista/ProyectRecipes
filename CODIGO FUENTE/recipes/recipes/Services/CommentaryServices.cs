@@ -23,7 +23,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_commentary", commentary);
                 command.Parameters.AddWithValue("i_recipe", recipe);
                 command.Parameters.AddWithValue("i_text", text);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_commentary");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_commentary");
             }
             catch (Exception ex)
             {

@@ -26,7 +26,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_quantity", qty);
                 command.Parameters.AddWithValue("i_price", price);
                 command.Parameters.AddWithValue("i_person", person);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_recipe_order");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_recipe_order");
             }
             catch (Exception ex)
             {

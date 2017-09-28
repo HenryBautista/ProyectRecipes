@@ -27,7 +27,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_text2", txt2);
                 command.Parameters.AddWithValue("i_image1", image1);
                 command.Parameters.AddWithValue("i_image2", image2);
-                GeneralServices.ExecuteQuery(command, "recipes..sp_promotion");
+                GeneralServices.ExecuteQuery(command, "recipes2..sp_promotion");
             }
             catch (Exception ex)
             {
