@@ -19,6 +19,8 @@
     <div class="container">
         <div class="detail-recImage">
             <asp:Image ID="ImagenRecipe" runat="server" ImageUrl="~/Images/RecipePhotos/comida.jpg" class="recImage" />
+            <a href="#">¿Como se prepara?</a>
+            <iframe width="400" height="315" src="https://www.youtube.com/embed/iQX6OlqyfY4" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="detail-recipe">
             <div class="lblRecipeName-detail">

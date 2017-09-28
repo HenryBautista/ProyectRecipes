@@ -118,15 +118,15 @@
                                                         </a>
                                                         <ul class="dropdown-menu">
                                                             <li><a href="../Views/StartPageView.aspx#blog">Mercado Virtual de ingredientes</a></li>
-                                                            <li><a href="../Views/RecipesView.aspx">Recetas sugerias</a></li>
-                                                            <li><a href="../Views/RecipesView.aspx">Recetas personalizadas</a></li>
+                                                            <li><a href="../Views/StartPageView.aspx">Recetas sugerias</a></li>
+                                                            <li><a href="../Views/StartPageView.aspx">Recetas personalizadas</a></li>
                                                         </ul>
                                                     </li>
                                                     <li>
                                                         <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administracion
                                                         </a>
                                                         <ul class="dropdown-menu">
-                                                            <li><a href="../Views/RegisterIngredientView.aspx">Nutriente</a></li>
+                                                            <li><a href="../Views/RegisterNutrient.aspx">Nutriente</a></li>
                                                             <li><a href="../Views/RegisterIngredientView.aspx">Ingrediente</a></li>
                                                             <li><a href="../Views/RegisterPromotion.aspx">Registrar promocion</a></li>
                                                             <li><a href="../Views/RegisterRecipeView.aspx">Nueva receta</a></li>

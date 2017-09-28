@@ -8,6 +8,11 @@
             cursor:pointer;
         }
     </style>
+    <script>
+        function confirmation() {
+            return confirm("Esta seguro que desea realizar el pedido?");
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -32,7 +37,7 @@
                     <br />
                     <label runat="server" id="lbl_msg" class="col-lg-2 label-danger control-label"></label>
                     <br />
-                    <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn-form" OnClick="ConfirmBuy"/>
+                    <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn-form" OnClick="ConfirmBuy" OnClientClick="return confirmation();"/>
                     <asp:Label ID="user_id" Visible="false" runat="server"></asp:Label>
                 </div>
             </div>
