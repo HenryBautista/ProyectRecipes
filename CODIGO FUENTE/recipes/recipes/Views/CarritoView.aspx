@@ -32,7 +32,7 @@
                     <br />
                     <label runat="server" id="lbl_msg" class="col-lg-2 label-danger control-label"></label>
                     <br />
-                    <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn-form" OnClick="ConfirmBuy"/>
+                    <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn-form" OnClick="ConfirmBuy" OnClientClick="return confirmation();"/>
                     <asp:Label ID="user_id" Visible="false" runat="server"></asp:Label>
                 </div>
             </div>
