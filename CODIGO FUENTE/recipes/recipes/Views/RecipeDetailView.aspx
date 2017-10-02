@@ -17,10 +17,13 @@
         });
     </script>
     <div class="container">
-        <div class="detail-recImage">
-            <asp:Image ID="ImagenRecipe" runat="server" ImageUrl="~/Images/RecipePhotos/comida.jpg" class="recImage" />
-            <a href="#">¿Como se prepara?</a>
-            <iframe width="400" height="315" src="https://www.youtube.com/embed/iQX6OlqyfY4" frameborder="0" allowfullscreen></iframe>
+        <div class="row">
+            <div class="col-sm-6">
+                <iframe style="min-width:100%; min-height:350px" src="https://www.youtube.com/embed/iQX6OlqyfY4" frameborder="0" allowfullscreen class="img-responsive"></iframe>
+            </div>
+            <div class="col-sm-6">
+                <asp:Image ID="ImagenRecipe" runat="server" ImageUrl="~/Images/RecipePhotos/comida.jpg" class="img-responsive" />
+            </div>
         </div>
         <div class="detail-recipe">
             <div class="lblRecipeName-detail">

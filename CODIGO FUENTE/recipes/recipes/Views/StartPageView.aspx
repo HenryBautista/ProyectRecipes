@@ -12,7 +12,7 @@
                 <div class="col-md-12">
                     <div class="block">
                         <%--<img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms" src="images/cooker-img.png" alt="cooker-img">--%>
-                        <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">Somos <span>Resetas Bolivia</span>
+                        <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">Somos <span>Recetas Bolivia</span>
                             <%--<br />
                             Comer bien <span>y sentirse bien</span>--%>
                         </h1>
@@ -71,7 +71,7 @@
                                         <div class="item">
                                             <div style="width: 100%;">
                                                 <div class="div-prImages" style="float: left; width: 50%;">
-                                                    <asp:Image ImageUrl='<%#Bind("pr_image1") %>' runat="server" ID="prImage1" CssClass="img-responsive" />
+                                                    <asp:Image ImageUrl='<%#Bind("pr_image") %>' runat="server" ID="prImage1" CssClass="img-responsive" />
                                                 </div>
                                                 <div class="div-prDetalles" style="float: left; width: 50%;">
                                                     <div class="div-subprDetalles" style="margin: 20px; width: 100%;">
@@ -81,7 +81,7 @@
                                                         <br />
                                                         <div>
                                                             <p>
-                                                                <asp:Label Text='<%#Bind("pr_text1") %>' runat="server" ID="lblTexto1" />
+                                                                <asp:Label Text='<%#Bind("pr_text") %>' runat="server" ID="lblTexto1" />
                                                             </p>
                                                         </div>
                                                         <br />
@@ -119,7 +119,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h1 class="heading">Ultimas <span>Recetas</span> para <span>Ver</span></h1>
+                        <h1 class="heading">Nuestros <span>Productos</span> los mejores <span>Ingredientes</span></h1>
                         <ul>
                             <asp:Repeater ID="repeateringredients" runat="server">
                                 <ItemTemplate>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using recipes.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,16 @@ namespace recipes.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                BindData();
+            }
+        }
 
+        private void BindData()
+        {
+            grdConsultas.DataSource = GeneralServices.Show_Data_table("consult","S3",null);
+            grdConsultas.DataBind();
         }
     }
 }

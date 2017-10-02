@@ -9,7 +9,7 @@ namespace recipes.Services
 {
     public static class IngredientServices
     {
-        public static string InsertOrUpdate(int? i_ingre, string ingre, string name, int unit, float cost, float factor, int category, int origin)
+        public static string InsertOrUpdate(int? i_ingre, string ingre,string image, string name, int unit, float cost,int qty, int category, int origin)
         {
             try
             {
@@ -23,10 +23,12 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_action", type);
                 command.Parameters.AddWithValue("i_ingredient", i_ingre);
                 command.Parameters.AddWithValue("i_ingredient_id", ingre);
+                command.Parameters.AddWithValue("i_image", image);
                 command.Parameters.AddWithValue("i_name", name);
                 command.Parameters.AddWithValue("i_unit", unit);
                 command.Parameters.AddWithValue("i_cost", cost);
-                command.Parameters.AddWithValue("i_factor", factor);
+                command.Parameters.AddWithValue("i_quantity", qty);
+                command.Parameters.AddWithValue("i_factor", (cost/qty));
                 command.Parameters.AddWithValue("i_category", category);
                 command.Parameters.AddWithValue("i_origin", origin);
                 GeneralServices.ExecuteQuery(command, "recipes2..sp_ingredient");

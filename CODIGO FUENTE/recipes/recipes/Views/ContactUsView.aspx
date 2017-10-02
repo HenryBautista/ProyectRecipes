@@ -7,18 +7,17 @@
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="name" class="h4">Name</label>
-                <input type="text" runat="server" class="form-control" id="name" placeholder="Introduce Nombre" required="required" />
+                <input type="text" runat="server" class="form-control" id="txt_name" placeholder="Introduce Nombre" required="required" />
             </div>
             <div class="form-group col-sm-6">
                 <label for="email" class="h4">Email</label>
-                <input type="text" runat="server" class="form-control" id="email" placeholder="Introduce email" required="required" />
+                <input type="" runat="server" class="form-control" id="txt_email" placeholder="Introduce Email" required="required" />
             </div>
         </div>
         <div class="form-group">
             <label for="message" class="h4 ">Message</label>
-            <textarea id="message" runat="server" class="form-control" rows="5" placeholder="Escriba su mensaje" required="required"></textarea>
+            <textarea id="txt_message" runat="server" class="form-control" rows="5" placeholder="Escriba su mensaje" required="required"></textarea>
         </div>
-        <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Enviar</button>
-
+        <button type="submit" id="form_submit" runat="server" class="btn btn-success btn-lg pull-right " onclick="btn_SaveConsult">Enviar</button>
     </div>
 </asp:Content>

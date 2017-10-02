@@ -6,12 +6,12 @@
     <div class="container" style="width: 80%; margin-left: auto; margin-right: auto;margin-top:70px;">
         <h2>Detalle de consultas</h2>
         <br />
-        <asp:GridView runat="server" ID="grdConsultas" Width="100%" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="co_consultas" AllowPaging="True">
+        <asp:GridView runat="server" ID="grdConsultas" Width="100%" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="co_consult" AllowPaging="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:TemplateField HeaderText="Nº" ItemStyle-Width="20px">
                     <ItemTemplate>
-                        <asp:Label Text='<%#Bind("co_consultas") %>' ID="lblNumero" runat="server" />
+                        <asp:Label Text='<%#Bind("co_consult") %>' ID="lblNumero" runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Fecha">
@@ -26,12 +26,12 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Email">
                     <ItemTemplate>
-                        <asp:HyperLink NavigateUrl='<%#Bind("co_name") %>' runat="server" Text='<%#Bind("co_name") %>' ID="lblEmail"></asp:HyperLink>
+                        <asp:HyperLink NavigateUrl='<%# Bind("co_email", "mailto:{0}") %>' runat="server" Text='<%#Bind("co_email") %>' ID="lblEmail"></asp:HyperLink>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Consulta" ItemStyle-Width="250px">
                     <ItemTemplate>
-                        <asp:Label Text='<%#Bind("co_consulta") %>' id="lblConsulta" runat="server"/>
+                        <asp:Label Text='<%#Bind("co_text") %>' id="lblConsulta" runat="server"/>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Atendido">

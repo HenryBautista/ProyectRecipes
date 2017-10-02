@@ -9,7 +9,7 @@ namespace recipes.Services
 {
     public static class RecipeServices
     {
-        public static string InsertOrUpdate(int? recipe, string i_recipe, string name, int turn, string image, float tc, string obs, int usr)
+        public static string InsertOrUpdate(int? recipe, string i_recipe, string name, int turn, string image, string url, float tc, string obs, int usr)
         {
             try
             {
@@ -26,6 +26,7 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_name", name);
                 command.Parameters.AddWithValue("i_turn", turn);
                 command.Parameters.AddWithValue("i_image", image);
+                command.Parameters.AddWithValue("i_url_video", url);
                 command.Parameters.AddWithValue("i_total_cost", tc);
                 command.Parameters.AddWithValue("i_observation", obs);
                 command.Parameters.AddWithValue("i_of_user", usr);

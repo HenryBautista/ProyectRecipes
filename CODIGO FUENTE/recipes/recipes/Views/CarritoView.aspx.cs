@@ -28,7 +28,7 @@ namespace recipes.Views
             DataTable result2 = GeneralServices.Show_Data_table("user","F2", Convert.ToInt32(id));
             if (result.Rows.Count>0 && result2.Rows.Count > 0)
             {                                
-                txtFecha.Text = result.Rows[0]["or_order_date"].ToString();
+                //txtFecha.Text = result.Rows[0]["or_order_date"].ToString();
                 lbl_cantidad.Text = result.Rows[0]["or_total_quantity"].ToString();
                 lbl_cost.Text = result.Rows[0]["or_total_price"].ToString();
                 grdOrden.DataSource = result2;
@@ -68,8 +68,8 @@ namespace recipes.Views
         {
             string now = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff");
             DateTime actual = Convert.ToDateTime(now);
-            DateTime fecha = Convert.ToDateTime(txtFecha.Text);
-            int result = DateTime.Compare(fecha, actual);
+            //DateTime fecha = Convert.ToDateTime(txtFecha.Text);
+            int result = DateTime.Compare(DateTime.Now, actual);
             if (result<=0)
             {
                 lbl_msg.InnerText = "La fecha ya paso o no es correcta";
@@ -79,7 +79,7 @@ namespace recipes.Views
         }
         protected void ConfirmarOrden()
         {            
-            OrderServices.ConfirmOrder(Convert.ToInt32(user_id.Text) ,Convert.ToDateTime(txtFecha.Text));
+            OrderServices.ConfirmOrder(Convert.ToInt32(user_id.Text) ,Convert.ToDateTime("txtFecha.Text"));
         }
 
         protected void grdOrden_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -189,6 +189,11 @@ namespace recipes.Views
                     b1.Visible = true;
                 }
             }
+        }
+
+        protected void btn_cart_Click(object sender, EventArgs e)
+        {
+
         }
 
         

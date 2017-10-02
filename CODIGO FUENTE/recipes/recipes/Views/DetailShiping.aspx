@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h1 class="heading">Ultimas <span>Recetas</span> para <span>Ver</span></h1>
+                        <h1 class="heading">Lista de envios de <span>Productos</span> </h1>
                         <asp:GridView ID="grdPeople" runat="server">
 
                         </asp:GridView>

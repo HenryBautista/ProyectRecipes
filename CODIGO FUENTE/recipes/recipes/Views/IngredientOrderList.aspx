@@ -6,44 +6,43 @@
     <div style="width: 80%; margin-left: auto; margin-right: auto;margin-top:70px">
         <h2>Lista de ingredientes de pedidos</h2>
         <br />
-        <asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AllowPaging="True">
+        <asp:GridView ID="Grd_ingredient" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AllowPaging="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:TemplateField HeaderText="Fecha">
                     <ItemTemplate>
-                        <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("") %>'></asp:Label>
+                        <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("or_order_date") %>'>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Usuario">
                     <ItemTemplate>
-                        <asp:Label ID="lblUsuario" runat="server" Text='<%# Bind("") %>' />
+                        <asp:Label ID="lblUsuario" runat="server" Text='<%# Bind("us_name") %>' />
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Receta">
+<%--                <asp:TemplateField HeaderText="Receta">
                     <ItemTemplate>
-                        <asp:Label ID="lblReceta" runat="server" Text='<%# Bind("") %>' />
+                        <asp:Label ID="lblReceta" runat="server" Text='<%# Bind("or_order_date") %>' />
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
                 <asp:TemplateField HeaderText="Ingrediente">
                     <ItemTemplate>
-                        <asp:Label ID="lblIngrediente" runat="server" Text='<%# Bind("") %>' />
+                        <asp:Label ID="lblIngrediente" runat="server" Text='<%# Bind("in_name") %>' />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Unidad de medida">
                     <ItemTemplate>
-                        <asp:Label ID="lblUnidadMedida" runat="server" Text='<%# Bind("") %>' />
+                        <asp:Label ID="lblUnidadMedida" runat="server" Text='<%# Bind("UNIT") %>' />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Cantidad">
                     <ItemTemplate>
-                        <asp:Label ID="lblCantidad" runat="server" Text='<%# Bind("") %>' />
+                        <asp:Label ID="lblCantidad" runat="server" Text='<%# Bind("ro_quantity") %>' />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Atendido" HeaderStyle-Wrap="true">
                     <ItemTemplate>
-                        <asp:CheckBox Checked='<%# Eval("") %>' runat="server" Style="margin-left: auto; margin-right: auto;" />
+                        <asp:CheckBox Checked='<%# Bind("ro_ok") %>' runat="server" Style="margin-left: auto; margin-right: auto;" />
                     </ItemTemplate>
-
                     <HeaderStyle Wrap="True"></HeaderStyle>
                     <ItemStyle Width="20px" />
                 </asp:TemplateField>
@@ -58,7 +57,6 @@
             <SortedAscendingHeaderStyle BackColor="#246B61" />
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
-
         </asp:GridView>
     </div>
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterView.aspx.cs" Inherits="recipes.Views.RegisterView" MasterPageFile="~/Views/recipes.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterView.aspx.cs" Inherits="recipes.Views.RegisterView" MasterPageFile="~/Views/recipesHTT.Master"%>
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link href="../Content/bootstrap.min.css" rel="stylesheet"  type="text/css"/>
     <script src="../Scripts/jquery-1.9.1.min.js"></script>
@@ -9,12 +9,10 @@
     <asp:ScriptManager ID="SM" runat="server">
 
     </asp:ScriptManager>
+    <section>
     <div class="container-fluid">
-        <div class="row"> 
-            <div class="col-md-8 hidden-xs"  style="background-color:black">
-                <img src="../Images/RecipePhotos/macdonalds-japones-1.jpg" style="height:100%;width:100%; opacity:0.5"/>
-            </div>
-            <div class="col-sm-12 col-md-3" style="background-color:whitesmoke"> 
+        <div class="form"> 
+            <div class="col-sm-6 center-block" style="background-color:whitesmoke; margin-left:auto; margin-right:auto"> 
                 <div>
                    <div class="form-group">
                        <label>Nombre:</label>
@@ -46,4 +44,5 @@
             </div>
         </div>
     </div>
+    </section>
 </asp:Content>

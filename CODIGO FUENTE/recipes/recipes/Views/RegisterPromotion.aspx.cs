@@ -107,27 +107,14 @@ namespace recipes.Views
                     string title = ((TextBox)grdPromotion.Rows[index].FindControl("txttitle")).Text;
                     string texto = ((TextBox)grdPromotion.Rows[index].FindControl("txt1")).Text;
                     FileUpload img1 = ((FileUpload)grdPromotion.Rows[index].FindControl("img1"));
-                    FileUpload img2 = ((FileUpload)grdPromotion.Rows[index].FindControl("img2"));
                     if (check_fields(name,title,texto, index) && img1.HasFile )
                     {
                         string strname = img1.FileName.ToString();
                         string strname2 = null;
                         strname = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff") + strname;
-                        img1.PostedFile.SaveAs(Server.MapPath("~/Images/RecipePhotos/") + strname);
-                        strname = "~/Images/RecipePhotos/" + strname;
-                        if (img2.HasFile)
-                        {
-                            strname2 = img2.FileName.ToString();
-                            strname2 = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff") + strname2;
-                            img2.PostedFile.SaveAs(Server.MapPath("~/Images/RecipePhotos/") + strname2);
-                            strname2 = "~/Images/RecipePhotos/" + strname2;
-
-                            PromotionServices.InsertOrUpdate(id_pro, name, title, texto, null, strname, strname2);
-                        }
-                        else
-                        {
-                            PromotionServices.InsertOrUpdate(id_pro, name, title, texto, null, strname, strname2);
-                        }
+                        img1.PostedFile.SaveAs(Server.MapPath("~/Images/PromotionPhotos/") + strname);
+                        strname = "~/Images/PromotionPhotos/" + strname;
+                        PromotionServices.InsertOrUpdate(id_pro, name, title, texto, null, strname, strname2);
                         grdPromotion.EditIndex = -1;
                         BindData();
                     }
@@ -148,13 +135,11 @@ namespace recipes.Views
                     BindData();
                     break;
                 case "delete_promotion":
-                    string result = GeneralServices.Delete_this("promotion", "recipes..sp_promotion", id_pro.ToString());
+                    string result = GeneralServices.Delete_this("promotion", "recipes2..sp_promotion", id_pro.ToString());
                     if (result == "success")
                     {
                         string ruta1 = ((Image)grdPromotion.Rows[index].FindControl("img1")).ImageUrl;
-                        string ruta2 = ((Image)grdPromotion.Rows[index].FindControl("img2")).ImageUrl;
                         System.IO.File.Delete(Server.MapPath(ruta1));
-                        System.IO.File.Delete(Server.MapPath(ruta2));
                         BindData();
                     }
                     else

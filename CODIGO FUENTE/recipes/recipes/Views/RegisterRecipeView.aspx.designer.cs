@@ -67,15 +67,6 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.FileUpload file_image;
         
         /// <summary>
-        /// tbox_Observation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbox_Observation;
-        
-        /// <summary>
         /// tbox_url control.
         /// </summary>
         /// <remarks>
@@ -83,6 +74,15 @@ namespace recipes.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbox_url;
+        
+        /// <summary>
+        /// tbox_Observation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbox_Observation;
         
         /// <summary>
         /// lblError control.

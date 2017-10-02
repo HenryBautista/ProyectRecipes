@@ -20,11 +20,11 @@
                 <form runat="server">
                     <div class="form-group">
                     <label>Email:</label>
-                    <asp:TextBox type="email" runat="server" class="form-control" id="tbox_email" placeholder="Ingrese su Email"></asp:TextBox>
+                    <asp:TextBox type="email" required="required" runat="server" class="form-control" id="tbox_email" placeholder="Ingrese su Email"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label>Contraseña:</label>
-                    <asp:TextBox runat="server"  type="password" class="form-control" id="tbox_password" placeholder="contraseña"/>
+                    <asp:TextBox runat="server"  type="password" required="required" class="form-control" id="tbox_password" placeholder="contraseña"/>
                 </div>
                     <p class="alert-warning"><label id="lbl_error" runat="server" style="color:red"></label></p>
                     <asp:Button id="btn_access" class="btn btn-success" runat="server" style="width:100%" Text="Aceeder" OnClick="btn_access_Click"> </asp:Button>

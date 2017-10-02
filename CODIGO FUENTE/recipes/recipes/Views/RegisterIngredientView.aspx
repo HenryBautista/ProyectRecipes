@@ -24,22 +24,20 @@
         </div>
         <div class="div-formulario">
             <asp:Label Text="Codigo" runat="server" />
-            <asp:TextBox ID="tbox_code" runat="server" placeholder="Introducir codigo" class="form-control"></asp:TextBox>
+            <asp:TextBox ID="tbox_code" runat="server" required="required" placeholder="Introducir codigo" class="form-control"></asp:TextBox>
 
             <asp:Label Text="Nombre" runat="server" />
-            <asp:TextBox ID="tbox_name" placeholder="Introducir nombre" runat="server" class="form-control"></asp:TextBox>
+            <asp:TextBox ID="tbox_name" placeholder="Introducir nombre" runat="server" required="required" class="form-control"></asp:TextBox>
 
             <asp:Label Text="Unidad de medida" runat="server" />
             <asp:DropDownList ID="DDL_unit" CssClass="form-control" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
 
             <asp:Label Text="Costo" runat="server" />
-            <asp:TextBox ID="tbox_price" placeholder="Costo ingrediente" runat="server" class="txt-form" />
+            <asp:TextBox ID="tbox_price" type="numeric" required="required" placeholder="Costo ingrediente" runat="server" class="form-control" />
             
             <asp:Label Text="Cantidad" runat="server" />
-            <asp:TextBox ID="TextBox1" placeholder="Cantidad de ingrediente" runat="server" class="txt-form" />
+            <asp:TextBox ID="tbox_qty" placeholder="Cantidad de ingrediente" runat="server" required="required" class="form-control" />
 
-            <asp:Label Text="Factor" runat="server" />
-            <asp:TextBox ID="tbox_factor" placeholder="Factor" runat="server" class="txt-form" />
             <br />
             <asp:Label Text="Categoria" runat="server" />
             <asp:DropDownList ID="DDL_category" CssClass="form-control" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
@@ -150,8 +148,7 @@
                             <asp:DropDownList ID="DDLunidad" DataSource='<%# getData(2) %>' SelectedValue='<%# Bind("in_unit")%>' Enabled="false" DataValueField="co_correlative" DataTextField="co_name" runat="server">
                             </asp:DropDownList>
                         </ItemTemplate>
-                    </asp:TemplateField>
-                    
+                    </asp:TemplateField>                    
                     <asp:TemplateField HeaderText="Cantidad">
                         <EditItemTemplate>
                             <asp:TextBox ID="txtqty" runat="server" Text='<%# Bind("in_quantity") %>'></asp:TextBox>
@@ -170,7 +167,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Factor">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtFactor" runat="server" Text='<%# Bind("in_factor") %>'></asp:TextBox>
+                            <asp:label ID="txtFactor" runat="server" Text='<%# Bind("in_factor") %>'></asp:label>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblFactor" runat="server" Text='<%# Bind("in_factor") %>'></asp:Label>

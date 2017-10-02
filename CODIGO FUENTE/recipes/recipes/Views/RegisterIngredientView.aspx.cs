@@ -30,8 +30,12 @@ namespace recipes.Views
         protected void btn_crear_Click(object sender, EventArgs e)
         {
             if (check_fields())
-            {
-                string result = IngredientServices.InsertOrUpdate(null, tbox_code.Text, tbox_name.Text, Int32.Parse(DDL_unit.SelectedValue), float.Parse(tbox_price.Text), float.Parse(tbox_factor.Text), Int32.Parse(DDL_category.SelectedValue), Int32.Parse(DDL_origin.SelectedValue));
+            {                
+                string strname = file_image.FileName.ToString();
+                strname = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff") + strname;
+                file_image.PostedFile.SaveAs(Server.MapPath("~/Images/RecipePhotos/") + strname);
+                strname = "~/Images/RecipePhotos/" + strname;
+                string result = IngredientServices.InsertOrUpdate(null, tbox_code.Text,strname, tbox_name.Text, Int32.Parse(DDL_unit.SelectedValue), float.Parse(tbox_price.Text),Int32.Parse(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue), Int32.Parse(DDL_origin.SelectedValue));
                 if (result == "success")
                 {
                     BindData();
@@ -65,15 +69,20 @@ namespace recipes.Views
                 lbl_msg.InnerText = "Ingrese un Costo";
                 return false;
             }
-            if (tbox_factor.Text == "")
+            if (tbox_qty.Text == "")
             {
-                lbl_msg.InnerText = "Ingrese un Factor";
+                lbl_msg.InnerText = "Ingrese una cantidad";
+                return false;
+            }
+            if (!file_image.HasFile)
+            {
+                lbl_msg.InnerText = "Ingrese una imagen";
                 return false;
             }
             try
             {
                 float n = float.Parse(tbox_price.Text);
-                n = float.Parse(tbox_factor.Text);
+                n = float.Parse(tbox_qty.Text);
             }
             catch (Exception e)
             {
@@ -84,7 +93,7 @@ namespace recipes.Views
             lbl_msg.InnerText = "";
             return true;
         }
-        private bool check_fields(string cod,string name,string price,string factor, int index)
+        private bool check_fields(string cod,string name,string price,string qty, int index)
         {
             Label msg = grdIngredientes.Rows[index].FindControl("lblmsg") as Label;
 
@@ -108,15 +117,16 @@ namespace recipes.Views
                 msg.Text = "Ingrese un Costo";
                 return false;
             }
-            if (factor == "")
+            if (qty == "")
             {
-                msg.Text = "Ingrese un Factor";
+                msg.Text = "Ingrese una cantidad";
                 return false;
             }
+
             try
             {
                 float n = float.Parse(price);
-                n = float.Parse(factor);
+                n = float.Parse(qty);
             }
             catch (Exception e)
             {
@@ -212,19 +222,39 @@ namespace recipes.Views
                     BindData();
                     break;
                 case "update_ingredient":
+                    FileUpload img1 = ((FileUpload)grdIngredientes.Rows[index].FindControl("img1"));
                     string cod = ((TextBox)grdIngredientes.Rows[index].FindControl("txtCodigo")).Text;
                     string name = ((TextBox)grdIngredientes.Rows[index].FindControl("txtNombre")).Text;
                     string price = ((TextBox)grdIngredientes.Rows[index].FindControl("txtCosto")).Text;
-                    string factor = ((TextBox)grdIngredientes.Rows[index].FindControl("txtFactor")).Text;
+                    string qty = ((TextBox)grdIngredientes.Rows[index].FindControl("txtqty")).Text;
+                    string factor = (double.Parse(price)/Int32.Parse(qty)).ToString();
                     string unit = ((DropDownList)grdIngredientes.Rows[index].FindControl("DDLUnidadMedida")).SelectedValue;
                     string cat = ((DropDownList)grdIngredientes.Rows[index].FindControl("DDLCategory")).SelectedValue;
                     string org = ((DropDownList)grdIngredientes.Rows[index].FindControl("DDLOrigin")).SelectedValue;
-                    if (check_fields(cod,name,price,factor,index))
+                    if (check_fields(cod,name,price,qty,index)&&img1.HasFile)
                     {
+                        string strname = file_image.FileName.ToString();
+                        strname = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff") + strname;
+                        file_image.PostedFile.SaveAs(Server.MapPath("~/Images/IngredientPhotos/") + strname);
+                        strname = "~/Images/IngredientPhotos/" + strname;
+                        DataTable dt = GeneralServices.Show_Data_table("ingredient", "S2", id_ing);
+                        string ruta1 = dt.Rows[0]["in_image"].ToString();
+                        System.IO.File.Delete(Server.MapPath(ruta1));
                         IngredientServices.InsertOrUpdate(id_ing,
-                            cod,name,Convert.ToInt32(unit),float.Parse( price), float.Parse(factor), Convert.ToInt32(cat), Convert.ToInt32(org));
+                            cod,strname,name,Convert.ToInt32(unit),float.Parse(price),Int32.Parse(qty) , Convert.ToInt32(cat), Convert.ToInt32(org));
                         grdIngredientes.EditIndex = -1;
                         BindData();
+                    }
+                    else
+                    {
+                        if (check_fields(cod,name,price,qty,index))
+                        {
+                            DataTable dt = GeneralServices.Show_Data_table("ingredient", "S2", id_ing);
+                            IngredientServices.InsertOrUpdate(id_ing,
+                            cod,dt.Rows[0]["in_image"].ToString(),name,Convert.ToInt32(unit),float.Parse(price),Int32.Parse(qty) , Convert.ToInt32(cat), Convert.ToInt32(org));
+                            grdIngredientes.EditIndex = -1;
+                            BindData();
+                        }
                     }
                     break;
                 case "cancel_ingredient":
@@ -232,9 +262,12 @@ namespace recipes.Views
                     BindData();
                     break;
                 case "delete_ingredient":
-                    string result = GeneralServices.Delete_this("ingredient", "recipes..sp_ingredient", id_ing.ToString());
-                    if (result == "success")
+                    string result = GeneralServices.Delete_this("ingredient", "recipes2..sp_ingredient", id_ing.ToString());
+                    if (result == "success"){
+                        string ruta1 = ((Image)grdIngredientes.Rows[index].FindControl("img1")).ImageUrl;
+                        System.IO.File.Delete(Server.MapPath(ruta1));
                         BindData();
+                    }                        
                     else
                     {
                         Label msg = grdIngredientes.Rows[index].FindControl("lblmsg") as Label;
