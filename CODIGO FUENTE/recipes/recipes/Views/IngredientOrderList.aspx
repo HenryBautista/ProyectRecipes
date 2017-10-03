@@ -41,7 +41,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Atendido" HeaderStyle-Wrap="true">
                     <ItemTemplate>
-                        <asp:CheckBox Checked='<%# Bind("ro_ok") %>' runat="server" Style="margin-left: auto; margin-right: auto;" />
+                        <asp:CheckBox Checked='<%# Bind("ro_ok") %>' ID="chkAtendido" runat="server" Style="margin-left: auto; margin-right: auto;" />
                     </ItemTemplate>
                     <HeaderStyle Wrap="True"></HeaderStyle>
                     <ItemStyle Width="20px" />

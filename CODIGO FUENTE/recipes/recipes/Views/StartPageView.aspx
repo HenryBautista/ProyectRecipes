@@ -120,6 +120,18 @@
                 <div class="col-md-12">
                     <div class="block">
                         <h1 class="heading">Nuestros <span>Productos</span> los mejores <span>Ingredientes</span></h1>
+                        <div class="form-group">
+                            <div class="form-group col-md-4">
+                                <h3 style="color:white;">Origen</h3>
+                                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlOrigen">
+                                </asp:DropDownList>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <h3 style="color:white;">Categoria</h3>
+                                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlCategoria">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
                         <ul>
                             <asp:Repeater ID="repeateringredients" runat="server">
                                 <ItemTemplate>
