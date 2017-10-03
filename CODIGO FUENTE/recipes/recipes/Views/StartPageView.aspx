@@ -122,12 +122,12 @@
                         <h1 class="heading">Nuestros <span>Productos</span> los mejores <span>Ingredientes</span></h1>
                         <div class="form-group">
                             <div class="form-group col-md-4">
-                                <h3 style="color:white;">Origen</h3>
+                                <h3 style="color: white;">Origen</h3>
                                 <asp:DropDownList runat="server" CssClass="form-control" ID="ddlOrigen">
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group col-md-4">
-                                <h3 style="color:white;">Categoria</h3>
+                                <h3 style="color: white;">Categoria</h3>
                                 <asp:DropDownList runat="server" CssClass="form-control" ID="ddlCategoria">
                                 </asp:DropDownList>
                             </div>
@@ -147,18 +147,22 @@
                                                 <%--<asp:Label Text='<%#Bind("in_cantidad") %>' runat="server" ID="lblObservacion" class="recipe-obs" />--%>
                                             </p>
                                             <br />
-                                            <div style="background-color: red; width: 60%">
-                                                <p style="color: white">
-                                                    <asp:Label Text='<%#Bind("in_cost") %>' runat="server" ID="lbl_total_cost" ForeColor="White" Font-Size="18" />
+                                            <div style="background-color: white; width: 60%; margin-left: auto; margin-right: auto;">
+                                                <p style="color: black">
+                                                    <asp:Label Text='<%#Bind("in_cost") %>' Style="color: black; font-size: 30px; font-weight: bolder;" runat="server" ID="lbl_total_cost" ForeColor="White" Font-Size="18" />
                                                     Bs.
                                                 </p>
+                                            </div>
+                                            <div style="background-color: white; width: 100%">
+                                                <asp:Button Text="Comprar" ID="btnComprar" CssClass="btn btn-danger" runat="server" Style="width: 100%;" />
                                             </div>
                                         </div>
                                     </li>
                                 </ItemTemplate>
                             </asp:Repeater>
+                            
                         </ul>
-<%--                        <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" href="#" role="button">Ver mas >></a>--%>
+                        <%--                        <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" href="#" role="button">Ver mas >></a>--%>
                     </div>
                 </div>
                 <!-- .col-md-12 close -->

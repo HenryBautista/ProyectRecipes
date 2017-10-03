@@ -110,7 +110,14 @@
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
             </div>
-            <asp:Button runat="server" ID="Edit" Text="Editar receta" class="btnEdit" OnClick="Edit_Click" />            
+            <div class="form-group" style="width:60%;">
+                <div class="form-group col-md-6">
+                <asp:Button runat="server" ID="Edit" Text="Editar receta" class="btn btn-primary" OnClick="Edit_Click" />  
+            </div>
+             <div class="form-group col-md-6">
+                 <asp:Button Text="Comprar" ID="btnComprar" CssClass="btn btn-danger" runat="server" />
+             </div>
+            </div>
         </div>
     </div>
 </asp:Content>
