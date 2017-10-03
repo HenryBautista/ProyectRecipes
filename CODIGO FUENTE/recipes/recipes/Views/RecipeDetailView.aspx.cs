@@ -14,6 +14,7 @@ namespace recipes.Views
     public partial class RecipeDetailView : System.Web.UI.Page
     {
         int recipe_index;
+        int usr=0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -52,6 +53,15 @@ namespace recipes.Views
                 GridView grdNutrientes = e.Row.FindControl("grdNutrientes") as GridView;
                 grdNutrientes.DataSource = GeneralServices.Show_Data_table("ingredient", "F2", Convert.ToInt32(ingredientId)); ;
                 grdNutrientes.DataBind();
+            }
+        }
+        protected void Carrito_Click(object sender, EventArgs e)
+        {
+            DataTable dt = OrderServices.GetOrdertoUser(usr);
+            string r = Recipe_orderServices.InsertOrUpdate(null, Int32.Parse(dt.Rows[0]["or_order"].ToString()), recipe_index, 1, float.Parse(dt.Rows[0]["or_price"].ToString()),usr);
+            if (r=="success")
+            {
+                
             }
         }
     }

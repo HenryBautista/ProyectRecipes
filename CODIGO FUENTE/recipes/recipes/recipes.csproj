@@ -155,6 +155,7 @@
     <Content Include="Views\ContactUsView.aspx" />
     <Content Include="Views\DetailShiping.aspx" />
     <Content Include="Views\EditRecipeView.aspx" />
+    <Content Include="Views\IngredientListView.aspx" />
     <Content Include="Views\IngredientNutrientView.aspx" />
     <Content Include="Views\IngredientOrderList.aspx" />
     <Content Include="Views\LoginView.aspx" />
@@ -259,6 +260,13 @@
     </Compile>
     <Compile Include="Views\EditRecipeView.aspx.designer.cs">
       <DependentUpon>EditRecipeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IngredientListView.aspx.cs">
+      <DependentUpon>IngredientListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\IngredientListView.aspx.designer.cs">
+      <DependentUpon>IngredientListView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\IngredientNutrientView.aspx.cs">
       <DependentUpon>IngredientNutrientView.aspx</DependentUpon>

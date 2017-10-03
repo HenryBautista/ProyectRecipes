@@ -33,6 +33,7 @@
     <script src="../js/plugins.js"></script>
     <script src="../js/wow.min.js"></script>
     <script src="../js/main.js"></script>
+    <%--<script type="text/javascript" src="../Scripts/jquery-1.9.1.js"></script>--%>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -49,7 +50,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="block">
-                               <%--<nav class="navbar navbar-default">
+                                <%--<nav class="navbar navbar-default">
                           <div class="container-fluid">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
@@ -127,13 +128,13 @@
                                                         <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administracion
                                                         </a>
                                                         <ul class="dropdown-menu">
-                                                            
+
                                                             <li><a href="../Views/StartViewAdministrator.aspx">Nosotros </a></li>
                                                             <li><a href="../Views/RegisterNutrient.aspx">Nutriente</a></li>
                                                             <li><a href="../Views/RegisterIngredientView.aspx">Ingrediente</a></li>
                                                             <li><a href="../Views/RegisterPromotion.aspx">Registrar promocion</a></li>
-                                                            <li><a href="../Views/RegisterRecipeView.aspx">Nueva receta</a></li>                                                            
-                                                            <li><a href="../Views/RecipePeopleView.aspx">Recetas de Usuarios</a></li>                                                          
+                                                            <li><a href="../Views/RegisterRecipeView.aspx">Nueva receta</a></li>
+                                                            <li><a href="../Views/RecipePeopleView.aspx">Recetas de Usuarios</a></li>
                                                             <li><a href="../Views/IngredientOrderList.aspx">Lista de ingredientes pedidos</a></li>
                                                         </ul>
                                                     </li>

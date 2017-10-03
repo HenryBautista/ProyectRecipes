@@ -10,7 +10,7 @@
 namespace recipes.Views {
     
     
-    public partial class ContactUsView {
+    public partial class ContactUsView1 {
         
         /// <summary>
         /// txt_name control.
@@ -20,6 +20,15 @@ namespace recipes.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_name;
+        
+        /// <summary>
+        /// txt_email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_email;
         
         /// <summary>
         /// txt_message control.
@@ -37,6 +46,6 @@ namespace recipes.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton form_submit;
+        protected global::System.Web.UI.WebControls.Button form_submit;
     }
 }

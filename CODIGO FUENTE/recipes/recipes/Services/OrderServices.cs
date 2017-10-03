@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -48,6 +49,21 @@ namespace recipes.Services
                 return ex.Message;
             }
             return "success";
+        }
+        public static DataTable GetOrdertoUser(int usr)
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "F1");
+                command.Parameters.AddWithValue("i_user", usr);
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_order");
+            }
+            catch (Exception ex)
+            {
+            }
+            return result;
         }
     }
 }
