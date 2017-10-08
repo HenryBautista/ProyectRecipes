@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="recetas.master.cs" Inherits="recetas.Views.recetas" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <%--<link href="../bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="../bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../bootstrap-3.3.7/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../bootstrap-3.3.7/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="../bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+    <script src="../bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="../bootstrap-3.3.7/dist/js/npm.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--%>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <style>
+        /* Remove the navbar's default rounded borders and increase the bottom margin */
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+            border: none;
+        }
+
+        li:hover {
+            border-bottom: 3px solid #ff0000;
+        }
+
+        a {
+            color: black;
+        }
+        /* Remove the jumbotron's default bottom margin */
+        .jumbotron {
+            margin-bottom: 0;
+        }
+
+        body {
+            font-family: Calibri;
+        }
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-light" style="background-color: #fff;">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar "></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Recetas Bolivia</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Inicio</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Mercado virtual de ingredientes</a></li>
+                                    <li><a href="#">Recetas sugeridas</a></li>
+                                    <li><a href="#">Recetas personalizadas</a></li>
+                                    <li><a href="#">Planificación del pedido</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Promociones</a></li>
+                            <li><a href="#">Nosotros</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administración <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../Views/RecetaVistaAdmin.aspx">Recetas</a></li>
+                                    <li><a href="#">Ingredientes</a></li>
+                                    <li><a href="#">Nutrientes</a></li>
+                                    <li><a href="#">Nosotros</a></li>
+                                    <li><a href="#">Lista de ingredientes pedidos</a></li>
+                                    <li><a href="#">Recetas de usuarios</a></li>
+                                    <li><a href="#">Nosotros</a></li>
+                                    <li><a href="#">Promociones</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
