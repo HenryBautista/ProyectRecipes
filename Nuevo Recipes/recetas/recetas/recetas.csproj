@@ -211,6 +211,7 @@
     <None Include="packages.config" />
     <Content Include="Views\IngredienteEditAdmin.aspx" />
     <Content Include="Views\IngredienteViewAdmin.aspx" />
+    <Content Include="Views\Login.aspx" />
     <Content Include="Views\NutrienteViewAdmin.aspx" />
     <Content Include="Views\RecetaEditAdmin.aspx" />
     <Content Include="Views\recetas.Master" />
@@ -473,6 +474,7 @@
     <Content Include="bootstrap-3.3.7\package.js" />
     <Content Include="Views\RecetaVistaAdmin.aspx" />
     <Content Include="Views\StartPage.aspx" />
+    <Content Include="Views\UsuarioRegistro.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -493,6 +495,13 @@
     </Compile>
     <Compile Include="Views\IngredienteViewAdmin.aspx.designer.cs">
       <DependentUpon>IngredienteViewAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\NutrienteViewAdmin.aspx.cs">
       <DependentUpon>NutrienteViewAdmin.aspx</DependentUpon>
@@ -529,6 +538,16 @@
     <Compile Include="Views\StartPage.aspx.designer.cs">
       <DependentUpon>StartPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\UsuarioRegistro.aspx.cs">
+      <DependentUpon>UsuarioRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UsuarioRegistro.aspx.designer.cs">
+      <DependentUpon>UsuarioRegistro.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -15,7 +15,7 @@
     <script src="../bootstrap-3.3.7/dist/js/npm.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--%>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -64,7 +64,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Recetas Bolivia</a>
+                        <a class="navbar-brand" href="#" style="background:#eba880; border-radius:0.5px">Recetas <span style="color:#c95918;font-weight:bold;">Bolivia</span></a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
@@ -96,8 +96,8 @@
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                            <li style="background:#f27261;"><a href="../Views/UsuarioRegistro.aspx"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li>
+                            <li style="background:#b7f16d;"><a href="../Views/Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
                         </ul>
                     </div>
                 </div>
