@@ -16,6 +16,7 @@ namespace recipes.Views
             if (!IsPostBack)
             {
                 BindData();
+                //ScriptManager.RegisterClientScriptInclude(Page, typeof(Page), "jquery", ResolveClientUrl(@"~/js/vendor/jquery-1.10.2.min.js"));
             }
         }
         protected void BindData()

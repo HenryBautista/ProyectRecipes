@@ -85,11 +85,10 @@ namespace recetas.Views
             comando.Parameters.AddWithValue("@i_recipe_id", txtCodigo.Text);
             comando.Parameters.AddWithValue("@i_name", txtNombre.Text);
             comando.Parameters.AddWithValue("@i_turn", ddlTurno.SelectedValue);
-            //comando.Parameters.AddWithValue("@i_image",imgFile);
+            comando.Parameters.AddWithValue("@i_image",imgFile.FileName);
             comando.Parameters.AddWithValue("@i_total_cost", txtCosto.Text);
             comando.Parameters.AddWithValue("@i_observation", txtObs.Text);
             comando.Parameters.AddWithValue("@i_url_video", txtVideo.Text);
-
             comando.ExecuteNonQuery();
             conexion.Close();
             Response.Redirect("~/Views/RecetaVistaAdmin.aspx");

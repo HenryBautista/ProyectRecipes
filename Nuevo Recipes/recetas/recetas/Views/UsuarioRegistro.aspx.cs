@@ -37,8 +37,6 @@ namespace recetas.Views
             conexion.Close();
 
             Response.Redirect("~/Views/Login.aspx");
-        }
-
-        
+        }        
     }
 }
