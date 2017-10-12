@@ -60,31 +60,32 @@
                                 </div>
                             </div>
                             <asp:Label ID="recipe_id" Visible="false" runat="server"></asp:Label>
-                            <a href="#" class="btn btn-info btn-lg">
+                            <a href="#" class="btn btn-info btn-lg" id="btnCart" runat="server" onserverclick="btnCart_ServerClick">
                                 <span class="glyphicon glyphicon-shopping-cart"></span>Comprar
                             </a>
+                            <asp:Button Text="text" runat="server" />
                         </div>
                     </div>
 
                 </div>
                 <h2>Ingredientes</h2>
                 <div class="form-group">
-                    <asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                    <asp:GridView runat="server" id="grdIngredients" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:BoundField HeaderText="Nº" DataField="in_ingredient" />
                             <asp:TemplateField HeaderText="Imagen">
                                 <ItemTemplate>
-                                    <asp:Image ImageUrl='<%#Bind("in_image") %>' runat="server" ID="img" />
+                                    <asp:Image ImageUrl='<%#Bind("in_image") %>' runat="server" ID="img" style="width:80px; height:80px;"/>
                                 </ItemTemplate>
                             </asp:TemplateField>
+                            <asp:BoundField HeaderText="Nº" DataField="in_ingredient" />
                             <asp:BoundField HeaderText="Nombre" DataField="in_name" />
-                            <asp:BoundField HeaderText="Unidad" DataField="in_unit" />
-                            <asp:BoundField HeaderText="Cantidad" DataField="in_quantity" />
+                            <asp:BoundField HeaderText="Unidad" DataField="UNIT" />
+                            <asp:BoundField HeaderText="Cantidad" DataField="ri_quantity" />
                             <asp:BoundField HeaderText="Costo" DataField="in_cost" />
                             <asp:BoundField HeaderText="Factor" DataField="in_factor" />
-                            <asp:BoundField HeaderText="Categoria" DataField="in_category" />
-                            <asp:BoundField HeaderText="Origen" DataField="in_origin" />
+                            <asp:BoundField HeaderText="Categoria" DataField="CATEGORY" />
+                            <asp:BoundField HeaderText="Origen" DataField="ORIGIN" />
                         </Columns>
                         <EditRowStyle BackColor="#7C6F57" />
                         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

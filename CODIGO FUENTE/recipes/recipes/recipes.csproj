@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -148,6 +149,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Views\IngredientNutrientView.aspx" />
+    <Content Include="Views\RecipeDetail.aspx" />
     <Content Include="Views\RecipeIngredientView.aspx" />
     <Content Include="Views\RegisterIngredient.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
@@ -190,6 +192,13 @@
     </Compile>
     <Compile Include="Views\IngredientNutrientView.aspx.designer.cs">
       <DependentUpon>IngredientNutrientView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecipeDetail.aspx.cs">
+      <DependentUpon>RecipeDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RecipeDetail.aspx.designer.cs">
+      <DependentUpon>RecipeDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RecipeIngredientView.aspx.cs">
       <DependentUpon>RecipeIngredientView.aspx</DependentUpon>
