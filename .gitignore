@@ -1,2 +1,4 @@
 
 CODIGO FUENTE/recipes/recipes/Web.config
+*.dll
+CODIGO FUENTE/recipes/recipes/bin/recipes.dll

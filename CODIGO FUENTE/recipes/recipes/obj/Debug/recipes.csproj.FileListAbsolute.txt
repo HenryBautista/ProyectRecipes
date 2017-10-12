@@ -12,13 +12,6 @@ C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bi
 C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.csprojResolveAssemblyReference.cache
 C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.dll
 C:\Users\Hebert\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.pdb
-C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\Assets\css\PromotionStyles.css
-C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll.config
-C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll
-C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.pdb
-C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.csproj.CoreCompileInputs.cache
-C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.dll
-C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.pdb
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\Assets\css\PromotionStyles.css
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll.config
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll
@@ -26,3 +19,11 @@ C:\Users\Heber\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.dll
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.pdb
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.csprojResolveAssemblyReference.cache
+C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\Assets\css\PromotionStyles.css
+C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll.config
+C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.dll
+C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\bin\recipes.pdb
+C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.csprojResolveAssemblyReference.cache
+C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.csproj.CoreCompileInputs.cache
+C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.dll
+C:\Users\aleag\Documents\GitHub\ProyectRecipes\CODIGO FUENTE\recipes\recipes\obj\Debug\recipes.pdb
