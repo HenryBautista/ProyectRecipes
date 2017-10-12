@@ -25,7 +25,7 @@ namespace recipes.Views
             recipe_id.Text = idrecipe;
             grdIngredients.DataSource = Recipe_ingredientServices.DataFromRecipe(idrecipe);
             grdIngredients.DataBind();
-            DataTable dts = GeneralServices.Show_Data_table("recipe", "S4", Convert.ToInt32(idrecipe));
+            DataTable dts = GeneralServices.Show_Data_table("recipe", "S4", Convert.ToInt32(recipe_id.Text));
             txt_code.Text = dts.Rows[0]["re_recipe_id"].ToString();
             txt_nombre.Text = dts.Rows[0]["re_name"].ToString();
             txt_turno.Text = dts.Rows[0]["TURNO"].ToString();
