@@ -23,22 +23,8 @@ namespace recetas.Views
 
         private void BindData()
         {
-            SqlCommand comando = new SqlCommand();
-            conexion.Open();
-            comando.Connection = conexion;
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "recipes2..sp_ingredient";
-            comando.Parameters.AddWithValue("@i_action", "S1");
-            grdRecetas.DataSource = getdata(comando);
+            grdRecetas.DataSource = GeneralServices.Show_Data_table("ingredient", "S1", null);
             grdRecetas.DataBind();
-        }
-
-        private DataTable getdata(SqlCommand comando)
-        {
-            DataTable dt = new DataTable();
-            dt.Load(comando.ExecuteReader());
-            conexion.Close();
-            return dt;
         }
 
         protected void lnkRemove_Click(object sender, EventArgs e)

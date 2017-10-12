@@ -1,11 +1,11 @@
-﻿using recipes.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using recipes.Services;
+using System.Globalization;
 
 namespace recipes.Views
 {
@@ -18,97 +18,67 @@ namespace recipes.Views
                 BindData();
             }
         }
-
+        //llena el grid con la consulta 
         private void BindData()
         {
-            DataTable result = GeneralServices.Show_Data_table("nutrient", "S1", null);
-            if (result.Rows.Count > 0)
-            {
-                grdNutrients.DataSource = result;
-                grdNutrients.DataBind();
-            }
-            else
-            {
-                result.Rows.Add(result.NewRow());
-                result.Rows[0]["nu_name"] = "";
-                grdNutrients.EditIndex = 0;
-                grdNutrients.DataSource = result;
-                grdNutrients.DataBind();
-            }
+            grdNutrients.DataSource = GeneralServices.Show_Data_table("nutrient","S1",null);
+            grdNutrients.DataBind();
         }
-        protected void grdNutrients_RowDataBound(object sender, GridViewRowEventArgs e)
+        //comandos del grid
+         protected void grdNutrients_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                Button b1;
-                b1 = e.Row.FindControl("btn_edit") as Button;
-                b1.CommandArgument = e.Row.RowIndex.ToString();
-                b1 = e.Row.FindControl("btn_update") as Button;
-                b1.CommandArgument = e.Row.RowIndex.ToString();
-                b1 = e.Row.FindControl("btn_cancel") as Button;
-                b1.CommandArgument = e.Row.RowIndex.ToString();
-                b1 = e.Row.FindControl("btn_del") as Button;
-                b1.CommandArgument = e.Row.RowIndex.ToString();
-                if (grdNutrients.EditIndex != -1 && e.Row.RowIndex == grdNutrients.EditIndex)
-                {
-                    b1 = e.Row.FindControl("btn_edit") as Button;
-                    b1.Visible = false;
-                    b1 = e.Row.FindControl("btn_update") as Button;
-                    b1.Visible = true;
-                    b1 = e.Row.FindControl("btn_cancel") as Button;
-                    b1.Visible = true;
-                    b1 = e.Row.FindControl("btn_del") as Button;
-                    b1.Visible = false;
-                }
-                else
-                {
-                    b1 = e.Row.FindControl("btn_edit") as Button;
-                    b1.Visible = true;
-                    b1 = e.Row.FindControl("btn_update") as Button;
-                    b1.Visible = false;
-                    b1 = e.Row.FindControl("btn_cancel") as Button;
-                    b1.Visible = false;
-                    b1 = e.Row.FindControl("btn_del") as Button;
-                    b1.Visible = true;
-                }
-            }
-        }
-
-        protected void grdNutrients_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            int index;
-            try
+            int index = -1;
+            string idnutrient = null;
+            string name;
+            TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+            if (!string.IsNullOrEmpty(e.CommandArgument.ToString()))
             {
                 index = Convert.ToInt32(e.CommandArgument);
+                idnutrient = grdNutrients.DataKeys[index].Value.ToString();
             }
-            catch (Exception)
-            {
-
-                index = 0;
-            }
-            string com = e.CommandName.ToString();
-            int? id_ing;
-            try
-            {
-                id_ing = Convert.ToInt32(grdNutrients.DataKeys[index].Value);
-            }
-            catch (Exception)
-            {
-
-                id_ing = null;
-            }
-
-            switch (com)
-            {
+            switch (e.CommandName.ToString())
+            {//si no hay datos en el grid esta el add2
+                case "add2":
+                    name = ((TextBox)grdNutrients.Controls[0].Controls[0].FindControl("txtempty")).Text;
+                    name.TrimEnd().TrimStart();
+                    name = ti.ToTitleCase(name);
+                    NutrientServices.InsertOrUpdate(null, name);
+                    BindData();
+                    break;
+                    // desde el footer
+                case "add":
+                    name = ((TextBox)grdNutrients.FooterRow.FindControl("txtfooter")).Text;
+                    name.TrimEnd().TrimStart();
+                    name = ti.ToTitleCase(name);
+                    if (check_fields(name,index))
+                    {
+                        NutrientServices.InsertOrUpdate(null, name);
+                        BindData();
+                    }
+                    break;
                 case "edit_nutrient":
                     grdNutrients.EditIndex = index;
                     BindData();
                     break;
+                case "delete_nutrient":
+                    string result = GeneralServices.Delete_this("nutrient", "recipes2..sp_nutrient", idnutrient);
+                    if (result != "success")
+                    {
+                        Label msg = grdNutrients.Rows[index].FindControl("lblmsg") as Label;
+                        msg.Text = result;
+                    }
+                    else
+                    {
+                        BindData();
+                    }
+                    break;
                 case "update_nutrient":
-                    string name = ((TextBox)grdNutrients.Rows[index].FindControl("txtQty")).Text;
+                    name = ((TextBox)grdNutrients.Rows[index].FindControl("txtname")).Text;
+                    name.TrimEnd().TrimStart();
+                    name = ti.ToTitleCase(name);
                     if (check_fields(name, index))
                     {
-                        NutrientServices.InsertOrUpdate(id_ing, name);
+                        NutrientServices.InsertOrUpdate(Convert.ToInt32(idnutrient), name);
                         grdNutrients.EditIndex = -1;
                         BindData();
                     }
@@ -117,53 +87,40 @@ namespace recipes.Views
                     grdNutrients.EditIndex = -1;
                     BindData();
                     break;
-                case "delete_nutrient":
-                    string result = GeneralServices.Delete_this("nutrient", "recipes..sp_nutrient", id_ing.ToString());
-                    if (result == "success")
-                        BindData();
-                    else
-                    {
-                        Label msg = grdNutrients.Rows[index].FindControl("lblmsg") as Label;
-                        msg.Text = "No se Pudo Eliminar";
-                    }
-                    break;
-                case "add":
-                    name = ((TextBox)grdNutrients.FooterRow.FindControl("txtfooter")).Text;
-                    if (check_fields(name, index))
-                    {
-                        NutrientServices.InsertOrUpdate(id_ing, name);
-                        BindData();
-                    }
-                    break;
                 default:
                     break;
             }
         }
-
-        private bool check_fields( string name, int index)
-        {
-            Label msg = grdNutrients.Rows[index].FindControl("lblmsg") as Label;
-
-            if (name == "")
-            {
-                msg.Text = "Ingrese una nombre";
-                return false;
-            }
-            try
-            {
-                if (NutrientServices.CmpID(name).Rows.Count > 1)
-                {
-                    msg.Text = "El nutriente ya existe";
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                msg.Text = "ok";
-            }
-            msg.Text = "";
-            return true;
-        }
-      
+         private bool check_fields(string name, int index)
+         {
+             Label msg;
+             if (index!=-1)
+             {                 
+                msg = grdNutrients.Rows[index].FindControl("lblmsg") as Label;
+             }
+             else
+             {
+                 msg = grdNutrients.FooterRow.FindControl("lblmsg2") as Label;
+             }
+             if (name == "")
+             {
+                 msg.Text = "Ingrese un nombre";
+                 return false;
+             }
+             try
+             {
+                 if (NutrientServices.CmpID(name).Rows.Count == 1)
+                 {
+                     msg.Text = "El nutriente ya existe";
+                     return false;
+                 }
+             }
+             catch (Exception e)
+             {
+                 msg.Text = e.Message;
+             }
+             msg.Text = "";
+             return true;
+         }
     }
 }

@@ -112,6 +112,7 @@ C:\Users\aleag\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\obj
 C:\Users\aleag\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\obj\Debug\recetas.csproj.CoreCompileInputs.cache
 C:\Users\aleag\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\obj\Debug\recetas.dll
 C:\Users\aleag\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\obj\Debug\recetas.pdb
+C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\obj\Debug\recetas.csprojResolveAssemblyReference.cache
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\bin\roslyn\csc.exe
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\bin\roslyn\csc.exe.config
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\bin\roslyn\csc.rsp
@@ -165,6 +166,5 @@ C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\bin
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\bin\recetas.pdb
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\obj\Debug\recetas.csprojResolveAssemblyReference.cache
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\obj\Debug\recetas.dll
 C:\Users\Heber\Documents\GitHub\ProyectRecipes\Nuevo Recipes\recetas\recetas\obj\Debug\recetas.pdb

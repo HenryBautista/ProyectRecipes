@@ -37,7 +37,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <asp:Label Text="Imagen" runat="server" />
-                        <input id="imgFile" type="file" runat="server"/>
+                        <asp:FileUpload id="imgFile" type="file" runat="server"/>
                     </div>
                 </div>
                 <div class="col-md-6">

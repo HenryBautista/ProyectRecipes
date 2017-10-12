@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace recipes.Services
+namespace recetas.Services
 {
     public static class IngredientServices
     {
@@ -54,7 +54,9 @@ namespace recipes.Services
             catch (Exception ex)
             {
                 return result;
-            }                
+            }
+
+                
             return result;
         }
         public static DataTable CmpID(string id)
@@ -65,13 +67,15 @@ namespace recipes.Services
             {
                 SqlCommand command = new SqlCommand();
                 command.Parameters.AddWithValue("i_action", "F1");
-                command.Parameters.AddWithValue("i_name", id);
+                command.Parameters.AddWithValue("i_ingredient_id", id);
                 result = GeneralServices.ExecuteQuery(command, "recipes2..sp_ingredient");
             }
             catch (Exception ex)
             {
                 return result;
             }
+
+
             return result;
         }
     }

@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace recipes.Services
+namespace recetas.Services
 {
     public class Recipe_ingredientServices
     {
@@ -44,22 +44,6 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_action", "F2");
                 command.Parameters.AddWithValue("i_recipe", recipe);
                 command.Parameters.AddWithValue("i_ingredient", ing);
-                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_recipe_ingredient");
-            }
-            catch (Exception ex)
-            {
-                return result;
-            }
-            return result;
-        }
-        internal static DataTable DataFromRecipe( string recipe)
-        {
-            DataTable result = new DataTable();
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                command.Parameters.AddWithValue("i_action", "F1");
-                command.Parameters.AddWithValue("i_recipe", recipe);
                 result = GeneralServices.ExecuteQuery(command, "recipes2..sp_recipe_ingredient");
             }
             catch (Exception ex)

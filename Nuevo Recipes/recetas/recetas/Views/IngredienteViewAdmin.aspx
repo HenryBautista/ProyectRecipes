@@ -81,14 +81,14 @@
                     </asp:TemplateField>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink ID="hplSeleccioar0" CssClass="btn btn-link" runat="server" NavigateUrl='<%#"~/Views/IngredienteEditAdmin.aspx?recipeID=" + DataBinder.Eval(Container.DataItem, "in_ingredient")%>'>Editar</asp:HyperLink>
+                            <asp:HyperLink ID="hplSeleccioar1" CssClass="btn btn-link" runat="server" NavigateUrl='<%#"~/Views/IngredienteEditAdmin.aspx?recipeID=" + DataBinder.Eval(Container.DataItem, "in_ingredient")%>'>Editar</asp:HyperLink>
                         </ItemTemplate>
                         <ItemStyle Width="30px" />
                     </asp:TemplateField>
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkRemove" runat="server" CssClass="btn btn-danger"
-                                CommandArgument='<%# Eval("in_ingredient_id")%>'
+                                CommandArgument='<%#Eval("in_ingredient")%>'
                                 OnClientClick="return confirm('Esta seguro que desea eliminar?')"
                                 Text="Eliminar" OnClick="lnkRemove_Click"></asp:LinkButton>
                         </ItemTemplate>

@@ -24,21 +24,8 @@ namespace recipes.Views
         private void BindData()
         {
             ingredient_id.Text = in_ingredientId;
-            DataTable result = GeneralServices.Show_Data_table("ingredient", "F2", Convert.ToInt32(in_ingredientId));
-            if (result.Rows.Count>0)
-            {
-                grdNutrients.DataSource = result;
-                grdNutrients.DataBind();
-            }
-            else
-            {
-                result.Rows.Add(result.NewRow());
-                result.Rows[0]["nu_nutrient"] = -1;
-                result.Rows[0]["in_quantity"] = 0;
-                grdNutrients.DataSource = result;
-                grdNutrients.DataBind();
-                //ShowNoResultFound(result, grdNutrients);
-            }
+            grdNutrients.DataSource = GeneralServices.Show_Data_table("ingredient", "F2", Convert.ToInt32(in_ingredientId));
+            grdNutrients.DataBind();            
             DataTable dts = GeneralServices.Show_Data_table("ingredient", "S4", Convert.ToInt32(in_ingredientId));
             lbl_code.Text = dts.Rows[0]["in_ingredient_id"].ToString();
             lbl_nombre.Text = dts.Rows[0]["in_name"].ToString();
@@ -47,6 +34,8 @@ namespace recipes.Views
             lbl_factor.Text = dts.Rows[0]["in_factor"].ToString();
             lbl_cat.Text = dts.Rows[0]["CATEGORY"].ToString();
             lbl_origin.Text = dts.Rows[0]["ORIGIN"].ToString();
+            lbl_qty.Text = dts.Rows[0]["in_quantity"].ToString();
+            imageIngredient.ImageUrl = dts.Rows[0]["in_image"].ToString();
         }
         protected DataTable getNutrient()
         {
@@ -87,7 +76,7 @@ namespace recipes.Views
                 case "update_nutrient":
                     string qty = ((TextBox)grdNutrients.Rows[index].FindControl("txtQty")).Text;
                     string nutri = ((DropDownList)grdNutrients.Rows[index].FindControl("DDLnutrient")).SelectedValue;
-                    if (check_fields(qty,index))
+                    if (cmp(nutri) && check_fields(qty, index))
                     {
                         Ingredient_nutrientServices.InsertOrUpdate(id_ing,Convert.ToInt32(nutri), Convert.ToInt32(ingredient_id.Text), Convert.ToInt32(qty));
                         grdNutrients.EditIndex = -1;
@@ -116,6 +105,12 @@ namespace recipes.Views
                         Ingredient_nutrientServices.InsertOrUpdate(id_ing, Convert.ToInt32(nutri2), Convert.ToInt32(ingredient_id.Text), Convert.ToInt32(qty2));
                         BindData();
                     }
+                    break;
+                case "add2":
+                    qty = ((TextBox)grdNutrients.Controls[0].Controls[0].FindControl("txtempty")).Text;
+                    string idNu = ((DropDownList)grdNutrients.Controls[0].Controls[0].FindControl("DDLempty")).SelectedValue;
+                    Ingredient_nutrientServices.InsertOrUpdate(null,Convert.ToInt32(idNu),Convert.ToInt32(ingredient_id.Text), Convert.ToInt32(qty));
+                    BindData();
                     break;
                 default:
                     break;
@@ -164,62 +159,5 @@ namespace recipes.Views
             return true;
         }
 
-        private void ShowNoResultFound(DataTable source, GridView gv)
-        {
-            source.Rows.Add(source.NewRow()); // create a new blank row to the DataTable
-                                              // Bind the DataTable which contain a blank row to the GridView
-            gv.DataSource = source;
-            gv.DataBind();
-            // Get the total number of columns in the GridView to know what the Column Span should be
-            int columnsCount = gv.Columns.Count;
-            gv.Rows[0].Cells.Clear();// clear all the cells in the row
-            gv.Rows[0].Cells.Add(new TableCell()); //add a new blank cell
-            gv.Rows[0].Cells[0].ColumnSpan = columnsCount; //set the column span to the new added cell
-
-            //You can set the styles here
-            gv.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
-            gv.Rows[0].Cells[0].ForeColor = System.Drawing.Color.Red;
-            gv.Rows[0].Cells[0].Font.Bold = true;
-            //set No Results found to the new added cell
-            gv.Rows[0].Cells[0].Text = "No temenos datos!";
-        }
-        protected void grdNutrients_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                DataTable result = GeneralServices.Show_Data_table("ingredient", "F2", Convert.ToInt32(in_ingredientId));
-                Button b1;
-                    b1 = e.Row.FindControl("btn_edit") as Button;
-                    b1.CommandArgument = e.Row.RowIndex.ToString();
-                    b1 = e.Row.FindControl("btn_update") as Button;
-                    b1.CommandArgument = e.Row.RowIndex.ToString();
-                    b1 = e.Row.FindControl("btn_cancel") as Button;
-                    b1.CommandArgument = e.Row.RowIndex.ToString();
-                    b1 = e.Row.FindControl("btn_del") as Button;
-                    b1.CommandArgument = e.Row.RowIndex.ToString();
-                if (grdNutrients.EditIndex != -1 && e.Row.RowIndex == grdNutrients.EditIndex)
-                {
-                    b1 = e.Row.FindControl("btn_edit") as Button;
-                    b1.Visible = false;
-                    b1 = e.Row.FindControl("btn_update") as Button;
-                    b1.Visible = true;
-                    b1 = e.Row.FindControl("btn_cancel") as Button;
-                    b1.Visible = true;
-                    b1 = e.Row.FindControl("btn_del") as Button;
-                    b1.Visible = false;
-                }
-                else
-                {
-                    b1 = e.Row.FindControl("btn_edit") as Button;
-                    b1.Visible = true;
-                    b1 = e.Row.FindControl("btn_update") as Button;
-                    b1.Visible = false;
-                    b1 = e.Row.FindControl("btn_cancel") as Button;
-                    b1.Visible = false;
-                    b1 = e.Row.FindControl("btn_del") as Button;
-                    b1.Visible = true;
-                }
-            }
-        }
     }
 }

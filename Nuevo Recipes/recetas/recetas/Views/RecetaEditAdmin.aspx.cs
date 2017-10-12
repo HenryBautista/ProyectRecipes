@@ -17,8 +17,7 @@ namespace recetas.Views
         {
             if (!IsPostBack)
             {
-                GeneralServices servicio = new GeneralServices();
-                servicio.FillDropwDownList(ddlTurno, 1, "S1");
+                GeneralServices.FillDropwDownList(ddlTurno, 1, "S1");
                 if (Request.QueryString["recipeID"] != null)
                 {
                     title.InnerText = "Edicion de receta";
@@ -85,7 +84,7 @@ namespace recetas.Views
             comando.Parameters.AddWithValue("@i_recipe_id", txtCodigo.Text);
             comando.Parameters.AddWithValue("@i_name", txtNombre.Text);
             comando.Parameters.AddWithValue("@i_turn", ddlTurno.SelectedValue);
-            comando.Parameters.AddWithValue("@i_image",imgFile.FileName);
+            comando.Parameters.AddWithValue("@i_image",imgFile.FileName.ToString());
             comando.Parameters.AddWithValue("@i_total_cost", txtCosto.Text);
             comando.Parameters.AddWithValue("@i_observation", txtObs.Text);
             comando.Parameters.AddWithValue("@i_url_video", txtVideo.Text);
