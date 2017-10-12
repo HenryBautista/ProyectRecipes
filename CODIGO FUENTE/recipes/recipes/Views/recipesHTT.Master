@@ -131,9 +131,9 @@
 
                                                             <li><a href="../Views/StartViewAdministrator.aspx">Nosotros </a></li>
                                                             <li><a href="../Views/RegisterNutrient.aspx">Nutriente</a></li>
-                                                            <li><a href="../Views/RegisterIngredientView.aspx">Ingrediente</a></li>
+                                                            <li><a href="../Views/RegisterIngredient.aspx">Ingrediente</a></li>
                                                             <li><a href="../Views/RegisterPromotion.aspx">Registrar promocion</a></li>
-                                                            <li><a href="../Views/RegisterRecipeView.aspx">Nueva receta</a></li>
+                                                            <li><a href="../Views/RegisterRecipe.aspx">Nueva receta</a></li>
                                                             <li><a href="../Views/RecipePeopleView.aspx">Recetas de Usuarios</a></li>
                                                             <li><a href="../Views/IngredientOrderList.aspx">Lista de ingredientes pedidos</a></li>
                                                         </ul>
