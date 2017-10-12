@@ -4,6 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="about-us">
+        <div class="container">
+            
         <div style="width: 90%; height: auto; margin-left: auto; margin-right: auto;">
             <h3>Lista de<span> Promociones</span></h3>
             <hr />
@@ -16,7 +18,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <asp:TextBox ID="ingredientID" runat="server" BorderStyle="None" ForeColor="White" />
+                                <asp:TextBox ID="promotionID" runat="server" BorderStyle="None" ForeColor="White" />
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" runat="server" id="myModalLabel">Nuevo ingrediente</h4>
                             </div>
@@ -25,10 +27,10 @@
                                 <asp:TextBox ID="tbox_name" placeholder="Introducir nombre" runat="server" required="true" class="form-control"></asp:TextBox>
 
                                 <asp:Label Text="Titulo" runat="server" />
-                                <asp:TextBox ID="tbox_tittle" type="number" step="0.01" required="true" placeholder="Costo ingrediente" runat="server" class="form-control" />
+                                <asp:TextBox ID="tbox_tittle" required="true" placeholder="Titulo de promocion" runat="server" class="form-control" />
 
                                 <asp:Label Text="Detalles" runat="server" />
-                                <asp:TextBox ID="tbox_detail" type="number" placeholder="Cantidad de ingrediente" runat="server" required="true" class="form-control" />
+                                <asp:TextBox ID="tbox_detail" placeholder="Detalles de promocion" TextMode="MultiLine" runat="server" required="true" class="form-control" />
                                 
                                 <asp:Label Text="Imagen" runat="server" />
                                 <asp:FileUpload ID="file_image" runat="server" class="txt-form" />
@@ -38,7 +40,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                <asp:Button type="button" ID="btnSave" runat="server" class="btn btn-success" OnClick="Save_Click" data-toggle="modal" data-target="#myModal2" Text="Guardar"/>                                
+                                <asp:Button type="button" ID="btnSave" runat="server" class="btn btn-success" OnClick="btn_createPromotion_Click" data-toggle="modal" data-target="#myModal2" Text="Guardar"/>                                
                             </div>
                         </div>
                     </div>
@@ -50,26 +52,17 @@
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Imagen">
-                        <EditItemTemplate>
-                            <asp:FileUpload runat="server" ID="img1" />
-                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Image ID="img1" ImageUrl='<%# Bind("in_image") %>' runat="server" Width="80" Height="80"></asp:Image>
+                            <asp:Image ID="img1" ImageUrl='<%# Bind("pr_image") %>' runat="server" Width="80" Height="80"></asp:Image>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField HeaderText="Codigo" DataField="in_ingredient_id" />
-                    <asp:BoundField HeaderText="Nombre" DataField="in_name" />
-                    <asp:BoundField HeaderText="Unidad de medida" DataField="UNIT" />
-                    <asp:BoundField HeaderText="Cantidad" DataField="in_quantity" />
-                    <asp:BoundField HeaderText="Costo" DataField="in_cost" />
-                    <asp:BoundField HeaderText="Factor" DataField="in_factor" />
-                    <asp:BoundField HeaderText="Categoria" DataField="CATEGORY" />
-                    <asp:BoundField HeaderText="Origen" DataField="ORIGIN" />
+                    <asp:BoundField HeaderText="Nombre " DataField="pr_name" />
+                    <asp:BoundField HeaderText="Titulo" DataField="pr_title" />
+                    <asp:BoundField HeaderText="Detalles" DataField="pr_text" />
                     <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:HyperLink ID="hplSeleccioar1" CssClass="btn btn-link" runat="server" NavigateUrl='<%#"~/Views/IngredientNutrientView.aspx?valor=" + DataBinder.Eval(Container.DataItem, "in_ingredient")%>'>Nutrientes</asp:HyperLink>
-                            <asp:Button ID="btn_edit" CommandName="edit_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="Editar" runat="server" OnClientClick="llenar()" />
-                            <asp:Button ID="btn_del" CommandName="delete_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="Eliminar" runat="server" OnClientClick="llenar(); return confirm('¿Está seguro que desea eliminar el ingrediente ?');" />
+                        <ItemTemplate>                            
+                            <asp:Button ID="btn_edit" CommandName="edit_promotion" CommandArgument='<%# Container.DataItemIndex %>' Text="Editar" runat="server" OnClientClick="llenar()" />
+                            <asp:Button ID="btn_del" CommandName="delete_promotion" CommandArgument='<%# Container.DataItemIndex %>' Text="Eliminar" runat="server" OnClientClick="llenar(); return confirm('¿Está seguro que desea eliminar el ingrediente ?');" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -85,6 +78,7 @@
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
         </div>
+        </div>
          <script type="text/javascript">
              function openModal() {
                  $('#myModal2').modal('show');
@@ -93,17 +87,15 @@
                  alert("Algo salio mal!");
              };
              function llenar() {
-                 $('#<%=tbox_code.ClientID%>').val('p');
                  $('#<%=tbox_name.ClientID%>').val('p');
-                 $('#<%=tbox_price.ClientID%>').val('1');
-                 $('#<%=tbox_qty.ClientID%>').val('1');
+                 $('#<%=tbox_tittle.ClientID%>').val('1');
+                 $('#<%=tbox_detail.ClientID%>').val('1');
              };
              function vaciar() {
-                 $('#<%=ingredientID.ClientID%>').val('');
-                 $('#<%=tbox_code.ClientID%>').val('');
+                 $('#<%=promotionID.ClientID%>').val('');
                  $('#<%=tbox_name.ClientID%>').val('');
-                 $('#<%=tbox_price.ClientID%>').val('');
-                 $('#<%=tbox_qty.ClientID%>').val('');
+                 $('#<%=tbox_tittle.ClientID%>').val('');
+                 $('#<%=tbox_detail.ClientID%>').val(''); 
              };
         </script>
     </section>

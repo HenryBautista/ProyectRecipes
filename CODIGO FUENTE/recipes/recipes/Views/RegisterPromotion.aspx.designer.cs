@@ -13,13 +13,13 @@ namespace recipes.Views {
     public partial class RegisterPromotion {
         
         /// <summary>
-        /// ingredientID control.
+        /// promotionID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ingredientID;
+        protected global::System.Web.UI.WebControls.TextBox promotionID;
         
         /// <summary>
         /// myModalLabel control.

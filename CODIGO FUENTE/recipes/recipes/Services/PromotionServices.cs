@@ -8,7 +8,7 @@ namespace recipes.Services
 {
     public static class PromotionServices
     {
-        public static string InsertOrUpdate(int? promotion, string name, string title, string txt1, string txt2, string image1, string image2)
+        public static string InsertOrUpdate(int? promotion, string name, string title, string txt1, string image1)
         {
             try
             {
@@ -23,10 +23,8 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_promotion", promotion);
                 command.Parameters.AddWithValue("i_name", name);
                 command.Parameters.AddWithValue("i_title", title);
-                command.Parameters.AddWithValue("i_text1", txt1);
-                command.Parameters.AddWithValue("i_text2", txt2);
-                command.Parameters.AddWithValue("i_image1", image1);
-                command.Parameters.AddWithValue("i_image2", image2);
+                command.Parameters.AddWithValue("i_text", txt1);
+                command.Parameters.AddWithValue("i_image", image1);
                 GeneralServices.ExecuteQuery(command, "recipes2..sp_promotion");
             }
             catch (Exception ex)

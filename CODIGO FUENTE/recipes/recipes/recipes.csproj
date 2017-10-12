@@ -153,8 +153,9 @@
     <Content Include="Views\RecipeIngredientView.aspx" />
     <Content Include="Views\RegisterIngredient.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
+    <Content Include="Views\RegisterPromotion.aspx" />
     <Content Include="Views\RegisterRecipe.aspx" />
-    <Content Include="Views\View.aspx" />
+    <Content Include="Views\StartPageView.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -235,6 +236,13 @@
     <Compile Include="Views\RegisterNutrient.aspx.designer.cs">
       <DependentUpon>RegisterNutrient.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegisterPromotion.aspx.cs">
+      <DependentUpon>RegisterPromotion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterPromotion.aspx.designer.cs">
+      <DependentUpon>RegisterPromotion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterRecipe.aspx.cs">
       <DependentUpon>RegisterRecipe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -242,12 +250,11 @@
     <Compile Include="Views\RegisterRecipe.aspx.designer.cs">
       <DependentUpon>RegisterRecipe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\View.aspx.cs">
-      <DependentUpon>View.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Views\StartPageView.aspx.cs">
+      <DependentUpon>StartPageView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\View.aspx.designer.cs">
-      <DependentUpon>View.aspx</DependentUpon>
+    <Compile Include="Views\StartPageView.aspx.designer.cs">
+      <DependentUpon>StartPageView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

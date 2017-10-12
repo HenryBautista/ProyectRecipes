@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using recipes.Services;
 using System.Data;
+using System.Globalization;
 
 namespace recipes.Views
 {
@@ -27,123 +28,87 @@ namespace recipes.Views
 
         protected void btn_createPromotion_Click(object sender, EventArgs e)
         {
-            if (checkFields())
+            if (string.IsNullOrEmpty(promotionID.Text))
             {
-                string strname = flpImage1.FileName.ToString();
-                string strname2 = null;
-                strname = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff") + strname;
-                flpImage1.PostedFile.SaveAs(Server.MapPath("~/Images/PromotionPhotos/") + strname);
-                strname = "~/Images/PromotionPhotos/" + strname;
-                PromotionServices.InsertOrUpdate(
-                    null,txtName.Text,txtTitle.Text,txtDetalles.Text,null,strname,strname2);
-                BindData();
+                if (file_image.HasFile)
+                {
+                    string strname = file_image.FileName.ToString();
+                    strname = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff") + strname;
+                    file_image.PostedFile.SaveAs(Server.MapPath("~/Images/PromotionPhotos/") + strname);
+                    strname = "~/Images/PromotionPhotos/" + strname;
+                    string result = PromotionServices.InsertOrUpdate(
+                    null, tbox_name.Text, tbox_tittle.Text, tbox_detail.Text, strname);
+                }
+                else
+                {
+                    string result = PromotionServices.InsertOrUpdate(
+                    null, tbox_name.Text, tbox_tittle.Text, tbox_detail.Text, null);
+                }
             }
-        }
-
-        private bool checkFields()
-        {
-            if (txtName.Text == "")
+            else
             {
-                lblError.Text = "introduzca un nombre" ;
-                return false;
-            }
-            if (txtTitle.Text == "")
-            {
-                lblError.Text = "introduzca un titulo";
-                return false;
-            }
-            if (txtDetalles.Text == "")
-            {
-                lblError.Text = "introduzca los detalles de la promocion";
-                return false;
-            }
-            if (!flpImage1.HasFile)
-            {
-                lblError.Text = "introduzca una imagen";
-                return false;
-            }
-            return true;
-        }
-
-        protected void grdPromotion_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            int index;
-            try
-            {
-                index = Convert.ToInt32(e.CommandArgument);
-            }
-            catch (Exception)
-            {
-
-                index = -1;
-            }
-            string com = e.CommandName.ToString();
-            int? id_pro;
-            try
-            {
-                id_pro = Convert.ToInt32(grdPromotion.DataKeys[index].Value);
-            }
-            catch (Exception)
-            {
-
-                id_pro = null;
-            }
-
-            switch (com)
-            {
-                case "edit_promotion":
-                    grdPromotion.EditIndex = index;
-                    BindData();
-                    break;
-                case "update_promotion":
-                    string name = ((TextBox)grdPromotion.Rows[index].FindControl("txtname")).Text;
-                    string title = ((TextBox)grdPromotion.Rows[index].FindControl("txttitle")).Text;
-                    string texto = ((TextBox)grdPromotion.Rows[index].FindControl("txt1")).Text;
-                    FileUpload img1 = ((FileUpload)grdPromotion.Rows[index].FindControl("img1"));
-                    if (check_fields(name,title,texto, index) && img1.HasFile )
-                    {
-                        string strname = img1.FileName.ToString();
-                        string strname2 = null;
-                        strname = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff") + strname;
-                        img1.PostedFile.SaveAs(Server.MapPath("~/Images/PromotionPhotos/") + strname);
-                        strname = "~/Images/PromotionPhotos/" + strname;
-                        PromotionServices.InsertOrUpdate(id_pro, name, title, texto, null, strname, strname2);
-                        grdPromotion.EditIndex = -1;
-                        BindData();
-
-                    }
-                    else
-                    {
-                        if (check_fields(name, title, texto, index))
-                        {
-                            DataTable dt = GeneralServices.Show_Data_table("promotion","S2",id_pro);
-                            PromotionServices.InsertOrUpdate(id_pro, name, title, texto, null, dt.Rows[0]["pr_image1"].ToString(), dt.Rows[0]["pr_image2"].ToString());
-
-                            grdPromotion.EditIndex = -1;
-                            BindData();
-                        }
-                    }
-                    break;
-                case "cancel_promotion":
-                    grdPromotion.EditIndex = -1;
-                    BindData();
-                    break;
-                case "delete_promotion":
-                    string result = GeneralServices.Delete_this("promotion", "recipes2..sp_promotion", id_pro.ToString());
+                if (file_image.HasFile)
+                {
+                    string strname = file_image.FileName.ToString();
+                    strname = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff") + strname;
+                    file_image.PostedFile.SaveAs(Server.MapPath("~/Images/PromotionPhotos/") + strname);
+                    strname = "~/Images/PromotionPhotos/" + strname;
+                    string old = (GeneralServices.Show_Data_table("promotion", "S2", Convert.ToInt32(promotionID.Text))).Rows[0]["pr_image"].ToString();
+                    string result = PromotionServices.InsertOrUpdate(
+                    Convert.ToInt32(promotionID.Text), tbox_name.Text, tbox_tittle.Text, tbox_detail.Text, strname);
                     if (result == "success")
                     {
-                        string ruta1 = ((Image)grdPromotion.Rows[index].FindControl("img1")).ImageUrl;
-                        System.IO.File.Delete(Server.MapPath(ruta1));
-                        BindData();
+                        System.IO.File.Delete(Server.MapPath(old));
                     }
                     else
                     {
-                        Label msg = grdPromotion.Rows[index].FindControl("lblmsg") as Label;
-                        msg.Text = "No se Pudo Eliminar";
+                        System.IO.File.Delete(Server.MapPath(strname));
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "AlertError();", true);
                     }
-                    break;
-                default:
-                    break;
+                }
+                else
+                {
+                    string old = (GeneralServices.Show_Data_table("promotion", "S2", Convert.ToInt32(promotionID.Text))).Rows[0]["pr_image"].ToString();
+                    string result = PromotionServices.InsertOrUpdate(
+                    Convert.ToInt32(promotionID.Text), tbox_name.Text, tbox_tittle.Text, tbox_detail.Text, old);
+                }
+            }
+            BindData();
+        }
+        protected void grdPromotion_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = -1;
+            string idpromotion = null;
+            TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+            if ((!string.IsNullOrEmpty(e.CommandArgument.ToString())) && e.CommandName == "edit_promotion")
+            {
+                index = Convert.ToInt32(e.CommandArgument);
+                idpromotion = grdPromotion.DataKeys[index].Value.ToString();
+                DataTable dt = GeneralServices.Show_Data_table("promotion", "S2", Convert.ToInt32(idpromotion));
+                promotionID.Text = idpromotion;
+                tbox_name.Text = dt.Rows[0]["pr_name"].ToString();
+                tbox_tittle.Text = dt.Rows[0]["pr_title"].ToString();
+                tbox_detail.Text = dt.Rows[0]["pr_text"].ToString();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+            }
+            if ((!string.IsNullOrEmpty(e.CommandArgument.ToString())) && e.CommandName == "delete_promotion")
+            {
+                index = Convert.ToInt32(e.CommandArgument);
+                idpromotion = grdPromotion.DataKeys[index].Value.ToString();
+                string old = (GeneralServices.Show_Data_table("promotion", "S2", Convert.ToInt32(idpromotion))).Rows[0]["pr_image"].ToString();
+                string result = GeneralServices.Delete_this("promotion", "recipes2..sp_promotion", idpromotion);
+                if (result == "success")
+                {
+                    if (!string.IsNullOrEmpty(old))
+                    {
+                        System.IO.File.Delete(Server.MapPath(old));
+                    }
+                    BindData();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "AlertError();", true);
+                }
             }
         }
 
@@ -168,42 +133,5 @@ namespace recipes.Views
             return true;
         }
 
-        protected void grdPromotion_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                Button b1;
-                b1 = e.Row.FindControl("btn_edit") as Button;
-                b1.CommandArgument = e.Row.RowIndex.ToString();
-                b1 = e.Row.FindControl("btn_update") as Button;
-                b1.CommandArgument = e.Row.RowIndex.ToString();
-                b1 = e.Row.FindControl("btn_cancel") as Button;
-                b1.CommandArgument = e.Row.RowIndex.ToString();
-                b1 = e.Row.FindControl("btn_del") as Button;
-                b1.CommandArgument = e.Row.RowIndex.ToString();
-                if (grdPromotion.EditIndex != -1 && e.Row.RowIndex == grdPromotion.EditIndex)
-                {
-                    b1 = e.Row.FindControl("btn_edit") as Button;
-                    b1.Visible = false;
-                    b1 = e.Row.FindControl("btn_update") as Button;
-                    b1.Visible = true;
-                    b1 = e.Row.FindControl("btn_cancel") as Button;
-                    b1.Visible = true;
-                    b1 = e.Row.FindControl("btn_del") as Button;
-                    b1.Visible = false;
-                }
-                else
-                {
-                    b1 = e.Row.FindControl("btn_edit") as Button;
-                    b1.Visible = true;
-                    b1 = e.Row.FindControl("btn_update") as Button;
-                    b1.Visible = false;
-                    b1 = e.Row.FindControl("btn_cancel") as Button;
-                    b1.Visible = false;
-                    b1 = e.Row.FindControl("btn_del") as Button;
-                    b1.Visible = true;
-                }
-            }
-        }
     }
 }
