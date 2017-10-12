@@ -25,8 +25,8 @@ namespace recipes.Views
         {
             ingredient_id.Text = in_ingredientId;
             grdNutrients.DataSource = GeneralServices.Show_Data_table("ingredient", "F2", Convert.ToInt32(in_ingredientId));
-            grdNutrients.DataBind();            
-            DataTable dts = GeneralServices.Show_Data_table("ingredient", "S4", Convert.ToInt32(in_ingredientId));
+            grdNutrients.DataBind();
+            DataTable dts = GeneralServices.Show_Data_table("ingredient", "S4", Convert.ToInt32(ingredient_id.Text));
             lbl_code.Text = dts.Rows[0]["in_ingredient_id"].ToString();
             lbl_nombre.Text = dts.Rows[0]["in_name"].ToString();
             lbl_unidad.Text = dts.Rows[0]["UNIT"].ToString();
@@ -88,7 +88,7 @@ namespace recipes.Views
                     BindData();
                     break;
                 case "delete_nutrient":
-                    string result = GeneralServices.Delete_this("ingredient_nutrient", "recipes..sp_ingredient_nutrient", id_ing.ToString());
+                    string result = GeneralServices.Delete_this("ingredient_nutrient", "recipes2..sp_ingredient_nutrient", id_ing.ToString());
                     if (result == "success")
                         BindData();
                     else

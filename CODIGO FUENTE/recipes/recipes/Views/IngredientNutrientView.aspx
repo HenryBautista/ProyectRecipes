@@ -102,7 +102,7 @@
                                     <asp:Label ID="lblQty" runat="server" Text='<%# Bind("in_quantity") %>'></asp:Label>
                                 </ItemTemplate>
                                 <FooterTemplate>
-                                    <asp:TextBox ID="txtfooter" runat="server" type="numeric" required="true"></asp:TextBox>
+                                    <asp:TextBox ID="txtfooter" runat="server" type="numeric"></asp:TextBox>
                                 </FooterTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField>
