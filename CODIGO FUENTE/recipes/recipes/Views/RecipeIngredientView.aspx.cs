@@ -32,7 +32,7 @@ namespace recipes.Views
             txt_cost.Text = dts.Rows[0]["re_total_cost"].ToString();
             txt_obs.Text = dts.Rows[0]["re_observation"].ToString();
             txt_url.Text = dts.Rows[0]["re_url_video"].ToString();
-            re_iframe.InnerHtml = dts.Rows[0]["re_url_video"].ToString();
+            re_iframe.Attributes.Add("src",dts.Rows[0]["re_url_video"].ToString());
             imageRecipe.ImageUrl = dts.Rows[0]["re_image"].ToString();
         }
         protected DataTable getIngredient()

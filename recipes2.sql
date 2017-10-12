@@ -124,12 +124,13 @@ pr_title varchar(50),
 pr_text varchar(max),
 pr_image varchar(200)
 )
-create table t_consultas(
-co_consultas int not null identity(1,1)  primary key,
+create table t_consult(
+co_consult int not null identity(1,1)  primary key,
 co_date date, 
-co_name varchar(50),
-co_consulta varchar(max),
-co_is bit				--consulta atendida 0 no 1 
+co_name varchar(50) not null,
+co_text varchar(max),
+co_email varchar(50),
+co_is bit			--consulta atendida 0 no 1 
 )
 
 create table t_concept
