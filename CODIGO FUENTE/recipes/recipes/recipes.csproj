@@ -149,11 +149,13 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Views\IngredientNutrientView.aspx" />
+    <Content Include="Views\Login.aspx" />
     <Content Include="Views\RecipeDetail.aspx" />
     <Content Include="Views\RecipeIngredientView.aspx" />
     <Content Include="Views\RegisterIngredient.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
     <Content Include="Views\RegisterRecipe.aspx" />
+    <Content Include="Views\RegisterUser.aspx" />
     <Content Include="Views\View.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -192,6 +194,13 @@
     </Compile>
     <Compile Include="Views\IngredientNutrientView.aspx.designer.cs">
       <DependentUpon>IngredientNutrientView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RecipeDetail.aspx.cs">
       <DependentUpon>RecipeDetail.aspx</DependentUpon>
@@ -241,6 +250,13 @@
     </Compile>
     <Compile Include="Views\RegisterRecipe.aspx.designer.cs">
       <DependentUpon>RegisterRecipe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterUser.aspx.cs">
+      <DependentUpon>RegisterUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterUser.aspx.designer.cs">
+      <DependentUpon>RegisterUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\View.aspx.cs">
       <DependentUpon>View.aspx</DependentUpon>
