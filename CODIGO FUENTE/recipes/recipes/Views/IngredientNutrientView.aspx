@@ -73,7 +73,7 @@
                 </div>
              <br />   
             <div class="row">
-                <div style="width: 70%; height: auto; margin-left: auto; margin-right: auto;">
+                <div style="width: 95%; height: auto; margin-left: auto; margin-right: auto;">
                     <h3>Lista de nutrientes</h3>
                     <asp:GridView runat="server" ID="grdNutrients" DataKeyNames="in_ingredient_nutrient"
                         AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"
@@ -102,7 +102,7 @@
                                     <asp:Label ID="lblQty" runat="server" Text='<%# Bind("in_quantity") %>'></asp:Label>
                                 </ItemTemplate>
                                 <FooterTemplate>
-                                    <asp:TextBox ID="txtfooter" runat="server" type="numeric"></asp:TextBox>
+                                    <asp:TextBox ID="txtfooter" runat="server" type="numeric" Placeholder="Cantidad"></asp:TextBox>
                                 </FooterTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField>
@@ -128,7 +128,7 @@
                                 </asp:DropDownList>
                                 </div>
                                 <div class="col-md-4">
-                                <asp:TextBox ID="txtempty" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtempty" CssClass="form-control" runat="server" Placeholder="Cantidad"></asp:TextBox>
                                 </div>                                
                                 <div class="col-md-4">
                                 <asp:Button ID="Button1" CssClass="owl-buttons" CommandName="add2" Text="Agregar" runat="server" />

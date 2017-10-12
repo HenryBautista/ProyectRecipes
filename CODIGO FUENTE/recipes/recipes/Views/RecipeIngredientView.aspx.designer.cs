@@ -13,15 +13,6 @@ namespace recipes.Views {
     public partial class RecipeIngredientView {
         
         /// <summary>
-        /// imageRecipe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imageRecipe;
-        
-        /// <summary>
         /// re_iframe control.
         /// </summary>
         /// <remarks>

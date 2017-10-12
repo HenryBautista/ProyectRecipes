@@ -70,7 +70,7 @@ namespace recipes.Views
             }
             else
             {
-                if ((GeneralServices.Show_Data_table("ingredient", "S2", Convert.ToInt32(ingredientID.Text))).Rows[0]["in_image"].ToString() != name)
+                if ((GeneralServices.Show_Data_table("ingredient", "S2", Convert.ToInt32(ingredientID.Text))).Rows[0]["in_name"].ToString() != name)
                 {
                     if (IngredientServices.CmpID(name).Rows.Count == 0)
                     {

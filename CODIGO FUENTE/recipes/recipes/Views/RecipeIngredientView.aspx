@@ -7,11 +7,8 @@
         <div class="container">
             <div class="container" style="width: 80%; margin-top: 25px; border: 1px solid #e1e1e1;">
                 <div class="row">
-                    <div class="col-lg-6" style="background: #fff;">
-                        <div class="col-md-6">                            
-                        <asp:Image runat="server" ID="imageRecipe" class="img-responsive" />
-                        </div>
-                        <div class="col-sm-6">
+                    <div class="col-md-6" style="background: #fff;">
+                        <div >
                             <iframe runat="server" id="re_iframe" style="min-width: 100%; min-height: 350px" frameborder="0" allowfullscreen class="img-responsive"></iframe>
                         </div>
                     </div>
@@ -65,7 +62,7 @@
                 </div>
                 <br />
                 <div class="row">
-                    <div style="width: 70%; height: auto; margin-left: auto; margin-right: auto;">
+                    <div style="width: 95%; height: auto; margin-left: auto; margin-right: auto;">
                         <h3>Lista de Ingredientes</h3>
                         <asp:GridView runat="server" ID="grdIngredients" DataKeyNames="ri_recipe_ingredient"
                             AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"
@@ -94,7 +91,7 @@
                                         <asp:Label ID="lblQty" runat="server" Text='<%# Bind("ri_quantity") %>'></asp:Label>
                                     </ItemTemplate>
                                     <FooterTemplate>
-                                        <asp:TextBox ID="txtfooterqty" runat="server" type="numeric"></asp:TextBox>
+                                        <asp:TextBox ID="txtfooterqty" runat="server" type="numeric" Placeholder="Cantidad"></asp:TextBox>
                                     </FooterTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Observation">
@@ -105,7 +102,7 @@
                                         <asp:Label ID="lblObs" runat="server" Text='<%# Bind("ri_observation") %>'></asp:Label>
                                     </ItemTemplate>
                                     <FooterTemplate>
-                                        <asp:TextBox ID="txtfooterobs" runat="server"></asp:TextBox>                                        
+                                        <asp:TextBox ID="txtfooterobs" runat="server" Placeholder="Observacion"></asp:TextBox>                                        
                                         <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
                                     </FooterTemplate>
                                 </asp:TemplateField>
