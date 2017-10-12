@@ -15,9 +15,13 @@ namespace recipes.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             idrecipe = Request.QueryString["valor"];
-            if (!IsPostBack)
+            if (Session["us_user"] != null)
             {
                 BindData();
+            }
+            else
+            {
+                Response.Redirect("~/Views/Login.aspx");
             }
         }
         private void BindData()

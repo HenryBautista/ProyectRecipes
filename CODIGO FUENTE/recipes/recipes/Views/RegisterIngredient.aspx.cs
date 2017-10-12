@@ -16,9 +16,13 @@ namespace recipes.Views
         TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["us_user"] != null)
             {
                 BindData();
+            }
+            else
+            {
+                Response.Redirect("~/Views/Login.aspx");
             }
         }
         protected void BindData()
