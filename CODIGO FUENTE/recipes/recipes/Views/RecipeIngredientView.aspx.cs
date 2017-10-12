@@ -70,7 +70,7 @@ namespace recipes.Views
                     BindData();
                     break;
                 case "delete_ingredient":
-                    string result = GeneralServices.Delete_this("recipe_ingredient", "recipes..sp_recipe_ingredient", id_ing.ToString());
+                    string result = GeneralServices.Delete_this("recipe_ingredient", "recipes2..sp_recipe_ingredient", id_ing.ToString());
                     if (result == "success")
                         BindData();
                     else
