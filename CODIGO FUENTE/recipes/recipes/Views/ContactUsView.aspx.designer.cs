@@ -10,42 +10,42 @@
 namespace recipes.Views {
     
     
-    public partial class Login {
+    public partial class ContactUsView1 {
         
         /// <summary>
-        /// txtUser control.
+        /// txt_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUser;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_name;
         
         /// <summary>
-        /// txtPass control.
+        /// txt_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPass;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_email;
         
         /// <summary>
-        /// btnIniciar control.
+        /// txt_message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIniciar;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_message;
         
         /// <summary>
-        /// lblEstado control.
+        /// form_submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstado;
+        protected global::System.Web.UI.WebControls.Button form_submit;
     }
 }

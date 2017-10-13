@@ -14,30 +14,33 @@ namespace recipes.Views
         {
             if (!this.IsPostBack)
             {
-                GetUser();
                 string current = this.ContentPlaceHolder1.Page.GetType().Name;
                 if (!current.Contains("startpageview"))
                 {
                     hero_area.Visible = false;
                 }
-                //ImageInicio.Src = GeneralServices.Show_Data_table("recipes","F2",null).Rows[0]["re_url"].ToString();
             }
+            GetUser();
         }
         private void GetUser()
-        {
-            try
+        {            
+            if (Session["us_user"] != null)
             {
-                lbl_usuario.InnerText = Session["US_NAME"].ToString();
-                lbl_log.Visible = false;
-                li_user.Visible = true;
+                if (bool.Parse( Session["us_master"].ToString()))
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "ismaster();", true);
+                    lbl_master.InnerText = Session["us_user"].ToString().ToUpper();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "isuser();", true);
+                    lbl_user.InnerText = Session["us_user"].ToString().ToUpper();
+                }
             }
-            catch (Exception)
+            else
             {
-                lbl_log.Visible = true;
-                li_user.Visible = false;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "isnormal();", true);
             }
         }
-
-
     }
 }

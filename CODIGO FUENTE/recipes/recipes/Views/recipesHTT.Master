@@ -50,48 +50,6 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="block">
-                                <%--<nav class="navbar navbar-default">
-                          <div class="container-fluid">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header">
-                              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                              </button>
-                                  <a class="navbar-brand" href="#">
-                                    <img src="../Images/logo.png" alt="Logo" />
-                                  </a>
-
-                            </div>
-
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                              <ul class="nav navbar-nav navbar-right" id="top-nav">
-                                <li>
-                                    <asp:HyperLink ID="hyper" runat="server" NavigateUrl="../Views/StartPageView.aspx"
-                                        Text="Inicio">
-                                    </asp:HyperLink>
-                                    </li>
-                                <li><asp:HyperLink ID="about" runat="server" Text="Nosotros" NavigateUrl="../Views/About.aspx"></asp:HyperLink></li>
-                                <li><button id="about_button">Nosotros</button></li>
-                                <li><a href="../Views/StartPageView.aspx">menu</a></li>
-                                <li><a href="../Views/StartPageView.aspx" >news</a></li>
-                                <li><a href="../Views/Contact.aspx">contactos</a></li>
-                                <li> <a href="../Views/StartPageView.aspx">Administración
-                                     </a>
-                                    <ul>
-                                        <li><a href="../Views/RegisterIngredientView.aspx">Ingrediente</a></li>
-                                        <li><a href="../Views/UserView.aspx">Registrar usuario</a></li>
-                                        <li><a href="../Views/RegisterPromotion.aspx">Registrar promoción</a></li>
-                                        <li><a href="../Views/RegisterRecipeView.aspx">Nueva Receta</a></li>
-                                    </ul>
-                               </li>
-                              </ul>
-                            </div><!-- /.navbar-collapse -->
-                          </div><!-- /.container-fluid -->
-                        </nav>--%>
                                 <nav id="ttr_menu" class="navbar-default navbar">
                                     <div id="ttr_menu_inner_in">
                                         <div class="menuforeground">
@@ -109,40 +67,31 @@
                                                 </a>
                                             </div>
                                             <div class="menu-center collapse navbar-collapse">
-                                                <ul class="ttr_menu_items nav navbar-nav navbar-right">
+                                                <ul id="normal" class="ttr_menu_items nav navbar-nav navbar-right">
                                                     <li><a href="../Views/StartPageView.aspx">inicio</a></li>
-                                                    <li><a href="../Views/StartPageView.aspx#slider">promociones</a></li>
-                                                    <li><a href="../Views/StartPageView.aspx#about-us" id="about_button">Nosotros</a></li>
-                                                    <li><a href="../Views/StartPageView.aspx#footer">contactos</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#about-us">Nosotros</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#slider">Promociones</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#footer">Contactos</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#blog">Productos</a></li>
+                                                    <li><a href="../Views/Login.aspx">Iniciar Sesion</a></li>
+                                                    <li><a href="../Views/RegisterUser.aspx">Registrarse</a></li>
+                                                    <li><a href="../Views/ContactUsView.aspx">Contactanos</a></li>
+                                                </ul>
+                                                <ul id="usr" class="ttr_menu_items nav navbar-nav navbar-right">
+                                                    <li><a href="../Views/StartPageView.aspx">Inicio</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#slider">Promociones</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#about-us">Nosotros</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#footer">Contactos</a></li>
                                                     <li>
                                                         <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
                                                         </a>
                                                         <ul class="dropdown-menu">
                                                             <li><a href="../Views/StartPageView.aspx#blog">Mercado Virtual de ingredientes</a></li>
                                                             <li><a href="../Views/RecipesView.aspx">Recetas sugeridas</a></li>
-                                                            <li><a href="../Views/RecipesView.aspx">Recetas personalizadas</a></li>
-                                                            <li><a href="../Views/CarritoView.aspx">Carrito de compras</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administracion
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-
-                                                            <li><a href="../Views/StartViewAdministrator.aspx">Nosotros </a></li>
-                                                            <li><a href="../Views/RegisterNutrient.aspx">Nutriente</a></li>
-                                                            <li><a href="../Views/RegisterIngredient.aspx">Ingrediente</a></li>
-                                                            <li><a href="../Views/RegisterPromotion.aspx">Registrar promocion</a></li>
+                                                            <li><a href="../Views/RecipesView.aspx">Mis Recetas</a></li>
                                                             <li><a href="../Views/RegisterRecipe.aspx">Nueva receta</a></li>
-                                                            <li><a href="../Views/RecipePeopleView.aspx">Recetas de Usuarios</a></li>
-                                                            <li><a href="../Views/IngredientOrderList.aspx">Lista de ingredientes pedidos</a></li>
+                                                            <li><a href="../Views/CarritoView.aspx">Lista de compras</a></li>
                                                         </ul>
-                                                    </li>
-                                                    <li><a id="lbl_log" runat="server" href="../Views/LoginView.aspx">
-                                                        <div class="div-login" id="divLogin" runat="server">
-                                                            <asp:Label Text="Iniciar sesión" ID="lbllogin" runat="server" />
-                                                        </div>
-                                                    </a>
                                                     </li>
                                                     <li>
                                                         <%--<a href="../Views/CarritoView.aspx">
@@ -161,7 +110,7 @@
                                                                         <h4 class="modal-title">Carrito</h4>
                                                                     </div>
                                                                     <div class="modal-body" style="padding: 1px;">
-                                                                        <asp:GridView runat="server" ID="grdCarritoProductos" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                                                        <asp:GridView runat="server" ID="GridView1" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
                                                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                                             <Columns>
                                                                                 <asp:TemplateField HeaderText="Producto">
@@ -198,8 +147,44 @@
                                                         </div>
                                                         <%---------%>
                                                     </li>
-                                                    <li id="li_user" runat="server">
-                                                        <a id="lbl_usuario" runat="server" data-toggle="dropdown">SESION NO INICIADA</a>
+                                                    <li runat="server">
+                                                        <a id="lbl_user" runat="server" data-toggle="dropdown">SESION NO INICIADA</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="../Views/UserView.aspx">Mi perfil</a></li>
+                                                            <li>
+                                                                <a href="../Views/logout.aspx">Terminar sesion</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <ul id="master" class="ttr_menu_items nav navbar-nav navbar-right">
+                                                    <li><a href="../Views/StartPageView.aspx">inicio</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#slider">promociones</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#about-us" id="about_button">Nosotros</a></li>
+                                                    <li><a href="../Views/StartPageView.aspx#footer">contactos</a></li>
+                                                    <li>
+                                                        <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administracion Pagina
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+
+                                                            <li><a href="../Views/StartViewAdministrator.aspx">Nosotros </a></li>
+                                                            <li><a href="../Views/RegisterPromotion.aspx">Registrar promocion</a></li>
+                                                            <li><a href="../Views/UserConsult.aspx">Lista de consultas</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administracion Productos
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="../Views/RegisterNutrient.aspx">Nutriente</a></li>
+                                                            <li><a href="../Views/RegisterIngredient.aspx">Ingrediente</a></li>
+                                                            <li><a href="../Views/RegisterRecipe.aspx">Nueva receta</a></li>
+                                                            <li><a href="../Views/RecipePeopleView.aspx">Recetas de Usuarios</a></li>
+                                                            <li><a href="../Views/IngredientOrderList.aspx">Lista de ingredientes pedidos</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li runat="server">
+                                                        <a id="lbl_master" runat="server" data-toggle="dropdown">SESION NO INICIADA</a>
                                                         <ul class="dropdown-menu">
                                                             <li><a href="../Views/UserView.aspx">Mi perfil</a></li>
                                                             <li>
@@ -221,9 +206,20 @@
                 <!-- .container close -->
             </nav>
             <!-- header close -->
-            <script>
-
-</script>
+            <script type="text/javascript">
+                function isuser() {
+                    $('#master').remove();
+                    $('#normal').remove();
+                };
+                function ismaster() {
+                    $('#usr').remove();
+                    $('#normal').remove();
+                };
+                function isnormal() {
+                    $('#usr').remove();
+                    $('#master').remove();
+                };
+            </script>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 
@@ -253,25 +249,6 @@
                                 </div>
                             </div>
                         </div>
-                        <%--                <!-- .col-md-4 close -->
-                <div class="col-md-4">
-                    <div class="block wow fadeInLeft"  data-wow-delay="700ms">
-                        <h3>LATEST <span>BLOG POSTS</span></h3>
-                        <div class="blog">
-                            <ul>
-                                <li>
-                                    <h4><a href="#">Nov 9-2014</a></h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adip iscing elit. Curabitur ut blandit sapien</p>
-                                </li>
-                                <li>
-                                    <h4><a href="#">Sep 8-2014</a></h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adip iscing elit. Curabitur ut blandit sapien</p>
-                                </li>
-                            </ul>                
-                        </div>
-                    </div>
-                </div>--%>
-                        <!-- .col-md-4 close -->
                         <div class="col-md-4">
                             <div class="block wow fadeInLeft" data-wow-delay="1100ms">
                                 <%--<div class="gallary">

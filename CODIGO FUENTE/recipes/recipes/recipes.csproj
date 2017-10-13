@@ -148,13 +148,17 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Views\ContactUsView.aspx" />
     <Content Include="Views\IngredientNutrientView.aspx" />
+    <Content Include="Views\Login.aspx" />
+    <Content Include="Views\logout.aspx" />
     <Content Include="Views\RecipeDetail.aspx" />
     <Content Include="Views\RecipeIngredientView.aspx" />
     <Content Include="Views\RegisterIngredient.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
     <Content Include="Views\RegisterPromotion.aspx" />
     <Content Include="Views\RegisterRecipe.aspx" />
+    <Content Include="Views\RegisterUser.aspx" />
     <Content Include="Views\StartPageView.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -187,12 +191,33 @@
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="Services\User_recipeServices.cs" />
     <Compile Include="Util\Utilities.cs" />
+    <Compile Include="Views\ContactUsView.aspx.cs">
+      <DependentUpon>ContactUsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ContactUsView.aspx.designer.cs">
+      <DependentUpon>ContactUsView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\IngredientNutrientView.aspx.cs">
       <DependentUpon>IngredientNutrientView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\IngredientNutrientView.aspx.designer.cs">
       <DependentUpon>IngredientNutrientView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RecipeDetail.aspx.cs">
       <DependentUpon>RecipeDetail.aspx</DependentUpon>
@@ -249,6 +274,13 @@
     </Compile>
     <Compile Include="Views\RegisterRecipe.aspx.designer.cs">
       <DependentUpon>RegisterRecipe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterUser.aspx.cs">
+      <DependentUpon>RegisterUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterUser.aspx.designer.cs">
+      <DependentUpon>RegisterUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\StartPageView.aspx.cs">
       <DependentUpon>StartPageView.aspx</DependentUpon>

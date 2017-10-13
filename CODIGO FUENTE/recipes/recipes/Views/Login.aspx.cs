@@ -22,9 +22,9 @@ namespace recipes.Views
             DataTable user = GetThisUserByMail(txtUser.Text.ToLower(),txtPass.Text);
             if (user.Rows.Count > 0)
             {
-                Session["us_user"] = user.Rows[0]["us_name"].ToString() ;
-                Session["master"] = user.Rows[0]["us_master"].ToString();
-                Response.Redirect("~/Views/StartPage.aspx");
+                Session["us_user"] = user.Rows[0]["us_name"].ToString();
+                Session["us_master"] = user.Rows[0]["us_master"].ToString();
+                Response.Redirect("~/Views/StartPageView.aspx");
             }
             else
             {

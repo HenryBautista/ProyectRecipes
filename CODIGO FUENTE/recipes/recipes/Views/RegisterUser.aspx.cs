@@ -42,12 +42,11 @@ namespace recipes.Views
                 comando.Parameters.AddWithValue("@i_phone", txtTelefono.Text);
                 comando.Parameters.AddWithValue("@i_address", txtDireccion.Text);
                 comando.Parameters.AddWithValue("@i_password", txtPass.Text);
+                comando.Parameters.AddWithValue("@i_master", 0);
                 comando.ExecuteNonQuery();
                 conexion.Close();
-
                 Response.Redirect("~/Views/Login.aspx");
-            }
-            
+            }            
         }
     }
 }

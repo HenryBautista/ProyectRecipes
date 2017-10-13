@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-6" style="background: #fff;">
                 <h3>Bienvenido a</h3>
-                <h1>Recetas <span style="font-weight: bold; color: #de5224">Bolivia</span></h1>
+                <h1>Recetas <span style="font-weight: bold; color: #fc9776">Bolivia</span></h1>
                 <br />
                 <br />
                 <h3 style="font-weight: bold;">Beneficios de unirse a nuestro sitio</h3>

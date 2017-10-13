@@ -49,58 +49,31 @@ namespace recipes.Views {
         protected global::System.Web.UI.HtmlControls.HtmlImage ImageInicio;
         
         /// <summary>
-        /// lbl_log control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lbl_log;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// divLogin control.
+        /// lbl_user control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLogin;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lbl_user;
         
         /// <summary>
-        /// lbllogin control.
+        /// lbl_master control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbllogin;
-        
-        /// <summary>
-        /// grdCarritoProductos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdCarritoProductos;
-        
-        /// <summary>
-        /// li_user control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li_user;
-        
-        /// <summary>
-        /// lbl_usuario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lbl_usuario;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lbl_master;
         
         /// <summary>
         /// ContentPlaceHolder1 control.

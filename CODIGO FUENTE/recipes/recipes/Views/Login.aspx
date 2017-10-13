@@ -25,7 +25,7 @@
                     </div>
                     <asp:Button Text="Entrar" ID="btnIniciar" OnClick="btnIniciar_Click" CssClass="btn btn-primary" runat="server" />
                     <a href="../Views/StartPage.aspx" class="btn btn-danger">Cancelar</a>
-                    <p>¿No estas registrado aún?<a href="../Views/UsuarioRegistro.aspx">Registrate!</a></p>
+                    <p>¿No estas registrado aún?   <a href="../Views/UsuarioRegistro.aspx">Registrate!</a></p>
                     <br />
                     <asp:Label Text="text" ID="lblEstado" runat="server" CssClass="label label-danger" style="font-size:15px;"/>
                 </div>
