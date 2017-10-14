@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="RecipeIngredientView.aspx.cs" Inherits="recipes.Views.RecipeIngredientView" %>
+﻿<%@ Page Title="" Language="C#"  MasterPageFile="~/Views/recipesHTT.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="RecipeIngredientView.aspx.cs" Inherits="recipes.Views.RecipeIngredientView" %>
 <%@ OutputCache Location="None" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

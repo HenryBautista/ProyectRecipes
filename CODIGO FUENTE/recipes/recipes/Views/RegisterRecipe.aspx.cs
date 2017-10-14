@@ -15,13 +15,16 @@ namespace recipes.Views
         int usr = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["us_user"] != null)
+            if (!IsPostBack)
             {
-                BindData();
-            }
-            else
-            {
-                Response.Redirect("~/Views/Login.aspx");
+                if (Session["us_user"] != null)
+                {
+                    BindData();
+                }
+                else
+                {
+                    Response.Redirect("~/Views/Login.aspx");
+                }
             }
         }
 
