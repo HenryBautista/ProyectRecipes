@@ -38,15 +38,22 @@ namespace recipes.Views
                 comando.Parameters.AddWithValue("@i_name", txtNombre.Text);
                 comando.Parameters.AddWithValue("@i_last_name", txtPaterno.Text);
                 comando.Parameters.AddWithValue("@i_mother_last_name", txtMaterno.Text);
-                comando.Parameters.AddWithValue("@i_mail", txtEmail.Text);
+                comando.Parameters.AddWithValue("@i_mail", txtEmail.Text.ToLower());
                 comando.Parameters.AddWithValue("@i_phone", txtTelefono.Text);
                 comando.Parameters.AddWithValue("@i_address", txtDireccion.Text);
                 comando.Parameters.AddWithValue("@i_password", txtPass.Text);
                 comando.Parameters.AddWithValue("@i_master", 0);
                 comando.ExecuteNonQuery();
                 conexion.Close();
+                AddMeToPerson();
                 Response.Redirect("~/Views/Login.aspx");
-            }            
+            }
+        }
+
+        private void AddMeToPerson()
+        {
+            DataTable usr = UserServices.GetThisUserByMail(txtEmail.Text.ToLower());
+            PersonServices.InsertOrUpdate(null,txtNombre.Text, Convert.ToInt32(usr.Rows[0]["us_user"]));
         }
     }
 }

@@ -24,6 +24,7 @@ namespace recipes.Views
             {
                 Session["us_user"] = user.Rows[0]["us_name"].ToString();
                 Session["us_master"] = user.Rows[0]["us_master"].ToString();
+                Session["us_id"] = user.Rows[0]["us_user"].ToString();
                 Response.Redirect("~/Views/StartPageView.aspx");
             }
             else

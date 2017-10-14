@@ -149,11 +149,13 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Views\ContactUsView.aspx" />
+    <Content Include="Views\IngredientDetail.aspx" />
     <Content Include="Views\IngredientNutrientView.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\logout.aspx" />
     <Content Include="Views\RecipeDetail.aspx" />
     <Content Include="Views\RecipeIngredientView.aspx" />
+    <Content Include="Views\RecipesView.aspx" />
     <Content Include="Views\RegisterIngredient.aspx" />
     <Content Include="Views\RegisterNutrient.aspx" />
     <Content Include="Views\RegisterPromotion.aspx" />
@@ -198,6 +200,13 @@
     <Compile Include="Views\ContactUsView.aspx.designer.cs">
       <DependentUpon>ContactUsView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\IngredientDetail.aspx.cs">
+      <DependentUpon>IngredientDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\IngredientDetail.aspx.designer.cs">
+      <DependentUpon>IngredientDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\IngredientNutrientView.aspx.cs">
       <DependentUpon>IngredientNutrientView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -232,6 +241,13 @@
     </Compile>
     <Compile Include="Views\RecipeIngredientView.aspx.designer.cs">
       <DependentUpon>RecipeIngredientView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecipesView.aspx.cs">
+      <DependentUpon>RecipesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RecipesView.aspx.designer.cs">
+      <DependentUpon>RecipesView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterIngredient.aspx.cs">
       <DependentUpon>RegisterIngredient.aspx</DependentUpon>

@@ -33,7 +33,7 @@ namespace recipes.Services
             return "success";
         }
 
-        public static DataTable getMyPerson(int usr)
+        public static DataTable getMyPeople(int usr)
         {
             DataTable result = new DataTable();
             try

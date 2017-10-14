@@ -46,7 +46,31 @@ namespace recipes.Views
 
         protected void btnCart_ServerClick(object sender, EventArgs e)
         {
-            
+            string r="";
+            DataTable dt = OrderServices.GetOrdertoUser(Convert.ToInt32(Session["us_id"]));
+            DataTable per = PersonServices.getMyPeople(Convert.ToInt32(Session["us_id"]));            
+            if (dt.Rows.Count==0)
+            {
+                OrderServices.InsertOrUpdate(null,DateTime.Now,Convert.ToInt32(Session["us_id"]),0,0);
+                dt = OrderServices.GetOrdertoUser(Convert.ToInt32(Session["us_id"]));
+                r = Recipe_orderServices.InsertOrUpdate(null, Convert.ToInt32(dt.Rows[0]["or_order"]), Convert.ToInt32(recipe_id.Text), 1, float.Parse(txt_cost.Text), Convert.ToInt32(per.Rows[0]["pe_person"]), 1);
+            }
+            else
+            {                
+                if (Recipe_orderServices.CmpRecipeExist(Convert.ToInt32(dt.Rows[0]["or_order"]), Convert.ToInt32(recipe_id.Text)).Rows.Count > 0)
+                {
+
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "AlertExist();", true);
+                }
+                else
+                {
+                    r = Recipe_orderServices.InsertOrUpdate(null, Convert.ToInt32(dt.Rows[0]["or_order"]), Convert.ToInt32(recipe_id.Text), 1, float.Parse(txt_cost.Text), Convert.ToInt32(per.Rows[0]["pe_person"]), 1);
+                }
+            }            
+            if (r != "success")
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "AlertError();", true);
+            }
         }
     }
 }

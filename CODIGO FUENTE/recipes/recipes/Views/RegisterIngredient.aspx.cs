@@ -16,7 +16,7 @@ namespace recipes.Views
         TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["us_user"] != null)
+            if (Session["us_user"] != null && bool.Parse(Session["us_master"].ToString()))            
             {
                 BindData();
             }

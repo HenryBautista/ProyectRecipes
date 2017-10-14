@@ -43,7 +43,7 @@
                                 <li data-target="#myCarousel" data-slide-to="3"></li>
                             </ol>
                             <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
+                            <div class="carousel-inner" style="max-height:300px">
                                 <div class="item active">
                                     <div style="width: 100%;">
                                         <div class="div-prImages" style="float: left; width: 50%;">
@@ -136,27 +136,33 @@
                             <asp:Repeater ID="repeateringredients" runat="server">
                                 <ItemTemplate>
                                     <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
+                                        <asp:HyperLink class="absoluto enlace" runat="server" CommandArgument='<%# Eval("in_ingredient") %>'
+                                            NavigateUrl='<%#"~/Views/IngredientDetail.aspx?valor=" + DataBinder.Eval(Container.DataItem, "in_ingredient").ToString()%>'
+                                            Style="text-decoration: none; color: black;">
                                         <div class="blog-img">
                                             <asp:Image ImageUrl='<%#Bind("in_image") %>' runat="server" ID="re_image" alt="blog-img" Style="height: 280px" />
                                             <%--<img src='<%#Bind("re_image") %>' alt="blog-img" />--%>
                                         </div>
                                         <div class="content-right">
-                                            <h3>
-                                                <asp:Label Text='<%#Bind("in_name") %>' runat="server" ID="lblRecipeName" class="name"></asp:Label></h3>
-                                            <p>
-                                                <%--<asp:Label Text='<%#Bind("in_cantidad") %>' runat="server" ID="lblObservacion" class="recipe-obs" />--%>
-                                            </p>
+                                            <div style="height:150px">                                                
+                                            <h3><asp:Label Text='<%#Bind("in_name") %>' runat="server" ID="lblRecipeName" class="name"></asp:Label></h3>
+                                            <h4>Costo: <asp:Label Text='<%#Bind("in_cost") %>' runat="server" ID="Label1" class="recipe-obs" /> Bs.</h4> 
+                                            <h4>Unidades: <asp:Label Text='<%#Bind("UNITABB") %>' runat="server" ID="Label3" class="recipe-obs" /></h4> 
+                                            <h4>Cantidad: <asp:Label Text='<%#Bind("in_quantity") %>' runat="server" ID="Label2" class="recipe-obs" /> unidades</h4>
+                                            <h4>Origen: <asp:Label Text='<%#Bind("ORIGIN") %>' runat="server" ID="Label4" class="recipe-obs" /></h4>                                               
                                             <br />
+                                            </div>
                                             <div style="background-color: white; width: 60%; margin-left: auto; margin-right: auto;">
                                                 <p style="color: black">
-                                                    <asp:Label Text='<%#Bind("in_cost") %>' Style="color: black; font-size: 30px; font-weight: bolder;" runat="server" ID="lbl_total_cost" ForeColor="White" Font-Size="18" />
+                                                    <asp:Label Text='<%#Bind("in_factor") %>' Style="color: black; font-size: 30px; font-weight: bolder;" runat="server" ID="lbl_total_cost" ForeColor="White" Font-Size="18" />
                                                     Bs.
                                                 </p>
                                             </div>
-                                            <div style="background-color: white; width: 100%">
-                                                <asp:Button Text="Comprar" ID="btnComprar" CssClass="btn btn-danger" runat="server" Style="width: 100%;" />
+                                            <div style="background-color: white; width: 100%; margin-bottom:5px">
+                                                <asp:Button Text="Comprar" ID="btnComprar" CssClass="btn btn-danger" CommandArgument='<%#Bind("in_ingredient") %>' OnClick="btnComprar_Click" runat="server" Style="width: 100%;" />
                                             </div>
                                         </div>
+                                        </asp:HyperLink>
                                     </li>
                                 </ItemTemplate>
                             </asp:Repeater>
@@ -170,6 +176,15 @@
             <!-- .row close -->
         </div>
         <!-- .containe close -->
+        
+        <script type="text/javascript">
+            function AlertError() {
+                alert("Algo salio mal!");
+            };
+            function AlertExist() {
+                alert("Ya se encuenta en la lista,puede modificar\n la cantidad al planificar el pedido ");
+            };
+        </script>
     </section>
     <!-- #blog close -->
 </asp:Content>

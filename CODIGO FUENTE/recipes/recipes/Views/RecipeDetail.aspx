@@ -18,7 +18,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <asp:Label Text="Codigo" runat="server" CssClass="control-label" />
+                                        <asp:Label Text="Codigo" runat="server" CssClass="control-label"/>
                                         <asp:TextBox runat="server" ID="txt_code" CssClass="form-control" ReadOnly="true" />
                                     </div>
                                 </div>
@@ -101,5 +101,13 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            function AlertError() {
+                alert("Algo salio mal!");
+            }; 
+            function AlertExist() {
+                alert("Ya se encuenta en la lista,puede modificar\n la cantidad al planificar el pedido  ");
+            };
+        </script>
     </section>
 </asp:Content>
