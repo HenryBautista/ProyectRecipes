@@ -22,7 +22,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <asp:TextBox runat="server" ID="txtPass" CssClass="form-control" required="true" placeholder="Contraseña" />
+                        <asp:TextBox runat="server" ID="txtPass" TextMode="Password" CssClass="form-control" required="true" placeholder="Contraseña" />
                     </div>
                     <asp:Button Text="Entrar" ID="btnIniciar" OnClick="btnIniciar_Click" CssClass="btn btn-primary" runat="server" />
                     <a href="../Views/StartPage.aspx" class="btn btn-danger">Cancelar</a>
