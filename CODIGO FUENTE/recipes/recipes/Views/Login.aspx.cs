@@ -14,7 +14,10 @@ namespace recipes.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["us_user"]!=null)
+            {                
+                Response.Redirect("~/Views/StartPageView.aspx");
+            }
         }
 
         protected void btnIniciar_Click(object sender, EventArgs e)
@@ -25,6 +28,8 @@ namespace recipes.Views
                 Session["us_user"] = user.Rows[0]["us_name"].ToString();
                 Session["us_master"] = user.Rows[0]["us_master"].ToString();
                 Session["us_id"] = user.Rows[0]["us_user"].ToString();
+                txtPass.Text = "";
+                txtUser.Text = "";
                 Response.Redirect("~/Views/StartPageView.aspx");
             }
             else

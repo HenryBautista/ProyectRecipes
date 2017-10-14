@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="recipes.Views.Login" %>
+<%@ OutputCache Location="None" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -32,4 +33,12 @@
                 
             </div>
         </div>
+    <script type="text/javascript">
+        function noBack() {
+            window.history.forward();
+            setTimeout("noBack", 0);
+            window.onload = function () { null };
+        };
+        window.onload = noBack();
+    </script>
 </asp:Content>

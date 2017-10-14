@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="recipesHTT.master.cs" Inherits="recipes.Views.recipesHTT" %>
+﻿<%@ Master Language="C#" LinePragmas="false" AutoEventWireup="true" CodeBehind="recipesHTT.master.cs" Inherits="recipes.Views.recipesHTT" %>
 
 <!DOCTYPE html>
 

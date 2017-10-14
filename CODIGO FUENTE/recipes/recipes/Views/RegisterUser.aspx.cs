@@ -17,7 +17,10 @@ namespace recipes.Views
         SqlConnection conexion = new SqlConnection(cadena);
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["us_user"] != null)
+            {
+                Response.Redirect("~/Views/StartPageView.aspx");
+            }
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
