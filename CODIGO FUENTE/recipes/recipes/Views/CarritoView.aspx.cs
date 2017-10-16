@@ -16,7 +16,7 @@ namespace recipes.Views
         {
             if (!IsPostBack)
             {
-                id = Request.QueryString["id"];
+                id = Session["us_id"].ToString();
                 BindData();
             }
         }
@@ -31,8 +31,10 @@ namespace recipes.Views
                 //txtFecha.Text = result.Rows[0]["or_order_date"].ToString();
                 lbl_cantidad.Text = result.Rows[0]["or_total_quantity"].ToString();
                 lbl_cost.Text = result.Rows[0]["or_total_price"].ToString();
-                grdOrden.DataSource = result2;
-                grdOrden.DataBind();
+                grdRecetas.DataSource = result2;
+                grdRecetas.DataBind();
+                grdIngredients.DataSource = GeneralServices.Show_Data_table("user", "F3", Convert.ToInt32(id));
+                grdIngredients.DataBind();
             }
         }
 
@@ -42,7 +44,7 @@ namespace recipes.Views
         }
         private bool check_fields(string qty, int index)
         {
-            Label msg = grdOrden.Rows[index].FindControl("lblmsg") as Label;
+            Label msg = grdRecetas.Rows[index].FindControl("lblmsg") as Label;
 
             if (qty == "")
             {
@@ -98,7 +100,7 @@ namespace recipes.Views
             int? id_ing;
             try
             {
-                id_ing = Convert.ToInt32(grdOrden.DataKeys[index].Value);
+                id_ing = Convert.ToInt32(grdRecetas.DataKeys[index].Value);
             }
             catch (Exception)
             {
@@ -109,13 +111,13 @@ namespace recipes.Views
             switch (com)
             {
                 case "edit_nutrient":
-                    grdOrden.EditIndex = index;
+                    grdRecetas.EditIndex = index;
                     BindData();
                     break;
                 case "update_nutrient":
-                    string qty = ((TextBox)grdOrden.Rows[index].FindControl("txtQty")).Text;
-                    string per = ((DropDownList)grdOrden.Rows[index].FindControl("DDLPerson")).SelectedValue;
-                    string price = ((Label)grdOrden.Rows[index].FindControl("lblunidad")).Text;
+                    string qty = ((TextBox)grdRecetas.Rows[index].FindControl("txtQty")).Text;
+                    string per = ((DropDownList)grdRecetas.Rows[index].FindControl("DDLPerson")).SelectedValue;
+                    string price = ((Label)grdRecetas.Rows[index].FindControl("lblunidad")).Text;
 
                     if (check_fields(qty, index))
                     {
@@ -126,12 +128,12 @@ namespace recipes.Views
                         //                    Convert.ToInt32(dt.Rows[0]["ro_recipe"].ToString()),
                         //                    Convert.ToInt32(qty), tp, Convert.ToInt32(per));
                         GeneralServices.Show_Data_table("order", "U2", id_ing);
-                        grdOrden.EditIndex = -1;
+                        grdRecetas.EditIndex = -1;
                         BindData();
                     }
                     break;
                 case "cancel_nutrient":
-                    grdOrden.EditIndex = -1;
+                    grdRecetas.EditIndex = -1;
                     BindData();
                     break;
                 case "delete_nutrient":
@@ -143,7 +145,7 @@ namespace recipes.Views
                     }
                     else
                     {
-                        Label msg = grdOrden.Rows[index].FindControl("lblmsg") as Label;
+                        Label msg = grdRecetas.Rows[index].FindControl("lblmsg") as Label;
                         msg.Text = "No se Pudo Eliminar";
                     }
                     break;
@@ -166,7 +168,7 @@ namespace recipes.Views
                 b1.CommandArgument = e.Row.RowIndex.ToString();
                 b1 = e.Row.FindControl("btn_del") as Button;
                 b1.CommandArgument = e.Row.RowIndex.ToString();
-                if (grdOrden.EditIndex != -1 && e.Row.RowIndex == grdOrden.EditIndex)
+                if (grdRecetas.EditIndex != -1 && e.Row.RowIndex == grdRecetas.EditIndex)
                 {
                     b1 = e.Row.FindControl("btn_edit") as Button;
                     b1.Visible = false;
