@@ -28,7 +28,7 @@ namespace recipes.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtFecha;
+        protected global::System.Web.UI.WebControls.TextBox txtFecha;
         
         /// <summary>
         /// lblabel control.

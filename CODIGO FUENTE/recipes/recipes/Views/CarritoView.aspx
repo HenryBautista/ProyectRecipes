@@ -52,7 +52,7 @@
                     <div class='col-sm-6'>
                         <div class="form-group">
                             <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' id="txtFecha" runat="server" class="datepicker" />
+                                <asp:Textbox type='text' id="txtFecha" runat="server" class="datepicker" />
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
