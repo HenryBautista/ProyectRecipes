@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="CarritoView.aspx.cs" Inherits="recipes.Views.CarritoView" %>
+
 <%@ OutputCache Location="None" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -11,30 +12,13 @@
             return confirm("Esta seguro que desea realizar el pedido?");
         }
     </script>
-    <script type="text/javascript">
-        function PrintPanel() {
-            var panel = document.getElementById("<%=pnlContents.ClientID %>");
-            var printWindow = window.open('', '', 'height=800,width=400');
-            printWindow.document.write('<html><head><title>Detalle de pedido</title>');
-            printWindow.document.write('</head><body >');
-            printWindow.document.write(panel.innerHTML);
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            setTimeout(function () {
-                printWindow.print();
-            }, 500);
-            return false;
-        };
-        //$(document).ready(function () {
-        //    $('.datepicker').pickadate({
-        //        selectMonths: true, // Creates a dropdown to control month
-        //        selectYears: 15, // Creates a dropdown of 15 years to control year,
-        //        today: 'Hoy',
-        //        clear: 'Limpiar',
-        //        close: 'aceptar',
-        //        closeOnSelect: false // Close upon selecting a date,
-        //    });
-        //});
+    
+    <link href="../Assets/datepicker/css/datepicker.css" rel="stylesheet" />
+    <script src="../Assets/datepicker/js/bootstrap-datepicker.js"></script>
+    <script>
+        $(function () {
+            $('.datepicker').datepicker();
+        });
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -42,40 +26,47 @@
 
     <section>
         <div class="container" style="margin: 10px; margin-top: 70px;">
-            <%--            <div style="float: left; width: 30%; height: 30%;">
-                <img src="../Images/RecipePhotos/comida.jpg" style="width: 100%; height: 100%;" />--%>
         </div>
         <div class="container">
             <div style="float: left; width: 100%;" class="detail">
                 <div class="row">
-                    <asp:Label Text="Fecha" runat="server" />
-                    <div class='col-sm-6'>
+                    <div class='col-sm-4'>
                         <div class="form-group">
+                            <asp:Label Text="Fecha" runat="server" />
                             <div class='input-group date' id='datetimepicker1'>
-                                <asp:Textbox type='text' id="txtFecha" runat="server" class="datepicker" />
+                                <asp:TextBox type='text' ID="txtFecha" runat="server" required="true" class="datepicker form-control" placeholder="Fecha" />
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <asp:Label Text="" ID="lblabel" runat="server" />
-                    <asp:Label Text="Cantidad" runat="server" />
-                    <asp:Label class="txt-form" ID="lbl_cantidad" placeholder="Cantidad" runat="server"></asp:Label>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <asp:Label Text="Cantidad total de productos" runat="server" />
+                            <br />
+                            <asp:Label class="label label-primary" ID="lbl_cantidad" runat="server"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <asp:Label Text="Precio total" runat="server" />
+                            <br />
+                            <asp:Label class="label label-primary" ID="lbl_cost" runat="server"></asp:Label>
+                        </div>
+                        <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn btn-primary" OnClick="btn_cart_Click" OnClientClick="return confirmation();" />
+                        <asp:Button Text="Imprimir" ID="btnPrint" CssClass="btn btn-success" runat="server" OnClientClick="return PrintPanel();" />
 
-                    <asp:Label Text="Precio total" runat="server" />
-                    <asp:Label class="txt-form" ID="lbl_cost" runat="server"></asp:Label>
+                    </div>
                     <br />
                     <label runat="server" id="lbl_msg" class="col-lg-2 label-danger control-label"></label>
                     <br />
-                    <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn btn-primary" OnClick="btn_cart_Click" OnClientClick="return confirmation();" />
-                    <asp:Button Text="Imprimir" ID="btnPrint" CssClass="btn btn-success" runat="server" OnClientClick="return PrintPanel();"/>
 
                     <%-- Area de impresion de reporte --%>
-                    <asp:Panel ID="pnlContents" runat="server" visible="false">
+                    <asp:Panel ID="pnlContents" runat="server" Visible="false">
                         <h3>Recetas Bolivia</h3>
                         <hr style="border-top: dotted 2px;" />
-                        <p style="font-weight:bold;">Detalle de compra</p>
+                        <p style="font-weight: bold;">Detalle de compra</p>
                         <div class="row">
                             <div class="col-md-6">
                                 Usuario
@@ -101,7 +92,7 @@
                             </div>
                         </div>
                         <hr style="border-top: dotted 2px;" />
-                        <p style="font-weight:bold;">Lista de productos</p>
+                        <p style="font-weight: bold;">Lista de productos</p>
                         <asp:Repeater runat="server" ID="rptLista">
                             <ItemTemplate>
                                 <div class="row">
@@ -127,9 +118,9 @@
                 <h3>Lista de ordenes <span>Recetas</span></h3>
                 <asp:GridView runat="server" ID="grdRecetas" DataKeyNames="ro_recipe_order"
                     AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"
-                    OnRowCommand="grdOrden_RowCommand" CssClass="table table-bordered bs-table" >
+                    OnRowCommand="grdOrden_RowCommand" CssClass="table table-bordered bs-table">
                     <AlternatingRowStyle BackColor="White" />
-                    <Columns>                        
+                    <Columns>
                         <asp:ImageField HeaderText="IMAGEN" DataImageUrlField="re_image" ControlStyle-Width="80">
                             <ControlStyle Width="80px"></ControlStyle>
                         </asp:ImageField>
@@ -181,7 +172,7 @@
                             <ItemTemplate>
                                 <asp:DropDownList ID="DDLPer" DataSource='<%# getPerson() %>' SelectedValue='<%# Bind("ro_person")%>' Enabled="false" DataValueField="pe_person" DataTextField="pe_name" runat="server">
                                 </asp:DropDownList>
-                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>                                
+                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField>
@@ -190,7 +181,7 @@
                                 <asp:Button ID="btn_del" CommandName="delete_recipe" CommandArgument='<%# Container.DataItemIndex %>' Text="Eliminar" runat="server" />
                             </ItemTemplate>
                             <EditItemTemplate>
-                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>                                
+                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
                                 <asp:Button ID="btn_update" CommandName="update_recipe" CommandArgument='<%# Container.DataItemIndex %>' Text="Guardar" runat="server" />
                                 <asp:Button ID="btn_cancel" CommandName="cancel_recipe" CommandArgument='<%# Container.DataItemIndex %>' Text="Cancelar" runat="server" />
                             </EditItemTemplate>
@@ -209,7 +200,7 @@
                 </asp:GridView>
                 <h3>Lista de ordenes
                 <span>Ingredientes</span></h3>
-                <asp:GridView ID="grdIngredients" runat="server" CssClass="table table-bordered bs-table" 
+                <asp:GridView ID="grdIngredients" runat="server" CssClass="table table-bordered bs-table"
                     AutoGenerateColumns="False" EnablePersistedSelection="True" OnRowCommand="grdIngredients_RowCommand"
                     DataKeyNames="ro_recipe_order" Style="width: 100%;" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
@@ -265,7 +256,7 @@
                             <ItemTemplate>
                                 <asp:DropDownList ID="DDLPer" DataSource='<%# getPerson() %>' SelectedValue='<%# Bind("ro_person")%>' Enabled="false" DataValueField="pe_person" DataTextField="pe_name" runat="server">
                                 </asp:DropDownList>
-                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>                                
+                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField>
@@ -274,7 +265,7 @@
                                 <asp:Button ID="btn_del" CommandName="delete_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="Eliminar" runat="server" />
                             </ItemTemplate>
                             <EditItemTemplate>
-                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>                                
+                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
                                 <asp:Button ID="btn_update" CommandName="update_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="Guardar" runat="server" />
                                 <asp:Button ID="btn_cancel" CommandName="cancel_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="Cancelar" runat="server" />
                             </EditItemTemplate>

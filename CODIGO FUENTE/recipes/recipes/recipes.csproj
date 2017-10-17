@@ -78,6 +78,8 @@
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\StartPageViewStyles.css" />
     <Content Include="Assets\css\Styles.css" />
+    <Content Include="Assets\datepicker\css\datepicker.css" />
+    <Content Include="Assets\datepicker\js\bootstrap-datepicker.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -142,6 +144,7 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\ufonts.com_tw-cen-mt.ttf" />
     <Content Include="js\.DS_Store" />
+    <Content Include="Assets\datepicker\less\datepicker.less" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
