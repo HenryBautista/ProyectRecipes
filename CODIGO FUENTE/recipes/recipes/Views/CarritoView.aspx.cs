@@ -27,7 +27,6 @@ namespace recipes.Views
                     Response.Redirect("~/Views/Login.aspx");
                 }
             }
-
         }
 
         private void BindData()

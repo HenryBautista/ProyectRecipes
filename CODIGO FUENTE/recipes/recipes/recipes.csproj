@@ -166,6 +166,7 @@
     <Content Include="Views\RegisterPromotion.aspx" />
     <Content Include="Views\RegisterRecipe.aspx" />
     <Content Include="Views\RegisterUser.aspx" />
+    <Content Include="Views\ReportView.aspx" />
     <Content Include="Views\StartPageView.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -316,6 +317,13 @@
     </Compile>
     <Compile Include="Views\RegisterUser.aspx.designer.cs">
       <DependentUpon>RegisterUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportView.aspx.cs">
+      <DependentUpon>ReportView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ReportView.aspx.designer.cs">
+      <DependentUpon>ReportView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\StartPageView.aspx.cs">
       <DependentUpon>StartPageView.aspx</DependentUpon>

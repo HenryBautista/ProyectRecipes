@@ -55,7 +55,7 @@
                             <asp:Label class="label label-primary" ID="lbl_cost" runat="server"></asp:Label>
                         </div>
                         <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn btn-primary" OnClick="btn_cart_Click" OnClientClick="return confirmation();" />
-                        <asp:Button Text="Imprimir" ID="btnPrint" CssClass="btn btn-success" runat="server" OnClientClick="return PrintPanel();" />
+                        <a href="../Views/ReportView.aspx" class="btn btn-success">Reporte de compra</a>
 
                     </div>
                     <br />
