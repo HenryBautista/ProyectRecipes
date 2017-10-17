@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" AutoEventWireup="true" CodeBehind="CarritoView.aspx.cs" Inherits="recipes.Views.CarritoView" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="CarritoView.aspx.cs" Inherits="recipes.Views.CarritoView" %>
+<%@ OutputCache Location="None" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .button-cart:hover {
@@ -127,7 +127,7 @@
                 <h3>Lista de ordenes <span>Recetas</span></h3>
                 <asp:GridView runat="server" ID="grdRecetas" DataKeyNames="ro_recipe_order"
                     AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"
-                    OnRowCommand="grdOrden_RowCommand">
+                    OnRowCommand="grdOrden_RowCommand" CssClass="table table-bordered bs-table" >
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>                        
                         <asp:ImageField HeaderText="IMAGEN" DataImageUrlField="re_image" ControlStyle-Width="80">
@@ -151,7 +151,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Cantidad">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("ro_quantity") %>'></asp:TextBox>
+                                <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("ro_quantity") %>' type="numeric" required="true"></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblQty" runat="server" Text='<%# Bind("ro_quantity") %>'></asp:Label>
@@ -209,14 +209,76 @@
                 </asp:GridView>
                 <h3>Lista de ordenes
                 <span>Ingredientes</span></h3>
-                <asp:GridView ID="grdIngredients" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="False" EnablePersistedSelection="True"
+                <asp:GridView ID="grdIngredients" runat="server" CssClass="table table-bordered bs-table" 
+                    AutoGenerateColumns="False" EnablePersistedSelection="True" OnRowCommand="grdIngredients_RowCommand"
                     DataKeyNames="ro_recipe_order" Style="width: 100%;" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:ImageField HeaderText="IMAGEN" DataImageUrlField="in_image" ControlStyle-Width="80">
                             <ControlStyle Width="80px"></ControlStyle>
                         </asp:ImageField>
-                        <asp:BoundField HeaderText="Ingrediente" DataField="INGREDIENT" />
+                        <asp:TemplateField HeaderText="Ingrediente">
+                            <EditItemTemplate>
+                                <asp:Label ID="lblRecipe" runat="server" Text='<%# Bind("INGREDIENT") %>'></asp:Label>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="lblRecipe" runat="server" Text='<%# Bind("INGREDIENT") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Unidad">
+                            <EditItemTemplate>
+                                <asp:Label ID="lblTurno" runat="server" Text='<%# Bind("UNIT") %>'></asp:Label>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="lblTurno" runat="server" Text='<%# Bind("UNIT") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Cantidad">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("ro_quantity") %>' type="numeric" required="true"></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="lblQty" runat="server" Text='<%# Bind("ro_quantity") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Precio Unidad">
+                            <EditItemTemplate>
+                                <asp:Label ID="lblunidad" runat="server" Text='<%# Bind("re_total_cost") %>'></asp:Label>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="lblPunidad" runat="server" Text='<%# Bind("re_total_cost") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Precio total">
+                            <EditItemTemplate>
+                                <asp:Label ID="lblprice" runat="server" Text='<%# Bind("ro_price") %>'></asp:Label>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="lblprice" runat="server" Text='<%# Bind("ro_price") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Persona">
+                            <EditItemTemplate>
+                                <asp:DropDownList ID="DDLPerson" DataSource='<%# getPerson() %>' SelectedValue='<%# Bind("ro_person")%>' Enabled="True" DataValueField="pe_person" DataTextField="pe_name" runat="server">
+                                </asp:DropDownList>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:DropDownList ID="DDLPer" DataSource='<%# getPerson() %>' SelectedValue='<%# Bind("ro_person")%>' Enabled="false" DataValueField="pe_person" DataTextField="pe_name" runat="server">
+                                </asp:DropDownList>
+                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>                                
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Button ID="btn_edit" CommandName="edit_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="Editar" runat="server" />
+                                <asp:Button ID="btn_del" CommandName="delete_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="Eliminar" runat="server" />
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>                                
+                                <asp:Button ID="btn_update" CommandName="update_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="Guardar" runat="server" />
+                                <asp:Button ID="btn_cancel" CommandName="cancel_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="Cancelar" runat="server" />
+                            </EditItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                     <EditRowStyle BackColor="#7C6F57" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

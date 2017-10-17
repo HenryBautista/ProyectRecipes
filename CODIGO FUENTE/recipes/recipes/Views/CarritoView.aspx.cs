@@ -19,6 +19,7 @@ namespace recipes.Views
                 if (Session["us_user"] != null)
                 {
                     id = Session["us_id"].ToString();
+                    user_id.Text = id;
                     BindData();
                 }
                 else
@@ -31,9 +32,8 @@ namespace recipes.Views
 
         private void BindData()
         {
-            user_id.Text = id;
-            DataTable result = GeneralServices.Show_Data_table("user", "F1", Convert.ToInt32(id));
-            DataTable result2 = GeneralServices.Show_Data_table("user", "F2", Convert.ToInt32(id));
+            DataTable result = GeneralServices.Show_Data_table("user", "F1", Convert.ToInt32(user_id.Text));
+            DataTable result2 = GeneralServices.Show_Data_table("user", "F2", Convert.ToInt32(user_id.Text));
             if (result.Rows.Count > 0 && result2.Rows.Count > 0)
             {
                 //txtFecha.Text = result.Rows[0]["or_order_date"].ToString();
@@ -62,6 +62,17 @@ namespace recipes.Views
             return true;
         }
 
+        private bool check_fieldsI(string qty, int index)
+        {
+            Label msg = grdIngredients.Rows[index].FindControl("lblmsg") as Label;
+            if (Convert.ToInt32(qty) <= 0)
+            {
+                msg.Text = "La cantidad debe ser mayor a 0";
+                return false;
+            }
+            msg.Text = "";
+            return true;
+        }
         private bool checkOrder()
         {
             string now = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff");
@@ -77,12 +88,10 @@ namespace recipes.Views
         }
         protected void ConfirmarOrden()
         {
-            OrderServices.ConfirmOrder(Convert.ToInt32(user_id.Text), Convert.ToDateTime("txtFecha.Text"));
         }
 
         protected void grdOrden_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
             int index = -1;
             string idreceta = null;
             string com = e.CommandName;
@@ -95,19 +104,18 @@ namespace recipes.Views
             {
                 case "edit_recipe":
                     grdRecetas.EditIndex = index;
-                    BindData();
                     break;
                 case "update_recipe":
                     string qty = ((TextBox)grdRecetas.Rows[index].FindControl("txtQty")).Text;
                     string per = ((DropDownList)grdRecetas.Rows[index].FindControl("DDLPerson")).SelectedValue;
                     string price = ((Label)grdRecetas.Rows[index].FindControl("lblunidad")).Text;
-                    if (check_fields(qty, index))
+                    if (check_fieldsI(qty, index))
                     {
                         DataTable dt = GeneralServices.Show_Data_table("recipe_order", "S2", Convert.ToInt32(idreceta));
                         Recipe_orderServices.InsertOrUpdate(Convert.ToInt32(idreceta),
                                             Convert.ToInt32(dt.Rows[0]["ro_order"].ToString()),
                                             Convert.ToInt32(dt.Rows[0]["ro_key"].ToString()),
-                                            Convert.ToInt32(qty), (Convert.ToInt32(qty) * Convert.ToInt32(price)), Convert.ToInt32(per),1);
+                                            Convert.ToInt32(qty),float.Parse(price), Convert.ToInt32(per),1);
                         grdRecetas.EditIndex = -1;
                         BindData();
                     }
@@ -135,12 +143,67 @@ namespace recipes.Views
         
         protected void btn_cart_Click(object sender, EventArgs e)
         {
-
+            if (checkOrder())
+            {
+                OrderServices.ConfirmOrder(Convert.ToInt32(user_id.Text), Convert.ToDateTime("txtFecha.Text"));
+            }
         }
 
         protected void btnPrint_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void grdIngredients_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = -1;
+            string idingredient = null;
+            string com = e.CommandName;
+            if (!string.IsNullOrEmpty(e.CommandArgument.ToString()))
+            {
+                index = Convert.ToInt32(e.CommandArgument);
+                idingredient = grdIngredients.DataKeys[index].Value.ToString();
+            }
+            switch (com)
+            {
+                case "edit_ingredient":
+                    grdIngredients.EditIndex = index;
+                    BindData();
+                    break;
+                case "update_ingredient":
+                    string qty = ((TextBox)grdIngredients.Rows[index].FindControl("txtQty")).Text;
+                    string per = ((DropDownList)grdIngredients.Rows[index].FindControl("DDLPerson")).SelectedValue;
+                    string price = ((Label)grdIngredients.Rows[index].FindControl("lblunidad")).Text;
+                    if (check_fields(qty, index))
+                    {
+                        DataTable dt = GeneralServices.Show_Data_table("recipe_order", "S2", Convert.ToInt32(idingredient));
+                        Recipe_orderServices.InsertOrUpdate(Convert.ToInt32(idingredient),
+                                            Convert.ToInt32(dt.Rows[0]["ro_order"].ToString()),
+                                            Convert.ToInt32(dt.Rows[0]["ro_key"].ToString()),
+                                            Convert.ToInt32(qty), float.Parse(price), Convert.ToInt32(per), 0);
+                        grdIngredients.EditIndex = -1;
+                        BindData();
+                    }
+                    break;
+                case "cancel_ingredient":
+                    grdIngredients.EditIndex = -1;
+                    BindData();
+                    break;
+                case "delete_ingredient":
+                    string result = GeneralServices.Delete_this("recipe_order", "recipes..sp_recipe_order", idingredient);
+                    if (result == "success")
+                    {
+                        BindData();
+                    }
+                    else
+                    {
+                        Label msg = grdIngredients.Rows[index].FindControl("lblmsg") as Label;
+                        msg.Text = "No se Pudo Eliminar";
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
 }
 }
