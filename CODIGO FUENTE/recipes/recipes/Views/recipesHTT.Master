@@ -88,7 +88,7 @@
                                                         <ul class="dropdown-menu">
                                                             <li><a href="../Views/StartPageView.aspx#blog">Mercado Virtual de ingredientes</a></li>
                                                             <li><a href="../Views/RecipesView.aspx">Recetas sugeridas</a></li>
-                                                            <li><a href="../Views/RecipesView.aspx">Mis Recetas</a></li>
+                                                            <li><a href="../Views/RecipesView.aspx?valor=1">Mis Recetas</a></li>
                                                             <li><a href="../Views/RegisterRecipe.aspx">Nueva receta</a></li>
                                                             <li><a href="../Views/CarritoView.aspx">Lista de compras</a></li>
                                                         </ul>
@@ -194,7 +194,7 @@
 
                                                             <li><a href="../Views/StartViewAdministrator.aspx">Nosotros </a></li>
                                                             <li><a href="../Views/RegisterPromotion.aspx">Registrar promocion</a></li>
-                                                            <li><a href="../Views/UserConsult.aspx">Lista de consultas</a></li>
+                                                            <li><a href="../Views/ContactAdmin.aspx">Lista de consultas</a></li>
                                                         </ul>
                                                     </li>
                                                     <li>

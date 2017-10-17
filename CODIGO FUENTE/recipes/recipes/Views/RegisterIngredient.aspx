@@ -7,7 +7,7 @@
     </asp:ScriptManager>
     <section id="about-us">
         <div style="width: 90%; height: auto; margin-left: auto; margin-right: auto;">
-            <h3>Lista de<span> Ingredientes</span></h3>
+            <h3 class="heading">Lista de<span> Ingredientes</span></h3>
             <hr />
             <div>
                 <button type="button" class="btn btn-success btn-lg" onclick="vaciar()" data-toggle="modal" data-target="#myModal2">

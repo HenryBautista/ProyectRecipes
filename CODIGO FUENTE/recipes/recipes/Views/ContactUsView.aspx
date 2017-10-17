@@ -6,7 +6,7 @@
     <section id="about-us">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-10">
                     <div class="block">
                         <h1 class="heading"><span>Contactanos</span></h1>
                         <div style="margin: 10px; margin-top: 70px;">

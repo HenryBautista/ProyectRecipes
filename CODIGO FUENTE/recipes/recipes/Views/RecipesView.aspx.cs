@@ -15,14 +15,29 @@ namespace recipes.Views
         {
             if (!this.IsPostBack)
             {
-                BindData();
-            } 
+                if (Session["us_user"] != null)
+                {
+                    BindData();
+                }
+                else
+                {
+                    Response.Redirect("~/Views/Login.aspx");
+                }
+            }
         }
 
         private void BindData()
         {
-            repeaterRecipes.DataSource = GeneralServices.Show_Data_table("recipe", "S3", null);
-            repeaterRecipes.DataBind();
+            if (Request.QueryString["valor"] == null)
+            {
+                repeaterRecipes.DataSource = GeneralServices.Show_Data_table("recipe", "S3", null);
+                repeaterRecipes.DataBind();
+            }
+            else
+            {
+                repeaterRecipes.DataSource = GeneralServices.Show_Data_table("user", "F4", Convert.ToInt32(Session["us_id"]));
+                repeaterRecipes.DataBind();
+            }
         }
         protected void btnComprar_Click(object sender, EventArgs e)
         {
@@ -53,6 +68,6 @@ namespace recipes.Views
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "AlertError();", true);
             }
-        } 
+        }
     }
 }

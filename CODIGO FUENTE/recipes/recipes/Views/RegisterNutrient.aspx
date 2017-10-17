@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="about-us">
         <div style="width: 70%; height: auto; margin-left: auto; margin-right: auto;">
-            <h3>Lista de Nutrientes</h3>
+            <h3 class="heading">Lista de <span>Nutrientes</span></h3>
             <asp:GridView runat="server" ID="grdNutrients" DataKeyNames="nu_nutrient"
                 AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" Width="100%"
                 GridLines="None" ShowFooter="true"
