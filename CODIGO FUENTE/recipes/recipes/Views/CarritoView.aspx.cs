@@ -86,10 +86,6 @@ namespace recipes.Views
             }
             return true;
         }
-        protected void ConfirmarOrden()
-        {
-        }
-
         protected void grdOrden_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = -1;

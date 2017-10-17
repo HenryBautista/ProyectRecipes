@@ -49,13 +49,22 @@ namespace recipes.Views {
         protected global::System.Web.UI.HtmlControls.HtmlImage ImageInicio;
         
         /// <summary>
-        /// GridView1 control.
+        /// grdRecetasPop control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView grdRecetasPop;
+        
+        /// <summary>
+        /// grdIngredientesPop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdIngredientesPop;
         
         /// <summary>
         /// lbl_user control.

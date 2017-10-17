@@ -110,15 +110,20 @@
                                                                         <h4 class="modal-title">Carrito</h4>
                                                                     </div>
                                                                     <div class="modal-body" style="padding: 1px;">
-                                                                        <asp:GridView runat="server" ID="GridView1" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                                                        <asp:GridView runat="server" ID="grdRecetasPop" AutoGenerateColumns="False"
+                                                                            CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="grdRecetasPop_RowCommand"
+                                                                            DataKeyNames="ro_recipe_order">
                                                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                                             <Columns>
-                                                                                <asp:TemplateField HeaderText="Producto">
+                                                                                <asp:BoundField HeaderText="Nombre " DataField="RECIPE" />
+                                                                                <asp:BoundField HeaderText="Cant" DataField="ro_quantity" />
+                                                                                <asp:BoundField HeaderText="Precio" DataField="ro_price" />
+                                                                                <asp:TemplateField>
                                                                                     <ItemTemplate>
-                                                                                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                                                                        <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
+                                                                                        <asp:Button ID="btn_del" CommandName="delete_recipe" CommandArgument='<%# Container.DataItemIndex %>' Text="X" runat="server" />
                                                                                     </ItemTemplate>
                                                                                 </asp:TemplateField>
-                                                                                <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="X" />
                                                                             </Columns>
                                                                             <EditRowStyle BackColor="#999999" />
                                                                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -130,13 +135,33 @@
                                                                             <SortedAscendingHeaderStyle BackColor="#506C8C" />
                                                                             <SortedDescendingCellStyle BackColor="#FFFDF8" />
                                                                             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-
                                                                         </asp:GridView>
-                                                                        <asp:Label Text="aqui vienen los" runat="server" />
-                                                                        <br />
-                                                                        <asp:Label Text=" la lista de productos" runat="server" />
-                                                                        <asp:Label Text="hay que borrar esto" runat="server" />
-                                                                        <asp:Label Text="y llenar el gridview" runat="server" />
+                                                                        <asp:GridView runat="server" ID="grdIngredientesPop" AutoGenerateColumns="False"
+                                                                            CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="grdIngredientesPop_RowCommand"
+                                                                            DataKeyNames="ro_recipe_order">
+                                                                            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                                                            <Columns>
+                                                                                <asp:BoundField HeaderText="Nombre " DataField="INGREDIENT" />
+                                                                                <asp:BoundField HeaderText="Cant" DataField="ro_quantity" />
+                                                                                <asp:BoundField HeaderText="Precio" DataField="ro_price" />
+                                                                                <asp:TemplateField>
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
+                                                                                        <asp:Button ID="btn_del" CommandName="delete_ingredient" CommandArgument='<%# Container.DataItemIndex %>' Text="X" runat="server" />
+                                                                                    </ItemTemplate>
+                                                                                </asp:TemplateField>
+                                                                            </Columns>
+                                                                            <EditRowStyle BackColor="#999999" />
+                                                                            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                                                            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                                                            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                                                            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                                                            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                                                            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                                                            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                                                            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                                                            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                                                                        </asp:GridView>
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <a href="../Views/CarritoView.aspx" class="btn btn-default">Planificar pedido</a>
