@@ -54,5 +54,39 @@ namespace recipes.Services
             }
             return result;
         }
+
+        internal static DataTable getUserRecipe(string p)
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "F2");
+                command.Parameters.AddWithValue("i_recipe_id", p);
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_recipe");
+            }
+            catch (Exception)
+            {
+                result = new DataTable();
+            }
+            return result;
+        }
+
+        internal static DataTable CmpID(string p)
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "F2");
+                command.Parameters.AddWithValue("i_recipe_id", p);
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_recipe");
+            }
+            catch (Exception)
+            {
+                result = new DataTable();
+            }
+            return result;
+        }
     }
 }

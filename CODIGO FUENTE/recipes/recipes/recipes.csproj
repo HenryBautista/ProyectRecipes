@@ -148,6 +148,7 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Views\AboutUsAdmin.aspx" />
     <Content Include="Views\CarritoView.aspx" />
     <Content Include="Views\ContactUsView.aspx" />
     <Content Include="Views\IngredientDetail.aspx" />
@@ -194,6 +195,13 @@
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="Services\User_recipeServices.cs" />
     <Compile Include="Util\Utilities.cs" />
+    <Compile Include="Views\AboutUsAdmin.aspx.cs">
+      <DependentUpon>AboutUsAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AboutUsAdmin.aspx.designer.cs">
+      <DependentUpon>AboutUsAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\CarritoView.aspx.cs">
       <DependentUpon>CarritoView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

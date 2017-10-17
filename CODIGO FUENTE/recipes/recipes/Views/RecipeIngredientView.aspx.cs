@@ -19,6 +19,7 @@ namespace recipes.Views
                 idrecipe = Request.QueryString["valor"];
                 if (Session["us_user"] != null)
                 {
+                    recipe_id.Text = idrecipe;
                     BindData();
                 }
                 else
@@ -29,8 +30,7 @@ namespace recipes.Views
         }
         private void BindData()
         {
-            recipe_id.Text = idrecipe;
-            grdIngredients.DataSource = Recipe_ingredientServices.DataFromRecipe(idrecipe);
+            grdIngredients.DataSource = Recipe_ingredientServices.DataFromRecipe(recipe_id.Text);
             grdIngredients.DataBind();
             DataTable dts = GeneralServices.Show_Data_table("recipe", "S4", Convert.ToInt32(recipe_id.Text));
             txt_code.Text = dts.Rows[0]["re_recipe_id"].ToString();

@@ -109,6 +109,7 @@
                  $('#<%=tbox_name.ClientID%>').val('');
                  $('#<%=tbox_url.ClientID%>').val('');
                  $('#<%=tbox_Observation.ClientID%>').val('');
+                 $('#<%=lbl_msg.ClientID%>').empty();
              };
         </script>
     </section>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -33,6 +34,23 @@ namespace recipes.Services
             }
             return "success";
         }
-        
+
+
+        internal static DataTable GetInicio()
+        {
+
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "F1");
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_promotion");
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
+            return result;
+        }
     }
 }

@@ -11,13 +11,6 @@
             return confirm("Esta seguro que desea realizar el pedido?");
         }
     </script>
-
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker();
-        });
-    </script>
-
     <script type="text/javascript">
         function PrintPanel() {
             var panel = document.getElementById("<%=pnlContents.ClientID %>");
@@ -31,7 +24,17 @@
                 printWindow.print();
             }, 500);
             return false;
-        }
+        };
+        //$(document).ready(function () {
+        //    $('.datepicker').pickadate({
+        //        selectMonths: true, // Creates a dropdown to control month
+        //        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        //        today: 'Hoy',
+        //        clear: 'Limpiar',
+        //        close: 'aceptar',
+        //        closeOnSelect: false // Close upon selecting a date,
+        //    });
+        //});
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -49,7 +52,7 @@
                     <div class='col-sm-6'>
                         <div class="form-group">
                             <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
+                                <input type='text' id="txtFecha" runat="server" class="datepicker" />
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -57,11 +60,6 @@
                         </div>
                     </div>
                     <asp:Label Text="" ID="lblabel" runat="server" />
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#datetimepicker1').datetimepicker();
-                        });
-                    </script>
                     <asp:Label Text="Cantidad" runat="server" />
                     <asp:Label class="txt-form" ID="lbl_cantidad" placeholder="Cantidad" runat="server"></asp:Label>
 
@@ -71,10 +69,10 @@
                     <label runat="server" id="lbl_msg" class="col-lg-2 label-danger control-label"></label>
                     <br />
                     <asp:Button runat="server" Text="Comprar" ID="btn_cart" class="btn btn-primary" OnClick="btn_cart_Click" OnClientClick="return confirmation();" />
-                    <asp:Button Text="Imprimir" ID="btnPrint" CssClass="btn btn-success" runat="server" OnClientClick="return PrintPanel();" onserverclick="btnPrint_Click" />
+                    <asp:Button Text="Imprimir" ID="btnPrint" CssClass="btn btn-success" runat="server" OnClientClick="return PrintPanel();"/>
 
                     <%-- Area de impresion de reporte --%>
-                    <asp:Panel ID="pnlContents" runat="server">
+                    <asp:Panel ID="pnlContents" runat="server" visible="false">
                         <h3>Recetas Bolivia</h3>
                         <hr style="border-top: dotted 2px;" />
                         <p style="font-weight:bold;">Detalle de compra</p>
@@ -129,7 +127,7 @@
                 <h3>Lista de ordenes <span>Recetas</span></h3>
                 <asp:GridView runat="server" ID="grdRecetas" DataKeyNames="ro_recipe_order"
                     AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"
-                    OnRowCommand="grdOrden_RowCommand" OnRowDataBound="grdOrden_RowDataBound">
+                    OnRowCommand="grdOrden_RowCommand">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>                        
                         <asp:ImageField HeaderText="IMAGEN" DataImageUrlField="re_image" ControlStyle-Width="80">
@@ -183,16 +181,19 @@
                             <ItemTemplate>
                                 <asp:DropDownList ID="DDLPer" DataSource='<%# getPerson() %>' SelectedValue='<%# Bind("ro_person")%>' Enabled="false" DataValueField="pe_person" DataTextField="pe_name" runat="server">
                                 </asp:DropDownList>
+                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>                                
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>
-                                <asp:Button ID="btn_edit" CommandName="edit_nutrient" Text="Editar" runat="server" />
-                                <asp:Button ID="btn_update" CommandName="update_nutrient" Text="Guardar" runat="server" Visible="true" />
-                                <asp:Button ID="btn_cancel" CommandName="cancel_nutrient" Text="Cancelar" runat="server" Visible="true" />
-                                <asp:Button ID="btn_del" CommandName="delete_nutrient" Text="Eliminar" runat="server" />
+                                <asp:Button ID="btn_edit" CommandName="edit_recipe" CommandArgument='<%# Container.DataItemIndex %>' Text="Editar" runat="server" />
+                                <asp:Button ID="btn_del" CommandName="delete_recipe" CommandArgument='<%# Container.DataItemIndex %>' Text="Eliminar" runat="server" />
                             </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:Label ID="lblmsg" runat="server" CssClass="col-lg-2 label-danger control-label"></asp:Label>                                
+                                <asp:Button ID="btn_update" CommandName="update_recipe" CommandArgument='<%# Container.DataItemIndex %>' Text="Guardar" runat="server" />
+                                <asp:Button ID="btn_cancel" CommandName="cancel_recipe" CommandArgument='<%# Container.DataItemIndex %>' Text="Cancelar" runat="server" />
+                            </EditItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                     <EditRowStyle BackColor="#7C6F57" />
