@@ -74,5 +74,24 @@ namespace recipes.Services
             }
             return result;
         }
+
+        internal static DataTable GetByCatOrigin(string category, string origin)
+        {
+
+            DataTable result = new DataTable();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Parameters.AddWithValue("i_action", "F3");
+                command.Parameters.AddWithValue("i_category", category);
+                command.Parameters.AddWithValue("i_origin", origin);
+                result = GeneralServices.ExecuteQuery(command, "recipes2..sp_ingredient");
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
+            return result;
+        }
     }
 }

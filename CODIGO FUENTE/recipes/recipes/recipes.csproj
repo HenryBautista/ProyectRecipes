@@ -153,11 +153,13 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Views\AboutUsAdmin.aspx" />
     <Content Include="Views\CarritoView.aspx" />
+    <Content Include="Views\ContactAdmin.aspx" />
     <Content Include="Views\ContactUsView.aspx" />
     <Content Include="Views\IngredientDetail.aspx" />
     <Content Include="Views\IngredientNutrientView.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\logout.aspx" />
+    <Content Include="Views\OrderList.aspx" />
     <Content Include="Views\RecipeDetail.aspx" />
     <Content Include="Views\RecipeIngredientView.aspx" />
     <Content Include="Views\RecipesView.aspx" />
@@ -168,6 +170,7 @@
     <Content Include="Views\RegisterUser.aspx" />
     <Content Include="Views\ReportView.aspx" />
     <Content Include="Views\StartPageView.aspx" />
+    <Content Include="Views\UserRecipes.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -213,6 +216,13 @@
     <Compile Include="Views\CarritoView.aspx.designer.cs">
       <DependentUpon>CarritoView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ContactAdmin.aspx.cs">
+      <DependentUpon>ContactAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ContactAdmin.aspx.designer.cs">
+      <DependentUpon>ContactAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\ContactUsView.aspx.cs">
       <DependentUpon>ContactUsView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -247,6 +257,13 @@
     </Compile>
     <Compile Include="Views\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RecipeDetail.aspx.cs">
       <DependentUpon>RecipeDetail.aspx</DependentUpon>
@@ -331,6 +348,13 @@
     </Compile>
     <Compile Include="Views\StartPageView.aspx.designer.cs">
       <DependentUpon>StartPageView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserRecipes.aspx.cs">
+      <DependentUpon>UserRecipes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserRecipes.aspx.designer.cs">
+      <DependentUpon>UserRecipes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

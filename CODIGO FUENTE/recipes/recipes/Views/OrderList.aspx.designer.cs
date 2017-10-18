@@ -10,7 +10,7 @@
 namespace recipes.Views {
     
     
-    public partial class ContactAdmin {
+    public partial class OrderList {
         
         /// <summary>
         /// all control.
@@ -31,12 +31,12 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// grdConsultas control.
+        /// grdOrdenes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdConsultas;
+        protected global::System.Web.UI.WebControls.GridView grdOrdenes;
     }
 }

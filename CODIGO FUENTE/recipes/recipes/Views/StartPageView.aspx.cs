@@ -28,8 +28,12 @@ namespace recipes.Views
             repeateringredients.DataBind();
             repeaterItem.DataSource = GeneralServices.Show_Data_table("promotion", "S1", null);
             repeaterItem.DataBind();
+            Parrafo.InnerText = (PromotionServices.GetInicio()).Rows[0]["pr_text"].ToString();
+            ddlOrigen.DataSource = ConceptServices.GetConcept(4);
+            ddlOrigen.DataBind();
+            ddlCategoria.DataSource = ConceptServices.GetConcept(3);
+            ddlCategoria.DataBind();
         }
-
         protected void btnComprar_Click(object sender, EventArgs e)
         {
             string r="";
@@ -59,6 +63,12 @@ namespace recipes.Views
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "AlertError();", true);
             }
+        }
+
+        protected void btnBuscar_Click1(object sender, EventArgs e)
+        {
+            repeateringredients.DataSource = IngredientServices.GetByCatOrigin(ddlCategoria.SelectedValue,ddlOrigen.SelectedValue);
+            repeateringredients.DataBind();
         }        
     }
 }

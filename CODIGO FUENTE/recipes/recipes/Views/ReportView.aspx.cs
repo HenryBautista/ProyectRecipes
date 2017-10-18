@@ -18,8 +18,9 @@ namespace recipes.Views
             {
                 if (Session["us_user"] != null)
                 {
-                    id = Session["us_id"].ToString();
-                    user_id.Text = id;
+                    id = Request.QueryString["valor"].ToString();
+                    order_id.Text = id;
+                    user_id.Text = Session["us_id"].ToString();
                     BindData();
                 }
                 else
@@ -30,17 +31,17 @@ namespace recipes.Views
         }
         private void BindData()
         {
-            DataTable result = GeneralServices.Show_Data_table("user", "F1", Convert.ToInt32(user_id.Text));
-            DataTable result2 = GeneralServices.Show_Data_table("user", "F2", Convert.ToInt32(user_id.Text));
+            DataTable result = GeneralServices.Show_Data_table("order", "S2", Convert.ToInt32(order_id.Text));
+            DataTable result2 = GeneralServices.Show_Data_table("order", "F2", Convert.ToInt32(order_id.Text));
             if (result.Rows.Count > 0 && result2.Rows.Count > 0)
             {
-                lblusuario.Text = getPerson().ToString();
+                lblusuario.Text = Session["us_user"].ToString();
                 lblFecha.Text = result.Rows[0]["or_order_date"].ToString();
                 lblCantidad.Text = result.Rows[0]["or_total_quantity"].ToString();
                 lblTotal.Text = result.Rows[0]["or_total_price"].ToString();
                 grdRecetas.DataSource = result2;
                 grdRecetas.DataBind();
-                grdIngredients.DataSource = GeneralServices.Show_Data_table("user", "F3", Convert.ToInt32(id));
+                grdIngredients.DataSource = GeneralServices.Show_Data_table("order", "F3", Convert.ToInt32(order_id.Text));
                 grdIngredients.DataBind();
             }
         }

@@ -36,11 +36,12 @@ namespace recipes.Views
             if (result.Rows.Count > 0 && result2.Rows.Count > 0)
             {
                 //txtFecha.Text = result.Rows[0]["or_order_date"].ToString();
-                lbl_cantidad.Text = result.Rows[0]["or_total_quantity"].ToString();
-                lbl_cost.Text = result.Rows[0]["or_total_price"].ToString();
+                order_id.Text = result.Rows[0]["or_order"].ToString();
+                lblCantidad.Text = result.Rows[0]["or_total_quantity"].ToString();
+                lblTotal.Text = result.Rows[0]["or_total_price"].ToString();
                 grdRecetas.DataSource = result2;
                 grdRecetas.DataBind();
-                grdIngredients.DataSource = GeneralServices.Show_Data_table("user", "F3", Convert.ToInt32(id));
+                grdIngredients.DataSource = GeneralServices.Show_Data_table("user", "F3", Convert.ToInt32(user_id.Text));
                 grdIngredients.DataBind();
             }
         }
@@ -74,10 +75,10 @@ namespace recipes.Views
         }
         private bool checkOrder()
         {
-            string now = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff");
+            string now = DateTime.Now.ToString("yyyy.MM.dd hh:mm:ss");
             DateTime actual = Convert.ToDateTime(now);
             DateTime fecha = Convert.ToDateTime(txtFecha.Text);
-            int result = DateTime.Compare(DateTime.Now, actual);
+            int result = DateTime.Compare(fecha, actual);
             if (result <= 0)
             {
                 lbl_msg.InnerText = "La fecha ya paso o no es correcta";
@@ -140,13 +141,13 @@ namespace recipes.Views
         {
             if (checkOrder())
             {
-                OrderServices.ConfirmOrder(Convert.ToInt32(user_id.Text), Convert.ToDateTime("txtFecha.Text"));
+                OrderServices.ConfirmOrder(Convert.ToInt32(order_id.Text), Convert.ToDateTime(txtFecha.Text));
+                Response.Redirect("../Views/ReportView.aspx?valor=" + order_id.Text);
             }
         }
-
         protected void btnPrint_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../Views/ReportView.aspx?valor=" + order_id.Text);            
         }
 
         protected void grdIngredients_RowCommand(object sender, GridViewCommandEventArgs e)

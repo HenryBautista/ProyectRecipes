@@ -4,7 +4,7 @@
     <script type="text/javascript">
         function PrintPanel() {
             var panel = document.getElementById("<%=pnlContents.ClientID %>");
-            var printWindow = window.open('', '', 'height=400,width=800');
+            var printWindow = window.open('', '', 'height=1000,width=800');
             printWindow.document.write('<html><head><title>DIV Contents</title>');
             printWindow.document.write('</head><body >');
             printWindow.document.write(panel.innerHTML);
@@ -177,5 +177,6 @@
         <br />
         <asp:Button ID="btnPrint" runat="server" Text="Imprimir" CssClass="btn btn-primary" OnClientClick="return PrintPanel();" />
         <asp:Label ID="user_id" Visible="false" runat="server"></asp:Label>
+        <asp:Label ID="order_id" Visible="false" runat="server"></asp:Label>
     </div>
 </asp:Content>

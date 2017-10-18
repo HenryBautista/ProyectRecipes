@@ -124,14 +124,20 @@
                         <div class="form-group">
                             <div class="form-group col-md-4">
                                 <h3 style="color: white;">Origen</h3>
-                                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlOrigen">
+                                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlOrigen" DataValueField="co_correlative" DataTextField="co_name">
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group col-md-4">
                                 <h3 style="color: white;">Categoria</h3>
-                                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlCategoria">
+                                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlCategoria" DataValueField="co_correlative" DataTextField="co_name">
                                 </asp:DropDownList>
                             </div>
+                            
+                            <div class="form-group col-md-4">
+                                <h3 style="color: white;">Filtros</h3>
+                                <asp:Button Text="Buscar" ID="btnBuscar" CssClass="btn btn-default" OnClick="btnBuscar_Click1" runat="server" />
+                            </div>
+                            
                         </div>
                         <ul>
                             <asp:Repeater ID="repeateringredients" runat="server">

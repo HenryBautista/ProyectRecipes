@@ -192,7 +192,7 @@
                                                         </a>
                                                         <ul class="dropdown-menu">
 
-                                                            <li><a href="../Views/StartViewAdministrator.aspx">Nosotros </a></li>
+                                                            <li><a href="../Views/AboutUsAdmin.aspx">Nosotros </a></li>
                                                             <li><a href="../Views/RegisterPromotion.aspx">Registrar promocion</a></li>
                                                             <li><a href="../Views/ContactAdmin.aspx">Lista de consultas</a></li>
                                                         </ul>
@@ -204,8 +204,8 @@
                                                             <li><a href="../Views/RegisterNutrient.aspx">Nutriente</a></li>
                                                             <li><a href="../Views/RegisterIngredient.aspx">Ingrediente</a></li>
                                                             <li><a href="../Views/RegisterRecipe.aspx">Nueva receta</a></li>
-                                                            <li><a href="../Views/RecipePeopleView.aspx">Recetas de Usuarios</a></li>
-                                                            <li><a href="../Views/IngredientOrderList.aspx">Lista de ingredientes pedidos</a></li>
+                                                            <li><a href="../Views/UserRecipes.aspx">Recetas de Usuarios</a></li>
+                                                            <li><a href="../Views/OrderList.aspx">Lista de pedidos</a></li>
                                                         </ul>
                                                     </li>
                                                     <li runat="server">

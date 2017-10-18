@@ -53,6 +53,7 @@ namespace recipes.Views
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "isnormal();", true);
             }
+            ImageInicio.Src = (PromotionServices.GetInicio()).Rows[0]["pr_image"].ToString();
         }
 
         protected void grdRecetasPop_RowCommand(object sender, GridViewCommandEventArgs e)
