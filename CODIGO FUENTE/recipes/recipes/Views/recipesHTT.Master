@@ -40,7 +40,7 @@
 <body>
     <form id="form1" runat="server">
         <section id="hero_area" runat="server">
-            <img id="ImageInicio" runat="server" class="img-responsive" src="../Images/header.jpg" alt="" />
+            <img id="ImageInicio" style="margin-left:auto;margin-right:auto;" runat="server" class="img-responsive" src="../Images/header.jpg" alt="" />
         </section>
         <div>
             <!--Header start 

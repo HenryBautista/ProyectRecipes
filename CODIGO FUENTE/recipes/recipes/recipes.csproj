@@ -111,6 +111,9 @@
     <Content Include="Images\plus1600.png" />
     <Content Include="Images\product.png" />
     <Content Include="Images\promotion.png" />
+    <Content Include="Images\PromotionPhotos\friday.jpg" />
+    <Content Include="Images\PromotionPhotos\header.jpg" />
+    <Content Include="Images\PromotionPhotos\promo.png" />
     <Content Include="Images\RecipePhotos\4.jpg" />
     <Content Include="Images\RecipePhotos\1.jpg" />
     <Content Include="Images\RecipePhotos\2.jpg" />
@@ -372,7 +375,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\IngredientPhotos\" />
-    <Folder Include="Images\PromotionPhotos\" />
     <Folder Include="less\" />
     <Folder Include="Reports\" />
   </ItemGroup>

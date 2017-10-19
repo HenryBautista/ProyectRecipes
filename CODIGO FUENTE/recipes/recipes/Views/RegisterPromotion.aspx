@@ -14,13 +14,13 @@
                     Promocion
                 </button>
                 <!-- Modal -->
-                <div class="modal fade bottom" id="myModal2" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal fade bottom" style="margin-top:70px;" id="myModal2" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <asp:TextBox ID="promotionID" runat="server" BorderStyle="None" ForeColor="White" />
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" runat="server" id="myModalLabel">Nuevo ingrediente</h4>
+                                <h4 class="modal-title" runat="server" id="myModalLabel">Nueva promoción</h4>
                             </div>
                             <div class="modal-body">
                                 <asp:Label Text="Nombre" runat="server" />

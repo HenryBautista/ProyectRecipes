@@ -48,17 +48,17 @@
                                 <div class="item active">
                                     <div style="width: 100%;">
                                         <div class="div-prImages" style="float: left; width: 50%;">
-                                            <asp:Image ImageUrl="~/Images/RecipePhotos/comida.jpg" runat="server" ID="prImage1" CssClass="img-responsive" />
+                                            <asp:Image ImageUrl="~/Images/PromotionPhotos/promo.png" runat="server" ID="prImage1" CssClass="img-responsive" />
                                         </div>
                                         <div class="div-prDetalles" style="float: left; width: 50%;">
                                             <div class="div-subprDetalles" style="margin: 20px; width: 100%;">
                                                 <h2 style="width: 80%; overflow-wrap: break-word; margin-left: auto; margin-right: auto; border-bottom: 1px solid #0a306c;">
-                                                    <asp:Label Text="Titulo" runat="server" />
+                                                    <asp:Label Text="Nuevas promociones" runat="server" />
                                                 </h2>
                                                 <br />
                                                 <div>
                                                     <p>
-                                                        <asp:Label Text="texto 1" runat="server" ID="lblTexto1" />
+                                                        <asp:Label Text="Descuentos en nuestros productos..." runat="server" ID="lblTexto1" />
                                                     </p>
                                                 </div>
                                                 <br />
@@ -69,7 +69,7 @@
                                 <%-- AQUI DEBERIAN ESTAR LAS DEMAS PROMOCIONES, LO DE ARRIBA ES EL QUE VA A ESTAR ACTIVO LA PRIMERA VEZ --%>
                                 <asp:Repeater runat="server" ID="repeaterItem">
                                     <ItemTemplate>
-                                        <div class="item">
+                                        <div class="item ">
                                             <div style="width: 100%;">
                                                 <div class="div-prImages" style="float: left; width: 50%;">
                                                     <asp:Image ImageUrl='<%#Bind("pr_image") %>' runat="server" ID="prImage1" CssClass="img-responsive" />
