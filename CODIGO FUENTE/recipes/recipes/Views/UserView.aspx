@@ -87,7 +87,9 @@
                     <tr>
                         <td>Nombre:</td>
                         <td><asp:TextBox ID="tbox_person_name" runat="server" Width="100%"></asp:TextBox></td>
-                        <td><asp:Button id="btn_person_save" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="btn_person_save_Click"/></td>
+                        <td><asp:Button id="btn_person_save" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="btn_person_save_Click"/></td>                        
+                        <td><asp:Button id="btn_person_update" runat="server" Text="Actualizar" CssClass="btn btn-success" OnClick="btn_person_save_Click" Visible="false"/></td>
+                        <td><asp:Button id="btn_person_cancel" runat="server" Text="Cancelar" CssClass="btn btn-danger" OnClick="btn_person_cancel_Click" Visible="false"/></td>
                         <td></td>
                     </tr>
                     <tr>

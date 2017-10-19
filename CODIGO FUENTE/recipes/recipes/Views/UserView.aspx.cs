@@ -73,8 +73,14 @@ namespace recipes.Views
                     result = PersonServices.InsertOrUpdate(null, tbox_person_name.Text, user);
                 }
                 load_persons();
-                if (result == "success")
+                if (result == "success"){
                     lbl_person_error.InnerText = "La persona ah sido insertada exitosamente";
+                    tbox_person_name.Text = "";
+                    person_selected = 0;
+                    btn_person_cancel.Visible = false;
+                    btn_person_update.Visible = false;
+                    btn_person_save.Visible = true;
+                }
                 else
                     lbl_person_error.InnerText = "Ha ocurrido un error " + result;
             }
@@ -91,6 +97,9 @@ namespace recipes.Views
                     DataTable result = PersonServices.GetThisPerson(id);
                     tbox_person_name.Text = result.Rows[0]["pe_name"].ToString();
                     person_selected = int.Parse(id);
+                    btn_person_cancel.Visible = true;
+                    btn_person_update.Visible = true;
+                    btn_person_save.Visible = false;
                     break;
 
             }
@@ -133,6 +142,15 @@ namespace recipes.Views
                 return false;
             }
             return true;
+        }
+
+        protected void btn_person_cancel_Click(object sender, EventArgs e)
+        {
+            tbox_person_name.Text = "";
+            person_selected = 0;
+            btn_person_cancel.Visible = false;
+            btn_person_update.Visible = false;
+            btn_person_save.Visible = true;
         }
     }
 }

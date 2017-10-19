@@ -94,6 +94,24 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.Button btn_person_save;
         
         /// <summary>
+        /// btn_person_update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_person_update;
+        
+        /// <summary>
+        /// btn_person_cancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_person_cancel;
+        
+        /// <summary>
         /// lbl_person_error control.
         /// </summary>
         /// <remarks>
