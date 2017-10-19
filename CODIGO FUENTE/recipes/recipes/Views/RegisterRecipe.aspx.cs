@@ -97,14 +97,14 @@ namespace recipes.Views
                     strname = "~/Images/RecipePhotos/" + strname;
                     string result = RecipeServices.InsertOrUpdate(null, tbox_id.Text,
                         tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
-                        strname, tbox_url.Text, 0, tbox_Observation.Text, 1);
+                        strname, tbox_url.Text.Replace("watch?v=", "embed/"), 0, tbox_Observation.Text, 1);
                 }
                 else
                 {
 
                     string result = RecipeServices.InsertOrUpdate(null, tbox_id.Text,
                         tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
-                        null, tbox_url.Text, 0, tbox_Observation.Text, 1);
+                        null, tbox_url.Text.Replace("watch?v=", "embed/"), 0, tbox_Observation.Text, 1);
                 }
                 DataTable grecipe = RecipeServices.getUserRecipe(tbox_id.Text);
                 User_recipeServices.InsertOrUpdate(null,Convert.ToInt32(Session["us_id"]),Convert.ToInt32(grecipe.Rows[0]["re_recipe"]));
@@ -120,7 +120,7 @@ namespace recipes.Views
                     string old = (GeneralServices.Show_Data_table("recipe", "S2", Convert.ToInt32(RecipeID.Text))).Rows[0]["re_image"].ToString();
                     string result = RecipeServices.InsertOrUpdate(Convert.ToInt32(RecipeID.Text), tbox_id.Text,
                         tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
-                        strname, tbox_url.Text, 0, tbox_Observation.Text, 1);
+                        strname, tbox_url.Text.Replace("watch?v=", "embed/"), 0, tbox_Observation.Text, 1);
                     if (result == "success")
                     {
                         System.IO.File.Delete(Server.MapPath(old));
@@ -136,7 +136,7 @@ namespace recipes.Views
                     string old = (GeneralServices.Show_Data_table("recipe", "S2", Convert.ToInt32(RecipeID.Text))).Rows[0]["re_image"].ToString();
                     RecipeServices.InsertOrUpdate(Convert.ToInt32(RecipeID.Text), tbox_id.Text,
                         tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
-                        old, tbox_url.Text, 0, tbox_Observation.Text, 1);
+                        old, tbox_url.Text.Replace("watch?v=", "embed/"), 0, tbox_Observation.Text, 1);
                 }
             }
         }
