@@ -41,6 +41,10 @@ namespace recipes.Views
                     System.IO.File.Delete(Server.MapPath(imageIni.ImageUrl));
                 }
             }
+            else
+            {
+                PromotionServices.InsertOrUpdate(Convert.ToInt32(inicio.InnerText), "inicio", "Recetas Bolivia", Parrafo.InnerText, imageIni.ImageUrl);
+            }
         }
     }
 }

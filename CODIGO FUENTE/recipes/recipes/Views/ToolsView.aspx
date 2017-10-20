@@ -1,25 +1,36 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" AutoEventWireup="true" CodeBehind="ToolsView.aspx.cs" Inherits="recipes.Views.ToolsView" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="ToolsView.aspx.cs" Inherits="recipes.Views.ToolsView" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="about-us">
         <div style="width: 70%; height: auto; margin-left: auto; margin-right: auto;">
             <h3 class="heading">Lista de <span>Turnos</span></h3>
-            <asp:GridView runat="server" ID="grdTurnos" DataKeyNames="co_concept"
+            <asp:GridView runat="server" ID="grdTurnos" DataKeyNames="co_correlative"
                 AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" Width="100%"
-                GridLines="None" ShowFooter="true"
-                OnRowCommand="grdNutrients_RowCommand">
+                GridLines="None" ShowFooter="true" OnRowCommand="grdTurnos_RowCommand">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtname" required="true" runat="server" Text='<%# Bind("nu_name") %>'></asp:TextBox>
+                            <asp:TextBox ID="txtname" required="true" runat="server" Text='<%# Bind("co_name") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblname" runat="server" Text='<%# Bind("nu_name") %>'></asp:Label>
+                            <asp:Label ID="lblname" runat="server" Text='<%# Bind("co_name") %>'></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
                             <asp:TextBox ID="txtfooter" runat="server" CssClass="form-control"></asp:TextBox>
+                        </FooterTemplate>
+                    </asp:TemplateField>
+                    
+                    <asp:TemplateField HeaderText="Abreviacion">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtAB" required="true" runat="server" Text='<%# Bind("co_abbreviation") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblAB" runat="server" Text='<%# Bind("co_abbreviation") %>'></asp:Label>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="txtfooterAB" runat="server" CssClass="form-control"></asp:TextBox>
                         </FooterTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>
@@ -56,22 +67,33 @@
         </div>
         
         <div style="width: 70%; height: auto; margin-left: auto; margin-right: auto;">
-            <h3 class="heading">Lista de <span>Nutrientes</span></h3>
-            <asp:GridView runat="server" ID="GridView1" DataKeyNames="nu_nutrient"
+            <h3 class="heading">Lista de <span>Categorias</span></h3>
+            <asp:GridView runat="server" ID="grdCategorias" DataKeyNames="co_correlative"
                 AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" Width="100%"
-                GridLines="None" ShowFooter="true"
-                OnRowCommand="grdNutrients_RowCommand">
+                GridLines="None" ShowFooter="true" OnRowCommand="grdCategorias_RowCommand">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtname" required="true" runat="server" Text='<%# Bind("nu_name") %>'></asp:TextBox>
+                            <asp:TextBox ID="txtname" required="true" runat="server" Text='<%# Bind("co_name") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblname" runat="server" Text='<%# Bind("nu_name") %>'></asp:Label>
+                            <asp:Label ID="lblname" runat="server" Text='<%# Bind("co_name") %>'></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
                             <asp:TextBox ID="txtfooter" runat="server" CssClass="form-control"></asp:TextBox>
+                        </FooterTemplate>
+                    </asp:TemplateField>
+                    
+                    <asp:TemplateField HeaderText="Abreviacion">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtAB" required="true" runat="server" Text='<%# Bind("co_abbreviation") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblAB" runat="server" Text='<%# Bind("co_abbreviation") %>'></asp:Label>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="txtfooterAB" runat="server" CssClass="form-control"></asp:TextBox>
                         </FooterTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>
@@ -108,22 +130,33 @@
         </div>
         
         <div style="width: 70%; height: auto; margin-left: auto; margin-right: auto;">
-            <h3 class="heading">Lista de <span>Nutrientes</span></h3>
-            <asp:GridView runat="server" ID="GridView2" DataKeyNames="nu_nutrient"
+            <h3 class="heading">Lista de <span>Origen</span></h3>
+            <asp:GridView runat="server" ID="grdOrigen" DataKeyNames="co_correlative"
                 AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" Width="100%"
-                GridLines="None" ShowFooter="true"
-                OnRowCommand="grdNutrients_RowCommand">
+                GridLines="None" ShowFooter="true" OnRowCommand="grdOrigen_RowCommand">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtname" required="true" runat="server" Text='<%# Bind("nu_name") %>'></asp:TextBox>
+                            <asp:TextBox ID="txtname" required="true" runat="server" Text='<%# Bind("co_name") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblname" runat="server" Text='<%# Bind("nu_name") %>'></asp:Label>
+                            <asp:Label ID="lblname" runat="server" Text='<%# Bind("co_name") %>'></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
                             <asp:TextBox ID="txtfooter" runat="server" CssClass="form-control"></asp:TextBox>
+                        </FooterTemplate>
+                    </asp:TemplateField>
+                    
+                    <asp:TemplateField HeaderText="Abreviacion">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtAB" required="true" runat="server" Text='<%# Bind("co_abbreviation") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblAB" runat="server" Text='<%# Bind("co_abbreviation") %>'></asp:Label>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="txtfooterAB" runat="server" CssClass="form-control"></asp:TextBox>
                         </FooterTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>
@@ -160,22 +193,33 @@
         </div>
         
         <div style="width: 70%; height: auto; margin-left: auto; margin-right: auto;">
-            <h3 class="heading">Lista de <span>Nutrientes</span></h3>
-            <asp:GridView runat="server" ID="GridView3" DataKeyNames="nu_nutrient"
+            <h3 class="heading">Lista de <span>Unidad</span></h3>
+            <asp:GridView runat="server" ID="grdUnidad" DataKeyNames="co_correlative"
                 AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" Width="100%"
-                GridLines="None" ShowFooter="true"
-                OnRowCommand="grdNutrients_RowCommand">
+                GridLines="None" ShowFooter="true" OnRowCommand="grdUnidad_RowCommand">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtname" required="true" runat="server" Text='<%# Bind("nu_name") %>'></asp:TextBox>
+                            <asp:TextBox ID="txtname" required="true" runat="server" Text='<%# Bind("co_name") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblname" runat="server" Text='<%# Bind("nu_name") %>'></asp:Label>
+                            <asp:Label ID="lblname" runat="server" Text='<%# Bind("co_name") %>'></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
                             <asp:TextBox ID="txtfooter" runat="server" CssClass="form-control"></asp:TextBox>
+                        </FooterTemplate>
+                    </asp:TemplateField>
+                    
+                    <asp:TemplateField HeaderText="Abreviacion">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtAB" required="true" runat="server" Text='<%# Bind("co_abbreviation") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblAB" runat="server" Text='<%# Bind("co_abbreviation") %>'></asp:Label>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="txtfooterAB" runat="server" CssClass="form-control"></asp:TextBox>
                         </FooterTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>

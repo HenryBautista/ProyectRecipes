@@ -22,30 +22,30 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.GridView grdTurnos;
         
         /// <summary>
-        /// GridView1 control.
+        /// grdCategorias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView grdCategorias;
         
         /// <summary>
-        /// GridView2 control.
+        /// grdOrigen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView grdOrigen;
         
         /// <summary>
-        /// GridView3 control.
+        /// grdUnidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView3;
+        protected global::System.Web.UI.WebControls.GridView grdUnidad;
     }
 }

@@ -201,6 +201,7 @@
                                                         <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administracion Productos
                                                         </a>
                                                         <ul class="dropdown-menu">
+                                                            <li><a href="../Views/ToolsView.aspx">Unidades</a></li>
                                                             <li><a href="../Views/RegisterNutrient.aspx">Nutriente</a></li>
                                                             <li><a href="../Views/RegisterIngredient.aspx">Ingrediente</a></li>
                                                             <li><a href="../Views/RegisterRecipe.aspx">Nueva receta</a></li>

@@ -173,6 +173,7 @@
     <Content Include="Views\RegisterUser.aspx" />
     <Content Include="Views\ReportView.aspx" />
     <Content Include="Views\StartPageView.aspx" />
+    <Content Include="Views\ToolsView.aspx" />
     <Content Include="Views\UserRecipes.aspx" />
     <Content Include="Views\UserView.aspx" />
     <Content Include="Web.config">
@@ -352,6 +353,13 @@
     </Compile>
     <Compile Include="Views\StartPageView.aspx.designer.cs">
       <DependentUpon>StartPageView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolsView.aspx.cs">
+      <DependentUpon>ToolsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ToolsView.aspx.designer.cs">
+      <DependentUpon>ToolsView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\UserRecipes.aspx.cs">
       <DependentUpon>UserRecipes.aspx</DependentUpon>
