@@ -60,7 +60,7 @@ namespace recipes.Views
                     string old = (GeneralServices.Show_Data_table("promotion", "S2", Convert.ToInt32(promotionID.Text))).Rows[0]["pr_image"].ToString();
                     string result = PromotionServices.InsertOrUpdate(
                     Convert.ToInt32(promotionID.Text), tbox_name.Text, tbox_tittle.Text, tbox_detail.Text, strname);
-                    if (result == "success")
+                    if (result == "success" && !string.IsNullOrEmpty(old))
                     {
                         System.IO.File.Delete(Server.MapPath(old));
                     }
@@ -101,7 +101,7 @@ namespace recipes.Views
                 idpromotion = grdPromotion.DataKeys[index].Value.ToString();
                 string old = (GeneralServices.Show_Data_table("promotion", "S2", Convert.ToInt32(idpromotion))).Rows[0]["pr_image"].ToString();
                 string result = GeneralServices.Delete_this("promotion", "recipes2..sp_promotion", idpromotion);
-                if (result == "success")
+                if (result == "success" && !string.IsNullOrEmpty(old))
                 {
                     if (!string.IsNullOrEmpty(old))
                     {

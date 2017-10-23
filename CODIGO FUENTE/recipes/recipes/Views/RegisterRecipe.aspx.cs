@@ -121,7 +121,7 @@ namespace recipes.Views
                     string result = RecipeServices.InsertOrUpdate(Convert.ToInt32(RecipeID.Text), tbox_id.Text,
                         tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
                         strname, tbox_url.Text.Replace("watch?v=", "embed/"), 0, tbox_Observation.Text, 1);
-                    if (result == "success")
+                    if (result == "success" && !string.IsNullOrEmpty(old))
                     {
                         System.IO.File.Delete(Server.MapPath(old));
                     }
