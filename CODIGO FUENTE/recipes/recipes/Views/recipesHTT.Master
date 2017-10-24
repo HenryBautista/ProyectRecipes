@@ -50,24 +50,25 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="block">
-                                <nav id="ttr_menu" class="navbar-default navbar">
+                                <nav id="ttr_menu" class="navbar-default navbar" >
                                     <div id="ttr_menu_inner_in">
                                         <div class="menuforeground">
                                         </div>
-                                        <div id="navigationmenu">
-                                            <div class="navbar-header">
-                                                <button id="nav-expander" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                                        <div id="navigationmenu"  style="width:100%;">
+                                            <div class="navbar-header" >
+                                                <button id="nav-expander" data-target=".navbar-collapse"  data-toggle="collapse" class="navbar-toggle" type="button">
                                                     <span class="sr-only"></span>
                                                     <span class="icon-bar"></span>
                                                     <span class="icon-bar"></span>
                                                     <span class="icon-bar"></span>
                                                 </button>
-                                                <a class="navbar-brand" href="#">
-                                                    <img src="../Images/logo.png" alt="Logo" />
+                                                <a class="navbar-brand" style="margin:0;padding:0; " href="#">
+                                                    <img  src="../Images/logo.png" alt="Logo" />
+                                                    <h2>Recetas Bolivia</h2>
                                                 </a>
                                             </div>
-                                            <div class="menu-center collapse navbar-collapse">
-                                                <ul id="normal" class="ttr_menu_items nav navbar-nav navbar-right">
+                                            <div class="menu-center collapse navbar-collapse"  >
+                                                <ul id="normal" class="ttr_menu_items nav navbar-nav navbar-right" >
                                                     <li><a href="../Views/StartPageView.aspx">inicio</a></li>
                                                     <li><a href="../Views/StartPageView.aspx#about-us">Nosotros</a></li>
                                                     <li><a href="../Views/StartPageView.aspx#slider">Promociones</a></li>
