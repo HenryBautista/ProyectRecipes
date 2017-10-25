@@ -53,7 +53,7 @@
                 </div>
                 <asp:Button Text="Registrarse" ID="btnRegistrar" OnClick="btnRegistrar_Click" CssClass="btn btn-primary" runat="server" />
                 <a href="../Views/StartPage.aspx" class="btn btn-danger">Cancelar</a>
-                <asp:Label Text="text" ID="lblUser" runat="server" />
+                <asp:Label Text="" ID="lblUser" runat="server" />
             </div>
         </div>
     </div>

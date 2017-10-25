@@ -33,7 +33,7 @@ namespace recipes.Views
         {
             DataTable result = GeneralServices.Show_Data_table("user", "F1", Convert.ToInt32(user_id.Text));
             DataTable result2 = GeneralServices.Show_Data_table("user", "F2", Convert.ToInt32(user_id.Text));
-            if (result.Rows.Count > 0 && result2.Rows.Count > 0)
+            if (result.Rows.Count > 0 )
             {
                 //txtFecha.Text = result.Rows[0]["or_order_date"].ToString();
                 order_id.Text = result.Rows[0]["or_order"].ToString();
@@ -121,7 +121,7 @@ namespace recipes.Views
                     BindData();
                     break;
                 case "delete_recipe":
-                    string result = GeneralServices.Delete_this("recipe_order", "recipes..sp_recipe_order", idreceta);
+                    string result = GeneralServices.Delete_this("recipe_order", "recipes2..sp_recipe_order", idreceta);
                     if (result == "success")
                     {
                         BindData();
@@ -186,7 +186,7 @@ namespace recipes.Views
                     BindData();
                     break;
                 case "delete_ingredient":
-                    string result = GeneralServices.Delete_this("recipe_order", "recipes..sp_recipe_order", idingredient);
+                    string result = GeneralServices.Delete_this("recipe_order", "recipes2..sp_recipe_order", idingredient);
                     if (result == "success")
                     {
                         BindData();

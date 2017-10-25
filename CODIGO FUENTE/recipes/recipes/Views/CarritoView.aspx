@@ -85,7 +85,7 @@
                     </asp:ImageField>
                     <asp:TemplateField HeaderText="Receta">
                         <EditItemTemplate>
-                            <asp:Label ID="lblRecipe" runat="server" Text='<%# Bind("RECIPE") %>'></asp:Label>
+                            <asp:Label ID="lblRecipe"  runat="server" Text='<%# Bind("RECIPE") %>'></asp:Label>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblRecipe" runat="server" Text='<%# Bind("RECIPE") %>'></asp:Label>

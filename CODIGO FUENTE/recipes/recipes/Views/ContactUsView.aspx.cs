@@ -17,6 +17,9 @@ namespace recipes.Views
         protected void btn_SaveConsult(object sender, EventArgs e)
         {
             ConsultServices.InsertOrUpdate(null, txt_name.Value, txt_email.Value, txt_message.Value);
+            txt_email.Value = "";
+            txt_message.Value = "";
+            txt_name.Value = "";
         }
     }
 }
