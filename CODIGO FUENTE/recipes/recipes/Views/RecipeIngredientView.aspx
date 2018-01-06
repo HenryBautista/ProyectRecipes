@@ -42,6 +42,20 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:Label Text="Unidad" runat="server" />
+                                    <asp:TextBox runat="server" ID="txt_unit" CssClass="form-control" ReadOnly="true" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:Label Text="Cantidad" runat="server" />
+                                    <asp:TextBox runat="server" ID="txt_qty" CssClass="form-control" ReadOnly="true" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <asp:Label Text="Observacion" runat="server" />

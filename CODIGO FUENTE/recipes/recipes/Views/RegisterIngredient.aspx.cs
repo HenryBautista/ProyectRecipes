@@ -57,14 +57,14 @@ namespace recipes.Views
                         strname = "~/Images/IngredientPhotos/" + strname;
                         string result = IngredientServices.InsertOrUpdate(null,
                             tbox_code.Text, strname, name, Int32.Parse(DDL_unit.SelectedValue),
-                            float.Parse(tbox_price.Text), Convert.ToInt32(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
+                            float.Parse(tbox_price.Text), float.Parse(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
                             Int32.Parse(DDL_origin.SelectedValue));
                     }
                     else
                     {
                         IngredientServices.InsertOrUpdate(null,
                             tbox_code.Text, null, name, Int32.Parse(DDL_unit.SelectedValue),
-                            float.Parse(tbox_price.Text), Convert.ToInt32(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
+                            float.Parse(tbox_price.Text), float.Parse(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
                             Int32.Parse(DDL_origin.SelectedValue));
                     }
                     BindData();
@@ -90,7 +90,7 @@ namespace recipes.Views
                             string old = (GeneralServices.Show_Data_table("ingredient", "S2", Convert.ToInt32(ingredientID.Text))).Rows[0]["in_image"].ToString();
                             string result = IngredientServices.InsertOrUpdate(Convert.ToInt32(ingredientID.Text),
                                 tbox_code.Text, strname, name, Int32.Parse(DDL_unit.SelectedValue),
-                                float.Parse(tbox_price.Text), Convert.ToInt32(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
+                                float.Parse(tbox_price.Text), float.Parse(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
                                 Int32.Parse(DDL_origin.SelectedValue));
                             if (result == "success")
                             {
@@ -110,7 +110,7 @@ namespace recipes.Views
                             string old = (GeneralServices.Show_Data_table("ingredient", "S2", Convert.ToInt32(ingredientID.Text))).Rows[0]["in_image"].ToString();
                             IngredientServices.InsertOrUpdate(Convert.ToInt32(ingredientID.Text),
                                 tbox_code.Text, old, name, Int32.Parse(DDL_unit.SelectedValue),
-                                float.Parse(tbox_price.Text), Convert.ToInt32(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
+                                float.Parse(tbox_price.Text), float.Parse(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
                                 Int32.Parse(DDL_origin.SelectedValue));
                         }
                         BindData();
@@ -132,7 +132,7 @@ namespace recipes.Views
                         string old = (GeneralServices.Show_Data_table("ingredient", "S2", Convert.ToInt32(ingredientID.Text))).Rows[0]["in_image"].ToString();
                         string result = IngredientServices.InsertOrUpdate(Convert.ToInt32(ingredientID.Text),
                             tbox_code.Text, strname, name, Int32.Parse(DDL_unit.SelectedValue),
-                            float.Parse(tbox_price.Text), Convert.ToInt32(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
+                            float.Parse(tbox_price.Text), float.Parse(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
                             Int32.Parse(DDL_origin.SelectedValue));
                         if (result == "success")
                         {
@@ -152,7 +152,7 @@ namespace recipes.Views
                         string old = (GeneralServices.Show_Data_table("ingredient", "S2", Convert.ToInt32(ingredientID.Text))).Rows[0]["in_image"].ToString();
                         IngredientServices.InsertOrUpdate(Convert.ToInt32(ingredientID.Text),
                             tbox_code.Text, old, name, Int32.Parse(DDL_unit.SelectedValue),
-                            float.Parse(tbox_price.Text), Convert.ToInt32(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
+                            float.Parse(tbox_price.Text), float.Parse(tbox_qty.Text), Int32.Parse(DDL_category.SelectedValue),
                             Int32.Parse(DDL_origin.SelectedValue));
                     }
                     BindData();

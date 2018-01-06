@@ -9,7 +9,7 @@ namespace recipes.Services
 {
     public static class Ingredient_nutrientServices
     {
-        public static string InsertOrUpdate(int? i_nutri, int nutri, int ingre, int qty)
+        public static string InsertOrUpdate(int? i_nutri, int nutri, int ingre, float qty)
         {
             try
             {

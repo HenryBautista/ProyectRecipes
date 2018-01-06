@@ -67,6 +67,15 @@ namespace recipes.Views {
         protected global::System.Web.UI.WebControls.TextBox tbox_Observation;
         
         /// <summary>
+        /// DDL_turn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDL_turn;
+        
+        /// <summary>
         /// DDL_unit control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace recipes.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDL_unit;
+        
+        /// <summary>
+        /// tbox_qty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbox_qty;
         
         /// <summary>
         /// file_image control.

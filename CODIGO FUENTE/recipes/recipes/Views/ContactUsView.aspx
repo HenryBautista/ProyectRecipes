@@ -7,6 +7,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10">
+                    <div>
+                        
                     <div class="block">
                         <h1 class="heading"><span>Contactanos</span></h1>
                         <div style="margin: 10px; margin-top: 70px;">
@@ -26,6 +28,7 @@
                             </div>
                             <asp:Button ID="form_submit" Text="Enviar" runat="server" CssClass="btn btn-success btn-lg pull-right " OnClick="btn_SaveConsult" />
                         </div>
+                    </div>
                     </div>
                 </div>
                 <!-- .col-md-12 close -->

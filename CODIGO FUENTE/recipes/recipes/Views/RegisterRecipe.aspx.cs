@@ -40,7 +40,9 @@ namespace recipes.Views
                 grdRecipes.DataSource = GeneralServices.Show_Data_table("user", "F4", Convert.ToInt32(Session["us_id"]));
                 grdRecipes.DataBind();
             }
-            DDL_unit.DataSource = ConceptServices.GetConcept(1);
+            DDL_turn.DataSource = ConceptServices.GetConcept(1);
+            DDL_turn.DataBind();
+            DDL_unit.DataSource = ConceptServices.GetConcept(2);
             DDL_unit.DataBind();
         }
 
@@ -96,14 +98,14 @@ namespace recipes.Views
                     file_image.PostedFile.SaveAs(Server.MapPath("~/Images/RecipePhotos/") + strname);
                     strname = "~/Images/RecipePhotos/" + strname;
                     string result = RecipeServices.InsertOrUpdate(null, tbox_id.Text,
-                        tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
+                        tbox_name.Text, Convert.ToInt32(DDL_turn.SelectedValue),Convert.ToInt32(DDL_unit.SelectedValue),float.Parse(tbox_qty.Text),
                         strname, tbox_url.Text.Replace("watch?v=", "embed/"), 0, tbox_Observation.Text, 1);
                 }
                 else
                 {
 
                     string result = RecipeServices.InsertOrUpdate(null, tbox_id.Text,
-                        tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
+                        tbox_name.Text, Convert.ToInt32(DDL_turn.SelectedValue), Convert.ToInt32(DDL_unit.SelectedValue), float.Parse(tbox_qty.Text),
                         null, tbox_url.Text.Replace("watch?v=", "embed/"), 0, tbox_Observation.Text, 1);
                 }
                 DataTable grecipe = RecipeServices.getUserRecipe(tbox_id.Text);
@@ -119,7 +121,7 @@ namespace recipes.Views
                     strname = "~/Images/RecipePhotos/" + strname;
                     string old = (GeneralServices.Show_Data_table("recipe", "S2", Convert.ToInt32(RecipeID.Text))).Rows[0]["re_image"].ToString();
                     string result = RecipeServices.InsertOrUpdate(Convert.ToInt32(RecipeID.Text), tbox_id.Text,
-                        tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
+                        tbox_name.Text, Convert.ToInt32(DDL_turn.SelectedValue), Convert.ToInt32(DDL_unit.SelectedValue), float.Parse(tbox_qty.Text),
                         strname, tbox_url.Text.Replace("watch?v=", "embed/"), 0, tbox_Observation.Text, 1);
                     if (result == "success" && !string.IsNullOrEmpty(old))
                     {
@@ -135,7 +137,7 @@ namespace recipes.Views
                 {
                     string old = (GeneralServices.Show_Data_table("recipe", "S2", Convert.ToInt32(RecipeID.Text))).Rows[0]["re_image"].ToString();
                     RecipeServices.InsertOrUpdate(Convert.ToInt32(RecipeID.Text), tbox_id.Text,
-                        tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
+                        tbox_name.Text, Convert.ToInt32(DDL_turn.SelectedValue), Convert.ToInt32(DDL_unit.SelectedValue), float.Parse(tbox_qty.Text),
                         old, tbox_url.Text.Replace("watch?v=", "embed/"), 0, tbox_Observation.Text, 1);
                 }
             }
@@ -152,14 +154,14 @@ namespace recipes.Views
                     file_image.PostedFile.SaveAs(Server.MapPath("~/Images/RecipePhotos/") + strname);
                     strname = "~/Images/RecipePhotos/" + strname;
                     string result = RecipeServices.InsertOrUpdate(null, tbox_id.Text,
-                        tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
+                        tbox_name.Text, Convert.ToInt32(DDL_turn.SelectedValue), Convert.ToInt32(DDL_unit.SelectedValue), float.Parse(tbox_qty.Text),
                         strname, tbox_url.Text, 0, tbox_Observation.Text, usr);
                 }
                 else
                 {
 
                     string result = RecipeServices.InsertOrUpdate(null, tbox_id.Text,
-                        tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
+                        tbox_name.Text, Convert.ToInt32(DDL_turn.SelectedValue), Convert.ToInt32(DDL_unit.SelectedValue), float.Parse(tbox_qty.Text),
                         null, tbox_url.Text, 0, tbox_Observation.Text, usr);
                 }
             }
@@ -173,7 +175,7 @@ namespace recipes.Views
                     strname = "~/Images/RecipePhotos/" + strname;
                     string old = (GeneralServices.Show_Data_table("recipe", "S2", Convert.ToInt32(RecipeID.Text))).Rows[0]["re_image"].ToString();
                     string result = RecipeServices.InsertOrUpdate(Convert.ToInt32(RecipeID.Text), tbox_id.Text,
-                        tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
+                        tbox_name.Text, Convert.ToInt32(DDL_turn.SelectedValue), Convert.ToInt32(DDL_unit.SelectedValue), float.Parse(tbox_qty.Text),
                         strname, tbox_url.Text, 0, tbox_Observation.Text, usr);
                     if (result == "success")
                     {
@@ -189,7 +191,7 @@ namespace recipes.Views
                 {
                     string old = (GeneralServices.Show_Data_table("recipe", "S2", Convert.ToInt32(RecipeID.Text))).Rows[0]["re_image"].ToString();
                     RecipeServices.InsertOrUpdate(Convert.ToInt32(RecipeID.Text), tbox_id.Text,
-                        tbox_name.Text, Convert.ToInt32(DDL_unit.SelectedValue),
+                        tbox_name.Text, Convert.ToInt32(DDL_turn.SelectedValue), Convert.ToInt32(DDL_unit.SelectedValue), float.Parse(tbox_qty.Text),
                         old, tbox_url.Text, 0, tbox_Observation.Text, usr);
                 }
             }
@@ -211,7 +213,9 @@ namespace recipes.Views
                 tbox_name.Text = dt.Rows[0]["re_name"].ToString();
                 tbox_url.Text = dt.Rows[0]["re_url_video"].ToString();
                 tbox_Observation.Text = dt.Rows[0]["re_observation"].ToString();
-                DDL_unit.SelectedValue = dt.Rows[0]["re_turn"].ToString();
+                DDL_turn.SelectedValue = dt.Rows[0]["re_turn"].ToString();
+                DDL_unit.SelectedValue = dt.Rows[0]["re_unit"].ToString();
+                tbox_qty.Text = dt.Rows[0]["re_quantity"].ToString();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
             }
             if ((!string.IsNullOrEmpty(e.CommandArgument.ToString())) && e.CommandName == "delete_recipe")

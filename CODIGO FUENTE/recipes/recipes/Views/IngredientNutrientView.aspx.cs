@@ -85,7 +85,7 @@ namespace recipes.Views
                     string nutri = ((DropDownList)grdNutrients.Rows[index].FindControl("DDLnutrient")).SelectedValue;
                     if (cmp(nutri) && check_fields(qty, index))
                     {
-                        Ingredient_nutrientServices.InsertOrUpdate(id_ing,Convert.ToInt32(nutri), Convert.ToInt32(ingredient_id.Text), Convert.ToInt32(qty));
+                        Ingredient_nutrientServices.InsertOrUpdate(id_ing, Convert.ToInt32(nutri), Convert.ToInt32(ingredient_id.Text), float.Parse(qty));
                         grdNutrients.EditIndex = -1;
                         BindData();
                     }
@@ -109,14 +109,14 @@ namespace recipes.Views
                     string nutri2 = ((DropDownList)grdNutrients.FooterRow.FindControl("DDLfooter")).SelectedValue;
                     if (cmp(nutri2) && check_fields(qty2, index))
                     {
-                        Ingredient_nutrientServices.InsertOrUpdate(id_ing, Convert.ToInt32(nutri2), Convert.ToInt32(ingredient_id.Text), Convert.ToInt32(qty2));
+                        Ingredient_nutrientServices.InsertOrUpdate(id_ing, Convert.ToInt32(nutri2), Convert.ToInt32(ingredient_id.Text), float.Parse(qty2));
                         BindData();
                     }
                     break;
                 case "add2":
                     qty = ((TextBox)grdNutrients.Controls[0].Controls[0].FindControl("txtempty")).Text;
                     string idNu = ((DropDownList)grdNutrients.Controls[0].Controls[0].FindControl("DDLempty")).SelectedValue;
-                    Ingredient_nutrientServices.InsertOrUpdate(null,Convert.ToInt32(idNu),Convert.ToInt32(ingredient_id.Text), Convert.ToInt32(qty));
+                    Ingredient_nutrientServices.InsertOrUpdate(null, Convert.ToInt32(idNu), Convert.ToInt32(ingredient_id.Text), float.Parse(qty));
                     BindData();
                     break;
                 default:
@@ -153,12 +153,12 @@ namespace recipes.Views
             }
             try
             {
-                int n = int.Parse(qty);
-                n = int.Parse(qty);
+                float n = float.Parse(qty);
+                n = float.Parse(qty);
             }
             catch (Exception e)
             {
-                msg.Text = "La cantidad no es un entero";
+                msg.Text = "La cantidad no es correcta";
                 return false;
             }
 

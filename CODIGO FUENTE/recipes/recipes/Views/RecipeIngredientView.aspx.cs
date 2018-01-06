@@ -39,6 +39,8 @@ namespace recipes.Views
             txt_cost.Text = dts.Rows[0]["re_total_cost"].ToString();
             txt_obs.Text = dts.Rows[0]["re_observation"].ToString();
             txt_url.Text = dts.Rows[0]["re_url_video"].ToString();
+            txt_unit.Text = dts.Rows[0]["UNIT"].ToString();
+            txt_qty.Text = dts.Rows[0]["re_quantity"].ToString();
             re_iframe.Attributes.Add("src",dts.Rows[0]["re_url_video"].ToString());
         }
         protected DataTable getIngredient()
@@ -67,7 +69,7 @@ namespace recipes.Views
                     qty = ((TextBox)grdIngredients.Rows[index].FindControl("txtQty")).Text;
                     obs = ((TextBox)grdIngredients.Rows[index].FindControl("txtObs")).Text;
                     ingredient = ((DropDownList)grdIngredients.Rows[index].FindControl("DDLingredient")).SelectedValue;
-                   Recipe_ingredientServices.InsertOrUpdate(id_ing, Convert.ToInt32(recipe_id.Text), Convert.ToInt32(ingredient), Convert.ToInt32(qty), obs);
+                    Recipe_ingredientServices.InsertOrUpdate(id_ing, Convert.ToInt32(recipe_id.Text), Convert.ToInt32(ingredient), float.Parse(qty), obs);
                    grdIngredients.EditIndex = -1;
                     BindData();
                     break;
@@ -91,7 +93,7 @@ namespace recipes.Views
                     ingredient = ((DropDownList)grdIngredients.FooterRow.FindControl("DDLfooter")).SelectedValue;
                     if (cmp(ingredient) && check_fields(qty,index))
                     {
-                        Recipe_ingredientServices.InsertOrUpdate(null, Convert.ToInt32(recipe_id.Text), Convert.ToInt32(ingredient), Convert.ToInt32(qty), obs);
+                        Recipe_ingredientServices.InsertOrUpdate(null, Convert.ToInt32(recipe_id.Text), Convert.ToInt32(ingredient), float.Parse(qty), obs);
                         BindData();
                     }
                     break;
@@ -99,7 +101,7 @@ namespace recipes.Views
                     qty = ((TextBox)grdIngredients.Controls[0].Controls[0].FindControl("txtemptyqty")).Text;
                     obs = ((TextBox)grdIngredients.Controls[0].Controls[0].FindControl("txtemptyobs")).Text;
                     ingredient = ((DropDownList)grdIngredients.Controls[0].Controls[0].FindControl("DDLempty")).SelectedValue;
-                    Recipe_ingredientServices.InsertOrUpdate(null, Convert.ToInt32(recipe_id.Text), Convert.ToInt32(ingredient),Convert.ToInt32(qty),obs);
+                    Recipe_ingredientServices.InsertOrUpdate(null, Convert.ToInt32(recipe_id.Text), Convert.ToInt32(ingredient), float.Parse(qty), obs);
                     BindData();
                     break;
                 default:

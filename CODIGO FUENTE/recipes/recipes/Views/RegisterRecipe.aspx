@@ -35,7 +35,13 @@
                                 <asp:TextBox ID="tbox_Observation" runat="server" required="true" TextMode="MultiLine" class="form-control" Style="width: 100%; height: 60px;"></asp:TextBox>
              
                                 <asp:Label Text="Turno" runat="server" />
+                                <asp:DropDownList ID="DDL_turn" CssClass="form-control" required="true" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
+                                                                
+                                <asp:Label Text="Unidad" runat="server" />
                                 <asp:DropDownList ID="DDL_unit" CssClass="form-control" required="true" DataValueField="co_correlative" DataTextField="co_name" runat="server"></asp:DropDownList>
+                                
+                                <asp:Label Text="Cantidad" runat="server" />
+                                <asp:TextBox ID="tbox_qty" type="number" placeholder="Cantidad " runat="server" required="true" class="form-control" />
                                                                 
                                 <asp:Label Text="Imagen" runat="server" />
                                 <asp:FileUpload ID="file_image" runat="server" class="txt-form" />
@@ -57,9 +63,6 @@
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Imagen">
-                        <EditItemTemplate>
-                            <asp:FileUpload runat="server" ID="img1" />
-                        </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Image ID="img1" ImageUrl='<%# Bind("re_image") %>' runat="server" Width="80" Height="80"></asp:Image>
                         </ItemTemplate>
@@ -67,6 +70,8 @@
                     <asp:BoundField HeaderText="Codigo" DataField="re_recipe_id" />
                     <asp:BoundField HeaderText="Nombre" DataField="re_name" />
                     <asp:BoundField HeaderText="Turno" DataField="TURNO" />
+                    <asp:BoundField HeaderText="Unidad" DataField="UNIT" />
+                    <asp:BoundField HeaderText="Cantidad" DataField="re_quantity" />
                     <asp:BoundField HeaderText="Observacion" DataField="re_observation" ItemStyle-Wrap="true" />
                     <asp:BoundField HeaderText="Costo" DataField="re_total_cost" />
                     <asp:BoundField HeaderText="URL video" DataField="re_url_video" />

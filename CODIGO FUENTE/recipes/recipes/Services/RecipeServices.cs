@@ -9,7 +9,7 @@ namespace recipes.Services
 {
     public static class RecipeServices
     {
-        public static string InsertOrUpdate(int? recipe, string i_recipe, string name, int turn, string image, string url, float tc, string obs, int usr)
+        public static string InsertOrUpdate(int? recipe, string i_recipe, string name, int turn,int  unit, float qty, string image, string url, float tc, string obs, int usr)
         {
             try
             {
@@ -30,6 +30,8 @@ namespace recipes.Services
                 command.Parameters.AddWithValue("i_total_cost", tc);
                 command.Parameters.AddWithValue("i_observation", obs);
                 command.Parameters.AddWithValue("i_of_user", usr);
+                command.Parameters.AddWithValue("i_unit", unit);
+                command.Parameters.AddWithValue("i_quantity", qty);
                 GeneralServices.ExecuteQuery(command, "recipes2..sp_recipe");
             }
             catch (Exception ex)
