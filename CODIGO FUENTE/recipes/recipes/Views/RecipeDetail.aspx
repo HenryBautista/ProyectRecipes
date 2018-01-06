@@ -63,7 +63,6 @@
                             <a href="#" class="btn btn-info btn-lg" id="btnCart" runat="server" onserverclick="btnCart_ServerClick">
                                 <span class="glyphicon glyphicon-shopping-cart"></span>Comprar
                             </a>
-                            <asp:Button Text="text" runat="server" />
                         </div>
                     </div>
 

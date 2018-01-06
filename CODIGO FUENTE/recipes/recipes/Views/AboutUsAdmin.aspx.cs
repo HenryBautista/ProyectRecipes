@@ -34,7 +34,7 @@ namespace recipes.Views
                 string strname = fileimage.FileName.ToString();
                 strname = DateTime.Now.ToString("dd.MM.yyyy.hh.mm.ss.ffffff") + strname;
                 fileimage.PostedFile.SaveAs(Server.MapPath("~/Images/PromotionPhotos/") + strname);
-                strname = "~/Images/RecipePhotos/" + strname;
+                strname = "~/Images/PromotionPhotos/" + strname;
                 string r = PromotionServices.InsertOrUpdate(Convert.ToInt32(inicio.InnerText),"inicio","Recetas Bolivia",Parrafo.InnerText,strname);
                 if (r == "success")
                 {

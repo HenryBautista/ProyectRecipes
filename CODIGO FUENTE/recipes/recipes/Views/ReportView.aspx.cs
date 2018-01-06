@@ -33,7 +33,7 @@ namespace recipes.Views
         {
             DataTable result = GeneralServices.Show_Data_table("order", "S2", Convert.ToInt32(order_id.Text));
             DataTable result2 = GeneralServices.Show_Data_table("order", "F2", Convert.ToInt32(order_id.Text));
-            if (result.Rows.Count > 0 && result2.Rows.Count > 0)
+            if (result.Rows.Count > 0 )
             {
                 lblusuario.Text = Session["us_user"].ToString();
                 lblFecha.Text = result.Rows[0]["or_order_date"].ToString();

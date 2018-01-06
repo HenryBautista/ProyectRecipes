@@ -69,7 +69,7 @@ namespace recipes.Views
             switch (com)
             {
                 case "delete_recipe":
-                    string result = GeneralServices.Delete_this("recipe_order", "recipes..sp_recipe_order", idreceta);
+                    string result = GeneralServices.Delete_this("recipe_order", "recipes2..sp_recipe_order", idreceta);
                     if (result == "success")
                     {
                         BindData();
@@ -98,7 +98,7 @@ namespace recipes.Views
             switch (com)
             {
                 case "delete_ingredient":
-                    string result = GeneralServices.Delete_this("recipe_order", "recipes..sp_recipe_order", idingredient);
+                    string result = GeneralServices.Delete_this("recipe_order", "recipes2..sp_recipe_order", idingredient);
                     if (result == "success")
                     {
                         BindData();

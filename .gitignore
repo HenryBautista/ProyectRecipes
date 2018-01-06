@@ -9,3 +9,4 @@ CODIGO FUENTE/recipes/recipes/bin/recipes.dll
 CODIGO FUENTE/recipes/recipes/obj/Debug/recipes.pdb
 CODIGO FUENTE/recipes/recipes/obj/Debug/recipes.dll
 CODIGO FUENTE/recipes/recipes/obj/Debug/recipes.pdb
+*.cache

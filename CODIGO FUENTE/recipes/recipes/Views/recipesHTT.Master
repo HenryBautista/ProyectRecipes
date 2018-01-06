@@ -34,13 +34,14 @@
     <script src="../js/wow.min.js"></script>
     <script src="../js/main.js"></script>
     <%--<script type="text/javascript" src="../Scripts/jquery-1.9.1.js"></script>--%>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <section id="hero_area" runat="server">
-            <img id="ImageInicio" style="margin-left:auto;margin-right:auto;" runat="server" class="img-responsive" src="../Images/header.jpg" alt="" />
+            <img id="ImageInicio" style="margin-left: auto; margin-right: auto;" runat="server" class="img-responsive" src="../Images/header.jpg" alt="" />
         </section>
         <div>
             <!--Header start 
@@ -54,7 +55,7 @@
                                     <div id="ttr_menu_inner_in">
                                         <div class="menuforeground">
                                         </div>
-                                        <div id="navigationmenu">
+                                        <div id="navigationmenu" style="width: 100%;">
                                             <div class="navbar-header">
                                                 <button id="nav-expander" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
                                                     <span class="sr-only"></span>
@@ -62,8 +63,9 @@
                                                     <span class="icon-bar"></span>
                                                     <span class="icon-bar"></span>
                                                 </button>
-                                                <a class="navbar-brand" href="#">
-                                                    <img src="../Images/logo.png" alt="Logo" />
+                                                <a class="navbar-brand" style="margin: 0; padding: 0;" href="#">
+                                                    <%--<img  src="../Images/logo.png" alt="Logo" />--%>
+                                                    <h2>Recetas <span style="color: #FF530A; font-weight: bold;">Bolivia</span></h2>
                                                 </a>
                                             </div>
                                             <div class="menu-center collapse navbar-collapse">
@@ -104,7 +106,7 @@
                                                         <div class="modal fade" id="myModal" role="dialog">
                                                             <div class="modal-dialog">
                                                                 <!-- Modal content-->
-                                                                <div class="modal-content" style="width: 30%; float: right;">
+                                                                <div class="modal-content" style="width: 40%; float: right;">
                                                                     <div class="modal-header">
                                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                         <h4 class="modal-title">Carrito</h4>
@@ -112,7 +114,7 @@
                                                                     <div class="modal-body" style="padding: 1px;">
                                                                         <asp:GridView runat="server" ID="grdRecetasPop" AutoGenerateColumns="False"
                                                                             CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="grdRecetasPop_RowCommand"
-                                                                            DataKeyNames="ro_recipe_order">
+                                                                            DataKeyNames="ro_recipe_order" Width="100%">
                                                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                                             <Columns>
                                                                                 <asp:BoundField HeaderText="Nombre " DataField="RECIPE" />
@@ -138,7 +140,7 @@
                                                                         </asp:GridView>
                                                                         <asp:GridView runat="server" ID="grdIngredientesPop" AutoGenerateColumns="False"
                                                                             CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="grdIngredientesPop_RowCommand"
-                                                                            DataKeyNames="ro_recipe_order">
+                                                                            DataKeyNames="ro_recipe_order" Width="100%">
                                                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                                             <Columns>
                                                                                 <asp:BoundField HeaderText="Nombre " DataField="INGREDIENT" />
@@ -165,6 +167,7 @@
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <a href="../Views/CarritoView.aspx" class="btn btn-default">Planificar pedido</a>
+                                                                        <a href="javascript:window.location.href=window.location.href">Actualizar</a>
                                                                     </div>
                                                                 </div>
 
