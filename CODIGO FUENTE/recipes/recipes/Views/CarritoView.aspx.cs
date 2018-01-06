@@ -105,7 +105,7 @@ namespace recipes.Views
                     string qty = ((TextBox)grdRecetas.Rows[index].FindControl("txtQty")).Text;
                     string per = ((DropDownList)grdRecetas.Rows[index].FindControl("DDLPerson")).SelectedValue;
                     string price = ((Label)grdRecetas.Rows[index].FindControl("lblunidad")).Text;
-                    if (check_fieldsI(qty, index))
+                    if (check_fields(qty, index))
                     {
                         DataTable dt = GeneralServices.Show_Data_table("recipe_order", "S2", Convert.ToInt32(idreceta));
                         Recipe_orderServices.InsertOrUpdate(Convert.ToInt32(idreceta),
@@ -170,7 +170,7 @@ namespace recipes.Views
                     string qty = ((TextBox)grdIngredients.Rows[index].FindControl("txtQty")).Text;
                     string per = ((DropDownList)grdIngredients.Rows[index].FindControl("DDLPerson")).SelectedValue;
                     string price = ((Label)grdIngredients.Rows[index].FindControl("lblunidad")).Text;
-                    if (check_fields(qty, index))
+                    if (check_fieldsI(qty, index))
                     {
                         DataTable dt = GeneralServices.Show_Data_table("recipe_order", "S2", Convert.ToInt32(idingredient));
                         Recipe_orderServices.InsertOrUpdate(Convert.ToInt32(idingredient),

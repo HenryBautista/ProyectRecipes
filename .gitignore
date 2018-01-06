@@ -10,3 +10,6 @@ CODIGO FUENTE/recipes/recipes/obj/Debug/recipes.pdb
 CODIGO FUENTE/recipes/recipes/obj/Debug/recipes.dll
 CODIGO FUENTE/recipes/recipes/obj/Debug/recipes.pdb
 *.cache
+*.suo
+*.dll
+CODIGO FUENTE/recipes/recipes/Web.config
