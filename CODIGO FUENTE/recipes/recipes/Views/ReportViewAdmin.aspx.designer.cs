@@ -10,87 +10,87 @@
 namespace recipes.Views {
     
     
-    public partial class recipesHTT {
+    public partial class ReportViewAdmin {
         
         /// <summary>
-        /// head control.
+        /// pnlContents control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Panel pnlContents;
         
         /// <summary>
-        /// form1 control.
+        /// lblFecha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblFecha;
         
         /// <summary>
-        /// hero_area control.
+        /// lblusuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hero_area;
+        protected global::System.Web.UI.WebControls.Label lblusuario;
         
         /// <summary>
-        /// ImageInicio control.
+        /// lblCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage ImageInicio;
+        protected global::System.Web.UI.WebControls.Label lblCantidad;
         
         /// <summary>
-        /// grdRecetasPop control.
+        /// lblTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdRecetasPop;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
         
         /// <summary>
-        /// grdIngredientesPop control.
+        /// grdIngredients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdIngredientesPop;
+        protected global::System.Web.UI.WebControls.GridView grdIngredients;
         
         /// <summary>
-        /// lbl_user control.
+        /// btnPrint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lbl_user;
+        protected global::System.Web.UI.WebControls.Button btnPrint;
         
         /// <summary>
-        /// lbl_master control.
+        /// user_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lbl_master;
+        protected global::System.Web.UI.WebControls.Label user_id;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// order_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label order_id;
     }
 }

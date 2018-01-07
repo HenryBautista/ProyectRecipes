@@ -1,17 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/recipesHTT.Master" AutoEventWireup="true" CodeBehind="ContactUsView.aspx.cs" Inherits="recipes.Views.ContactUsView1" %>
+
 <%@ OutputCache Location="None" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="about-us">
-        <div class="container">
+        <div class="container" style="width: 80%">
             <div class="row">
-                <div class="col-md-10">
-                    <div>
-                        
+                <div class="col-md-12">
                     <div class="block">
-                        <h1 class="heading"><span>Contactanos</span></h1>
-                        <div style="margin: 10px; margin-top: 70px;">
+                        <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms"><span>Contactanos</span></h1>
+                        <div style="margin: 10px; margin-top: 0px;">
                             <div class="row">
                                 <div class="form-group col-sm-6">
                                     <label for="name" class="h4">Name</label>
@@ -28,7 +27,6 @@
                             </div>
                             <asp:Button ID="form_submit" Text="Enviar" runat="server" CssClass="btn btn-success btn-lg pull-right " OnClick="btn_SaveConsult" />
                         </div>
-                    </div>
                     </div>
                 </div>
                 <!-- .col-md-12 close -->

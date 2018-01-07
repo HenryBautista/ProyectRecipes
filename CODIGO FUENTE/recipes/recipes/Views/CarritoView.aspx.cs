@@ -100,6 +100,7 @@ namespace recipes.Views
             {
                 case "edit_recipe":
                     grdRecetas.EditIndex = index;
+                    BindData();
                     break;
                 case "update_recipe":
                     string qty = ((TextBox)grdRecetas.Rows[index].FindControl("txtQty")).Text;

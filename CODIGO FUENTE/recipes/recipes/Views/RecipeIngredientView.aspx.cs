@@ -45,7 +45,7 @@ namespace recipes.Views
         }
         protected DataTable getIngredient()
         {
-            return GeneralServices.Show_Data_table("ingredient", "S1", null);
+            return GeneralServices.Show_Data_table("ingredient", "S5", null);
         }
 
         protected void grdIngredients_RowCommand(object sender, GridViewCommandEventArgs e)

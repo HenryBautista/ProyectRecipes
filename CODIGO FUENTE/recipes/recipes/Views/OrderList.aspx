@@ -16,10 +16,10 @@
                 <Columns>
                     <asp:BoundField HeaderText="Fecha" DataField="or_order_date" />
                     <asp:BoundField HeaderText="Nombre" DataField="us_name" />                    
-                    <asp:BoundField HeaderText="Cantidad" DataField="or_total_price" />
+                    <asp:BoundField HeaderText="Total" DataField="or_total_price" />
                     <asp:TemplateField>
                         <ItemTemplate>                            
-                            <asp:HyperLink runat="server" NavigateUrl='<%# Bind("or_order", "~/Views/ReportView.aspx?valor={0}") %>'
+                            <asp:HyperLink runat="server" NavigateUrl='<%# Bind("or_order", "~/Views/ReportViewAdmin.aspx?valor={0}") %>'
                               Text="Ver pedido"
                               ID="hlpedido"></asp:HyperLink>
                         </ItemTemplate>

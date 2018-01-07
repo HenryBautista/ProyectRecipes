@@ -45,6 +45,7 @@ namespace recipes.Views
             {
                 PromotionServices.InsertOrUpdate(Convert.ToInt32(inicio.InnerText), "inicio", "Recetas Bolivia", Parrafo.InnerText, imageIni.ImageUrl);
             }
+            BindData();
         }
     }
 }
